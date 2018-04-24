@@ -1,0 +1,36 @@
+svg 
+{ 
+	height: 30vw; 
+
+}
+
+path
+{
+	fill: #373d47;
+}
+
+path:hover
+{
+	cursor: pointer;
+	fill:#33b2ac;
+	transition-delay:0.01s;
+}
+.firstFloor
+{
+    margin: auto;
+    width: 45%;
+    border: 3px solid #44442d;
+    padding: 10px;
+}
+
+p
+{
+	text-align: center;
+	border-style: solid;
+    border-width: 1px;
+	border-radius: 5px;
+	margin:auto;
+	margin-top:10px;
+	width: 50px;
+	padding:5px;
+}
