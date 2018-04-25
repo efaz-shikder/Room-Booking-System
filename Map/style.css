@@ -1,20 +1,61 @@
 svg 
 { 
 	height: 30vw; 
-
 }
 
 path
 {
-	fill: #373d47;
+	fill: #373d47/* Grey */;
 }
-
-path:hover
+.C.Hallway:hover
 {
 	cursor: pointer;
-	fill:#33b2ac;
+	fill:#57a354/*Green*/;
 	transition-delay:0.01s;
 }
+
+.S.Hallway:hover
+{
+	cursor: pointer;
+	fill:#7c24a5/*Dark Purple*/;
+	transition-delay:0.01s;
+}
+
+.English.Hallway:hover
+{
+	cursor: pointer;
+	fill:#496fb2/*Sea blue*/;
+	transition-delay:0.01s;
+}
+
+.French.Hallway:hover
+{
+	cursor: pointer;
+	fill:#81e7f9/*Light blue*/;
+	transition-delay:0.01s;
+}
+
+.Gym.Hallway:hover
+{
+	cursor: pointer;
+	fill:#bf524a/*Maroon red*/;
+	transition-delay:0.01s;
+}
+
+.Front.foyer:hover
+{
+	cursor: pointer;
+	fill:#9b9934/*Gold*/;
+	transition-delay:0.01s;
+}
+
+.Music.Hallway:hover
+{
+	cursor: pointer;
+	fill:#fc8ada/*Pink*/;
+	transition-delay:0.01s;
+}
+
 .firstFloor
 {
     margin: auto;
@@ -34,3 +75,4 @@ p
 	width: 100px;
 	padding:5px;
 }
+
