@@ -6,22 +6,22 @@
   </head>
   <body>
 
-    <!-- Initial login screen -->
+    <!-- Create an initial login screen. -->
     <div id="id00">
       <div id="contentWrapper">
         <div id="imageWrapper">
-          <img class="expand" src="logo.png" alt="ARBIS logo">
+          <img class="expand" src="images/logo.png" alt="ARBIS logo">
         </div>
-        <button onclick="document.getElementById('id01').style.display='block'">LOGIN</button>
+        <button onclick="document.getElementById('firstScreen').style.display='block'">LOGIN</button>
       </div>
     </div>
 
-    <!-- Login information screen -->
-    <div id="id01" class="modal">
+    <!-- Create fields to enter the username and password. -->
+    <div id="firstScreen" class="modal">
 
       <form class="modal-content animate" action="/action_page.php">
         <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <span onclick="document.getElementById('firstScreen').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
 
         <div class="container">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="button" onclick="document.getElementById('firstScreen').style.display='none'" class="cancelbtn">Cancel</button>
           <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
       </form>
