@@ -33,8 +33,6 @@
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" id="password">
 
-          <button type="submit">Login</button>
-
           <label for="remember">
             <input id="remember" type="checkbox" checked="checked" name="remember"> Remember Me
           </label>
@@ -42,14 +40,12 @@
             <label id="toggle" onclick="togglePasswordVisibility()">Show Password</label>
           </label>
 
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+          <button type="submit">Login</button>
+          <div class="forget">
+            <span>Forgot password?</span>
+          </div>
         </div>
       </form>
-
     </div>
 
     <script type="text/javascript" src="loginScript.js"></script>
