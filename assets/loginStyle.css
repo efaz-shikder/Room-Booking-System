@@ -172,3 +172,13 @@ span.psw {
     width: 100%;
   }
 }
+
+#toggle
+{
+  float: right;
+}
+
+#remember
+{
+  float: left;
+}
