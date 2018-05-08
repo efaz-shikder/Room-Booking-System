@@ -1,9 +1,7 @@
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
-	
 	var roomType = elem.getAttribute("class");
-	document.getElementById("demo").innerHTML = elementID +" | "+ roomType;
 	
 	if (roomType != "Math Hallway" && roomType != "Science Hallway")
 	{
@@ -93,4 +91,17 @@ function hallwayHover(elem){
 		scienceRoom[i].style.fill = "#ffee05";
 		}	
 	}
+}
+
+function hallwayHoverOut()
+{
+
+	var map = document.getElementsByTagName("path");
+	for (i = 0; i < map.length; i++) {
+	map[i].style.fill = "#373d47";
+	}
+}
+
+function remove(elem)
+{
 }

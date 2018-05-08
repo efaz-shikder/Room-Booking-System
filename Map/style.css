@@ -66,11 +66,13 @@ path
 	opacity: 1;
 }
 
-.firstFloor
+.mapContainer
 {
-	cursor: pointer;
-	fill:#e0854c/*Orange*/;
-	transition-delay:0.01s;
+    float: left;
+    width: 68%;
+    border: 3px solid #44442d;
+	border-radius: 5px;
+    padding: 5px;
 }
 
 .Science.Hallway:hover
@@ -88,7 +90,21 @@ path
 	border-radius: 5px;
     padding: 10px;
 }
+.Math.Hallway:hover
+{
+	cursor: pointer;
+	fill:#7564c4/*Purple blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
 
+.Science.Hallway:hover
+{
+	cursor: pointer;
+	fill:#bfc6ff/*Lavender blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
 
 p
 {

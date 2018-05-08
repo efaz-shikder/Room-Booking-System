@@ -7,7 +7,7 @@
 <script src ="script.js"></script>
 </head>
 <body>
-<div class="floorMap">
+<div class="mapContainer">
 <svg version="1.1" viewBox="0 0 1648.8818 712.25055">
 	<!--English Hallway -->	
 	<path id="Day Care Office" 
@@ -484,12 +484,12 @@
      d="m 1496.8597,137.28926 h 56.0268 v 49.11919 h -56.0268 z"
 	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
     />
-	 <path id="220" 
+	
+	<path id="Washroom #5"
 	class="Science Hallway"
-     d="m 1498.8608,602.69348 h 56.0268 v 112.19427 h -56.0268 z"
+    d="m 1498.9067,8.2979774 h 54.6079 V 49.846016 h -54.6079 z"
 	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
     />
-	
 	 <!-- End of Science Hallway -->
 		
 	<!-- Math hallway -->
@@ -498,6 +498,11 @@
      d="m 1496.8599,191.86612 h 56.0268 v 49.11919 h -56.0268 z"
 	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
      />
+	<path id="220" 
+	class="Math Hallway"
+     d="m 1498.8608,602.69348 h 56.0268 v 112.19427 h -56.0268 z"
+	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
+    />
 	<path id="222" 
 	class="Math Hallway"
     d="m 1497.749,485.89902 h 56.0268 v 108.3351 h -56.0268 z"
@@ -548,15 +553,24 @@
     d="m 1592.9666,102.94788 h 56.0268 v 76.40763 h -56.0268 z"
 	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
     />
-	<path id="Washroom #5"
-	class="Math Hallway"
-    d="m 1498.9067,8.2979774 h 54.6079 V 49.846016 h -54.6079 z"
-	onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    />
+
 	<!--End of Math Hallway -->
 	
 </svg>
 </div>
 <p id="placeholderParagraph"></p>
+
+<div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway">S Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway">English Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway">French Hallway</a> 
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway">Gym Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer">Front foyer</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway">Music Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway">Math Hallway</a>
+  <a href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut (this)" id="Science_Hallway">Science Hallway</a>
+</div>
 </body>
 </html>
