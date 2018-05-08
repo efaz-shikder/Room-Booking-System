@@ -1,68 +1,94 @@
 svg 
 { 
-	height: 30vw; 
+	height: 28vw; 
 }
 
 path
 {
 	fill: #373d47/* Grey */;
+	opacity: 0.6;
+	transition: 0.3s;
 }
+	
 .C.Hallway:hover
 {
 	cursor: pointer;
-	fill:#57a354/*Green*/;
+	fill:#59f0ff /*Light blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .S.Hallway:hover
 {
 	cursor: pointer;
-	fill:#7c24a5/*Dark Purple*/;
+	fill: #8fd2d8/*Sea blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .English.Hallway:hover
 {
 	cursor: pointer;
-	fill:#496fb2/*Sea blue*/;
+	fill:#5fb7bf/*Dark grey-blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .French.Hallway:hover
 {
 	cursor: pointer;
-	fill:#81e7f9/*Light blue*/;
+	fill:#2ad1e0/*Neon blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .Gym.Hallway:hover
 {
 	cursor: pointer;
-	fill:#bf524a/*Maroon red*/;
+	fill:#33a1e0/*Sky blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .Front.foyer:hover
 {
 	cursor: pointer;
-	fill:#9b9934/*Gold*/;
+	fill:#246c96/*Navy blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .Music.Hallway:hover
 {
 	cursor: pointer;
-	fill:#fc8ada/*Pink*/;
+	fill:#2cb7a2/*Cyan blue*/;
 	transition-delay:0.01s;
+	opacity: 1;
 }
 
 .firstFloor
 {
+	cursor: pointer;
+	fill:#e0854c/*Orange*/;
+	transition-delay:0.01s;
+}
+
+.Science.Hallway:hover
+{
+	cursor: pointer;
+	fill:#ffb093/*Peach*/;
+	transition-delay:0.01s;
+}
+
+.floorMap
+{
     margin: auto;
-    width: 45%;
+    width: 75%;
     border: 3px solid #44442d;
+	border-radius: 5px;
     padding: 10px;
 }
+
 
 p
 {
@@ -70,9 +96,36 @@ p
 	border-style: solid;
     border-width: 1px;
 	border-radius: 5px;
-	margin:auto;
-	margin-top:10px;
-	width: 100px;
+	position: absolute;
+	width: 10%;
 	padding:5px;
+	bottom: 355px;
+    left: 625px;
 }
+
+.vertical-menu {
+    width: 25%;
+	height: 50vh;
+	float: right;	
+}
+
+.vertical-menu a {
+
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #33a1e0/*Sky blue*/;
+    color: white;
+}
+
+
 
