@@ -30,7 +30,7 @@ if (isset($_POST['submit']))
 	}
 	
 
-	$sql = "SELECT * FROM teacher WHERE username = '$username'";
+	$sql = "SELECT * FROM Teacher WHERE username = '$username'";
 	$query = mysqli_query($server, $sql);
 	$row = mysqli_fetch_array($query);
 
