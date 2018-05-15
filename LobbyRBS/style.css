@@ -2,13 +2,10 @@ svg
 { 
 	height: 28vw; 
 }
-body
-{
-	background-color: #000000;
-}
+
 path
 {
-	fill: #6b767c/* Grey */;
+	fill: #373d47/* Grey */;
 	opacity: 0.6;
 	transition: 0.3s;
 }
@@ -73,7 +70,7 @@ path
 {
     float: left;
     width: 68%;
-    border: 3px solid white;
+    border: 3px solid #44442d;
 	border-radius: 5px;
     padding: 5px;
 }
@@ -85,6 +82,14 @@ path
 	transition-delay:0.01s;
 }
 
+.floorMap
+{
+    margin: auto;
+    width: 75%;
+    border: 3px solid #44442d;
+	border-radius: 5px;
+    padding: 10px;
+}
 .Math.Hallway:hover
 {
 	cursor: pointer;
@@ -101,42 +106,39 @@ path
 	opacity: 1;
 }
 
-#placeholderParagraph
+p
 {
-	background-color: #00a7ee;
-	opacity:0.8;
-	margin-left:30%;
-	margin-right:60%;
-	float:left;
 	text-align: center;
-	color: white;
-	border: 3px solid white;
+	border-style: solid;
+    border-width: 1px;
+	border-radius: 5px;
+	position: absolute;
+	width: 10%;
+	padding:5px;
+	bottom: 355px;
+    left: 625px;
 }
-.vertical-menu 
-{
+
+.vertical-menu {
     width: 25%;
-	border: 3px solid white;	
+	height: 50vh;
 	float: right;	
 }
 
 .vertical-menu a {
 
-    background-color: #efefef;
+    background-color: #eee;
     color: black;
     display: block;
     padding: 10px;
-	margin: 2px;
     text-decoration: none;
 }
 
 .vertical-menu a:hover {
-    background-color: #dae2e5;
+    background-color: #ccc;
 }
 
 .vertical-menu a.active {
-    background-color: #00a7ee;/*Sky blue*/;
+    background-color: #33a1e0/*Sky blue*/;
     color: white;
 }
-
-
-

@@ -25,8 +25,6 @@
 
     $sql3 = "CREATE TABLE Booking(
 
-        bookingID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-
         teacherID  INT NOT NULL,
 
         classID INT NOT NULL,
@@ -37,7 +35,9 @@
 
         FOREIGN KEY (teacherID) REFERENCES Teacher(teacherID),
 
-        FOREIGN KEY (classID) REFERENCES Classroom(classID)
+        FOREIGN KEY (classID) REFERENCES Classroom(classID),
+
+        PRIMARY KEY (classID, dateOfBooking, period)
     )";
 
     if (mysqli_query($server, $sql1))

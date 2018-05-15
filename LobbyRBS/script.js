@@ -32,63 +32,63 @@ function hallwayHover(elem){
 	{
 		for (i = 0; i < cRoom.length; i++) 
 		{
-		cRoom[i].style.fill = "#00a7ee";
+		cRoom[i].style.fill = "#ffee05";
 		}
 	}
 	else if(hallwayType == "S_Hallway")
 	{
 		for (i = 0; i < sRoom.length; i++) 
 		{
-		sRoom[i].style.fill = "#00a7ee";
+		sRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "English_Hallway")
 	{
 		for (i = 0; i < englishRoom.length; i++) 
 		{
-		englishRoom[i].style.fill = "#00a7ee";
+		englishRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "French_Hallway")
 	{
 		for (i = 0; i < frenchRoom.length; i++) 
 		{
-		frenchRoom[i].style.fill = "#00a7ee";
+		frenchRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "Gym_Hallway")
 	{
 		for (i = 0; i < gymRoom.length; i++) 
 		{
-		gymRoom[i].style.fill = "#00a7ee";
+		gymRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "Front_Foyer")
 	{
 		for (i = 0; i < frontFoyerRoom.length; i++) 
 		{
-		frontFoyerRoom[i].style.fill = "#00a7ee";
+		frontFoyerRoom[i].style.fill = "#ffee05";
 		}
 	}
 	else if(hallwayType == "Music_Hallway")
 	{
 		for (i = 0; i < musicRoom.length; i++) 
 		{
-		musicRoom[i].style.fill = "#00a7ee";
+		musicRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "Math_Hallway")
 	{
 		for (i = 0; i < mathRoom.length; i++) 
 		{
-		mathRoom[i].style.fill = "#00a7ee";
+		mathRoom[i].style.fill = "#ffee05";
 		}	
 	}
 	else if(hallwayType == "Science_Hallway")
 	{
 	for (i = 0; i < scienceRoom.length; i++) 
 		{
-		scienceRoom[i].style.fill = "#00a7ee";
+		scienceRoom[i].style.fill = "#ffee05";
 		}	
 	}
 }
@@ -98,7 +98,7 @@ function hallwayHoverOut()
 
 	var map = document.getElementsByTagName("path");
 	for (i = 0; i < map.length; i++) {
-	map[i].style.fill = "#6b767c";
+	map[i].style.fill = "#373d47";
 	}
 }
 
