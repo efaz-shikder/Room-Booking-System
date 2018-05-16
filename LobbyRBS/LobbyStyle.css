@@ -1,5 +1,5 @@
 body {
-	background-color: white;
+	background-color: #000000;
 }
 
 .logo{
@@ -10,9 +10,9 @@ body {
 }
 
 .map{
-	height: 820px;
-	width: 1200px;
-	border:none;
+	height: 520px;
+	width: 1220px;
+	border-color: #00a7ee;
 }
 
 
