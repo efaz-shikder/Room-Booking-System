@@ -43,7 +43,7 @@ if (isset($_POST['signup']))
 	}
 	else
 	{
-		header("Location: index.php")
+		header("Location: ../../index.php");
 	}
 	
 	
