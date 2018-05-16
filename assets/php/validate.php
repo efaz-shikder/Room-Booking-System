@@ -44,14 +44,14 @@ if (isset($_POST['submit']))
 		{
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
-			header("Location: ../../LobbyRBS/Lobby.html");
+			header("Location: ../../LobbyRBS/Lobby.php");
 			echo "Successful login as ADMIN";
 		}
 		else
 		{
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
-			header("Location: ../../LobbyRBS/Lobby.html");
+			header("Location: ../../LobbyRBS/Lobby.php");
 			echo "Successful login as TEACHER";
 		}
 	}
