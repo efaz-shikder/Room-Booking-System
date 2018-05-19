@@ -4,7 +4,7 @@ session_start();
 
 include_once("connect.php");
 	
-$query = "SELECT * FROM Booking ORDER BY dateOfBooking ASC"; //You don't need a ; like you do in SQL
+$query = "SELECT * FROM Booking ORDER BY dateOfBooking ASC"; 
 $result = mysqli_query($server, $query);
 
 echo "<table>"; // start a table tag in the HTML
