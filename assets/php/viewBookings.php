@@ -16,14 +16,14 @@ while($row = mysqli_fetch_array($result))
 
 	$classID = $row['classID'];
 
-	$sql1 = "SELECT Booking.teacherID, first_name, last_name, Teacher.teacherID FROM Booking INNER JOIN Teacher ON Booking.teacherID=Teacher.teacherID WHERE Booking.teacherID=$teacherID";
+	$sql1 = "SELECT booking.teacherID, first_name, last_name, teacher.teacherID FROM booking INNER JOIN Teacher ON booking.teacherID=Teacher.teacherID WHERE booking.teacherID=$teacherID";
 	$resultTeacher = mysqli_query($server, $sql1);
 	$rowTeacher = mysqli_fetch_array($resultTeacher);
 
 	$firstName = $rowTeacher['first_name'];
 	$lastName = $rowTeacher['last_name'];
 
-	$sql2 = "SELECT Booking.classID, roomName, Classroom.classID FROM Booking INNER JOIN Classroom ON Booking.classID=Classroom.classID WHERE Booking.classID=$classID";
+	$sql2 = "SELECT booking.classID, roomName, classroom.classID FROM booking INNER JOIN classroom ON booking.classID=classroom.classID WHERE booking.classID=$classID";
 	$resultRoom =  mysqli_query($server, $sql2);
 	$rowRoom = mysqli_fetch_array($resultRoom);
 	$roomName = $rowRoom['roomName'];
