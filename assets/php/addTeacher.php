@@ -6,7 +6,7 @@ $username = "default";
 $password = "default";
 $first_name = "default";
 $last_name = "default";
-define("DEFAULT_ACCESS_LEVEL", '0');
+define("DEFAULT_ACCESS_LEVEL", 0);
 
 if (isset($_POST['signup']))
 {
@@ -34,16 +34,27 @@ if (isset($_POST['signup']))
 		// Worry about password encryption??
 
 
-		$sql = "INSERT INTO `Teacher` (`teacherID`, `first_name`, `last_name`, `username`, `password`, `accessLevel`) VALUES (NULL, '$first_name', '$last_name', '$username', '$password', 'DEFAULT_ACCESS_LEVEL')";
+		$sql = "INSERT INTO `Teacher` (`teacherID`, `first_name`, `last_name`, `username`, `password`, `accessLevel`) VALUES (NULL, '$first_name', '$last_name', '$username', '$password', DEFAULT_ACCESS_LEVEL)";
 
 		mysqli_query($server, $sql);
+
+		echo "<h1>Teacher successfully added. Redirecting to Log in.</h1>";
+		sleep(3);
+		//header("Location: ../../index.php");
+
 
 		// Wrap up and close connection
 		mysqli_close($server);
 	}
 	else
 	{
-		header("Location: ../../index.php");
+		echo "<h1>Passwords do not match. Redirecting to main menu.</h1>";
+		sleep(3);
+		//header("Location: ../../index.php");
+
+		// Wrap up and close connection
+		mysqli_close($server);
+
 	}
 	
 	

@@ -7,10 +7,10 @@
     <title>ARBIS</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="assets/CSS/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="assets/CSS/signin.css" rel="stylesheet">
 	
   </head>
 
@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row justify-content-md-center marginBottom">
         <div class="col">
-          <img class="img-fluid" src="skrrt.png" alt="ARBIS logo" height="140" width="140">
+          <img class="img-fluid" src="assets/images/skrrt.png" alt="ARBIS logo" height="140" width="140">
         </div>
       </div>
       <div class="row justify-content-md-center">
@@ -103,7 +103,7 @@
 		  </div>
         </div>
       </div>
-    <script src="javascript.js"></script>
+    <script src="assets/javascript/javascript.js"></script>
   </body>
   
   <?php

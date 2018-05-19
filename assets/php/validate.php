@@ -2,6 +2,7 @@
 
 session_start();
 
+set_time_limit(4);
 define("ADMIN", 1);
 $username = "default";
 $password = "default";
@@ -39,25 +40,28 @@ if (isset($_POST['submit']))
 	$accessLevel = $row['accessLevel'];
 
 	if ($password == $database_password) 
-	{
+	{ 
 		if($accessLevel == ADMIN)
 		{
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
-			header("Location: ../../homepage/index.php");
+			header("Location: ../../LobbyRBS/Lobby.php");
 			echo "Successful login as ADMIN";
 		}
 		else
 		{
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $id;
-			header("Location: ../../homepage/index.php");
+			header("Location: ../../LobbyRBS/Lobby.php");
 			echo "Successful login as TEACHER";
 		}
 	}
 	else
 	{
 		echo "Incorrect login details!";
+		sleep(2);
+		echo "test";
+		//header("Location: ../../index.php");
 	}
 }
 

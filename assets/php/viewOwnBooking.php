@@ -3,29 +3,30 @@
 session_start();
 
 include_once("connect.php");
+
 	
-$query = "SELECT * FROM Booking"; //You don't need a ; like you do in SQL
+$currentTeacherID = $_SESSION['id']; 
+$query = "SELECT * FROM Booking WHERE Booking.teacherID = '$currentTeacherID' " ; //You don't need a ; like you do in SQLT
+
 $result = mysqli_query($server, $query);
 
 echo "<table>"; // start a table tag in the HTML
 
-$teacherID = 1;
-
 while($row = mysqli_fetch_array($result))
 {   //Creates a loop to loop through results
 
-	$sql1 = "SELECT Booking.dateOfBooking, Booking.period, Booking.classID FROM Booking WHERE Booking.teacherID=$teacherID";
-	$result1 = mysqli_query($server, $sql1);
-	$row1 = mysqli_fetch_array($result1);
-	$classID = $row1['classID'];
+
+	$dateOfBooking = $row['dateOfBooking'];
+	$period = $row['period'];
+	$classID = $row['classID'];
 
 
-	$sql2 = "SELECT Booking.classID, roomName, Classroom.classID FROM Booking INNER JOIN Classroom ON Booking.classID=Classroom.classID WHERE Booking.classID=$classID";
-	$resultRoom =  mysqli_query($server, $sql2);
-	$rowRoom = mysqli_fetch_array($resultRoom);
-	$roomName = $rowRoom['roomName'];
 
+	$sql = "SELECT * FROM Classroom WHERE Classroom.classID = $classID";
+	$resultClassroom =  mysqli_query($server, $sql);
+	$resultName = mysqli_fetch_array($resultClassroom);
 
+	$roomName = $resultName['roomName'];
 
 
 echo "<tr><td>" . $roomName . "</td><td>" . $row['dateOfBooking'] . "</td>

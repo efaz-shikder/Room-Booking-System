@@ -9,7 +9,7 @@
 	<div id="ArbisNav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="Lobby.html">Home</a>
-		<a href="">Booked Rooms</a>
+		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
 		<a href="">Help</a>
 	</div>
 	<div id="main" class="main">
