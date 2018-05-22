@@ -4,12 +4,12 @@
 
 	include_once("connect.php");
 
-	$_SESSION['id'] = $teacherID;
-	$dateOfBooking = "";  // Get from calendar
-	$roomName = $_POST['roomName'];
-	$period = $_POST['period'];
+	$teacherID =  1;//$_SESSION['id'];
+	$dateOfBooking = "2018-05-16";  // Get from calendar
+	$roomName = 1; //$_POST['roomName'];
+	$period = 'B' //$_POST['period'];
 
-	$sql = "INSERT INTO `Booking` (`teacherID`, `classID`, `dateOfBooking`, `period`) VALUES ('$teacherID', '$roomID', '$dateOfBooking', '$period')";
+	$sql = "INSERT INTO `Booking` (`teacherID`, `classID`, `dateOfBooking`, `period`) VALUES ('1', '1', '2018-05-22', 'B')";
 	mysqli_query($server, $sql);
 
 	// Wrap up and close connection

@@ -16,7 +16,7 @@ while($row = mysqli_fetch_array($result))
 
 	$classID = $row['classID'];
 
-	$sql1 = "SELECT booking.teacherID, first_name, last_name, teacher.teacherID FROM booking INNER JOIN Teacher ON booking.teacherID=Teacher.teacherID WHERE booking.teacherID=$teacherID";
+	$sql1 = "SELECT Booking.teacherID, first_name, last_name, Teacher.teacherID FROM Booking INNER JOIN Teacher ON Booking.teacherID=Teacher.teacherID WHERE Booking.teacherID=$teacherID";
 	$resultTeacher = mysqli_query($server, $sql1);
 	$rowTeacher = mysqli_fetch_array($resultTeacher);
 

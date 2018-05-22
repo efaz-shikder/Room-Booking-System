@@ -64,29 +64,29 @@
           </div>
 		  <div id="mainButton2">
 			<div class="btn-text2" onclick="openForm2()">Sign Up</div>
-			
+			<form action="assets/php/addTeacher.php" method="post">
 			<div class="modal2">
           		<div class="close-button" onclick="closeForm()">x</div>
 				<div class="form-title">Sign Up</div>
 				<div class="input-group">
-          			<input type="text" id="name" onblur="checkInput(this)" />
+          			<input type="text" id="name" onblur="checkInput(this)" name="firstName" />
 					<label for="name">First Name</label>
           		</div>
 				<div class="input-group">
-          			<input type="text" id="name" onblur="checkInput(this)" />
+          			<input type="text" id="name" onblur="checkInput(this)" name="lastName" />
 					<label for="name">Last Name</label>
           		</div>
           		<div class="input-group">
-          			<input type="text" id="name" onblur="checkInput(this)" />
+          			<input type="text" id="name" onblur="checkInput(this)" name="username" />
 					<label for="name">Email</label>
 					<span class="unit">@tdsb.on.ca</span>
           		</div>
           		<div class="input-group">
-          			<input type="password" id="password2" onblur="checkInput(this)" />
+          			<input type="password" id="password2" onblur="checkInput(this)" name="password1" />
           			<label for="password">Password</label>
           		</div>
 				<div class="input-group">
-          			<input type="password" onblur="checkInput(this)" />
+          			<input type="password" onblur="checkInput(this)" name="password2" />
           			<label for="password">Re-enter Password</label>
           		</div>
               <div class="click-group">
@@ -97,7 +97,7 @@
                   </div>
                 </div>
               </div>
-			  <div class="form-button" onclick="closeForm()">Sign Up</div>
+			  <div > <input class="form-button" onclick="closeForm()" type="submit" name="submit" value = "Sign Up"></div>
           	</div>
 			
 		  </div>
