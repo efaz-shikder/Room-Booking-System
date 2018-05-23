@@ -106,14 +106,31 @@ function remove(elem)
 {
 }
 
+function openNav() {
+	document.getElementById("ArbisNav").style.width = "250px";
+	document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+	document.getElementById("ArbisNav").style.width = "0";
+	document.getElementById("main").style.marginLeft = "0px";
+}
+
 $(document).ready(function(){
-    $(".button a").click(function(){
-        $(".overlay").fadeToggle(200);
-       $(this).toggleClass('btn-open').toggleClass('btn-close');
-    });
+	$('#nav-icon3').click(function(){
+		$(this).toggleClass('open');
+	});
 });
-$('.overlay').on('click', function(){
-    $(".overlay").fadeToggle(200);
-    $(".button a").toggleClass('btn-open').toggleClass('btn-close');
-    open = false;
-});
+
+var action = 1;
+
+function toggleNav() {
+    if ( action == 1 ) {
+        openNav();
+        action = 2;
+    } else {
+        closeNav();
+        action = 1;
+    }
+    $("#mainContent").toggle();
+}

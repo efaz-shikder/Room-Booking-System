@@ -1,5 +1,5 @@
 .padding {
-	margin-top: 200px;
+	margin-top: 50px;
 }
 
 path
@@ -113,33 +113,12 @@ path
 }
 
 body {
-	background-color: black;
+  background-color: black;
   display: table;
   position: absolute;
   height: 100%;
   width: 100%;
 }
-
-.jumbotron {
-   display: table-cell;
-   vertical-align: middle;
-	 background-color: black;
-	 padding: 0;
-}
-/*
-p
-{
-	text-align: center;
-	border-style: solid;
-    border-width: 1px;
-	border-radius: 5px;
-	position: absolute;
-	width: 10%;
-	padding:5px;
-	bottom: 355px;
-    left: 625px;
-}
-*/
 
 ul {
 	margin:0;
@@ -160,96 +139,128 @@ nav {
 	background:none;
 }
 
-/*styling open close button*/
-.button {
-	display:inline;
-	position:absolute;
-	left:50px;
-	top:50px;
-	z-index:999;
-	font-size:30px;
-}
-.button a {
-	text-decoration:none;
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Stay on top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+	background-color: white;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.btn-open:after {
-	color: #00a7ee;
-	content: "\f0c9";
-	font-family:"FontAwesome";
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-}
-.btn-open:hover:after {
-	color:white;
-}
-.btn-close:after {
-	color:#00a7ee;
-	content:"\f00d";
-	font-family:"FontAwesome";
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-}
-.btn-close:hover:after {
-	color: white;
-}
-/*overlay*/
-.overlay {
-	display:none;
-	position:fixed;
-	top:0;
-	height:100%;
-	width:100%;
-	background:black;
-	overflow:auto;
-	z-index:99;
-}
-.wrap {
-	color:#00a7ee;
-	text-align:center;
-	max-width:90%;
-	margin:0 auto;
-}
-.wrap ul.wrap-nav {
-	border-bottom:1px solid #575757;
-	text-transform:capitalize;
-	padding:150px 0px 100px;
-}
-.wrap ul.wrap-nav li {
-	font-size:20px;
-	display:inline-block;
-	vertical-align:top;
-	width:24%;
-	position:relative;
-}
-.wrap ul.wrap-nav li a {
-	color:#00a7ee;
-	display:block;
-	padding:8px 0;
-	text-decoration:none;
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-}
-.wrap ul.wrap-nav li a:hover {
-	color:white;
-}
-.wrap ul.wrap-nav ul {
-	padding:20px 0;
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
 
-@media screen and (max-width:48em) {
-	.wrap ul.wrap-nav>li {
-		width:100%;
-		padding:20px 0;
-		border-bottom:1px solid #575757;
-	}
-	.wrap ul.wrap-nav {
-		padding:30px 0px 0px;
-	}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover{
+    color: #00a7ee;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.logo{
+	font-size:15px;
+	cursor:pointer;
+	height: 75px;
+	width: 50px;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Icon 3 */
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 18px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 36px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3 {
+  width: 60px;
+  height: 45px;
+  position: relative;		
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #00a7ee;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
