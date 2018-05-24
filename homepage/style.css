@@ -4,8 +4,8 @@
 
 path
 {
-	fill: #373d47/* Grey */;
-	opacity: 0.6;
+	fill: #818181/* Grey */;
+	opacity: 0.8;
 	transition: 0.3s;
 }
 
@@ -84,6 +84,14 @@ path
 {
 	cursor: pointer;
 	fill:#bfc6ff/*Lavender blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Geography.Hallway:hover
+{
+	cursor: pointer;
+	fill:#1637ba /*Dark blue*/;
 	transition-delay:0.01s;
 	opacity: 1;
 }
