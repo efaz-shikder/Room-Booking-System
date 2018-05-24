@@ -7,6 +7,10 @@ function availabilityDisplay(elem) {
 	{
 		var floorNumber = "First floor";
 	}
+	else if(roomType = "Geography Hallway")
+	{
+		floorNumber = "Third floor";
+	}
 	else
 	{
 		floorNumber= "Second floor"
@@ -25,6 +29,7 @@ var gymRoom = document.getElementsByClassName("Gym Hallway");
 var frenchRoom = document.getElementsByClassName("French Hallway");
 var musicRoom = document.getElementsByClassName("Music Hallway");
 var frontFoyerRoom = document.getElementsByClassName("Front foyer");
+var geographyRoom = document.getElementsByClassName("Geography Hallway");
 
 function hallwayHover(elem){
 	var hallwayType = elem.getAttribute("id");
@@ -91,9 +96,16 @@ function hallwayHover(elem){
 		scienceRoom[i].style.fill = "#00a7ee";
 		}	
 	}
+	else if(hallwayType == "Geography_Hallway")
+	{
+	for (i = 0; i < geographyRoom.length; i++) 
+		{
+		geographyRoom[i].style.fill = "#00a7ee";
+		}	
+	}
 }
 
-function hallwayHoverOut()
+function hallwayHoverOut(elem)
 {
 
 	var map = document.getElementsByTagName("path");

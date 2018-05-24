@@ -1,6 +1,6 @@
 svg 
 { 
-	height: 28vw; 
+	height: 43vh; 
 }
 body
 {
@@ -17,6 +17,14 @@ path
 {
 	cursor: pointer;
 	fill:#59f0ff /*Light blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Geography.Hallway:hover
+{
+	cursor: pointer;
+	fill:#1637ba /*Dark blue*/;
 	transition-delay:0.01s;
 	opacity: 1;
 }
