@@ -6,18 +6,32 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" >
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
 </head>
 
-<body>
-
+<body id="mainBody" background="websiteBackground1.jpg">
 
 	<div class="container-fluid">
 		<div id="ArbisNav" class="sidenav">
 			<a href="index.html">Home</a>
 			<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
 			<a href="">Help</a>
+			<h1 id="theme">Theme:</h1>
+			<label class="container">
+			<input type="radio" name="theme" value="black" onclick="themeChange(this)" checked="checked">
+			<span class="checkmark"></span>Black
+			</label>
+			<label class="container">
+			<input type="radio" name="theme" value="brown" onclick="themeChange(this)">
+			<span class="checkmark"></span>Brown
+			</label>
+			<label class="container">
+			<input type="radio" name="theme" value="light" onclick="themeChange(this)">
+			<span class="checkmark"></span>Light
+			</label>
 		</div>
+
 	</div>
 
 	<section id="main" class="main">
@@ -27,11 +41,11 @@
 		  <span></span>
 		  <span></span>
 		</div>
-
+	<p id="placeholderParagraph">Room name | Hallway | Floor</p>
 		<div class="padding">
 			<div class="container-fluid">
 
-					<div class="row" style="background-color:white;">
+					<div class="row" >
 						<div class="col-xl-9 col-lg-9 bg-black d-none d-lg-block" >
 							<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
 
@@ -334,7 +348,7 @@
 							  d="m 229.50085,447.79266 h 41.9865 v 59.08508 h -41.9865 z"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							  />
-							  <path id="Library"
+							  <path id="Library & Alcove"
 							  class="Front foyer"
 							  d="m 337.79181,326.39279 h 38.56678 v 114.75043 h -38.56678 z m 38.56677,38.56677 h 120.82994 v 76.18366 H 376.35858 Z"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
@@ -349,7 +363,7 @@
 							  d="m 440.38327,327.34271 h 57.94517 v 34.95709 h -57.94517 z"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							  />
-							  <path id="Display Case"
+							  <path id="Display Case & Tables"
 							  class="Front foyer"
 							  d="m 378.6384,443.99298 h 57.37521 v 63.07474 H 378.6384 Z"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
@@ -581,88 +595,74 @@
 							  />
 							  <!--End of English Hallway -->
 							  <!--Geography Hallway -->
-							  <path
+							  <path id="Social Studies & Humanities Office"
 							  d="m 1772.481,52.27 v 83.5736 h 60.674 V 52.27 Z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="Social Studies and Humanities Office"
-							  />
-							  <path
+    						  />
+							  <path id="Washroom #8"
     						  d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="Washroom #8"
-    						  />
-							  <path
+							  />
+							  <path id="312"
     						  d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="312"
     						  />
-							  <path
+							  <path id="310"
     						  d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="310"
     						  />
-							  <path
+							  <path id="308"
     						  d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="308"
     						  />
-							  <path
+							  <path id="306"
     						  d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="306"
-    						  />
-							  <path
+							  />
+							  <path id="302"
     						  d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="302"
     						  />
-							  <path
+							  <path id="History & Geography Office"
     						  d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="History and Geography Office"
     						  />
-							  <path
+							  <path id="311"
     						  d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
 							  class="Geography Hallway"
-    						  id="311"
     						  />
-							  <path
-    						  d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
+							  <path id="309"
+   						  	  d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="309"
-   						  	  />
-							  <path
+    						  />
+							  <path id="307"
     						  d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="307"
     						  />
-							  <path
+							  <path id="305"
     						  d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="305"
     						  />
-							  <path
+							  <path id="303"
     						  d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
 							  class="Geography Hallway"
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-     						  id="303"
-    						  />
-							  <path
+     						  />
+							  <path id="301"
     						  d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
 							  class="Geography Hallway"	
 							  onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-    						  id="301"
     						  />
 							  <!--End of Geography Hallway -->
 							</svg>
@@ -672,8 +672,8 @@
 						<div class="row h-100 justify-content-center align-items-center">
 
 								<ul class="nav flex-column text-center">
-									<li class="nav-item">
-										<a class="nav-link" href="#">Home</a>
+									<li class="nav-header">
+										<a class="nav-link" href="#">Hallway Selector</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
@@ -712,7 +712,6 @@
 					</div>
 
 					<div class="row bg-warning">
-						<div style="height: 300px; width: 100%;"></div>
 					</div>
 					
 					<div class="row">
