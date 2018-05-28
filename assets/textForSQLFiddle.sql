@@ -17,6 +17,8 @@ CREATE TABLE Classroom(
 
         roomName VARCHAR(50) NOT NULL,
 		
+		hallway ENUM('C Hallway', 'S Hallway', 'English Hallway', 'French Hallway', 'Gym Hallway', 'Frontt Foyer', 'Music Hallway', 'Math Hallway', 'Science Hallway', 'Geography Hallway') NOT NULL, 
+		
 		isBookable ENUM('yes', 'no')
 );
 
