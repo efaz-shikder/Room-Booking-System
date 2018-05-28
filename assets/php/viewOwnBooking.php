@@ -5,8 +5,8 @@ session_start();
 include_once("connect.php");
 
 	
-$currentTeacherID = $_SESSION['id']; 
-$query = "SELECT * FROM Booking WHERE Booking.teacherID = '$currentTeacherID' " ; //You don't need a ; like you do in SQLT
+$currentTeacherID = $_SESSION['email']; 
+$query = "SELECT * FROM Booking WHERE Booking.teacherEmail = '$currentTeacherID' " ; 
 
 $result = mysqli_query($server, $query);
 
@@ -39,3 +39,28 @@ echo "</table>"; //Close the table in HTML
 // Wrap up and close connection
 mysqli_close($server);
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bookings</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="" rel="stylesheet">
+  
+</head>
+
+<body>
+
+	<h1> Make bare divs like the shit we showed Arkin</h1>
+
+</body>
+
+
+</html>
