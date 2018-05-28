@@ -2,17 +2,17 @@
 
 session_start();
 
-$username = "default";
+$email = "default";
 $password = "default";
 $first_name = "default";
 $last_name = "default";
 define("DEFAULT_ACCESS_LEVEL", 0);
 
-if (isset($_POST['signup']))
+if(isset($_POST['submit'])) 
 {
 	include_once("connect.php");
 
-	$username = ($_POST['username']);
+	$email = $_POST['email'];
 	$password1 = ($_POST['password1']);
 	$password2 = ($_POST['password2']);
 	$first_name = ($_POST['firstName']);
@@ -21,24 +21,27 @@ if (isset($_POST['signup']))
 	if ($password1 == $password2)
 	{
 		// Security measures in order to prevent SQL injections
-		$username = stripslashes(strip_tags($_POST['username']));
+		$email = stripslashes(strip_tags($_POST['email']));
 		$password = stripslashes(strip_tags($_POST['password1']));
 		$first_name = stripslashes(strip_tags($_POST['firstName']));
 		$last_name = stripslashes(strip_tags($_POST['lastName']));
 
-		$username = mysqli_real_escape_string($server, $username);
+		$email = mysqli_real_escape_string($server, $email);
 		$password = mysqli_real_escape_string($server, $password);
 		$first_name = mysqli_real_escape_string($server, $first_name);
 		$last_name = mysqli_real_escape_string($server, $last_name);
 
 		// Worry about password encryption??
 
+		
 
-		$sql = "INSERT INTO `Teacher` (`teacherID`, `first_name`, `last_name`, `username`, `password`, `accessLevel`) VALUES (NULL, '$first_name', '$last_name', '$username', '$password', DEFAULT_ACCESS_LEVEL)";
+
+
+		$sql = "INSERT INTO `Teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', DEFAULT_ACCESS_LEVEL";
 
 		mysqli_query($server, $sql);
 
-		echo "<h1>Teacher successfully added. Redirecting to Log in.</h1>";
+		echo "<h1>Teacher successfully added.</h1>";
 		sleep(3);
 		//header("Location: ../../index.php");
 
@@ -56,8 +59,6 @@ if (isset($_POST['signup']))
 		mysqli_close($server);
 
 	}
-	
-	
 }
 
 ?>

@@ -11,14 +11,14 @@ if (isset($_POST['submit']))
 {
 	include_once("connect.php");
 
-	if("" == trim($_POST['username']))
+	if("" == trim($_POST['email']))
 	{
 		$username = "default";
 	}
 	else
 	{
 		// Security measures in order to prevent SQL injections
-		$username = strip_tags($_POST['username']);
+		$username = strip_tags($_POST['email']);
 		$password = strip_tags($_POST['password']);
 
 		$username = stripslashes($username);
@@ -31,7 +31,7 @@ if (isset($_POST['submit']))
 	}
 	
 
-	$sql = "SELECT * FROM Teacher WHERE username = '$username'";
+	$sql = "SELECT * FROM Teacher WHERE email = '$username'";
 	$query = mysqli_query($server, $sql);
 	$row = mysqli_fetch_array($query);
 
@@ -43,16 +43,14 @@ if (isset($_POST['submit']))
 	{ 
 		if($accessLevel == ADMIN)
 		{
-			$_SESSION['username'] = $username;
-			$_SESSION['id'] = $id;
-			header("Location: ../../LobbyRBS/Lobby.php");
+			$_SESSION['username'] = $email;
+			header("Location: ../../homepage/index.php");
 			echo "Successful login as ADMIN";
 		}
 		else
 		{
-			$_SESSION['username'] = $username;
-			$_SESSION['id'] = $id;
-			header("Location: ../../LobbyRBS/Lobby.php");
+			$_SESSION['username'] = $email;
+			header("Location: ../../homepage/index.php");
 			echo "Successful login as TEACHER";
 		}
 	}
@@ -60,9 +58,8 @@ if (isset($_POST['submit']))
 	{
 		echo "Incorrect login details!";
 		sleep(2);
-		echo "test";
 		//header("Location: ../../index.php");
-	}
+	} 
 }
 
 // Wrap up and close connection

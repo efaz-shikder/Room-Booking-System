@@ -37,7 +37,7 @@
 				<div class="close-button" onclick="closeForm()">x</div>
 				<div class="form-title">Sign In</div>
 					<div class="input-group">
-						<input type="text" id="name" onblur="checkInput(this)" name="username" />
+						<input type="text" id="name" onblur="checkInput(this)" name="email" />
 						<label for="name">Email</label>
 						<span class="unit">@tdsb.on.ca</span>
 					</div>
@@ -60,7 +60,9 @@
 				<div class="form-forgot">Forgot Password?</div>
 			
 			</div>
-			
+			</form>
+
+
           </div>
 		  <div id="mainButton2">
 			<div class="btn-text2" onclick="openForm2()">Sign Up</div>
@@ -77,7 +79,7 @@
 					<label for="name">Last Name</label>
           		</div>
           		<div class="input-group">
-          			<input type="text" id="name" onblur="checkInput(this)" name="username" />
+          			<input type="text" id="name" onblur="checkInput(this)" name="email" />
 					<label for="name">Email</label>
 					<span class="unit">@tdsb.on.ca</span>
           		</div>
@@ -99,13 +101,14 @@
               </div>
 			  <div > <input class="form-button" onclick="closeForm()" type="submit" name="submit" value = "Sign Up"></div>
           	</div>
-			
+			</form>
 		  </div>
         </div>
       </div>
     <script src="assets/javascript/javascript.js"></script>
   </body>
   
+
   <?php
     include "assets/php/connect.php";
     // Wrap up and close connection

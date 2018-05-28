@@ -1,10 +1,12 @@
 CREATE TABLE Teacher(
 
+        teacherID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
         first_name VARCHAR(30) NOT NULL,
 
         last_name VARCHAR(30) NOT NULL,
 
-        email VARCHAR(50) NOT NULL PRIMARY KEY,
+        email VARCHAR(50) NOT NULL,
 
         password VARCHAR(50) NOT NULL,
 
@@ -15,14 +17,12 @@ CREATE TABLE Classroom(
 
         classID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
-        roomName VARCHAR(50) NOT NULL,
-		
-		isBookable ENUM('yes', 'no')
+        roomName VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Booking(
 
-        teacherEmail  INT NOT NULL,
+        teacherID  INT NOT NULL,
 
         classID INT NOT NULL,
 
@@ -30,14 +30,14 @@ CREATE TABLE Booking(
 
         period ENUM('A', 'B', 'C', 'D') NOT NULL,
 
-        FOREIGN KEY (teacherEmail) REFERENCES Teacher(email),
+        FOREIGN KEY (teacherID) REFERENCES Teacher(teacherID),
 
         FOREIGN KEY (classID) REFERENCES Classroom(classID),
 
         PRIMARY KEY (classID, dateOfBooking, period)
 );
 
-CREATE TABLE Schedule(
+CREATE TABLE SpecialDate(
 
         ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
@@ -45,7 +45,7 @@ CREATE TABLE Schedule(
   
         specialDate date NOT NULL,
 		
-		typeOfDay ENUM('first day of school', 'last day of school', 'late start', 'no school', 'day zero') NOT NULL 
+		typeOfDay ENUM('late start', 'no school') NOT NULL 
 );
 
 
