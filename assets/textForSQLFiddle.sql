@@ -45,7 +45,7 @@ CREATE TABLE Schedule(
   
         specialDate date NOT NULL,
 		
-		typeOfDay ENUM('first day of school', 'last day of school', 'late start', 'no school', 'day zero') NOT NULL 
+		typeOfDay ENUM('first day of school', 'last day of school', 'late start', 'no school', 'day zero', 'normal day') NOT NULL 
 );
 
 
