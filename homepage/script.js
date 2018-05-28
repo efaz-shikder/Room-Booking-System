@@ -142,7 +142,7 @@ function hallwayHoverOut()
 	for (i = 0; i < map.length; i++) {
 	map[i].style.fill = "#5e7172";
 	}
-	document.getElementById("placeholderParagraph").innerHTML = "Room name | Hallway | Floor"
+	document.getElementById("placeholderParagraph").innerHTML = "Academic Room Booking and Inquiry System";
 }
 
 function remove(elem)
