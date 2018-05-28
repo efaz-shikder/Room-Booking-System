@@ -7,19 +7,12 @@
 	padding-top: 10px;
 	opacity: 0.9;
 	background-color: #eff5ff;
-	
-}
-.col-xl-3.col-lg-3.col-md-12.col-sm-12.col-xs-12.bg-dark
-{
-	opacity: 0.85;
+
 }
 
-.row.bg-warning
+.two
 {
-	opacity: 0.8;
-	height: 300px; 
-	width: 95vw;
-	background-color: #017f96;
+	height: 300px;
 }
 
 /*Map */
@@ -132,7 +125,6 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  
 }
 
 ul {
@@ -145,7 +137,6 @@ li {
 	padding:0;
 	margin:0;
 	color:
-
 }
 nav {
 	text-align:center;
@@ -156,6 +147,11 @@ nav {
 	background:none;
 }
 
+.nav {
+	position: relative;
+	top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
 .nav-header a
 {
 	color:white;
@@ -171,7 +167,7 @@ nav {
 }
 
 .nav-item a:hover
-{	
+{
 	color: #68d2ff;/* Standard blue */
 	font-weight: 700;
 	font-family: 'Playfair Display', serif;
@@ -224,7 +220,7 @@ nav {
 	width: 50px;
 }
 
-#placeholderParagraph 
+#placeholderParagraph
 {
 	display: block;
     font-size: 2em;
@@ -239,7 +235,6 @@ nav {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
-    padding: 30px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -291,7 +286,7 @@ nav {
 #nav-icon3 {
   width: 60px;
   height: 45px;
-  position: relative;		
+  position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -323,7 +318,7 @@ nav {
   transition: .25s ease-in-out;
 }
 
-.container 
+.container
 {
 	padding: 4px 4px 4px 32px;
     text-decoration: none;
@@ -332,7 +327,7 @@ nav {
     color: #677b7c/* Grey */;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
-	
+
 }
 #theme
 {
@@ -344,4 +339,86 @@ nav {
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
 
+}
+
+/** yeet **/
+.calendarContainer{
+	margin: 20px;
+}
+.calendar_weekdays{
+	color: #59f0ff;
+}
+.calendar, .calendar_weekdays, .calendar_content {
+    max-width: 300px;
+}
+.calendar {
+    margin: auto;
+    font-family:'Muli', sans-serif;
+    font-weight: 400;
+}
+.calendar_content, .calendar_weekdays, .calendar_header {
+    position: relative;
+    overflow: hidden;
+}
+.calendar_weekdays div {
+    display:inline-block;
+    vertical-align:top;
+}
+.calendar_weekdays div, .calendar_content div {
+    width: 14.28571%;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent;
+    color: #6f6f6f;
+    font-size: 14px;
+}
+.calendar_content div {
+    border: 1px solid transparent;
+    float: left;
+}
+.calendar_content div:hover {
+    border: 1px solid white;
+    cursor: default;
+}
+.calendar_content div.blank:hover {
+    cursor: default;
+    border: 1px solid transparent;
+}
+.calendar_content div.past-date {
+    color: white;
+}
+.calendar_content div.today {
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid white;
+}
+.calendar_content div.selected {
+    background-color: #59f0ff;
+}
+.calendar_header {
+    width: 100%;
+    text-align: center;
+}
+.calendar_header h2 {
+    padding: 0 10px;
+    font-family:'Muli', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #59f0ff;
+    float:left;
+    width:70%;
+    margin: 0 0 10px;
+}
+button.switch-month {
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: none;
+    color: #59f0ff;
+    float: left;
+    width:15%;
+    transition: color .2s;
+}
+button.switch-month:hover {
+    color: white;
 }
