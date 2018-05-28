@@ -1,3 +1,12 @@
+/* Color scheme
+#6dc5d6: Standard blue
+#59f0ff: Standard light blue
+#017f96: Standard dark blue
+
+#677b7c: Standard gray
+#a3acba: Standard light gray
+*/
+
 .padding {
 	margin-top: 30px;
 }
@@ -7,7 +16,7 @@
 	padding-top: 10px;
 	opacity: 0.9;
 	background-color: #eff5ff;
-
+	
 }
 
 .two
@@ -120,6 +129,19 @@ path
 
 /*End of Map */
 
+#placeholderParagraph
+{
+	display: block;
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+	text-shadow: 2px 2px #017f96;
+    font-weight: bold;
+	font-family: 'Playfair Display', serif;
+	color: white;
+}
+
 body {
   display: table;
   position: absolute;
@@ -137,6 +159,7 @@ li {
 	padding:0;
 	margin:0;
 	color:
+
 }
 nav {
 	text-align:center;
@@ -147,6 +170,7 @@ nav {
 	background:none;
 }
 
+/* Navigation */
 .nav {
 	position: relative;
 	top: 50%; left: 50%;
@@ -161,14 +185,14 @@ nav {
 }
 .nav-item a
 {
-	color: #017f96;/* Standard dark blue */
-	font-weight: 700;
+	color: #6dc5d6;/* Standard dark blue */
+	font-weight: 500;
 	font-family: 'Playfair Display', serif;
 }
 
 .nav-item a:hover
 {
-	color: #68d2ff;/* Standard blue */
+	color: #59f0ff;/* Standard light blue */
 	font-weight: 700;
 	font-family: 'Playfair Display', serif;
 }
@@ -184,13 +208,14 @@ nav {
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+
 /* The navigation menu links */
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
 	font-family: 'Playfair Display', serif;
-    color: #677b7c/* Grey */;
+    color: #677b7c;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
     transition: 0.3s;
@@ -200,7 +225,7 @@ nav {
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
-    color: #6dc5d6;/* Standard blue */
+    color: #6dc5d6;
 	transition: 0.5s;
 	text-shadow: 0.5px 0.5px #017f96;
 }
@@ -220,18 +245,6 @@ nav {
 	width: 50px;
 }
 
-#placeholderParagraph
-{
-	display: block;
-    font-size: 2em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-	text-shadow: 2px 2px #017f96;
-    font-weight: bold;
-	font-family: 'Playfair Display', serif;
-	color: white;
-}
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
@@ -318,17 +331,45 @@ nav {
   transition: .25s ease-in-out;
 }
 
+
+/* Website theme */
 .container
 {
-	padding: 4px 4px 4px 32px;
-    text-decoration: none;
-    font-size: 20px;
+	padding-left: 20px;
+    font-size: 18px;
 	font-family: 'Playfair Display', serif;
     color: #677b7c/* Grey */;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
+	margin-left: 32px;
+	position: relative;
+	cursor: pointer;
 
 }
+
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #677b7c/* Grey */;
+  border-radius: 20%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #a3acba;/*Standard Light gray */
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #6dc5d6;/* Standard blue */
+}
+
 #theme
 {
 	padding: 8px 8px 8px 32px;
@@ -338,8 +379,8 @@ nav {
     color: #677b7c/* Grey */;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
-
 }
+
 
 /** yeet **/
 .calendarContainer{
@@ -353,7 +394,7 @@ nav {
 }
 .calendar {
     margin: auto;
-    font-family:'Muli', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 .calendar_content, .calendar_weekdays, .calendar_header {
@@ -368,6 +409,7 @@ nav {
     width: 14.28571%;
     overflow: hidden;
     text-align: center;
+	font-family: 'Playfair Display', serif;
     background-color: transparent;
     color: #6f6f6f;
     font-size: 14px;
@@ -401,8 +443,8 @@ nav {
 }
 .calendar_header h2 {
     padding: 0 10px;
-    font-family:'Muli', sans-serif;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
     font-size: 18px;
     color: #59f0ff;
     float:left;
@@ -422,3 +464,6 @@ button.switch-month {
 button.switch-month:hover {
     color: white;
 }
+
+
+	color:
