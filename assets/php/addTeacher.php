@@ -2,31 +2,49 @@
 
 session_start();
 
-$username = "default";
-$password = "default";
-$first_name = "default";
-$last_name = "default";
-define("DEFAULT_ACCESS_LEVEL", 0);
+define("DEFAULT_ACCESS_LEVEL", "0");
 
-if (isset($_POST['signup']))
+if (isset($_POST['submit']))
 {
 	include_once("connect.php");
 
-	$username = ($_POST['username']);
-	$password1 = ($_POST['password1']);
-	$password2 = ($_POST['password2']);
-	$first_name = ($_POST['firstName']);
-	$last_name = ($_POST['lastName']);
+	if(isset($_POST['email']))
+	{
+		$email = $_POST['email'];
+	}
+
+
+	if(isset($_POST['password1']))
+	{
+		$password1 = $_POST['password1'];
+	}
+
+	if(isset($_POST['password2']))
+	{
+		$password2 = $_POST['password2'];
+	}
+
+
+	if(isset($_POST['firstName']))
+	{
+		$first_name = $_POST['lastName'];
+	}
+
+
+	if(isset($_POST['lastName']))
+	{
+		$last_name = $_POST['lastName'];
+	}
 
 	if ($password1 == $password2)
 	{
 		// Security measures in order to prevent SQL injections
-		$username = stripslashes(strip_tags($_POST['username']));
-		$password = stripslashes(strip_tags($_POST['password1']));
-		$first_name = stripslashes(strip_tags($_POST['firstName']));
-		$last_name = stripslashes(strip_tags($_POST['lastName']));
+		$email = stripslashes(strip_tags($email));
+		$password = stripslashes(strip_tags($password1));
+		$first_name = stripslashes(strip_tags($first_name));
+		$last_name = stripslashes(strip_tags($last_name));
 
-		$username = mysqli_real_escape_string($server, $username);
+		$email = mysqli_real_escape_string($server, $email);
 		$password = mysqli_real_escape_string($server, $password);
 		$first_name = mysqli_real_escape_string($server, $first_name);
 		$last_name = mysqli_real_escape_string($server, $last_name);
@@ -34,13 +52,12 @@ if (isset($_POST['signup']))
 		// Worry about password encryption??
 
 
-		$sql = "INSERT INTO `Teacher` (`teacherID`, `first_name`, `last_name`, `username`, `password`, `accessLevel`) VALUES (NULL, '$first_name', '$last_name', '$username', '$password', DEFAULT_ACCESS_LEVEL)";
+		$sql = "INSERT INTO `Teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', '" .  DEFAULT_ACCESS_LEVEL . "')";
 
 		mysqli_query($server, $sql);
 
-		echo "<h1>Teacher successfully added. Redirecting to Log in.</h1>";
-		sleep(3);
-		//header("Location: ../../index.php");
+		echo "<h1>Teacher successfully added. Redirecting to landing page.</h1>";
+		header("refresh:4;url=../../index.php");
 
 
 		// Wrap up and close connection
@@ -48,9 +65,8 @@ if (isset($_POST['signup']))
 	}
 	else
 	{
-		echo "<h1>Passwords do not match. Redirecting to main menu.</h1>";
-		sleep(3);
-		//header("Location: ../../index.php");
+		echo "<h1>Passwords entered do not match. Redirecting to landing page.</h1>";
+		header("refresh:4;url=../../index.php");
 
 		// Wrap up and close connection
 		mysqli_close($server);
