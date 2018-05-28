@@ -295,6 +295,7 @@ var vanillacalendar = {
   }
 }
 
+/** loads the calendar **/
 window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
