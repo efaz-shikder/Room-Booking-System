@@ -12,7 +12,7 @@ ul
 	background-color: black;
 	border-style: solid;
 	border-width: medium;
-	border-color: #33a1e0; 
+	border-color: #33a1e0; /*Aqua blue*/ 
 	text-align: left;
 	
 }
@@ -22,16 +22,16 @@ h1
 	margin: none;
 	border-style: none;
 	text-align: center;	
-	color: #33a1e0;
+	color: #33a1e0; /*Aqua blue*/
 }
 
 
 h2
 {
-	color: #33a1e0;
+	color: #33a1e0; /*Aqua blue*/
 }
 
 .important
 {
-	color: #33a1e0;
+	color: #33a1e0; /*Aqua blue*/
 }
