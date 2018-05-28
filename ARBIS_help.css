@@ -1,0 +1,37 @@
+body
+{
+	background-color: black;
+	font-family: sans-serif;
+}
+
+ul
+{
+	padding: 10px 10px 50px 10px;
+	color: white;
+	margin: 100px 250px ;
+	background-color: black;
+	border-style: solid;
+	border-width: medium;
+	border-color: #33a1e0; 
+	text-align: left;
+	
+}
+
+h1
+{
+	margin: none;
+	border-style: none;
+	text-align: center;	
+	color: #33a1e0;
+}
+
+
+h2
+{
+	color: #33a1e0;
+}
+
+.important
+{
+	color: #33a1e0;
+}
