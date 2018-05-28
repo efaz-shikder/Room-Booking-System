@@ -245,8 +245,11 @@ var vanillacalendar = {
     this.activeDates = document.querySelectorAll('[data-calendar-status="active"]')
     for (var i = 0; i < this.activeDates.length; i++) {
       this.activeDates[i].addEventListener('click', function (event) {
-        var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
-        picked.innerHTML = this.dataset.calendarDate
+				var simplifiedDate = this.dataset.calendarDate;
+				JSON.stringify(simplifiedDate);
+				simplifiedDate = simplifiedDate.slice(4,-24);
+				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
+        picked.innerHTML = simplifiedDate
         _this.removeActiveClass()
         this.classList.add('cal__date--selected')
       })
