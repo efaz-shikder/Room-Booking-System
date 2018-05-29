@@ -321,12 +321,37 @@ window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
 
+function ajaxHallway()
+{
+	var hallway = $('#C_Hallway');
+
+		$.ajax({
+			type: "POST",
+			url: '../assets/php/viewRooms.php',
+			data: 'hallway=' + hallway,
+			success: function(data){
+				document.location.href = '../assets/php/viewRooms.php';
+			}
+		});
+}
+
+
 /* Click Hallway */
 function clickCHallway()
 {
 	var btn = document.getElementById('C_Hallway');
 	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
+		var hallway = $('#C_Hallway').val();
+
+		$.ajax({
+			type: "POST",
+			url: '../assets/php/viewRooms.php',
+			data: 'hallway=' + hallway,
+			
+			success: function(data){
+			 	document.location.href = '../assets/php/viewRooms.php';
+			}
+		});
 	});
 }
 
@@ -410,4 +435,21 @@ function clickGeographyHallway()
 	});
 }
 
+function passHallway()
+{
 
+}
+
+/* Delet Booking Ajax to pass variables */
+function passBooking()
+{
+	var hallway = ""
+	$.ajax({
+			type: "POST",
+			url: '../assets/php/viewRooms.php',
+			data: 'hallway=' + hallway,
+			
+			success: function(data){
+			}
+		});
+}

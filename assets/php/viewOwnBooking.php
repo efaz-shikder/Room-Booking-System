@@ -96,9 +96,13 @@ function viewOwnBooking()
 
 
 
-	$cancelEditButton = '<form action="deleteBooking.php"> <input type="button" value="Cancel" onclick="alert('.'You clicked the button!'.')"> </form>
-					<form action="deleteBooking.php"> <input type="button" value="Edit" onclick="alert('.'You clicked the button!'.')"> </form>';
-	// $editButton = '';
+	$cancelEditButton = '<form action="deleteBooking.php"> 
+							<input type="button" value="Cancel" onclick="alert('.'You clicked the button!'.')"> 
+						</form>
+						
+						<form action="deleteBooking.php"> 
+							<input type="button" value="Edit" onclick="alert('.'You clicked the button!'.')"> 
+						</form>';
 
 	if (strtotime($dateOfBooking) < strtotime($currentDate))
 	{

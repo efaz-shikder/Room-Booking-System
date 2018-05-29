@@ -3,7 +3,9 @@
 	session_start();
 	include_once("connect.php");
 
-	define("ADMIN", 1);
+	$classID = $_POST['classID'];
+	$teacherEmail = $_SESSION['id'];
+	$dateOfBooking = $_POST['dateOfBooking'];
 
 
 	// Figure out SQL and variables 
