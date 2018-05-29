@@ -428,12 +428,14 @@ html {
 /** yeet **/
 .hallways {
 	margin-top: 30px;
+	background-color: #333333;
   font-family: 'Raleway', Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 .hallways * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -491,4 +493,26 @@ html {
   -webkit-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
   opacity: 1;
+}
+
+/** yeeet **/
+#rooms {
+	display: none;
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+#rooms li a {
+	display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#rooms li a:hover {
+	background-color: #555;
+  color: white;
 }
