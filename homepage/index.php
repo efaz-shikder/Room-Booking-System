@@ -37,8 +37,55 @@
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
+<<<<<<< HEAD
 					<!-- map info display -->
 					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+=======
+
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<!-- calendar -->
+						<input type="date" class="center" value="YYYY-MM-DD"/>
+
+					</div>
+					<!-- hallway selector -->
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<ul class="flex-column center nav">
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway" onclick="clickChallway(); return false;">C Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway" onclick="clickSHallway(); return false;">S Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway" onclick="clickEnglishHallway(); return false;">English Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway" onclick="clickFrenchHallway(); return false;">French Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway" onclick="clickGymHallway(); return false;">Gym Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer" onclick="clickFrontFoyer(); return false;">Front foyer</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway" onclick="clickMusicHallway(); return false;">Music Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway" onclick="clickMathHallway(); return false;">Math Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway" onclick="clickScienceHallway(); return false;">Science Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway" onclick="clickGeographyHallway(); return false;">Geography Hallway</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Row 2 -->
+				<div class="row">
+>>>>>>> homepage
 					<!-- map -->
 					<div class="col-xl-10 col-lg-10 bg-black d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
