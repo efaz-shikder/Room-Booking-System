@@ -406,22 +406,44 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
+var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
+
 $('#cHallway').click(function(){
+	// toggle others off
+	for (var i = 0; i < roomsArray.length; i++) {
 
-		if($("#rooms2").is(':visible')) {
-			$("#rooms2").toggle();
-		}
-		if($("#rooms2").is(':hidden')) {
-			$("#rooms").toggle();
-		}
-
+			if($(roomsArray[i]).is(':visible')) {
+				$(roomsArray[i]).toggle();
+			}
+	}
+	// toggle current on
+	if($("#rooms").is(':hidden')) {
+		$("#rooms").fadeToggle();
+	}
 })
 
 $('#sHallway').click(function(){
-	if($("#rooms").is(':visible')) {
-		$("#rooms").toggle();
+	// toggle others off
+	for (var i = 0; i < roomsArray.length; i++) {
+			if($(roomsArray[i]).is(':visible')) {
+				$(roomsArray[i]).toggle();
+			}
 	}
+	// toggle current on
 	if($("#rooms2").is(':hidden')) {
-		$("#rooms2").toggle();
+		$("#rooms2").fadeToggle();
+	}
+})
+
+$('#englishHallway').click(function(){
+	// toggle others off
+	for (var i = 0; i < roomsArray.length; i++) {
+			if($(roomsArray[i]).is(':visible')) {
+				$(roomsArray[i]).toggle();
+			}
+	}
+	// toggle current on
+	if($("#rooms3").is(':hidden')) {
+		$("#rooms3").fadeToggle();
 	}
 })
