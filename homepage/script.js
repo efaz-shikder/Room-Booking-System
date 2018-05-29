@@ -150,11 +150,6 @@ function toggleNav() {
 	$("#mainContent").toggle();
 }
 
-/** Show/Hide Toggle for room menu **/
-function showDiv() {
-   document.getElementById('rooms').style.display = "block";
-}
-
 /** Calendar **/
 var vanillacalendar = {
 	month: document.querySelectorAll('[data-calendar-area="month"]')[0],
@@ -321,37 +316,12 @@ window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
 
-function ajaxHallway()
-{
-	var hallway = $('#C_Hallway');
-
-		$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
-			success: function(data){
-				document.location.href = '../assets/php/viewRooms.php';
-			}
-		});
-}
-
-
 /* Click Hallway */
 function clickCHallway()
 {
 	var btn = document.getElementById('C_Hallway');
 	btn.addEventListener('click', function() {
-		var hallway = $('#C_Hallway').val();
-
-		$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
-			
-			success: function(data){
-			 	document.location.href = '../assets/php/viewRooms.php';
-			}
-		});
+		document.location.href = 'viewRooms.php';
 	});
 }
 
@@ -435,21 +405,23 @@ function clickGeographyHallway()
 	});
 }
 
-function passHallway()
-{
+/** Show/Hide Toggles for room menu **/
+$('#cHallway').click(function(){
 
-}
+		if($("#rooms2").is(':visible')) {
+			$("#rooms2").toggle();
+		}
+		if($("#rooms2").is(':hidden')) {
+			$("#rooms").toggle();
+		}
 
-/* Delet Booking Ajax to pass variables */
-function passBooking()
-{
-	var hallway = ""
-	$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
-			
-			success: function(data){
-			}
-		});
-}
+})
+
+$('#sHallway').click(function(){
+	if($("#rooms").is(':visible')) {
+		$("#rooms").toggle();
+	}
+	if($("#rooms2").is(':hidden')) {
+		$("#rooms2").toggle();
+	}
+})

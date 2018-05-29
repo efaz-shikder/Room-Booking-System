@@ -497,12 +497,13 @@ html {
 
 /** yeeet **/
 #rooms {
-	display: none;
+	position: absolute;
 	list-style-type: none;
   margin: 0;
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
+	display: none;
 }
 
 #rooms li a {
@@ -513,6 +514,28 @@ html {
 }
 
 #rooms li a:hover {
+	background-color: #555;
+  color: white;
+}
+
+#rooms2 {
+	position: absolute;
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+	display: none;
+}
+
+#rooms2 li a {
+	display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#rooms2 li a:hover {
 	background-color: #555;
   color: white;
 }
