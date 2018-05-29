@@ -8,7 +8,7 @@
 
 </head>
 
-<body id="mainBody" background="websiteBackground1.jpg">
+<body>
 
 	<!-- Navigation Menu -->
 	<div class="menunav">
@@ -16,42 +16,29 @@
 			<a href="index.html">Home</a>
 			<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
 			<a href="">Help</a>
-			<h1 id="theme">Theme:</h1>
-			<label class="containerT">
-			<input type="radio" name="theme" value="black" onclick="themeChange(this)" checked="checked">
-			<span class="checkmark"></span>Black
-			</label>
-			<label class="containerT">
-			<input type="radio" name="theme" value="brown" onclick="themeChange(this)">
-			<span class="checkmark"></span>Brown
-			</label>
-			<label class="containerT">
-			<input type="radio" name="theme" value="light" onclick="themeChange(this)">
-			<span class="checkmark"></span>Light
-			</label>
 		</div>
 	</div>
 
 	<section id="main" class="main" style="padding: 20px;">
 
-		<!-- Navigation Menu Icon -->
-		<div class="row">
-			<div id="navIcon">
-				<div id="nav-icon3" onclick="toggleNav()">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		</div>
-
 		<div class="jumbotron vertical-center">
 			<div class="container-fluid">
+
+				<!-- Navigation Menu Icon -->
+				<div class="row">
+					<div id="navIcon">
+						<div id="nav-icon3" onclick="toggleNav()">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
 				<!-- Row 1 -->
-				<div class="row bg-secondary">
+				<div class="row">
 					<!-- calendar -->
-					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 bg-dark">
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
 						<div class="calendar_container">
 							<!-- Date Picked Display -->
@@ -78,50 +65,48 @@
 					</div>
 				</div>
 				<!-- Row 2 -->
-				<div class="row bg-primary">
+				<div class="row">
 					<!-- hallway selector -->
-					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 bg-dark">
-
-							<ul class="center flex-column text-center">
-								<li class="nav-header">
-									<a class="nav-link" href="#">Hallway Selector</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway">S Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway">English Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway">French Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway">Gym Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer">Front foyer</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway">Music Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway">Math Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway">Science Hallway</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway">Geography Hallway</a>
-								</li>
-							</ul>
-
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<ul class="flex-column center nav">
+							<li class="">
+								<a class="" href="#">Hallway Selector</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway">S Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway">English Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway">French Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway">Gym Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer">Front foyer</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway">Music Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway">Math Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway">Science Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway">Geography Hallway</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<!-- Row 3 -->
-				<div class="row" style="background-color: #ff99ff;">
+				<div class="row">
 					<!-- map -->
 					<div class="col-xl-12 col-lg-12 bg-black d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
@@ -745,7 +730,7 @@
 						</svg>
 					</div>
 					<!-- map info display -->
-					<p id="placeholderParagraph">Academic Room Booking and Inquiry System</p>
+					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 				</div>
 
 			</div>

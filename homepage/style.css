@@ -1,17 +1,14 @@
-/* Color scheme
-#6dc5d6: Standard blue
-#59f0ff: Standard light blue
-#017f96: Standard dark blue
 
-#677b7c: Standard gray
-#a3acba: Standard light gray
-*/
+body{
+	background-color: black;
+}
 
 .jumbotron{
   margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
 	background: none;
-	transform: translateY(-7%);
 	z-index: -1;
+	padding: 0;
+	transform: translateY(-1%);
 }
 
 .vertical-center {
@@ -43,6 +40,12 @@
 }
 
 /*Map */
+svg {
+	margin-top: 15px;
+	margin-right: 75px;
+	margin-bottom: 15px;
+}
+
 path
 {
 	fill: #677b7c/* Grey */;
@@ -138,139 +141,89 @@ path
 	opacity: 1;
 }
 
-.border
-{
-    border: 3px solid #44442d;
-	border-radius: 5px;
-    padding: 5px;
-}
-
 /*End of Map */
 
 #placeholderParagraph
 {
 	display: block;
-    font-size: 2em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-	text-shadow: 2px 2px #017f96;
-    font-weight: bold;
-	font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
 }
 
-body {
-  display: table;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-ul {
-	margin:0;
-	padding:0;
-	text-decoration:none;
-	list-style:none;
-}
-li {
-	padding:0;
-	margin:0;
-	color:
-
-}
-nav {
-	text-align:center;
-	width:100%;
-	position:relative;
-	height:auto;
-	overflow:hidden;
-	background:none;
-}
-
-/* Navigation */
+/* Hallway Menu */
 .center {
 	position: relative;
 	top: 50%; left: 50%;
   transform: translate(-50%,-50%);
 }
-.nav-header a
-{
-	color:white;
-	text-shadow: 1px 2px #017f96;/* Standard dark blue */
-	font-weight: 700;
-	font-family: 'Playfair Display', serif;
-}
-.nav-item a
-{
-	color: #6dc5d6;/* Standard dark blue */
-	font-weight: 500;
-	font-family: 'Playfair Display', serif;
+.nav {
+	width: 673px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 16px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+	color: #008aee;
+	margin-bottom: 25px;
+	background: #008aee;
+	border-radius: 4px;
 }
 
-.nav-item a:hover
-{
-	color: #59f0ff;/* Standard light blue */
-	font-weight: 700;
-	font-family: 'Playfair Display', serif;
+.nav li a {
+	border-radius: 0px;
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
+.nav li a:hover {
+  background: #00a7ee;
+}
+
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Stay on top */
-    overflow-x: hidden; /* Disable horizontal scroll */
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Stay on top */
+  overflow-x: hidden; /* Disable horizontal scroll */
 	background-color: white;
-	opacity: 0.9;
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-	font-family: 'Playfair Display', serif;
-    color: #677b7c;
-    display: block;
-	text-shadow: 0.5px 0.5px #017f96;
-    transition: 0.3s;
-	opacity: 0.9;
-
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: black;
+  display: block;
+  transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
-    color: #6dc5d6;
-	transition: 0.5s;
-	text-shadow: 0.5px 0.5px #017f96;
 }
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    transition: .5s;
 }
 
 /** Nav Icon **/
 #navIcon {
 	z-index: 99;
+	transform: translateY(100%) translateX(-50%);
 }
 
 
@@ -333,7 +286,7 @@ nav {
   position: absolute;
   height: 9px;
   width: 100%;
-  background: #6dc5d6;
+  background: #008aee;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -347,63 +300,9 @@ nav {
   transition: .25s ease-in-out;
 }
 
-
-/* Website theme */
-.containerT
-{
-	padding-left: 20px;
-    font-size: 18px;
-	font-family: 'Playfair Display', serif;
-    color: #677b7c/* Grey */;
-    display: block;
-	text-shadow: 0.5px 0.5px #017f96;
-	margin-left: 32px;
-	position: relative;
-	cursor: pointer;
-
-}
-
-.containerT input {
-  position: absolute;
-  opacity: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  background-color: #677b7c/* Grey */;
-  border-radius: 20%;
-}
-
-.containerT:hover input ~ .checkmark {
-  background-color: #a3acba;/*Standard Light gray */
-}
-
-.containerT input:checked ~ .checkmark {
-  background-color: #6dc5d6;/* Standard blue */
-}
-
-#theme
-{
-	padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-	font-family: 'Playfair Display', serif;
-    color: #677b7c/* Grey */;
-    display: block;
-	text-shadow: 0.5px 0.5px #017f96;
-}
-
 /** Calendar **/
 html {
   box-sizing: border-box;
-}
-
-a, a:visited {
-  color: #0A9297;
 }
 
 .calendar_container {
@@ -499,12 +398,12 @@ a, a:visited {
 }
 
 .cal__date--today {
-  background-color: #0A9297;
+  background-color: #008aee; /*#00a7ee*/
   color: #fff;
 }
 
 .cal__date--selected {
-  background-color: #E7E9ED;
+  background-color: #46C5FB;
   color: #333;
 }
 

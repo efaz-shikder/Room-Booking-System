@@ -117,24 +117,6 @@ function hallwayHover(elem){
 	}
 }
 
-function themeChange(elem)
-{
-	var checkedTheme = elem.getAttribute("value");
-	if(checkedTheme == "black")
-	{
-	document.getElementById("mainBody").setAttribute("background", "websiteBackground1.jpg");
-	}
-	else if(checkedTheme == "brown")
-	{
-	document.getElementById("mainBody").setAttribute("background", "websiteBackground2.jpg");
-	}
-	else if (checkedTheme == "light")
-	{
-	document.getElementById("mainBody").setAttribute("background", "websiteBackground3.jpg");
-	}
-}
-
-
 function hallwayHoverOut()
 {
 
@@ -145,35 +127,25 @@ function hallwayHoverOut()
 	document.getElementById("placeholderParagraph").innerHTML = "Academic Room Booking and Inquiry System";
 }
 
-function remove(elem)
-{
-}
-
-function openNav() {
-	document.getElementById("ArbisNav").style.width = "250px";
-	document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-	document.getElementById("ArbisNav").style.width = "0";
-	document.getElementById("main").style.marginLeft = "0px";
-}
-
 $(document).ready(function(){
 	$('#nav-icon3').click(function(){
 		$(this).toggleClass('open');
 	});
 });
 
+/** Navigation Icon **/
 var action = 1;
 
 function toggleNav() {
     if ( action == 1 ) {
-        openNav();
-        action = 2;
-    } else {
-        closeNav();
-        action = 1;
+			document.getElementById("ArbisNav").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+      action = 2;
+    }
+		else {
+			document.getElementById("ArbisNav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0px";
+      action = 1;
     }
     $("#mainContent").toggle();
 }
@@ -245,9 +217,50 @@ var vanillacalendar = {
     this.activeDates = document.querySelectorAll('[data-calendar-status="active"]')
     for (var i = 0; i < this.activeDates.length; i++) {
       this.activeDates[i].addEventListener('click', function (event) {
+				// cut off first 4 and last 24 characters of date
 				var simplifiedDate = this.dataset.calendarDate;
 				JSON.stringify(simplifiedDate);
 				simplifiedDate = simplifiedDate.slice(4,-24);
+				var shortenedMonth = simplifiedDate.substr(0,3);
+				switch (shortenedMonth) {
+					case "Jan":
+						shortenedMonth = "01";
+						break;
+					case "Feb":
+						shortenedMonth = "02";
+						break;
+					case "Mar":
+						shortenedMonth = "03";
+						break;
+					case "Apr":
+						shortenedMonth = "04";
+						break;
+					case "May":
+						shortenedMonth = "05";
+						break;
+					case "Jun":
+						shortenedMonth = "06";
+						break;
+					case "Jul":
+						shortenedMonth = "07";
+						break;
+					case "Aug":
+						shortenedMonth = "08";
+						break;
+					case "Sep":
+						shortenedMonth = "09";
+						break;
+					case "Oct":
+						shortenedMonth = "10";
+						break;
+					case "Nov":
+						shortenedMonth = "11";
+						break;
+					case "Dec":
+						shortenedMonth = "12";
+						break;
+				}
+				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " -" + simplifiedDate.substr(3,4)
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
         picked.innerHTML = simplifiedDate
         _this.removeActiveClass()
@@ -298,7 +311,7 @@ var vanillacalendar = {
   }
 }
 
-/** loads the calendar **/
+// loads the calendar
 window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
