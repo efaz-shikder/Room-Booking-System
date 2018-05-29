@@ -1,16 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<title>test</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+
+</head>
+
+<body>
+
+	<!--
+	 Navigation Menu 
+	<div class="menunav">
+		<div id="ArbisNav" class="sidenav">
+			<a href="../../homepage/index.php">Home</a>
+			<a href="viewOwnBooking.php">Booked Rooms</a>
+			<a href="">Help</a>
+		</div>
+
+		<section id="main" class="main" style="padding: 20px;">
+
+			<div class="jumbotron vertical-center">
+				<div class="container-fluid">
+
+					/*  Navigation Menu Icon */
+					<div class="row">
+						<div id="navIcon">
+							<div id="nav-icon3" onclick="toggleNav()">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+	 
+	</div>
+-->
+<table id="bookings">
+	<tr>
+		<th>Date</th>
+		<th>Room Number</th>
+		<th>Period</th>
+		<th> Cancel or Edit</th>
+	</tr>
+	<?php viewOwnBooking() ?> 
+
+
+</table>
+
+<script src="../javascript/jquery.min.js"></script>
+<script src="../javascript/script.js"></script>
+
+</body>
+
+</html>
+
 <?php
 
-session_start();
+function viewOwnBooking()
+{
+	session_start();
 
-include_once("connect.php");
+	include_once("connect.php");
 
-	
-$currentTeacherID = $_SESSION['email']; 
-$query = "SELECT * FROM Booking WHERE Booking.teacherEmail = '$currentTeacherID' " ; 
 
-$result = mysqli_query($server, $query);
+	$currentTeacherID = $_SESSION['email']; 
+	$query = "SELECT * FROM Booking WHERE Booking.teacherEmail = '$currentTeacherID' " ; 
 
-echo "<table>"; // start a table tag in the HTML
+	$result = mysqli_query($server, $query);
 
 while($row = mysqli_fetch_array($result))
 {   //Creates a loop to loop through results
@@ -28,39 +91,15 @@ while($row = mysqli_fetch_array($result))
 
 	$roomName = $resultName['roomName'];
 
+	$cancelButton = '<form action="deleteBooking.php"> <input type="button" value="Cancel Booking" onclick="alert('.'You clicked the button!'.')"> </form>';
+	$editButton = '<form action="deleteBooking.php"> <input type="button" value="Edit Booking" onclick="alert('.'You clicked the button!'.')"> </form>';
 
-echo "<tr><td>" . $roomName . "</td><td>" . $row['dateOfBooking'] . "</td>
-	<td>" . $row['period'] . "</td></tr>";  //$row['index'] the index here is a field name
+	echo "<tr><td>" . $row['dateOfBooking'] . "</td><td>" . $roomName . "</td>
+	<td>" . $row['period'] . "</td><td>" . $cancelButton , $editButton . "</td></tr>"; 
 }
-
-echo "</table>"; //Close the table in HTML
-
 
 // Wrap up and close connection
 mysqli_close($server);
+}
+
 ?>
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Bookings</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="" rel="stylesheet">
-  
-</head>
-
-<body>
-
-	<h1> Make bare divs like the shit we showed Arkin</h1>
-
-</body>
-
-
-</html>

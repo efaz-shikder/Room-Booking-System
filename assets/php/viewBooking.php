@@ -12,11 +12,11 @@ echo "<table>"; // start a table tag in the HTML
 while($row = mysqli_fetch_array($result))
 {   //Creates a loop to loop through results
 
-	$teacherID = $row['teacherID'];
+	$teacherID = $row['teacherEmail'];
 
 	$classID = $row['classID'];
 
-	$sql1 = "SELECT Booking.teacherID, first_name, last_name, Teacher.teacherID FROM Booking INNER JOIN Teacher ON Booking.teacherID=Teacher.teacherID WHERE Booking.teacherID=$teacherID";
+	$sql1 = "SELECT Booking.teacherEmail, first_name, last_name, Teacher.email FROM Booking INNER JOIN Teacher ON Booking.teacherEmail=Teacher.email WHERE Booking.teacherEmail=$teacherID";
 	$resultTeacher = mysqli_query($server, $sql1);
 	$rowTeacher = mysqli_fetch_array($resultTeacher);
 
