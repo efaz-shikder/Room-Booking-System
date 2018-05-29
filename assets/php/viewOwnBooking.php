@@ -10,8 +10,7 @@
 
 <body>
 
-	<!--
-	 Navigation Menu 
+	<-- Navigation Menu -->
 	<div class="menunav">
 		<div id="ArbisNav" class="sidenav">
 			<a href="../../homepage/index.php">Home</a>
@@ -24,7 +23,7 @@
 			<div class="jumbotron vertical-center">
 				<div class="container-fluid">
 
-					/*  Navigation Menu Icon */
+					<!--  Navigation Menu Icon -->
 					<div class="row">
 						<div id="navIcon">
 							<div id="nav-icon3" onclick="toggleNav()">
@@ -37,25 +36,26 @@
 					</div>
 
 				</div>
+
+				<table id="bookings">
+			<tr>
+				<th>Date</th>
+				<th>Room Number</th>
+				<th>Period</th>
+				<th> Cancel or Edit</th>
+			</tr>
+			<?php viewOwnBooking() ?> 
+
+
+		</table>
 			</div>
 		</section>
-	 
 	</div>
--->
-<table id="bookings">
-	<tr>
-		<th>Date</th>
-		<th>Room Number</th>
-		<th>Period</th>
-		<th> Cancel or Edit</th>
-	</tr>
-	<?php viewOwnBooking() ?> 
 
 
-</table>
 
-<script src="../javascript/jquery.min.js"></script>
-<script src="../javascript/script.js"></script>
+	<script src="../javascript/jquery.min.js"></script>
+	<script src="../javascript/script.js"></script>
 
 </body>
 
@@ -75,7 +75,7 @@ function viewOwnBooking()
 
 	$result = mysqli_query($server, $query);
 
-while($row = mysqli_fetch_array($result))
+	while($row = mysqli_fetch_array($result))
 {   //Creates a loop to loop through results
 
 
