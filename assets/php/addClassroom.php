@@ -15,7 +15,7 @@
 		
 		switch($index)
 		{
-			case ($index < "9"):
+			case ($index < 9):
 				$hallway = 'S Hallway';
 				break;
 
@@ -57,7 +57,7 @@
 		}
 
 
-		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', NULL)";
+		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', 'no')";
 
 		if (mysqli_query($server, $sql))
     	{
