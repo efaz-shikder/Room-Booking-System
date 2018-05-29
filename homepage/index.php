@@ -73,34 +73,34 @@
 								<a class="" href="#">Hallway Selector</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway" onclick="clickChallway(); return false;">C Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway">S Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway" onclick="clickSHallway(); return false;">S Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway">English Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway" onclick="clickEnglishHallway(); return false;">English Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway">French Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway" onclick="clickFrenchHallway(); return false;">French Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway">Gym Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway" onclick="clickGymHallway(); return false;">Gym Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer">Front foyer</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer" onclick="clickFrontFoyer(); return false;">Front foyer</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway">Music Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway" onclick="clickMusicHallway(); return false;">Music Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway">Math Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway" onclick="clickMathHallway(); return false;">Math Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway">Science Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway" onclick="clickScienceHallway(); return false;">Science Hallway</a>
 							</li>
 							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway">Geography Hallway</a>
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway" onclick="clickGeographyHallway(); return false;">Geography Hallway</a>
 							</li>
 						</ul>
 					</div>
