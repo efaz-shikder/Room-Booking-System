@@ -406,44 +406,44 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
+var hallwayArray = ["#cHallway", "#sHallway", "englishHallway"];
 var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
 
-$('#cHallway').click(function(){
-	// toggle others off
-	for (var i = 0; i < roomsArray.length; i++) {
+function toggleRoomsOff()
+{
+	for (var i = 0; i < roomsArray.length; i++) 
+	{
 
-			if($(roomsArray[i]).is(':visible')) {
+			if($(roomsArray[i]).is(':visible'))
+			{
 				$(roomsArray[i]).toggle();
 			}
 	}
-	// toggle current on
-	if($("#rooms").is(':hidden')) {
-		$("#rooms").fadeToggle();
+}
+
+function toggleCurrentRoom(roomName)
+{
+	var roomsToToggle = roomName;
+	if($(roomName).is(':hidden')) {
+		$(roomName).fadeToggle();
 	}
+	
+}
+
+function toggleRooms(roomName)
+{
+	toggleRoomsOff();
+	toggleCurrentRoom(roomName);
+}
+
+$(hallwayArray[0]).click(function(){
+	toggleRooms(roomsArray[0]);
 })
 
-$('#sHallway').click(function(){
-	// toggle others off
-	for (var i = 0; i < roomsArray.length; i++) {
-			if($(roomsArray[i]).is(':visible')) {
-				$(roomsArray[i]).toggle();
-			}
-	}
-	// toggle current on
-	if($("#rooms2").is(':hidden')) {
-		$("#rooms2").fadeToggle();
-	}
+$(hallwayArray[1]).click(function(){
+	toggleRooms(roomsArray[1]);
 })
 
-$('#englishHallway').click(function(){
-	// toggle others off
-	for (var i = 0; i < roomsArray.length; i++) {
-			if($(roomsArray[i]).is(':visible')) {
-				$(roomsArray[i]).toggle();
-			}
-	}
-	// toggle current on
-	if($("#rooms3").is(':hidden')) {
-		$("#rooms3").fadeToggle();
-	}
+$(hallwayArray[2]).click(function(){
+	toggleRooms(roomsArray[2]);
 })
