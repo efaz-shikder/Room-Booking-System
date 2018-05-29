@@ -10,7 +10,7 @@
 
 <body>
 
-	<-- Navigation Menu -->
+	<!-- Navigation Menu -->
 	<div class="menunav">
 		<div id="ArbisNav" class="sidenav">
 			<a href="../../homepage/index.php">Home</a>
@@ -91,11 +91,22 @@ function viewOwnBooking()
 
 	$roomName = $resultName['roomName'];
 
-	$cancelButton = '<form action="deleteBooking.php"> <input type="button" value="Cancel Booking" onclick="alert('.'You clicked the button!'.')"> </form>';
-	$editButton = '<form action="deleteBooking.php"> <input type="button" value="Edit Booking" onclick="alert('.'You clicked the button!'.')"> </form>';
+	$currentDate = date("d.m.Y");
+	
 
-	echo "<tr><td>" . $row['dateOfBooking'] . "</td><td>" . $roomName . "</td>
-	<td>" . $row['period'] . "</td><td>" . $cancelButton , $editButton . "</td></tr>"; 
+
+
+	$cancelEditButton = '<form action="deleteBooking.php"> <input type="button" value="Cancel" onclick="alert('.'You clicked the button!'.')"> </form>
+					<form action="deleteBooking.php"> <input type="button" value="Edit" onclick="alert('.'You clicked the button!'.')"> </form>';
+	// $editButton = '';
+
+	if (strtotime($dateOfBooking) < strtotime($currentDate))
+	{
+		$cancelEditButton = "Unable to Cancel or Edit this Booking.";	
+	}
+
+	echo "<tr><td>" . $dateOfBooking . "</td><td>" . $roomName . "</td>
+	<td>" . $row['period'] . "</td><td>" . $cancelEditButton . "</td></tr>"; 
 }
 
 // Wrap up and close connection
