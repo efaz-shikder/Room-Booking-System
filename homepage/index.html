@@ -37,41 +37,15 @@
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
-					<!-- calendar -->
+
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-
-						<div class="calendar_container">
-							<!-- Date Picked Display -->
-							<p class="demo-picked">
-								Date picked: <span data-calendar-label="picked"></span>
-							</p>
-
-							<div class="cal">
-								<div class="cal__header">
-									<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24">
-									<path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>
-									<div class="cal__header__label" data-calendar-label="month">
-
-									</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"> <svg height="24" version="1.1" viewbox="0 0 24 24" width="24">
-									<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
-								</div>
-								<div class="cal__week">
-									<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
-								</div>
-								<div class="cal__body" data-calendar-area="month"></div>
-							</div>
-						</div>
+						<!-- calendar -->
+						<input type="date" class="center" value="YYYY-MM-DD"/>
 
 					</div>
-				</div>
-				<!-- Row 2 -->
-				<div class="row">
 					<!-- hallway selector -->
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
 						<ul class="flex-column center nav">
-							<li class="">
-								<a class="" href="#">Hallway Selector</a>
-							</li>
 							<li class="">
 								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
 							</li>
@@ -105,7 +79,7 @@
 						</ul>
 					</div>
 				</div>
-				<!-- Row 3 -->
+				<!-- Row 2 -->
 				<div class="row">
 					<!-- map -->
 					<div class="col-xl-12 col-lg-12 bg-black d-none d-lg-block">
