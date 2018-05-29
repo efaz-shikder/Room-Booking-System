@@ -1,4 +1,4 @@
-//display room name, type, and availability when hovered
+// Display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
 	var roomType = elem.getAttribute("class");
@@ -20,6 +20,7 @@ function availabilityDisplay(elem) {
 
 }
 
+// Array of all rooms in the school
 var englishRoom = document.getElementsByClassName("English Hallway");
 var mathRoom = document.getElementsByClassName("Math Hallway");
 var scienceRoom = document.getElementsByClassName("Science Hallway");
@@ -31,7 +32,7 @@ var musicRoom = document.getElementsByClassName("Music Hallway");
 var frontFoyerRoom = document.getElementsByClassName("Front foyer");
 var geographyRoom = document.getElementsByClassName("Geography Hallway");
 
-
+// Displays hallway when hovered over
 function hallwayHover(elem){
 	var hallwayType = elem.getAttribute("id");
 	if (hallwayType == "C_Hallway")
@@ -117,6 +118,7 @@ function hallwayHover(elem){
 	}
 }
 
+// Change the theme of the website
 function themeChange(elem)
 {
 	var checkedTheme = elem.getAttribute("value");
@@ -134,7 +136,7 @@ function themeChange(elem)
 	}
 }
 
-
+// Change heading of page
 function hallwayHoverOut()
 {
 
@@ -149,11 +151,13 @@ function remove(elem)
 {
 }
 
+// Open the navigation 
 function openNav() {
 	document.getElementById("ArbisNav").style.width = "250px";
 	document.getElementById("main").style.marginLeft = "250px";
 }
 
+//Close the navigation
 function closeNav() {
 	document.getElementById("ArbisNav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0px";

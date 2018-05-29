@@ -1,7 +1,7 @@
 body
 {
 	background-color: black;
-	font-family: sans-serif;
+	font-family: 'Playfair Display', serif;
 }
 
 ul
@@ -12,28 +12,32 @@ ul
 	background-color: black;
 	border-style: solid;
 	border-width: medium;
-	border-color: #33a1e0; /*Aqua blue*/ 
+	border-color: #6dc5d6; /*Aqua blue*/ 
 	text-align: left;
-	
 }
 
 h1
 {
 	margin: none;
 	border-style: none;
-	text-align: center;	
-	color: #33a1e0; /*Aqua blue*/
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px #017f96; /*Aqua blue*/
 }
 
-
+a
+{
+	color: #59f0ff;/*Light blue*/
+}
 h2
 {
-	color: #33a1e0; /*Aqua blue*/
+	color: #6dc5d6; /*Aqua blue*/
 }
 
 .important
 {
-	color: #33a1e0; /*Aqua blue*/
+	color: #6dc5d6; /*Aqua blue*/
+	font-weight: 700;
 }
 
 /*scrolling bar style*/
@@ -41,7 +45,7 @@ h2
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
-	background-color:  #33a1e0;
+	background-color:  #6dc5d6;/*Aqua blue*/
 }
 
 /* Track */
@@ -52,11 +56,13 @@ h2
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #1e89c8; 
+    background: #017f96;/*Dark aqua blue*/
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #176b9b; 
+    background: #1099b2; /*Light aqua blue*/
 }
+
+

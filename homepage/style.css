@@ -5,6 +5,7 @@
 
 #677b7c: Standard gray
 #a3acba: Standard light gray
+#eff5ff: blue-ish white
 */
 
 .padding {
@@ -15,7 +16,7 @@
 {
 	padding-top: 10px;
 	opacity: 0.9;
-	background-color: #eff5ff;
+	background-color: #eff5ff; /*blue-ish white*/
 	
 }
 
@@ -120,13 +121,6 @@ path
 	opacity: 1;
 }
 
-.border
-{
-    border: 3px solid #44442d;
-	border-radius: 5px;
-    padding: 5px;
-}
-
 /*End of Map */
 
 #placeholderParagraph
@@ -136,7 +130,7 @@ path
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 20px;
-	text-shadow: 2px 2px #017f96;
+	text-shadow: 2px 2px #017f96;/* Standard dark blue*/
     font-weight: bold;
 	font-family: 'Playfair Display', serif;
 	color: white;
@@ -185,7 +179,7 @@ nav {
 }
 .nav-item a
 {
-	color: #6dc5d6;/* Standard dark blue */
+	color: #6dc5d6;/* Standard  blue */
 	font-weight: 500;
 	font-family: 'Playfair Display', serif;
 }
@@ -215,7 +209,7 @@ nav {
     text-decoration: none;
     font-size: 25px;
 	font-family: 'Playfair Display', serif;
-    color: #677b7c;
+    color: #677b7c;/* Standard gray */
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
     transition: 0.3s;
@@ -225,7 +219,7 @@ nav {
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
-    color: #6dc5d6;
+    color: #6dc5d6;/* Standard light blue */
 	transition: 0.5s;
 	text-shadow: 0.5px 0.5px #017f96;
 }
@@ -338,7 +332,7 @@ nav {
 	padding-left: 20px;
     font-size: 18px;
 	font-family: 'Playfair Display', serif;
-    color: #677b7c/* Grey */;
+    color: #677b7c/* Standard gray */;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
 	margin-left: 32px;
@@ -358,7 +352,7 @@ nav {
   left: 0;
   height: 15px;
   width: 15px;
-  background-color: #677b7c/* Grey */;
+  background-color: #677b7c/* Standard gray */;
   border-radius: 20%;
 }
 
@@ -376,7 +370,7 @@ nav {
     text-decoration: none;
     font-size: 25px;
 	font-family: 'Playfair Display', serif;
-    color: #677b7c/* Grey */;
+    color: #677b7c/* Standard gray */;
     display: block;
 	text-shadow: 0.5px 0.5px #017f96;
 }
@@ -387,7 +381,7 @@ nav {
 	margin: 20px;
 }
 .calendar_weekdays{
-	color: #59f0ff;
+	color: #59f0ff;/* Standard light blue */
 }
 .calendar, .calendar_weekdays, .calendar_content {
     max-width: 300px;
@@ -411,7 +405,7 @@ nav {
     text-align: center;
 	font-family: 'Playfair Display', serif;
     background-color: transparent;
-    color: #6f6f6f;
+    color: #6f6f6f;/* Gray*/
     font-size: 14px;
 }
 .calendar_content div {
@@ -435,7 +429,7 @@ nav {
     border: 1px solid white;
 }
 .calendar_content div.selected {
-    background-color: #59f0ff;
+    background-color: #59f0ff;/* Standard light blue*/
 }
 .calendar_header {
     width: 100%;
@@ -446,7 +440,7 @@ nav {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 18px;
-    color: #59f0ff;
+    color: #59f0ff;/*Standard light blue*/
     float:left;
     width:70%;
     margin: 0 0 10px;
@@ -456,7 +450,7 @@ button.switch-month {
     padding: 0;
     outline: none;
     border: none;
-    color: #59f0ff;
+    color: #59f0ff;/* Standard light blue */
     float: left;
     width:15%;
     transition: color .2s;
@@ -464,6 +458,3 @@ button.switch-month {
 button.switch-month:hover {
     color: white;
 }
-
-
-	color:
