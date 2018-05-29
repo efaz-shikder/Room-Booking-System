@@ -147,9 +147,8 @@ path
 {
 	display: block;
   font-size: 2em;
-  margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 20px;
+  margin-left: 50px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
 }
@@ -424,4 +423,72 @@ html {
 
 .demo-picked span {
   font-weight: bold;
+}
+
+/** yeet **/
+.hallways {
+	margin-top: 30px;
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.hallways * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.hallways li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1em;
+  padding: 0;
+}
+.hallways a {
+  padding: 0.5em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  color: white;
+  position: relative;
+  text-decoration: none;
+}
+.hallways a:before,
+.hallways a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.hallways a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid #ffff66;
+  border-top: 3px solid #ffff66;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.hallways a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #ffff66;
+  border-bottom: 3px solid #ffff66;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.hallways a:hover,
+.hallways .current a {
+  color: #008aee;
+}
+.hallways a:hover:before,
+.hallways .current a:before,
+.hallways a:hover:after,
+.hallways .current a:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
 }

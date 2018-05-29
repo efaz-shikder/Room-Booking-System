@@ -150,6 +150,11 @@ function toggleNav() {
     $("#mainContent").toggle();
 }
 
+/** Show/Hide Toggle for room menu **/
+function showDiv() {
+   document.getElementById('rooms').style.display = "block";
+}
+
 /** Calendar **/
 var vanillacalendar = {
   month: document.querySelectorAll('[data-calendar-area="month"]')[0],
