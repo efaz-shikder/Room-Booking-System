@@ -36,7 +36,7 @@
 				<!-- Row 1 -->
 				<div class="row">
 					<!-- calender -->
-					<div class="col-xl-4 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
 						<!-- calendar -->
 						<div class="calendar_container">
 						  <!-- Date Picked Display -->
@@ -63,7 +63,7 @@
 						<div class="row">
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<ul id="myList" class="hallways">
+								<ul id="gridHallways" class="hallways">
 									<li onclick="passBooking(this);" class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
 									<li onclick="passBooking(this);" class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
 									<li onclick="passBooking(this);" class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
@@ -79,17 +79,27 @@
 							<!-- rooms -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="roomsContainer">
-									<ul id="rooms">
+									<ul id="rooms" class="gridRooms">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
 										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
+										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
+										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
+										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeetertot on the beat</a></li>
 										<li><a href="#">yeet</a></li>
 									</ul>
-									<ul id="rooms2">
+									<ul id="rooms2" class="gridRooms">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
 										<li><a href="#">yeet2</a></li>
 										<li><a href="#">yeet2</a></li>
 									</ul>
-									<ul id="rooms3">
+									<ul id="rooms3" class="gridRooms">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
 										<li><a href="#">yeet3</a></li>
 										<li><a href="#">yeet3</a></li>

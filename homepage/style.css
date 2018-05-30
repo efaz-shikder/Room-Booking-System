@@ -483,68 +483,23 @@ html {
 	font-size: 13px;
 }
 
-#rooms {
-
+#rooms, #rooms2, #rooms3 {
+	width: 92%;
 	list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
   background-color: #f1f1f1;
 	display: none;
 }
 
-#rooms li a {
+#rooms li a, #rooms2 li a, #rooms3 li a {
 	display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-#rooms li a:hover {
-	background-color: #555;
-  color: white;
-}
-
-#rooms2 {
-
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-	display: none;
-}
-
-#rooms2 li a {
-	display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#rooms2 li a:hover {
-	background-color: #555;
-  color: white;
-}
-
-#rooms3 {
-
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-	display: none;
-}
-
-#rooms3 li a {
-	display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#rooms3 li a:hover {
+#rooms li a:hover, #rooms2 li a:hover, #rooms3 li a:hover {
 	background-color: #555;
   color: white;
 }

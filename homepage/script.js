@@ -260,7 +260,7 @@ dateClicked: function () {
 					shortenedMonth = "12";
 					break;
 				}
-				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " -" + simplifiedDate.substr(3,4)
+				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " - " + simplifiedDate.substr(3,4)
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
 				_this.removeActiveClass()
@@ -456,14 +456,16 @@ $(hallwayArray[2]).click(function(){
 
 /** hallway grid **/
 $(document).ready(function() {
-    var numitems =  $("#myList li").length;
+    var numitems =  $("#gridHallways li").length;
 
-    $("ul#myList").css("column-count",5);
+    $("ul#gridHallways").css("column-count", numitems / 2);
 });
+/** rooms grid **/
+$(document).ready(function() {
+    var numitems =  $(".gridRooms li").length;
 
-function current(className) {
-	$("p:last").removeClass("intro").addClass("main");
-}
+    $("ul.gridRooms").css("column-count", numitems / 2);
+});
 
 /* Delet Booking Ajax to pass variables */
 function passBooking(element)
