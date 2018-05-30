@@ -219,7 +219,7 @@ dateClicked: function () {
 		this.activeDates[i].addEventListener('click', function (event) {
 				// cut off first 4 and last 24 characters of date
 				var simplifiedDate = this.dataset.calendarDate;
-				JSON.stringify(simplifiedDate);
+				JSON.stringify(simplifiedDate);				
 				simplifiedDate = simplifiedDate.slice(4,-24);
 				var shortenedMonth = simplifiedDate.substr(0,3);
 				switch (shortenedMonth) {

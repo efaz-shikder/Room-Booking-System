@@ -137,8 +137,9 @@ path
 
 #placeholderParagraph
 {
+	display: table-cell;
+	vertical-align: bottom;
 	margin-left: 50px;
-	display: block;
   font-size: 2em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
@@ -483,7 +484,7 @@ html {
 	font-size: 13px;
 }
 
-#rooms, #rooms2, #rooms3 {
+#rooms, #rooms2, #rooms3, #rooms4, #rooms5, #rooms6, #rooms7, #rooms8, #rooms9, #rooms10 {
 	width: 92%;
 	list-style-type: none;
   margin: 0;
@@ -492,14 +493,14 @@ html {
 	display: none;
 }
 
-#rooms li a, #rooms2 li a, #rooms3 li a {
+#rooms li a, #rooms2 li a, #rooms3 li a, #rooms4 li a, #rooms5 li a, #rooms6 li a, #rooms7 li a, #rooms8 li a, #rooms9 li a, #rooms10 li a {
 	display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-#rooms li a:hover, #rooms2 li a:hover, #rooms3 li a:hover {
+#rooms li a:hover, #rooms2 li a:hover, #rooms3 li a:hover, #rooms4 li a:hover, #rooms5 li a:hover, #rooms6 li a:hover, #rooms7 li a:hover, #rooms8 li a:hover, #rooms9 li a:hover, #rooms10 li a:hover {
 	background-color: #555;
   color: white;
 }

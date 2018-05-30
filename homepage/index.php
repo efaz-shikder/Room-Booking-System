@@ -134,9 +134,25 @@
 											echo '<a href='."#".'>'.$roomName.'</a>';
 											echo '</li>';
 										}
-										
+
 										?>
 									</ul>
+
+									<ul id="rooms4" class="gridRooms4">
+									</ul>
+									<ul id="rooms5" class="gridRooms5">
+									</ul>
+									<ul id="rooms6" class="gridRooms6">
+									</ul>
+									<ul id="rooms7" class="gridRooms7">
+									</ul>
+									<ul id="rooms8" class="gridRooms8">
+									</ul>
+									<ul id="rooms9" class="gridRooms9">
+									</ul>
+									<ul id="rooms10" class="gridRooms10">
+									</ul>
+
 								</div>
 							</div>
 						</div>
@@ -146,8 +162,15 @@
 				<div class="row">
 					<!-- map -->
 					<div class="col-xl-4 col-lg-4">
-						<!-- map info display -->
-						<p id="placeholderParagraph" class="d-none d-lg-block center">Academic Room Booking and Inquiry System</p>
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 bg-primary">
+								<p class="center" style="color: white;">EEYEEEEEEEET</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<!-- map info display -->
+								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+							</div>
+						</div>
 					</div>
 					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
