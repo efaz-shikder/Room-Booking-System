@@ -406,7 +406,7 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
-var hallwayArray = ["#cHallway", "#sHallway", "englishHallway"];
+var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway"];
 var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
 
 function toggleRoomsOff()
