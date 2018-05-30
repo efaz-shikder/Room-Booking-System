@@ -33,8 +33,8 @@ body{
 
 /*Map */
 svg {
+	width: 100%;
 	margin-top: 15px;
-	margin-right: 75px;
 	margin-bottom: 15px;
 }
 
@@ -137,9 +137,9 @@ path
 
 #placeholderParagraph
 {
+	margin-left: 50px;
 	display: block;
   font-size: 2em;
-  margin-bottom: 10px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
 }
@@ -206,6 +206,12 @@ path
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: .5s;
+}
+
+.container {
+padding-top: 20px;
+padding-bottom: 20px;
+max-width: 85vw;
 }
 
 /** Nav Icon **/
@@ -289,17 +295,11 @@ path
 /** Calendar **/
 html {
   box-sizing: border-box;
+	font-size: 9px;
 }
 
-.calendar_container {
-	box-sizing: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.6rem;
-  -webkit-font-smoothing: antialiased;
-  width: 96%;
-  margin: 1.6rem auto;
-  max-width: 76rem;
-  text-align: center;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 .cal__header button {
@@ -323,7 +323,10 @@ html {
 }
 
 .cal {
-  width: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+	font-size: 1.1rem;
+	width: 100%;
   max-width: 42rem;
   margin: 0 auto;
   background-color: #fff;
@@ -334,6 +337,7 @@ html {
 }
 
 .cal__header {
+	font-size: 1.5rem;
   display: flex;
   padding: 1.2rem 1.4rem;
   align-items: center;
@@ -352,7 +356,7 @@ html {
 }
 
 .cal__week span {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   max-width: 14.28%;
   padding: 1.2rem 1.4rem;
   flex: 0 0 14.28%;
@@ -363,6 +367,7 @@ html {
 }
 
 .cal__body {
+	font-size: 14px;
   display: flex;
   flex-wrap: wrap;
   background-color: #fafafa;
@@ -401,90 +406,83 @@ html {
   cursor: not-allowed;
 }
 
-.demo-picked {
+.calendar_container p {
+	font-size: 16px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
 	color: white;
-  font-size: 1.2rem;
+	font-weight: 600;
   text-align: center;
-}
-
-.demo-picked span {
-  font-weight: bold;
 }
 
 /** yeet **/
 .hallways {
+	transform: translateX(-6%);
 	margin-top: 30px;
-	background-color: #333333;
+	padding: 0;
   font-family: 'Raleway', Arial, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
+  text-transform: capitalize;
+	text-align: center;
+	font-weight: 200;
   letter-spacing: 1px;
 }
 
 .hallways * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.35s ease;
+	transition: all 0.35s ease;
 }
+
 .hallways li {
+	font-size: 13px;
   display: inline-block;
   list-style: outside none none;
-  margin: 0 1em;
-  padding: 0;
+  margin: 0 1.5em;
 }
+
 .hallways a {
-  padding: 0.5em 0.8em;
-  margin: 0.2em 0;
-  display: block;
+  padding: 0.3em;
+  display: inline-block;
   color: white;
   position: relative;
   text-decoration: none;
 }
+
 .hallways a:before,
 .hallways a:after {
-  height: 14px;
-  width: 14px;
+  height: 3px;
   position: absolute;
   content: '';
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-  opacity: 0;
+  background-color: #008aee;
+  width: 0;
 }
 .hallways a:before {
-  left: 0;
   top: 0;
-  border-left: 3px solid #ffff66;
-  border-top: 3px solid #ffff66;
-  -webkit-transform: translate(100%, 50%);
-  transform: translate(100%, 50%);
+  left: 0;
 }
 .hallways a:after {
-  right: 0;
   bottom: 0;
-  border-right: 3px solid #ffff66;
-  border-bottom: 3px solid #ffff66;
-  -webkit-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+  right: 0;
 }
 .hallways a:hover,
 .hallways .current a {
-  color: #008aee;
+  color: #ffffff;
 }
 .hallways a:hover:before,
 .hallways .current a:before,
 .hallways a:hover:after,
 .hallways .current a:after {
-  -webkit-transform: translate(0%, 0%);
-  transform: translate(0%, 0%);
-  opacity: 1;
+  width: 100%;
 }
 
 /** yeeet **/
+.roomsContainer ul li {
+	font-size: 13px;
+}
+
 #rooms {
 
 	list-style-type: none;

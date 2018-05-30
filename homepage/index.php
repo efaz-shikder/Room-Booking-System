@@ -19,7 +19,7 @@
 
 	<section id="main" class="main">
 
-		<div class="vertical-center">
+		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container-fluid">
 
 				<!-- Navigation Menu Icon -->
@@ -35,45 +35,79 @@
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
-					<!-- hallway selector -->
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul class="hallways">
-							<li class="current" onclick="passBooking(this);" id="cHallway"><a href="#">C Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="sHallway"><a href="#">S Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="englishHallway"><a href="#">English Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="French Hallway"><a href="#">French Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Front Foyer"><a href="#">Front Foyer</a></li>
-							<li class="current" onclick="passBooking(this);" id="Music Hallway"><a href="#">Music Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Math Hallway"><a href="#">Math Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Science Hallway"><a href="#">Science Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
-						</ul>
+					<!-- calender -->
+					<div class="col-xl-4 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+						<!-- calendar -->
+						<div class="calendar_container">
+						  <!-- Date Picked Display -->
+						  <p class="demo-picked">
+						    Date picked: <span data-calendar-label="picked"></span>
+						  </p>
+
+						  <div class="cal">
+						    <div class="cal__header">
+						      <button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
+						      <div class="cal__header__label" data-calendar-label="month">
+
+						      </div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+						    </div>
+						    <div class="cal__week">
+						      <span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+						    </div>
+						    <div class="cal__body" data-calendar-area="month"></div>
+						  </div>
+						</div>
 					</div>
-					<!-- rooms -->
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul id="rooms">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet</a></li>
-							<li><a href="#">yeet</a></li>
-						</ul>
-						<ul id="rooms2">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet2</a></li>
-							<li><a href="#">yeet2</a></li>
-						</ul>
-						<ul id="rooms3">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet3</a></li>
-							<li><a href="#">yeet3</a></li>
-						</ul>
+					<!-- hallways and rooms -->
+					<div class="col-xl-8 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+						<div class="row">
+							<!-- hallways -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<ul id="myList" class="hallways">
+									<li onclick="passBooking(this);" class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
+									<li onclick="passBooking(this);" class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
+									<li onclick="passBooking(this);" class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
+									<li onclick="passBooking(this);" id="French Hallway"><a href="#">French Hallway</a></li>
+									<li onclick="passBooking(this);" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
+									<li onclick="passBooking(this);" id="Front Foyer"><a href="#">Front Foyer</a></li>
+									<li onclick="passBooking(this);" id="Music Hallway"><a href="#">Music Hallway</a></li>
+									<li onclick="passBooking(this);" id="Math Hallway"><a href="#">Math Hallway</a></li>
+									<li onclick="passBooking(this);" id="Science Hallway"><a href="#">Science Hallway</a></li>
+									<li onclick="passBooking(this);" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
+								</ul>
+							</div>
+							<!-- rooms -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="roomsContainer">
+									<ul id="rooms">
+										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+										<li><a href="#">yeet</a></li>
+										<li><a href="#">yeet</a></li>
+									</ul>
+									<ul id="rooms2">
+										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+										<li><a href="#">yeet2</a></li>
+										<li><a href="#">yeet2</a></li>
+									</ul>
+									<ul id="rooms3">
+										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+										<li><a href="#">yeet3</a></li>
+										<li><a href="#">yeet3</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
 					<!-- map -->
-					<div class="col-xl-10 col-lg-10 d-none d-lg-block">
-						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
+					<div class="col-xl-4 col-lg-4">
+						<!-- map info display -->
+						<p id="placeholderParagraph" class="d-none d-lg-block center">Academic Room Booking and Inquiry System</p>
+					</div>
+					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
+						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
 
 							<!--English Hallway -->
 							<path id="Day Care Office"
@@ -693,13 +727,6 @@
 							<!--End of Geography Hallway -->
 						</svg>
 					</div>
-					<!-- calendar -->
-					<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
-						<!-- calendar -->
-						<input type="date" class="center" value="yyyy-mm-dd"/>
-					</div>
-					<!-- map info display -->
-					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 				</div>
 
 			</div>

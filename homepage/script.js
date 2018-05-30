@@ -197,7 +197,7 @@ createDay: function (num, day, year) {
 		}
 	}
 
-	if (this.date.getTime() <= this.todaysDate.getTime() - 1) {
+	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getDay() == 0) || (this.date.getDay() == 6) ) {
 		newDay.classList.add('cal__date--disabled')
 	} else {
 		newDay.classList.add('cal__date--active')
@@ -417,6 +417,9 @@ function toggleRoomsOff()
 			if($(roomsArray[i]).is(':visible'))
 			{
 				$(roomsArray[i]).toggle();
+				var n = hallwayArray[i];
+				n = "." + n.substring(1);
+				$(n).removeClass("current");
 			}
 	}
 }
@@ -427,7 +430,7 @@ function toggleCurrentRoom(roomName)
 	if($(roomName).is(':hidden')) {
 		$(roomName).fadeToggle();
 	}
-	
+
 }
 
 function toggleRooms(roomName)
@@ -438,15 +441,29 @@ function toggleRooms(roomName)
 
 $(hallwayArray[0]).click(function(){
 	toggleRooms(roomsArray[0]);
+	$(".cHallway").addClass("current");
 })
 
 $(hallwayArray[1]).click(function(){
 	toggleRooms(roomsArray[1]);
+	$(".sHallway").addClass("current");
 })
 
 $(hallwayArray[2]).click(function(){
 	toggleRooms(roomsArray[2]);
+	$(".englishHallway").addClass("current");
 })
+
+/** hallway grid **/
+$(document).ready(function() {
+    var numitems =  $("#myList li").length;
+
+    $("ul#myList").css("column-count",5);
+});
+
+function current(className) {
+	$("p:last").removeClass("intro").addClass("main");
+}
 
 /* Delet Booking Ajax to pass variables */
 function passBooking(element)
@@ -457,10 +474,10 @@ function passBooking(element)
 			type: "POST",
 			url: '../assets/php/viewRooms.php',
 			data: 'hallway=' + id,
-			
+
 			success: function(data){
 				$('rooms').php(data);
 
 			}
-		}); 
+		});
 }
