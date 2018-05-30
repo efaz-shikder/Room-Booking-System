@@ -261,6 +261,7 @@ dateClicked: function () {
 					break;
 				}
 				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " - " + simplifiedDate.substr(3,4)
+				var dateFinal = simplifiedDate;
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
 				_this.removeActiveClass()
@@ -460,11 +461,12 @@ $(document).ready(function() {
 
     $("ul#gridHallways").css("column-count", numitems / 2);
 });
+
 /** rooms grid **/
 $(document).ready(function() {
-    var numitems =  $(".gridRooms li").length;
+    var numitems =  $(".gridRooms1 li").length;
 
-    $("ul.gridRooms").css("column-count", numitems / 2);
+    $("ul.gridRooms1").css("column-count", numitems / 7);
 });
 
 /* Delet Booking Ajax to pass variables */
@@ -498,7 +500,7 @@ function bookAjax(date, room, period)
 					url: '../assets/php/addBooking.php',
 					data: {dateOfBooking: date, classID: classID, period: period},
 					success:function(data){
-						window.location.assign("../assets/php/viewOwnBookings.php") 
+						window.location.assign("../assets/php/viewOwnBookings.php")
 
 					}
 				});

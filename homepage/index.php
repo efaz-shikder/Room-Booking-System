@@ -80,8 +80,8 @@
 							<!-- rooms -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="roomsContainer">
-									<ul id="rooms" class="gridRooms">
-										<?php 
+									<ul id="rooms" class="gridRooms1">
+										<?php
 
 
 										session_start();
@@ -100,15 +100,17 @@
 											echo '<li id=$classID >';
 											echo '<a href='."#".'>'.$roomName.'</a>';
 											echo '</li>';
-										}	
+										}
 										?>
 									</ul>
-									<ul id="rooms2" class="gridRooms">
+									<ul id="rooms2" class="gridRooms2">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
 										<li><a href="#">yeet2</a></li>
 										<li><a href="#">yeet2</a></li>
+										<li><a href="#">yeet2</a></li>
+										<li><a href="#">yeet2</a></li>
 									</ul>
-									<ul id="rooms3" class="gridRooms">
+									<ul id="rooms3" class="gridRooms3">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
 										<li><a href="#">yeet3</a></li>
 										<li><a href="#">yeet3</a></li>
