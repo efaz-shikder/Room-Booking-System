@@ -2,17 +2,18 @@ body
 {
 	background-color: black;
 	font-family: 'Playfair Display', serif;
+	padding-top: 5px;
 }
 
 ul
 {
 	padding: 10px 10px 50px 10px;
 	color: white;
-	margin: 100px 250px ;
+	margin: 50px 250px ;
 	background-color: black;
 	border-style: solid;
 	border-width: medium;
-	border-color: #6dc5d6; /*Aqua blue*/ 
+	border-color: #59f0ff; /*Standard light blue*/
 	text-align: left;
 }
 
@@ -29,9 +30,19 @@ a
 {
 	color: #59f0ff;/*Light blue*/
 }
+
+a.goback{
+	border:solid;
+	color: white;
+	background-color: #59f0ff;/*Light blue*/
+	margin: 10px 5px;
+	text-decoration:none;
+	padding: 0px 2px;
+}
+
 h2
 {
-	color: #6dc5d6; /*Aqua blue*/
+	color: #59f0ff;/*Light blue*/
 }
 
 .important
