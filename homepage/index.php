@@ -1,8 +1,3 @@
-<?php
-
-session_start();
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,8 +37,55 @@ session_start();
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
+<<<<<<< HEAD
 					<!-- map info display -->
 					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+=======
+
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<!-- calendar -->
+						<input type="date" class="center" value="YYYY-MM-DD"/>
+
+					</div>
+					<!-- hallway selector -->
+					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						<ul class="flex-column center nav">
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway" onclick="clickChallway(); return false;">C Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway" onclick="clickSHallway(); return false;">S Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway" onclick="clickEnglishHallway(); return false;">English Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway" onclick="clickFrenchHallway(); return false;">French Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway" onclick="clickGymHallway(); return false;">Gym Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer" onclick="clickFrontFoyer(); return false;">Front foyer</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway" onclick="clickMusicHallway(); return false;">Music Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway" onclick="clickMathHallway(); return false;">Math Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway" onclick="clickScienceHallway(); return false;">Science Hallway</a>
+							</li>
+							<li class="">
+								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway" onclick="clickGeographyHallway(); return false;">Geography Hallway</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Row 2 -->
+				<div class="row">
+>>>>>>> homepage
 					<!-- map -->
 					<div class="col-xl-10 col-lg-10 bg-black d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
@@ -598,71 +640,71 @@ session_start();
 							d="m 1772.481,52.27 v 83.5736 h 60.674 V 52.27 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="Washroom #8"
-							d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
+								d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="312"
-							d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
+								d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="310"
-							d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
+								d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="308"
-							d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
+								d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="306"
-							d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
+								d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="302"
-							d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
+								d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="History & Geography Office"
-							d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
+								d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="311"
-							d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
+								d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
-							/>
+								/>
 							<path id="309"
-							d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
+										d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="307"
-							d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
+								d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="305"
-							d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
+								d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<path id="303"
-							d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
+								d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+									/>
 							<path id="301"
-							d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
+								d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							/>
+								/>
 							<!--End of Geography Hallway -->
 						</svg>
 					</div>
@@ -674,7 +716,7 @@ session_start();
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div id="rooms" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<ul class="hallways">
 							<li class="current" onclick="showDiv(); passBooking(this);" id="C Hallway"><a href="#">C Hallway</a></li>
 							<li class="current" onclick="showDiv(); passBooking(this);" id="S Hallway"><a href="#">S Hallway</a></li>

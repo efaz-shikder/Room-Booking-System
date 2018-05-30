@@ -150,11 +150,6 @@ function toggleNav() {
 	$("#mainContent").toggle();
 }
 
-/** Show/Hide Toggle for room menu **/
-function showDiv() {
-   document.getElementById('rooms').style.display = "block";
-}
-
 /** Calendar **/
 var vanillacalendar = {
 	month: document.querySelectorAll('[data-calendar-area="month"]')[0],
@@ -321,37 +316,12 @@ window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
 
-function ajaxHallway()
-{
-	var hallway = $('#C_Hallway');
-
-		$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
-			success: function(data){
-				document.location.href = '../assets/php/viewRooms.php';
-			}
-		});
-}
-
-
 /* Click Hallway */
 function clickCHallway()
 {
 	var btn = document.getElementById('C_Hallway');
 	btn.addEventListener('click', function() {
-		var hallway = $('#C_Hallway').val();
-
-		$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
-			
-			success: function(data){
-			 	document.location.href = '../assets/php/viewRooms.php';
-			}
-		});
+		document.location.href = 'viewRooms.php';
 	});
 }
 
@@ -435,25 +405,45 @@ function clickGeographyHallway()
 	});
 }
 
-function passHallway()
+/** Show/Hide Toggles for room menu **/
+var hallwayArray = ["#cHallway", "#sHallway", "englishHallway"];
+var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
+
+function toggleRoomsOff()
 {
+	for (var i = 0; i < roomsArray.length; i++) 
+	{
 
-}
-
-/* Delet Booking Ajax to pass variables */
-function passBooking(element)
-{
-	var id = element.id;
-
-	$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + id,
-			
-			success: function(data){
-				$('rooms').php(data);
-
+			if($(roomsArray[i]).is(':visible'))
+			{
+				$(roomsArray[i]).toggle();
 			}
-		}); 
+	}
 }
 
+function toggleCurrentRoom(roomName)
+{
+	var roomsToToggle = roomName;
+	if($(roomName).is(':hidden')) {
+		$(roomName).fadeToggle();
+	}
+	
+}
+
+function toggleRooms(roomName)
+{
+	toggleRoomsOff();
+	toggleCurrentRoom(roomName);
+}
+
+$(hallwayArray[0]).click(function(){
+	toggleRooms(roomsArray[0]);
+})
+
+$(hallwayArray[1]).click(function(){
+	toggleRooms(roomsArray[1]);
+})
+
+$(hallwayArray[2]).click(function(){
+	toggleRooms(roomsArray[2]);
+})

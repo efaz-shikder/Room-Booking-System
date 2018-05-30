@@ -148,7 +148,6 @@ path
 	display: block;
   font-size: 2em;
   margin-bottom: 10px;
-  margin-left: 50px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
 }
@@ -220,9 +219,7 @@ path
 /** Nav Icon **/
 #navIcon {
 	z-index: 99;
-	transform: translateY(100%) translateX(-50%);
 }
-
 
 #nav-icon3 span:nth-child(1) {
   top: 0px;
@@ -497,12 +494,13 @@ html {
 
 /** yeeet **/
 #rooms {
-	display: none;
+
 	list-style-type: none;
   margin: 0;
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
+	display: none;
 }
 
 #rooms li a {
@@ -513,6 +511,50 @@ html {
 }
 
 #rooms li a:hover {
+	background-color: #555;
+  color: white;
+}
+
+#rooms2 {
+
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+	display: none;
+}
+
+#rooms2 li a {
+	display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#rooms2 li a:hover {
+	background-color: #555;
+  color: white;
+}
+
+#rooms3 {
+
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+	display: none;
+}
+
+#rooms3 li a {
+	display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#rooms3 li a:hover {
 	background-color: #555;
   color: white;
 }
