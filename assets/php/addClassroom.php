@@ -13,6 +13,8 @@
 
 		$roomName = $room[$index];
 		
+		$hallway = 'S Hallway'; 
+		
 		switch($index)
 		{
 			case ($index == 0 || $index < 9):
