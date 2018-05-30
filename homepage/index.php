@@ -68,13 +68,13 @@
 									<li onclick="passBooking(this);" class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
 									<li onclick="passBooking(this);" class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
 									<li onclick="passBooking(this);" class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
-									<li onclick="passBooking(this);" id="French Hallway"><a href="#">French Hallway</a></li>
-									<li onclick="passBooking(this);" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
-									<li onclick="passBooking(this);" id="Front Foyer"><a href="#">Front Foyer</a></li>
-									<li onclick="passBooking(this);" id="Music Hallway"><a href="#">Music Hallway</a></li>
-									<li onclick="passBooking(this);" id="Math Hallway"><a href="#">Math Hallway</a></li>
-									<li onclick="passBooking(this);" id="Science Hallway"><a href="#">Science Hallway</a></li>
-									<li onclick="passBooking(this);" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
+									<li onclick="passBooking(this);" class="frenchHallway" id="French Hallway"><a href="#">French Hallway</a></li>
+									<li onclick="passBooking(this);" class="gymHallway" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
+									<li onclick="passBooking(this);" class="frontFoyer" id="Front Foyer"><a href="#">Front Foyer</a></li>
+									<li onclick="passBooking(this);" class="musicHallway" id="Music Hallway"><a href="#">Music Hallway</a></li>
+									<li onclick="passBooking(this);" class="mathHallway" id="Math Hallway"><a href="#">Math Hallway</a></li>
+									<li onclick="passBooking(this);" class="scienceHallway" id="Science Hallway"><a href="#">Science Hallway</a></li>
+									<li onclick="passBooking(this);" class="geographyHallway" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
@@ -139,18 +139,123 @@
 									</ul>
 
 									<ul id="rooms4" class="gridRooms4">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='French Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms5" class="gridRooms5">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Gym Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms6" class="gridRooms6">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway=''";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms7" class="gridRooms7">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Music Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms8" class="gridRooms8">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Math Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms9" class="gridRooms9">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms10" class="gridRooms10">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 
 								</div>

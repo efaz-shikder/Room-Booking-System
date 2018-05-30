@@ -61,7 +61,7 @@
 
 		if (mysqli_query($server, $sql))
     	{
-        echo "Room: $roomName created successfully. </br>";
+        echo "Room: $roomName Hallway: $hallway </br>";
     	} 
 	}
 

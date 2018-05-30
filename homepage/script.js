@@ -407,8 +407,8 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
-var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway"];
-var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
+var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
+var roomsArray = ["#rooms", "#rooms2", "#rooms3", "#rooms4", "#rooms5", "#rooms6", "#rooms7", "#rooms8", "#rooms9", "#room10"];
 
 function toggleRoomsOff()
 {
@@ -453,6 +453,41 @@ $(hallwayArray[1]).click(function(){
 $(hallwayArray[2]).click(function(){
 	toggleRooms(roomsArray[2]);
 	$(".englishHallway").addClass("current");
+})
+
+$(hallwayArray[3]).click(function(){
+	toggleRooms(roomsArray[3]);
+	$(".frenchHallway").addClass("current");
+})
+
+$(hallwayArray[4]).click(function(){
+	toggleRooms(roomsArray[4]);
+	$(".gymHallway").addClass("current");
+})
+
+$(hallwayArray[5]).click(function(){
+	toggleRooms(roomsArray[5]);
+	$(".frontFoyer").addClass("current");
+})
+
+$(hallwayArray[6]).click(function(){
+	toggleRooms(roomsArray[6]);
+	$(".musicHallway").addClass("current");
+})
+
+$(hallwayArray[7]).click(function(){
+	toggleRooms(roomsArray[7]);
+	$(".mathHallway").addClass("current");
+})
+
+$(hallwayArray[8]).click(function(){
+	toggleRooms(roomsArray[8]);
+	$(".scienceHallway").addClass("current");
+})
+
+$(hallwayArray[9]).click(function(){
+	toggleRooms(roomsArray[9]);
+	$(".geographyHallway").addClass("current");
 })
 
 /** hallway grid **/
