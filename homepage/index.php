@@ -68,13 +68,13 @@
 									<li onclick="passBooking(this);" class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
 									<li onclick="passBooking(this);" class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
 									<li onclick="passBooking(this);" class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
-									<li onclick="passBooking(this);" class="frenchHallway" id="French Hallway"><a href="#">French Hallway</a></li>
-									<li onclick="passBooking(this);" class="gymHallway" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
-									<li onclick="passBooking(this);" class="frontFoyer" id="Front Foyer"><a href="#">Front Foyer</a></li>
-									<li onclick="passBooking(this);" class="musicHallway" id="Music Hallway"><a href="#">Music Hallway</a></li>
-									<li onclick="passBooking(this);" class="mathHallway" id="Math Hallway"><a href="#">Math Hallway</a></li>
-									<li onclick="passBooking(this);" class="scienceHallway" id="Science Hallway"><a href="#">Science Hallway</a></li>
-									<li onclick="passBooking(this);" class="geographyHallway" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
+									<li onclick="passBooking(this);" class="frenchHallway" id="frenchHallway"><a href="#">French Hallway</a></li>
+									<li onclick="passBooking(this);" class="gymHallway" id="gymHallway"><a href="#">Gym Hallway</a></li>
+									<li onclick="passBooking(this);" class="frontFoyer" id="frontFoyer"><a href="#">Front Foyer</a></li>
+									<li onclick="passBooking(this);" class="musicHallway" id="musicHallway"><a href="#">Music Hallway</a></li>
+									<li onclick="passBooking(this);" class="mathHallway" id="mathHallway"><a href="#">Math Hallway</a></li>
+									<li onclick="passBooking(this);" class="scienceHallway" id="scienceHallway"><a href="#">Science Hallway</a></li>
+									<li onclick="passBooking(this);" class="geographyHallway" id="geographyHallway"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
