@@ -13,7 +13,6 @@
 
 		echo $index;
 		$roomName = $room[$index];
-		
 		switch($index)
 		{
 			case ($index == 0 || $index < 9):
