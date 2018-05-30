@@ -42,24 +42,21 @@ include_once("connect.php");
 						</div>
 					</div>
 
-				</div>
+					<table id="bookings">
+						<thead>
+							<th>Date</th>
+							<th>Room Number</th>
+							<th>Period</th>
+							<th> Cancel</th>
+						</thead>>
 
+						<?php
 
-				<table id="bookings">
-					<thead>
-						<th>Date</th>
-						<th>Room Number</th>
-						<th>Period</th>
-						<th> Cancel</th>
-					</thead>>
+						$currentTeacherID = $_SESSION['email']; 
+						$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
 
-					<?php
-
-					$currentTeacherID = $_SESSION['email']; 
-					$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
-
-					$result = mysqli_query($server, $query);
-					while($row = mysqli_fetch_array($result))
+						$result = mysqli_query($server, $query);
+						while($row = mysqli_fetch_array($result))
 						{   //Creates a loop to loop through results
 
 
@@ -85,9 +82,14 @@ include_once("connect.php");
 										<button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
 									</td>
 								</tr>
-						</tbody>
-					<?php } ?>
-				</table>
+							</tbody>
+						<?php } ?>
+					</table>
+
+				</div>
+
+
+				
 
 			</div>
 		</section>
@@ -120,6 +122,23 @@ include_once("connect.php");
 				});
 			}
 
+		}
+
+		/** Navigation Icon **/
+		var action = 1;
+
+		function toggleNav() {
+			if ( action == 1 ) {
+				document.getElementById("ArbisNav").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+				action = 2;
+			}
+			else {
+				document.getElementById("ArbisNav").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0px";
+				action = 1;
+			}
+			$("#mainContent").toggle();
 		}
 	</script>
 
