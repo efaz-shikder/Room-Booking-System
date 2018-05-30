@@ -219,9 +219,9 @@ dateClicked: function () {
 		this.activeDates[i].addEventListener('click', function (event) {
 				// cut off first 4 and last 24 characters of date
 				var simplifiedDate = this.dataset.calendarDate;
-				JSON.stringify(simplifiedDate);				
-				simplifiedDate = simplifiedDate.slice(4,-24);
-				var shortenedMonth = simplifiedDate.substr(0,3);
+				JSON.stringify(simplifiedDate);
+				simplifiedDate = simplifiedDate.substring(4,15);
+				var shortenedMonth = simplifiedDate.substring(0,3);
 				switch (shortenedMonth) {
 					case "Jan":
 					shortenedMonth = "01";
@@ -260,7 +260,7 @@ dateClicked: function () {
 					shortenedMonth = "12";
 					break;
 				}
-				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " - " + simplifiedDate.substr(3,4)
+				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " - " + simplifiedDate.substr(4,3)
 				var dateFinal = simplifiedDate;
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
