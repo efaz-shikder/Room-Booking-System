@@ -2,13 +2,14 @@ body
 {
 	background-color: black;
 	font-family: 'Playfair Display', serif;
+	padding-top: 5px;
 }
 
 ul
 {
 	padding: 10px 10px 50px 10px;
 	color: white;
-	margin: 100px 250px ;
+	margin: 50px 250px ;
 	background-color: black;
 	border-style: solid;
 	border-width: medium;
@@ -34,8 +35,7 @@ a.goback{
 	border:solid;
 	color: white;
 	background-color: #59f0ff;/*Light blue*/
-	padding-top: 5px;
-	margin: 5px;
+	margin: 10px 5px;
 }
 
 h2
