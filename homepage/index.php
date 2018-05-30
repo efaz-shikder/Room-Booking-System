@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,23 +40,23 @@
 					<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
 						<!-- calendar -->
 						<div class="calendar_container">
-						  <!-- Date Picked Display -->
-						  <p class="demo-picked">
-						    Date picked: <span data-calendar-label="picked"></span>
-						  </p>
+							<!-- Date Picked Display -->
+							<p class="demo-picked">
+								Date picked: <span data-calendar-label="picked"></span>
+							</p>
 
-						  <div class="cal">
-						    <div class="cal__header">
-						      <button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
-						      <div class="cal__header__label" data-calendar-label="month">
+							<div class="cal">
+								<div class="cal__header">
+									<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
+									<div class="cal__header__label" data-calendar-label="month">
 
-						      </div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
-						    </div>
-						    <div class="cal__week">
-						      <span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
-						    </div>
-						    <div class="cal__body" data-calendar-area="month"></div>
-						  </div>
+									</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+								</div>
+								<div class="cal__week">
+									<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+								</div>
+								<div class="cal__body" data-calendar-area="month"></div>
+							</div>
 						</div>
 					</div>
 					<!-- hallways and rooms -->
@@ -80,19 +81,27 @@
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="roomsContainer">
 									<ul id="rooms" class="gridRooms">
-										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-										<li><a href="#">yeet</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeet</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeet</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeet</a></li>
-										<li><a href="#">yeet</a></li>
-										<li><a href="#">yeetertot on the beat</a></li>
-										<li><a href="#">yeet</a></li>
+										<?php 
+
+
+										session_start();
+
+										include_once("../assets/php/connect.php");
+
+
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='C Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id=$classID >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}	
+										?>
 									</ul>
 									<ul id="rooms2" class="gridRooms">
 										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
@@ -669,71 +678,71 @@
 							d="m 1772.481,52.27 v 83.5736 h 60.674 V 52.27 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="Washroom #8"
-								d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
+							d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="312"
-								d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="310"
-								d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="308"
-								d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="306"
-								d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
+							d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="302"
-								d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="History & Geography Office"
-								d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
+							d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="311"
-								d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
+							d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
-								/>
+							/>
 							<path id="309"
-										d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
+							d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="307"
-								d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
+							d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="305"
-								d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
+							d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="303"
-								d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
+							d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-									/>
+							/>
 							<path id="301"
-								d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
+							d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<!--End of Geography Hallway -->
 						</svg>
 					</div>

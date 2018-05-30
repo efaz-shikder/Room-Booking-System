@@ -483,3 +483,25 @@ function passBooking(element)
 			}
 		});
 }
+
+function bookAjax(date, room, period)
+		{
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(room);
+			var period = JSON.stringify(period);
+
+			if (confirm('Are you sure you want to create booking')) {
+
+				$.ajax({
+
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: date, classID: classID, period: period},
+					success:function(data){
+						window.location.assign("../assets/php/viewOwnBookings.php") 
+
+					}
+				});
+			}
+
+		}
