@@ -97,23 +97,45 @@
 										{
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
-											echo '<li id=$classID >';
+											echo '<li id='. $classID .' >';
 											echo '<a href='."#".'>'.$roomName.'</a>';
 											echo '</li>';
 										}
 										?>
 									</ul>
 									<ul id="rooms2" class="gridRooms2">
-										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-										<li><a href="#">yeet2</a></li>
-										<li><a href="#">yeet2</a></li>
-										<li><a href="#">yeet2</a></li>
-										<li><a href="#">yeet2</a></li>
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='S Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
 									</ul>
 									<ul id="rooms3" class="gridRooms3">
-										<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-										<li><a href="#">yeet3</a></li>
-										<li><a href="#">yeet3</a></li>
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='English Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '</li>';
+										}
+										
+										?>
 									</ul>
 								</div>
 							</div>
