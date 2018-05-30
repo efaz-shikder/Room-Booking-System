@@ -3,14 +3,6 @@ body{
 	background-color: black;
 }
 
-.jumbotron{
-  margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
-	background: none;
-	z-index: -1;
-	padding: 0;
-	transform: translateY(-1%);
-}
-
 .vertical-center {
   min-height: 100%;
   min-height: 100vh;

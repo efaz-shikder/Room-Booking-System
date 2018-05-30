@@ -11,17 +11,15 @@
 <body>
 
 	<!-- Navigation Menu -->
-	<div class="menunav">
-		<div id="ArbisNav" class="sidenav">
-			<a href="index.html">Home</a>
-			<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
-			<a href="">Help</a>
-		</div>
+	<div id="ArbisNav" class="sidenav">
+		<a href="index.html">Home</a>
+		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
+		<a href="">Help</a>
 	</div>
 
-	<section id="main" class="main" style="padding: 20px;">
+	<section id="main" class="main">
 
-		<div class="jumbotron vertical-center">
+		<div class="vertical-center">
 			<div class="container-fluid">
 
 				<!-- Navigation Menu Icon -->
@@ -37,57 +35,44 @@
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
-<<<<<<< HEAD
-					<!-- map info display -->
-					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
-=======
-
-					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-						<!-- calendar -->
-						<input type="date" class="center" value="YYYY-MM-DD"/>
-
-					</div>
 					<!-- hallway selector -->
-					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-						<ul class="flex-column center nav">
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway" onclick="clickChallway(); return false;">C Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway" onclick="clickSHallway(); return false;">S Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway" onclick="clickEnglishHallway(); return false;">English Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway" onclick="clickFrenchHallway(); return false;">French Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway" onclick="clickGymHallway(); return false;">Gym Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer" onclick="clickFrontFoyer(); return false;">Front foyer</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway" onclick="clickMusicHallway(); return false;">Music Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway" onclick="clickMathHallway(); return false;">Math Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway" onclick="clickScienceHallway(); return false;">Science Hallway</a>
-							</li>
-							<li class="">
-								<a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway" onclick="clickGeographyHallway(); return false;">Geography Hallway</a>
-							</li>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<ul class="hallways">
+							<li class="current" onclick="passBooking(this);" id="cHallway"><a href="#">C Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="sHallway"><a href="#">S Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="englishHallway"><a href="#">English Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="French Hallway"><a href="#">French Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="Front Foyer"><a href="#">Front Foyer</a></li>
+							<li class="current" onclick="passBooking(this);" id="Music Hallway"><a href="#">Music Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="Math Hallway"><a href="#">Math Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="Science Hallway"><a href="#">Science Hallway</a></li>
+							<li class="current" onclick="passBooking(this);" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
+						</ul>
+					</div>
+					<!-- rooms -->
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<ul id="rooms">
+							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+							<li><a href="#">yeet</a></li>
+							<li><a href="#">yeet</a></li>
+						</ul>
+						<ul id="rooms2">
+							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+							<li><a href="#">yeet2</a></li>
+							<li><a href="#">yeet2</a></li>
+						</ul>
+						<ul id="rooms3">
+							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
+							<li><a href="#">yeet3</a></li>
+							<li><a href="#">yeet3</a></li>
 						</ul>
 					</div>
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
->>>>>>> homepage
 					<!-- map -->
-					<div class="col-xl-10 col-lg-10 bg-black d-none d-lg-block">
+					<div class="col-xl-10 col-lg-10 d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
 
 							<!--English Hallway -->
@@ -713,30 +698,8 @@
 						<!-- calendar -->
 						<input type="date" class="center" value="yyyy-mm-dd"/>
 					</div>
-				</div>
-				<!-- Row 2 -->
-				<div class="row">
-					<div id="rooms" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul class="hallways">
-							<li class="current" onclick="showDiv(); passBooking(this);" id="C Hallway"><a href="#">C Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="S Hallway"><a href="#">S Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="English Hallway"><a href="#" >English Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="French Hallway"><a href="#" >French Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Gym Hallway"><a href="#" >Gym Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Front Foyer"><a href="#" >Front Foyer</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Music Hallway"><a href="#" >Music Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Math Hallway"><a href="#" >Math Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Science Hallway"><a href="#" >Science Hallway</a></li>
-							<li class="current" onclick="showDiv(); passBooking(this);" id="Geography Hallway"><a href="#" >Geography Hallway</a></li>
-						</ul>
-					</div>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul id="rooms">
-							<?php include '../assets/php/viewRooms.php'; listRooms();?> 
-							<li><a href="#">yeet</a></li>
-							<li><a href="#">yeet</a></li>
-						</ul>
-					</div>
+					<!-- map info display -->
+					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 				</div>
 
 			</div>
