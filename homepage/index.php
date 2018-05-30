@@ -676,21 +676,23 @@ session_start();
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<ul class="hallways">
-							<li class="current" onclick="showDiv()"><a href="#" id="cHallway">C Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="sHallway">S Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="englishHallway">English Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="frenchHallway">French Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="gymHallway">Gym Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="frontFoyer">Front Foyer</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="musicHallway">Music Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="mathHallway">Math Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="scienceHallway">Science Hallway</a></li>
-							<li class="current" onclick="showDiv()"><a href="#><a href="#" id="geographyHallway">Geography Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="C Hallway"><a href="#">C Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="S Hallway"><a href="#">S Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="English Hallway"><a href="#" >English Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="French Hallway"><a href="#" >French Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Gym Hallway"><a href="#" >Gym Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Front Foyer"><a href="#" >Front Foyer</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Music Hallway"><a href="#" >Music Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Math Hallway"><a href="#" >Math Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Science Hallway"><a href="#" >Science Hallway</a></li>
+							<li class="current" onclick="showDiv(); passBooking(this);" id="Geography Hallway"><a href="#" >Geography Hallway</a></li>
 						</ul>
 					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<ul id="rooms">
-							<?php include '../assets/php/viewRooms.php'; listRooms(); ?> 
+							<?php include '../assets/php/viewRooms.php'; listRooms();?> 
+							<li><a href="#">yeet</a></li>
+							<li><a href="#">yeet</a></li>
 						</ul>
 					</div>
 				</div>

@@ -441,15 +441,19 @@ function passHallway()
 }
 
 /* Delet Booking Ajax to pass variables */
-function passBooking()
+function passBooking(element)
 {
-	var hallway = ""
+	var id = element.id;
+
 	$.ajax({
 			type: "POST",
 			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + hallway,
+			data: 'hallway=' + id,
 			
 			success: function(data){
+				$('rooms').php(data);
+
 			}
-		});
+		}); 
 }
+

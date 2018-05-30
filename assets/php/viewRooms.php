@@ -1,17 +1,18 @@
 <?php
+	
+	include_once("connect.php");
+		
+	
 
 	function listRooms()
 	{
-		include_once("connect.php");
+		if (isset($_POST['hallway'])) 
+		{
 		
-		if (isset($_POST['hallway'])) {
-			
 			$hallway = $_POST['hallway'];
-
-			echo "$hallway";
 		}
 
-		$sql = "SELECT * FROM `classroom` WHERE hallway = 'C Hallway' ORDER BY `classroom`.`roomName` ASC";
+		$sql = "SELECT * FROM `classroom` WHERE hallway = '$hallway' ORDER BY `classroom`.`roomName` ASC";
 		$result = mysqli_query($server, $sql);
 		while($row = mysqli_fetch_array($result))
 		{  
