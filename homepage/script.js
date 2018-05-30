@@ -411,7 +411,7 @@ var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
 
 function toggleRoomsOff()
 {
-	for (var i = 0; i < roomsArray.length; i++) 
+	for (var i = 0; i < roomsArray.length; i++)
 	{
 
 			if($(roomsArray[i]).is(':visible'))
