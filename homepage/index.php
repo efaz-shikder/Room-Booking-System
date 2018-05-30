@@ -65,16 +65,16 @@
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<ul id="gridHallways" class="hallways">
-									<li onclick="passBooking(this);" class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
-									<li onclick="passBooking(this);" class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
-									<li onclick="passBooking(this);" class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
-									<li onclick="passBooking(this);" class="frenchHallway" id="frenchHallway"><a href="#">French Hallway</a></li>
-									<li onclick="passBooking(this);" class="gymHallway" id="gymHallway"><a href="#">Gym Hallway</a></li>
-									<li onclick="passBooking(this);" class="frontFoyer" id="frontFoyer"><a href="#">Front Foyer</a></li>
-									<li onclick="passBooking(this);" class="musicHallway" id="musicHallway"><a href="#">Music Hallway</a></li>
-									<li onclick="passBooking(this);" class="mathHallway" id="mathHallway"><a href="#">Math Hallway</a></li>
-									<li onclick="passBooking(this);" class="scienceHallway" id="scienceHallway"><a href="#">Science Hallway</a></li>
-									<li onclick="passBooking(this);" class="geographyHallway" id="geographyHallway"><a href="#">Geography Hallway</a></li>
+									<li class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
+									<li class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway"><a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
@@ -98,7 +98,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="bookAJAX('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 										?>

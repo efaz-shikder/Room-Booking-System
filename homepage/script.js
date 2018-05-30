@@ -521,10 +521,17 @@ function passBooking(element)
 		});
 }
 
-function bookAjax(date, room, period)
+function getClassID(id)
+{
+	var classID = JSON.stringify(id);
+}
+
+
+
+function bookAjax()
 		{
-			var dateOfBooking = JSON.stringify(date);
-			var classID = JSON.stringify(room);
+			var dateOfBooking = JSON.stringify(dateFinal);
+			var classID = JSON.stringify(classID);
 			var period = JSON.stringify(period);
 
 			if (confirm('Are you sure you want to create booking')) {
