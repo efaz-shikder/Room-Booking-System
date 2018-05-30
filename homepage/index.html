@@ -12,7 +12,7 @@
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
-		<a href="index.html">Home</a>
+		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
 		<a href="">Help</a>
 	</div>
