@@ -9,7 +9,7 @@
 	$roomName = 1; //$_POST['roomName'];
 	$period = 'B' //$_POST['period'];
 
-	$sql = "INSERT INTO `Booking` (`teacherID`, `classID`, `dateOfBooking`, `period`) VALUES ('1', '1', '2018-05-22', 'B')";
+	$sql = "INSERT INTO `booking` (`teacherID`, `classID`, `dateOfBooking`, `period`) VALUES ('1', '1', '2018-05-22', 'B')";
 	mysqli_query($server, $sql);
 
 	// Wrap up and close connection

@@ -56,7 +56,7 @@ include_once("connect.php");
 					<?php
 
 					$currentTeacherID = $_SESSION['email']; 
-					$query = "SELECT * FROM Booking WHERE Booking.teacherEmail = '$currentTeacherID' " ; 
+					$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
 
 					$result = mysqli_query($server, $query);
 					while($row = mysqli_fetch_array($result))
@@ -67,7 +67,7 @@ include_once("connect.php");
 							$period = $row['period'];
 							$classID = $row['classID'];
 
-							$sql = "SELECT * FROM Classroom WHERE Classroom.classID = $classID";
+							$sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
 							$resultClassroom =  mysqli_query($server, $sql);
 							$resultName = mysqli_fetch_array($resultClassroom);
 
@@ -137,7 +137,7 @@ function viewOwnBooking()
 
 
 	$currentTeacherID = $_SESSION['email']; 
-	$query = "SELECT * FROM Booking WHERE Booking.teacherEmail = '$currentTeacherID' " ; 
+	$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
 
 	$result = mysqli_query($server, $query);
 
@@ -151,7 +151,7 @@ function viewOwnBooking()
 	}
 
 
-	$sql = "SELECT * FROM Classroom WHERE Classroom.classID = $classID";
+	$sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
 	$resultClassroom =  mysqli_query($server, $sql);
 	$resultName = mysqli_fetch_array($resultClassroom);
 

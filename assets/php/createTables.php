@@ -1,7 +1,7 @@
 <?php
     include "connect.php";
 
-    $sql1 = "CREATE TABLE Teacher(
+    $sql1 = "CREATE TABLE teacher(
 
         first_name VARCHAR(30) NOT NULL,
 
@@ -14,7 +14,7 @@
         accessLevel ENUM('0', '1') NOT NULL
     	)";
 
-    $sql2 = "CREATE TABLE Classroom(
+    $sql2 = "CREATE TABLE classroom(
 
         classID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
@@ -25,7 +25,7 @@
 		isBookable ENUM('yes', 'no')
 		)";
 
-    $sql3 = "CREATE TABLE Booking(
+    $sql3 = "CREATE TABLE booking(
 
         teacherEmail  VARCHAR(50) NOT NULL,
 
@@ -35,14 +35,14 @@
 
         period ENUM('A', 'B', 'C', 'D') NOT NULL,
 
-        FOREIGN KEY (teacherEmail) REFERENCES Teacher(email),
+        FOREIGN KEY (teacherEmail) REFERENCES teacher(email),
 
-        FOREIGN KEY (classID) REFERENCES Classroom(classID),
+        FOREIGN KEY (classID) REFERENCES classroom(classID),
 
         PRIMARY KEY (classID, dateOfBooking, period)
 	)";
 
-	$sql4 = "CREATE TABLE Schedule(
+	$sql4 = "CREATE TABLE schedule(
 
         ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
@@ -55,38 +55,38 @@
 
     if (mysqli_query($server, $sql1))
     {
-        echo "Table Teacher created successfully. </br>";
+        echo "Table teacher created successfully. </br>";
     }
     else
     {
-        echo "Error when creating Teacher table: " . mysqli_error($server) . "</br>";
+        echo "Error when creating teacher table: " . mysqli_error($server) . "</br>";
     }
 
     if (mysqli_query($server, $sql2))
     {
-        echo "Table Classroom created successfully. </br>";
+        echo "Table classroom created successfully. </br>";
     }
     else
     {
-        echo "Error when creating Classroom table: " . mysqli_error($server) . "</br>";
+        echo "Error when creating classroom table: " . mysqli_error($server) . "</br>";
     }
 
     if (mysqli_query($server, $sql3))
     {
-        echo "Table Booking created successfully. </br>";
+        echo "Table booking created successfully. </br>";
     }
     else
     {
-        echo "Error when creating Booking table: " . mysqli_error($server) . "</br>";
+        echo "Error when creating booking table: " . mysqli_error($server) . "</br>";
     }
 
     if (mysqli_query($server, $sql4))
     {
-        echo "Table Schedule created successfully. </br>";
+        echo "Table schedule created successfully. </br>";
     }
     else
     {
-        echo "Error when creating Schedule table: " . mysqli_error($server) . "</br>";
+        echo "Error when creating schedule table: " . mysqli_error($server) . "</br>";
     }
 
      // Wrap up and close connection

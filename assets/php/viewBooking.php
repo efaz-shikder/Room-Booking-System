@@ -4,7 +4,7 @@ session_start();
 
 include_once("connect.php");
 	
-$query = "SELECT * FROM Booking ORDER BY dateOfBooking ASC"; 
+$query = "SELECT * FROM booking ORDER BY dateOfBooking ASC"; 
 $result = mysqli_query($server, $query);
 
 echo "<table>"; // start a table tag in the HTML
@@ -16,7 +16,7 @@ while($row = mysqli_fetch_array($result))
 
 	$classID = $row['classID'];
 
-	$sql1 = "SELECT Booking.teacherEmail, first_name, last_name, Teacher.email FROM Booking INNER JOIN Teacher ON Booking.teacherEmail=Teacher.email WHERE Booking.teacherEmail=$teacherID";
+	$sql1 = "SELECT booking.teacherEmail, first_name, last_name, teacher.email FROM booking INNER JOIN teacher ON booking.teacherEmail=teacher.email WHERE booking.teacherEmail=$teacherID";
 	$resultTeacher = mysqli_query($server, $sql1);
 	$rowTeacher = mysqli_fetch_array($resultTeacher);
 

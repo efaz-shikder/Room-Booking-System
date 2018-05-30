@@ -52,7 +52,7 @@ if (isset($_POST['submit']))
 		// Worry about password encryption??
 
 
-		$sql = "INSERT INTO `Teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', '" .  DEFAULT_ACCESS_LEVEL . "')";
+		$sql = "INSERT INTO `teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', '" .  DEFAULT_ACCESS_LEVEL . "')";
 
 		mysqli_query($server, $sql);
 

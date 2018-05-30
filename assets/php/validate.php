@@ -39,7 +39,7 @@ if (isset($_POST['submit']))
 
 	// Worry about password encryption??
 
-	$sql = "SELECT * FROM Teacher WHERE email = '$email'";
+	$sql = "SELECT * FROM teacher WHERE email = '$email'";
 	$query = mysqli_query($server, $sql);
 	$row = mysqli_fetch_array($query);
 
