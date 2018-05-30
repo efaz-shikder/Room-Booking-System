@@ -447,3 +447,20 @@ $(hallwayArray[1]).click(function(){
 $(hallwayArray[2]).click(function(){
 	toggleRooms(roomsArray[2]);
 })
+
+/* Delet Booking Ajax to pass variables */
+function passBooking(element)
+{
+	var id = element.id;
+
+	$.ajax({
+			type: "POST",
+			url: '../assets/php/viewRooms.php',
+			data: 'hallway=' + id,
+			
+			success: function(data){
+				$('rooms').php(data);
+
+			}
+		}); 
+}
