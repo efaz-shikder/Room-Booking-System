@@ -506,6 +506,12 @@ html {
   color: white;
 }
 
+#rooms li a:focus, #rooms2 li a:focus, #rooms3 li a:focus, #rooms4 li a:focus, #rooms5 li a:focus, #rooms6 li a:focus, #rooms7 li a:focus, #rooms8 li a:focus,
+ #rooms9 li a:focus, #rooms10 li a:focus {
+	background-color: #555;
+  color: white;
+}
+
 /** period buttons **/
 .periodButtons{
 	display: flex;

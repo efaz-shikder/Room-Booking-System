@@ -501,9 +501,43 @@ $(document).ready(function() {
 
 /** rooms grid **/
 $(document).ready(function() {
-	var numitems =  $(".gridRooms1 li").length;
+	$("ul.gridRooms1").css("column-count", 3);
+});
 
-	$("ul.gridRooms1").css("column-count", numitems / 7);
+$(document).ready(function() {
+	$("ul.gridRooms2").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms3").css("column-count", 3);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms4").css("column-count", 1);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms5").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms6").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms7").css("column-count", 1);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms8").css("column-count", 4);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms9").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms10").css("column-count", 2);
 });
 
 /** submit button **/
