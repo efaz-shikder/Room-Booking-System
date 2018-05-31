@@ -11,26 +11,22 @@ include_once("connect.php");
 
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/viewBookings.css">
 
 </head>
 
 <body>
 
 	<!-- Navigation Menu -->
-	<div class="menunav">
 		<div id="ArbisNav" class="sidenav">
 			<a href="../../homepage/index.php">Home</a>
 			<a href="viewOwnBooking.php">Booked Rooms</a>
 			<a href="">Help</a>
 		</div>
 
-		<section id="main" class="main" style="padding: 20px;">
-
-			<div class="jumbotron vertical-center">
-				<div class="container-fluid">
-
-					<!--  Navigation Menu Icon -->
+	<section id="main" class="main">
+	<div class="container-fluid">
+	<!--  Navigation Menu Icon -->
 					<div class="row">
 						<div id="navIcon">
 							<div id="nav-icon3" onclick="toggleNav()">
@@ -41,17 +37,21 @@ include_once("connect.php");
 							</div>
 						</div>
 					</div>
-
 				</div>
 
-
+			
+			<div class="jumbotron vertical-center">
+				<div id="Bookings">
 				<table id="bookings">
 					<thead>
 						<th>Date</th>
 						<th>Room Number</th>
 						<th>Period</th>
-						<th> Cancel</th>
-					</thead>>
+						<th>Cancel</th>
+					</thead>
+				</div>
+			</div>
+		</section>
 
 					<?php
 
@@ -80,8 +80,7 @@ include_once("connect.php");
 									<td><?php echo $dateOfBooking ?></td> 
 									<td><?php echo $roomName ?></td> 
 									<td><?php echo $period ?></td> 
-									<td >
-										
+									<td>
 										<button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
 									</td>
 								</tr>
@@ -89,24 +88,43 @@ include_once("connect.php");
 					<?php } ?>
 				</table>
 
-			</div>
 		</section>
-	</div>
-
 
 
 	<script src="../javascript/jquery.min.js"></script>
-	<script src="../javascript/script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
 	<script type="text/javascript">
+	var action = 1;
 
+	function toggleNav() {
+		if ( action == 1 ) {
+		document.getElementById("ArbisNav").style.width = "250px";
+		document.getElementById("main").style.marginLeft = "280px";
+		action = 2;
+		}
+		else {
+		document.getElementById("ArbisNav").style.width = "0px";
+		document.getElementById("main").style.marginLeft = "0px";
+		action = 1;
+		}
+		$("#mainContent").toggle();
+	}
+	$(document).ready(function(){
+		$('#nav-icon3').click(function(){
+			$(this).toggleClass('open');
+		});
+	});
+
+	</script>
+	<script type="text/javascript">
 		function deleteAjax(date, room, periods)
 		{
 			var dateOfBooking = JSON.stringify(date);
 			var classID = JSON.stringify(room);
 			var period = JSON.stringify(periods);
 
-			if (confirm('Are you sure you want to delete booking')) {
+			if (confirm('Are you sure you want to delete booking?')) {
 
 				$.ajax({
 
