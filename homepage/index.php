@@ -68,7 +68,7 @@
 					<div class="col-xl-8 col-lg-9 col-md-9 col-sm-9 col-xs-9">
 						<div class="row">
 							<!-- hallways -->
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
 									<li class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
 									<li class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>

@@ -585,21 +585,25 @@ $('#D').click(function(){
 		isClicked = true;
 })
 
-/** yeet **/
+/** disable user from clicking on hallways until condition is met **/
 var repeater;
 
 function doWork() {
  $('#more').load('exp1.php');
  repeater = setTimeout(doWork, 1000);
- if ( (dateFinal == null) && !(isClicked) ) {
-	 document.getElementById('gridHallways').setAttribute("style", "pointer-events: none;");
+
+ if ( (dateFinal == null) || !(isClicked) ) {
+	 document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
  }
- else if ( !(dateFinal == null) || (isClicked) ) {
-	 document.getElementById('gridHallways').setAttribute("style", "pointer-events: none;");
+ else if ( !(dateFinal == null) && (isClicked) ) {
+	 document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
  }
 }
 
 doWork();
+
+
+
 
 /** yeet **/
 
