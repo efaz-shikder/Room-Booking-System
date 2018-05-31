@@ -103,7 +103,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 										?>
@@ -119,7 +119,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -136,7 +136,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -153,7 +153,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -170,7 +170,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 										?>
@@ -186,7 +186,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -203,7 +203,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -220,7 +220,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -237,7 +237,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -254,7 +254,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable();">'.$roomName.'</a>';
 											echo '</li>';
 										}
 

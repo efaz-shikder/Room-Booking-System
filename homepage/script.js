@@ -587,16 +587,28 @@ $('#D').click(function(){
 
 /** disable user from clicking on hallways until condition is met **/
 var repeater;
+var areHallwaysAvailable = false;
+
+function setHallwaysAvailable() {
+	areHallwaysAvailable = true;
+}
 
 function doWork() {
  $('#more').load('exp1.php');
- repeater = setTimeout(doWork, 1000);
+ repeater = setTimeout(doWork, 500);
 
  if ( (dateFinal == null) || !(isClicked) ) {
 	 document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
  }
  else if ( !(dateFinal == null) && (isClicked) ) {
 	 document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
+ }
+ /** disable user from clicking submit until condition is met **/
+ if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
+ 	document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
+ }
+ else {
+	 document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
  }
 }
 
