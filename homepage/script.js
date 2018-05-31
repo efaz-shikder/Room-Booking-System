@@ -1,3 +1,5 @@
+var dateFinal;
+
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -197,19 +199,20 @@ createDay: function (num, day, year) {
 		}
 	}
 
-	if (this.date.getTime() <= this.todaysDate.getTime() - 1) {
+	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
+		|| (this.date.getDay() === 6) || (this.date.getDay() === 0) ) {
 		newDay.classList.add('cal__date--disabled')
-	} else {
-		newDay.classList.add('cal__date--active')
-		newDay.setAttribute('data-calendar-status', 'active')
-	}
+} else {
+	newDay.classList.add('cal__date--active')
+	newDay.setAttribute('data-calendar-status', 'active')
+}
 
-	if (this.date.toString() === this.todaysDate.toString()) {
-		newDay.classList.add('cal__date--today')
-	}
+if (this.date.toString() === this.todaysDate.toString()) {
+	newDay.classList.add('cal__date--today')
+}
 
-	newDay.appendChild(dateEl)
-	this.month.appendChild(newDay)
+newDay.appendChild(dateEl)
+this.month.appendChild(newDay)
 },
 
 dateClicked: function () {
@@ -220,8 +223,8 @@ dateClicked: function () {
 				// cut off first 4 and last 24 characters of date
 				var simplifiedDate = this.dataset.calendarDate;
 				JSON.stringify(simplifiedDate);
-				simplifiedDate = simplifiedDate.slice(4,-24);
-				var shortenedMonth = simplifiedDate.substr(0,3);
+				simplifiedDate = simplifiedDate.substring(4,15);
+				var shortenedMonth = simplifiedDate.substring(0,3);
 				switch (shortenedMonth) {
 					case "Jan":
 					shortenedMonth = "01";
@@ -260,7 +263,8 @@ dateClicked: function () {
 					shortenedMonth = "12";
 					break;
 				}
-				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " -" + simplifiedDate.substr(3,4)
+				simplifiedDate = simplifiedDate.substr(7) + "-" + shortenedMonth + "-" + simplifiedDate.substr(4,3)
+				dateFinal = simplifiedDate;
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
 				_this.removeActiveClass()
@@ -406,18 +410,21 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
-var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway"];
-var roomsArray = ["#rooms", "#rooms2", "#rooms3"];
+var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
+var roomsArray = ["#rooms", "#rooms2", "#rooms3", "#rooms4", "#rooms5", "#rooms6", "#rooms7", "#rooms8", "#rooms9", "#room10"];
 
 function toggleRoomsOff()
 {
 	for (var i = 0; i < roomsArray.length; i++)
 	{
 
-			if($(roomsArray[i]).is(':visible'))
-			{
-				$(roomsArray[i]).toggle();
-			}
+		if($(roomsArray[i]).is(':visible'))
+		{
+			$(roomsArray[i]).toggle();
+			var n = hallwayArray[i];
+			n = "." + n.substring(1);
+			$(n).removeClass("current");
+		}
 	}
 }
 
@@ -427,7 +434,7 @@ function toggleCurrentRoom(roomName)
 	if($(roomName).is(':hidden')) {
 		$(roomName).fadeToggle();
 	}
-	
+
 }
 
 function toggleRooms(roomName)
@@ -438,29 +445,268 @@ function toggleRooms(roomName)
 
 $(hallwayArray[0]).click(function(){
 	toggleRooms(roomsArray[0]);
+	$(".cHallway").addClass("current");
 })
 
 $(hallwayArray[1]).click(function(){
 	toggleRooms(roomsArray[1]);
+	$(".sHallway").addClass("current");
 })
 
 $(hallwayArray[2]).click(function(){
 	toggleRooms(roomsArray[2]);
+	$(".englishHallway").addClass("current");
 })
 
-/* Delet Booking Ajax to pass variables */
-function passBooking(element)
-{
-	var id = element.id;
+$(hallwayArray[3]).click(function(){
+	toggleRooms(roomsArray[3]);
+	$(".frenchHallway").addClass("current");
+})
 
-	$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + id,
-			
-			success: function(data){
-				$('rooms').php(data);
+$(hallwayArray[4]).click(function(){
+	toggleRooms(roomsArray[4]);
+	$(".gymHallway").addClass("current");
+})
+
+$(hallwayArray[5]).click(function(){
+	toggleRooms(roomsArray[5]);
+	$(".frontFoyer").addClass("current");
+})
+
+$(hallwayArray[6]).click(function(){
+	toggleRooms(roomsArray[6]);
+	$(".musicHallway").addClass("current");
+})
+
+$(hallwayArray[7]).click(function(){
+	toggleRooms(roomsArray[7]);
+	$(".mathHallway").addClass("current");
+})
+
+$(hallwayArray[8]).click(function(){
+	toggleRooms(roomsArray[8]);
+	$(".scienceHallway").addClass("current");
+})
+
+$(hallwayArray[9]).click(function(){
+	toggleRooms(roomsArray[9]);
+	$(".geographyHallway").addClass("current");
+})
+
+/** hallway grid **/
+$(document).ready(function() {
+	var numitems =  $("#gridHallways li").length;
+
+	$("ul#gridHallways").css("column-count", numitems / 2);
+});
+
+/** rooms grid **/
+$(document).ready(function() {
+	$("ul.gridRooms1").css("column-count", 3);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms2").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms3").css("column-count", 3);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms4").css("column-count", 1);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms5").css("column-count", 1);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms6").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms7").css("column-count", 1);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms8").css("column-count", 4);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms9").css("column-count", 2);
+});
+
+$(document).ready(function() {
+	$("ul.gridRooms10").css("column-count", 3);
+});
+
+/** submit button **/
+$("button").click(function () {
+	var target = $(this);
+	if (target.hasClass("done")) {
+    // Do nothing
+} else {
+	target.addClass("processing");
+	setTimeout(function () {
+		target.removeClass("processing");
+		target.addClass("done");
+	}, 2200);
+}
+});
+var isClicked = false;
+/** period buttons **/
+$('#A').click(function(){
+	$("#A").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
+})
+$('#B').click(function(){
+	$("#B").removeClass("btn-animate").addClass("btn-clicked");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
+})
+$('#C').click(function(){
+	$("#C").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
+})
+$('#D').click(function(){
+	$("#D").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
+})
+
+/** disable user from clicking on hallways until condition is met **/
+var repeater;
+var areHallwaysAvailable = false;
+
+function setHallwaysAvailable(name) {
+	areHallwaysAvailable = true;
+	switch (name) {
+		case 1:
+			document.getElementById("rooms").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 2:
+			document.getElementById("rooms2").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 3:
+			document.getElementById("rooms3").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 4:
+			document.getElementById("rooms4").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 5:
+			document.getElementById("rooms5").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 6:
+			document.getElementById("rooms6").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 7:
+			document.getElementById("rooms7").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 8:
+			document.getElementById("rooms8").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 9:
+			document.getElementById("rooms9").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 10:
+			document.getElementById("rooms10").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+	}
+}
+
+function doWork() {
+ $('#more').load('exp1.php');
+ repeater = setTimeout(doWork, 500);
+
+ if ( (dateFinal == null) || !(isClicked) ) {
+	 document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+ }
+ else if ( !(dateFinal == null) && (isClicked) ) {
+	 document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
+ }
+ /** disable user from clicking submit until condition is met **/
+ if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
+ 	document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
+ }
+ else {
+	 document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+ }
+}
+
+doWork();
+
+
+
+
+/** yeet **/
+
+var period;
+var classID;
+
+function setClassID(id)
+{
+	classID = JSON.stringify(id);
+}
+
+function setPeriod(element)
+{
+	period = JSON.stringify(element.id);
+}
+
+function getClassID()
+{
+	return classID;
+}
+
+function getPeriod()
+{
+	return period;
+}
+
+function getDate()
+{
+	return dateFinal;
+}
+
+
+function bookAJAX(date, id, block)
+{
+
+	var dateOfBooking = JSON.stringify(date);
+	var classID = JSON.stringify(id);
+	var period = JSON.stringify(block);
+	period = period.substring(3,4);
+
+
+
+			if (confirm('Are you sure you want to create this booking?')) {
+
+		$.ajax({
+
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/viewOwnBooking.php");
+
+					}
+				});
+
 
 			}
-		}); 
-}
+
+		}

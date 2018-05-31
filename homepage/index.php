@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,66 +15,295 @@
 	<div id="ArbisNav" class="sidenav">
 		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
-		<a href="">Help</a>
+		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 
 	<section id="main" class="main">
 
-		<div class="vertical-center">
+		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container-fluid">
 
 				<!-- Navigation Menu Icon -->
 				<div class="row">
-					<div id="navIcon">
-						<div id="nav-icon3" onclick="toggleNav()">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
+					<div class="col">
+						<div id="navIcon">
+							<div id="nav-icon3" onclick="toggleNav()">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
 						</div>
+					</div>
+					<div class="col">
+						<input type="button" value="Logout" class="logout" onclick="window.location.href='../assets/php/logout.php'" />
 					</div>
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
-					<!-- hallway selector -->
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul class="hallways">
-							<li class="current" onclick="passBooking(this);" id="cHallway"><a href="#">C Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="sHallway"><a href="#">S Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="englishHallway"><a href="#">English Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="French Hallway"><a href="#">French Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Gym Hallway"><a href="#">Gym Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Front Foyer"><a href="#">Front Foyer</a></li>
-							<li class="current" onclick="passBooking(this);" id="Music Hallway"><a href="#">Music Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Math Hallway"><a href="#">Math Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Science Hallway"><a href="#">Science Hallway</a></li>
-							<li class="current" onclick="passBooking(this);" id="Geography Hallway"><a href="#">Geography Hallway</a></li>
-						</ul>
+					<!-- calender -->
+					<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
+						<!-- calendar -->
+						<div class="calendar_container">
+							<!-- Date Picked Display -->
+							<p class="demo-picked">
+								Date picked: <span data-calendar-label="picked"></span>
+							</p>
+
+							<div class="cal">
+								<div class="cal__header">
+									<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
+									<div class="cal__header__label" data-calendar-label="month">
+
+									</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+								</div>
+								<div class="cal__week">
+									<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+								</div>
+								<div class="cal__body" data-calendar-area="month"></div>
+							</div>
+						</div>
 					</div>
-					<!-- rooms -->
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<ul id="rooms">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet</a></li>
-							<li><a href="#">yeet</a></li>
-						</ul>
-						<ul id="rooms2">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet2</a></li>
-							<li><a href="#">yeet2</a></li>
-						</ul>
-						<ul id="rooms3">
-							<?php #include '../assets/php/viewRooms.php'; listRooms();?>
-							<li><a href="#">yeet3</a></li>
-							<li><a href="#">yeet3</a></li>
-						</ul>
+					<!-- hallways and rooms -->
+					<div class="col-xl-8 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+						<div class="row">
+							<!-- hallways -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
+								<ul id="gridHallways" class="hallways">
+									<li class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
+									<li class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway"><a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway"><a href="#">Geography Hallway</a></li>
+								</ul>
+							</div>
+							<!-- rooms -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="roomsContainer">
+									<ul id="rooms" class="gridRooms1">
+										<?php
+
+
+										session_start();
+
+										include_once("../assets/php/connect.php");
+
+
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='C Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+										?>
+									</ul>
+									<ul id="rooms2" class="gridRooms2">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='S Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms3" class="gridRooms3">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='English Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms4" class="gridRooms4">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='French Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms5" class="gridRooms5">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Gym Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+										?>
+									</ul>
+									<ul id="rooms6" class="gridRooms6">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Front Foyer'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms7" class="gridRooms7">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Music Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms8" class="gridRooms8">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Math Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms9" class="gridRooms9">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+									<ul id="rooms10" class="gridRooms10">
+										<?php
+
+										$currentTeacherID = $_SESSION['email'];
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway'";
+										$result = mysqli_query($server, $sql);
+										while($row = mysqli_fetch_array($result))
+										{
+											$roomName = $row['roomName'];
+											$classID = $row['classID'];
+											echo '<li id='. $classID .' >';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10);">'.$roomName.'</a>';
+											echo '</li>';
+										}
+
+										?>
+									</ul>
+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
 					<!-- map -->
-					<div class="col-xl-10 col-lg-10 d-none d-lg-block">
-						<svg version="1.1" viewBox="0 0 1925.4308 714.88776" class="center">
+					<div class="col-xl-4 col-lg-4">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="center periodButtons">
+									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
+									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
+									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
+									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
+								</div>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="submitButton">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+									  <span>Submit</span>
+									  <span>
+									    <svg viewBox="0 0 24 24">
+									      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+									    </svg>
+									  </span>
+									</button>
+								</div>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<!-- map info display -->
+								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Button to book
+					<div>
+						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
+					</div> -->
+					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
+						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
 
 							<!--English Hallway -->
 							<path id="Day Care Office"
@@ -625,81 +855,74 @@
 							d="m 1772.481,52.27 v 83.5736 h 60.674 V 52.27 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="Washroom #8"
-								d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
+							d="m 1771.948,147.3845 v 60.9706 h 62.271 v -60.9706 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="312"
-								d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.948,216.7739 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="310"
-								d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1772.48,306.6957 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="308"
-								d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.416,398.2043 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="306"
-								d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
+							d="m 1771.948,489.184 v 83.5735 h 60.674 V 489.184 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
 							/>
 							<path id="302"
-								d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
+							d="m 1771.948,579.6347 v 83.5736 h 60.674 v -83.5736 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="History & Geography Office"
-								d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
+							d="m 1868.111,73.1313 v 64.0734 h 56.821 V 73.1313 Z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="311"
-								d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
+							d="m 1868.111,143.1658 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
-								/>
+							/>
 							<path id="309"
-										d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
+							d="m 1868.609,228.1012 v 78.4776 h 55.825 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="307"
-								d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
+							d="m 1868.609,311.5466 v 78.4775 h 56.822 v -78.4775 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="305"
-								d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
+							d="m 1868.609,395.4886 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<path id="303"
-								d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
+							d="m 1868.111,479.4306 v 78.4776 h 56.821 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-									/>
+							/>
 							<path id="301"
-								d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
+							d="m 1867.612,565.3594 v 78.4776 h 56.822 v -78.4776 z"
 							class="Geography Hallway"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-								/>
+							/>
 							<!--End of Geography Hallway -->
 						</svg>
 					</div>
-					<!-- calendar -->
-					<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
-						<!-- calendar -->
-						<input type="date" class="center" value="yyyy-mm-dd"/>
-					</div>
-					<!-- map info display -->
-					<p id="placeholderParagraph" class="d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 				</div>
 
 			</div>

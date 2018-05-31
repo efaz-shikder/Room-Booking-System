@@ -1,19 +1,33 @@
 <?php
 
-	session_start();
+session_start();
 
-	include_once("connect.php");
+include_once("connect.php");
 
-	$teacherID =  1;//$_SESSION['id'];
-	$dateOfBooking = "2018-05-16";  // Get from calendar
-	$roomName = 1; //$_POST['roomName'];
-	$period = 'B' //$_POST['period'];
 
-	$sql = "INSERT INTO `booking` (`teacherID`, `classID`, `dateOfBooking`, `period`) VALUES ('1', '1', '2018-05-22', 'B')";
-	mysqli_query($server, $sql);
+echo $_POST['classID'] . "</br>";
+echo $_POST['period'] . "</br>";
+echo $_POST['dateOfBooking'] . "</br>";
 
-	// Wrap up and close connection
-	mysqli_close($server);
+
+$teacherEmail = $_SESSION['email'];
+$classID = $_POST['classID'];
+$dateOfBooking = $_POST['dateOfBooking'];
+$period = $_POST['period'];
+
+/*
+echo $teacherEmail = trim($teacherEmail, '"');
+echo $dateOfBooking =  trim($dateOfBooking, '"');
+echo $classID = trim($classID, '"') ;
+echo $period;*/
+
+
+$sql = "INSERT INTO `booking` (`teacherEmail`, `classID`, `dateOfBooking`, `period`) VALUES ('$teacherEmail', $classID, $dateOfBooking, '$period')";
+
+mysqli_query($server, $sql);
+
+// Wrap up and close connection
+mysqli_close($server);
 
 
 ?>

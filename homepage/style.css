@@ -33,8 +33,8 @@ body{
 
 /*Map */
 svg {
+	width: 100%;
 	margin-top: 15px;
-	margin-right: 75px;
 	margin-bottom: 15px;
 }
 
@@ -137,9 +137,10 @@ path
 
 #placeholderParagraph
 {
-	display: block;
+	display: table-cell;
+	vertical-align: bottom;
+	margin-left: 50px;
   font-size: 2em;
-  margin-bottom: 10px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
 }
@@ -206,6 +207,12 @@ path
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: .5s;
+}
+
+.container {
+padding-top: 20px;
+padding-bottom: 20px;
+max-width: 85vw;
 }
 
 /** Nav Icon **/
@@ -289,17 +296,11 @@ path
 /** Calendar **/
 html {
   box-sizing: border-box;
+	font-size: 9px;
 }
 
-.calendar_container {
-	box-sizing: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.6rem;
-  -webkit-font-smoothing: antialiased;
-  width: 96%;
-  margin: 1.6rem auto;
-  max-width: 76rem;
-  text-align: center;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 .cal__header button {
@@ -323,7 +324,10 @@ html {
 }
 
 .cal {
-  width: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+	font-size: 1.1rem;
+	width: 100%;
   max-width: 42rem;
   margin: 0 auto;
   background-color: #fff;
@@ -334,6 +338,7 @@ html {
 }
 
 .cal__header {
+	font-size: 1.5rem;
   display: flex;
   padding: 1.2rem 1.4rem;
   align-items: center;
@@ -352,7 +357,7 @@ html {
 }
 
 .cal__week span {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   max-width: 14.28%;
   padding: 1.2rem 1.4rem;
   flex: 0 0 14.28%;
@@ -363,6 +368,7 @@ html {
 }
 
 .cal__body {
+	font-size: 14px;
   display: flex;
   flex-wrap: wrap;
   background-color: #fafafa;
@@ -401,152 +407,313 @@ html {
   cursor: not-allowed;
 }
 
-.demo-picked {
+.calendar_container p {
+	font-size: 16px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
 	color: white;
-  font-size: 1.2rem;
+	font-weight: 600;
   text-align: center;
-}
-
-.demo-picked span {
-  font-weight: bold;
 }
 
 /** yeet **/
 .hallways {
+	transform: translateX(-6%);
 	margin-top: 30px;
-	background-color: #333333;
+	padding: 0;
   font-family: 'Raleway', Arial, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
+  text-transform: capitalize;
+	text-align: center;
+	font-weight: 200;
   letter-spacing: 1px;
 }
 
 .hallways * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.35s ease;
+	transition: all 0.35s ease;
 }
+
 .hallways li {
+	font-size: 13px;
   display: inline-block;
   list-style: outside none none;
-  margin: 0 1em;
-  padding: 0;
+  margin: 0 1.5em;
 }
+
 .hallways a {
-  padding: 0.5em 0.8em;
-  margin: 0.2em 0;
-  display: block;
+  padding: 0.3em;
+  display: inline-block;
   color: white;
   position: relative;
   text-decoration: none;
 }
+
 .hallways a:before,
 .hallways a:after {
-  height: 14px;
-  width: 14px;
+  height: 3px;
   position: absolute;
   content: '';
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-  opacity: 0;
+  background-color: #008aee;
+  width: 0;
 }
 .hallways a:before {
-  left: 0;
   top: 0;
-  border-left: 3px solid #ffff66;
-  border-top: 3px solid #ffff66;
-  -webkit-transform: translate(100%, 50%);
-  transform: translate(100%, 50%);
+  left: 0;
 }
 .hallways a:after {
-  right: 0;
   bottom: 0;
-  border-right: 3px solid #ffff66;
-  border-bottom: 3px solid #ffff66;
-  -webkit-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+  right: 0;
 }
 .hallways a:hover,
 .hallways .current a {
-  color: #008aee;
+  color: #ffffff;
 }
 .hallways a:hover:before,
 .hallways .current a:before,
 .hallways a:hover:after,
 .hallways .current a:after {
-  -webkit-transform: translate(0%, 0%);
-  transform: translate(0%, 0%);
-  opacity: 1;
+  width: 100%;
 }
 
 /** yeeet **/
-#rooms {
+.roomsContainer ul li {
+	font-size: 13px;
+}
 
+#rooms, #rooms2, #rooms3, #rooms4, #rooms5, #rooms6, #rooms7, #rooms8, #rooms9, #rooms10 {
+	width: 92%;
 	list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
   background-color: #f1f1f1;
 	display: none;
 }
 
-#rooms li a {
+#rooms li a, #rooms2 li a, #rooms3 li a, #rooms4 li a, #rooms5 li a, #rooms6 li a, #rooms7 li a, #rooms8 li a, #rooms9 li a, #rooms10 li a {
 	display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-#rooms li a:hover {
+#rooms li a:hover, #rooms2 li a:hover, #rooms3 li a:hover, #rooms4 li a:hover, #rooms5 li a:hover, #rooms6 li a:hover, #rooms7 li a:hover, #rooms8 li a:hover,
+ #rooms9 li a:hover, #rooms10 li a:hover {
 	background-color: #555;
   color: white;
 }
 
-#rooms2 {
-
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-	display: none;
+#rooms li a:focus, #rooms2 li a:focus, #rooms3 li a:focus, #rooms4 li a:focus, #rooms5 li a:focus, #rooms6 li a:focus, #rooms7 li a:focus, #rooms8 li a:focus,
+ #rooms9 li a:focus, #rooms10 li a:focus {
+	background-color: #555;
+  color: white;
 }
 
-#rooms2 li a {
-	display: block;
+/** period buttons **/
+.periodButtons{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 15px;
+}
+
+.btn-animate {
+	margin: 5px;
   color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 1;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
-
-#rooms2 li a:hover {
-	background-color: #555;
+.btn-animate span {
+  position: relative;
+  z-index: 2;
+}
+.btn-animate:before, .btn-animate:after {
+  border-radius: 8px;
+  content: '';
+  z-index: -1;
+  background: #fff;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.btn-animate:after {
+  background: #0080ee;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: .1s;
+}
+.btn-animate:hover {
+  box-shadow: 0px 16px 47px -15px #003f77;
+}
+.btn-animate:hover:after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  transition-delay: 0s;
+}
+.btn-animate:active {
+  -webkit-transform: translateY(4px) translateZ(0);
+          transform: translateY(4px) translateZ(0);
+  box-shadow: 0px 8px 10px -6px #003f77;
+}
+.btn-clicked {
+	margin: 5px;
   color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background: #0080ee;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 1;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
-#rooms3 {
-
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
+/** submit button **/
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(720deg);
+  }
+}
+.submitButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 14px;
+}
+button {
+  position: relative;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   width: 200px;
-  background-color: #f1f1f1;
-	display: none;
+  height: 50px;
+  border-radius: 25px;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-#rooms3 li a {
-	display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+.spin {
+  border: 2px solid #1ecd97;
+  color: #1ecd97;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+.spin span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease-in-out;
+}
+.spin span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.spin svg {
+  height: 30px;
+  fill: #1ecd97;
+}
+.spin:hover {
+  background-color: #1ecd97;
+  color: #fff;
+}
+.spin.done, .spin.processing {
+  pointer-events: none;
+  cursor: default;
+}
+.spin.processing {
+  width: 50px;
+  border-width: 4px;
+  border-right-color: #bbb;
+  border-bottom-color: #bbb;
+  animation: spin;
+  animation-delay: 200ms;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.spin.processing:hover {
+  background-color: transparent;
+}
+.spin.processing span:first-child {
+  opacity: 0;
+}
+.spin.done:hover {
+  background-color: transparent;
+}
+.spin.done span:first-child {
+  opacity: 0;
+}
+.spin.done span:last-child {
+  opacity: 1;
+}
+/** logout button **/
+.logout {
+	border: 2px solid red;
+  background: black;
+  width: 100px;
+  cursor:pointer;
+  border-radius:50px;
+  padding:10px 105px 10px 0;
+  color:red;
+	font-size: 16px;
+  text-align:center;
+  text-indent:40px;
+  display:flex;
+	float: right;
+
+  /* Animations: */
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .4s;
+  -webkit-transition-property: all;
+
+  -moz-transition-timing-function: ease-in-out;
+  -moz-transition-duration: .4s;
+  -moz-transition-property: all;
 }
 
-#rooms3 li a:hover {
-	background-color: #555;
-  color: white;
+.logout:hover {
+  background: red;
+	color: white;
+  background-position: 65px 5px;
+  text-indent: 10px;
 }
