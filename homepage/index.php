@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<input type="button" value="Logout" class="logout"/>
+						<input type="button" value="Logout" class="logout" onclick="window.location.href='../assets/php/logout.php'" />
 					</div>
 				</div>
 				<!-- Row 1 -->
@@ -154,7 +154,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -171,7 +171,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -188,7 +188,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -205,7 +205,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -222,7 +222,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -239,7 +239,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -256,7 +256,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -283,7 +283,7 @@
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="submitButton">
-									<button class="spin" id="spin">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
 									  <span>Submit</span>
 									  <span>
 									    <svg viewBox="0 0 24 24">
@@ -300,10 +300,10 @@
 						</div>
 					</div>
 
-					<!-- Button to book -->
+					<!-- Button to book 
 					<div>
 						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
-					</div>
+					</div> -->
 					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
 

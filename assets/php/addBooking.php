@@ -4,12 +4,12 @@ session_start();
 
 include_once("connect.php");
 
-/*
+
 echo $_POST['anything'] . "</br>";
 echo $_POST['classID'] . "</br>";
 echo $_POST['period'] . "</br>";
 echo $_POST['dateOfBooking'] . "</br>";
-*/
+
 
 $teacherEmail = $_SESSION['email'];
 $classID = $_POST['classID'];
