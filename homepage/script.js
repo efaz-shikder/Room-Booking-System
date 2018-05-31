@@ -620,7 +620,7 @@ function bookAJAX(date, id, block)
 
 
 
-			if (confirm('Are you sure you want to create booking?')) {
+			if (confirm('Are you sure you want to create this booking?')) {
 
 		$.ajax({
 

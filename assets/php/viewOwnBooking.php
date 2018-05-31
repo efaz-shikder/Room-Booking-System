@@ -103,7 +103,7 @@ include_once("connect.php");
 			var classID = JSON.stringify(room);
 			var period = JSON.stringify(periods);
 
-			if (confirm('Are you sure you want to delete booking')) {
+			if (confirm('Are you sure you want to delete this booking?')) {
 
 				$.ajax({
 
