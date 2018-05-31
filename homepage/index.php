@@ -270,10 +270,10 @@
 						<div class="row">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="center periodButtons">
-									<button class="btn-animate">A</button>
-									<button class="btn-animate">B</button>
-									<button class="btn-animate">C</button>
-									<button class="btn-animate">D</button>
+									<button id="a" class="btn-animate">A</button>
+									<button id="b" class="btn-animate">B</button>
+									<button id="c" class="btn-animate">C</button>
+									<button id="d" class="btn-animate">D</button>
 								</div>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">

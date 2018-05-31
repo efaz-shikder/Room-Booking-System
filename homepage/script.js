@@ -520,6 +520,32 @@ $("button").click(function () {
   }
 });
 
+/** period buttons **/
+$('#a').click(function(){
+	$("#a").removeClass("btn-animate").addClass("btn-clicked");
+		$("#b").removeClass("btn-clicked").addClass("btn-animate");
+		$("#c").removeClass("btn-clicked").addClass("btn-animate");
+		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+})
+$('#b').click(function(){
+	$("#b").removeClass("btn-animate").addClass("btn-clicked");
+		$("#a").removeClass("btn-clicked").addClass("btn-animate");
+		$("#c").removeClass("btn-clicked").addClass("btn-animate");
+		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+})
+$('#c').click(function(){
+	$("#c").removeClass("btn-animate").addClass("btn-clicked");
+		$("#b").removeClass("btn-clicked").addClass("btn-animate");
+		$("#a").removeClass("btn-clicked").addClass("btn-animate");
+		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+})
+$('#d').click(function(){
+	$("#d").removeClass("btn-animate").addClass("btn-clicked");
+		$("#b").removeClass("btn-clicked").addClass("btn-animate");
+		$("#c").removeClass("btn-clicked").addClass("btn-animate");
+		$("#a").removeClass("btn-clicked").addClass("btn-animate");
+})
+
 /* Delet Booking Ajax to pass variables */
 function passBooking(element)
 {
