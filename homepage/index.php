@@ -142,7 +142,6 @@
 
 										?>
 									</ul>
-
 									<ul id="rooms4" class="gridRooms4">
 										<?php
 
