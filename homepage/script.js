@@ -1,3 +1,4 @@
+var dateFinal;
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -197,7 +198,8 @@ createDay: function (num, day, year) {
 		}
 	}
 
-	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getDay() == 0) || (this.date.getDay() == 6) ) {
+	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
+				|| (this.date.getDay() === 6) || (this.date.getDay() === 0) ) {
 		newDay.classList.add('cal__date--disabled')
 	} else {
 		newDay.classList.add('cal__date--active')
@@ -502,6 +504,20 @@ $(document).ready(function() {
     var numitems =  $(".gridRooms1 li").length;
 
     $("ul.gridRooms1").css("column-count", numitems / 7);
+});
+
+/** submit button **/
+$("button").click(function () {
+  var target = $(this);
+  if (target.hasClass("done")) {
+    // Do nothing
+  } else {
+    target.addClass("processing");
+    setTimeout(function () {
+      target.removeClass("processing");
+      target.addClass("done");
+    }, 2200);
+  }
 });
 
 /* Delet Booking Ajax to pass variables */

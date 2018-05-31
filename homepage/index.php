@@ -277,6 +277,18 @@
 								</div>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="submitButton">
+									<button class="spin" id="spin">
+									  <span>Submit</span>
+									  <span>
+									    <svg viewBox="0 0 24 24">
+									      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+									    </svg>
+									  </span>
+									</button>
+								</div>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<!-- map info display -->
 								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 							</div>
