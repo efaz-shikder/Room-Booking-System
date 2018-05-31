@@ -22,6 +22,7 @@ function availabilityDisplay(elem) {
 
 }
 
+var map = document.getElementsByTagName("path");
 var englishRoom = document.getElementsByClassName("English Hallway");
 var mathRoom = document.getElementsByClassName("Math Hallway");
 var scienceRoom = document.getElementsByClassName("Science Hallway");
@@ -36,7 +37,7 @@ var geographyRoom = document.getElementsByClassName("Geography Hallway");
 
 function hallwayHover(elem){
 	var hallwayType = elem.getAttribute("id");
-	if (hallwayType == "C_Hallway")
+	if (hallwayType == "cHallway")
 	{
 		for (i = 0; i < cRoom.length; i++)
 		{
@@ -44,7 +45,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "C Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "S_Hallway")
+	else if(hallwayType == "sHallway")
 	{
 		for (i = 0; i < sRoom.length; i++)
 		{
@@ -52,7 +53,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "S Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "English_Hallway")
+	else if(hallwayType == "englishHallway")
 	{
 		for (i = 0; i < englishRoom.length; i++)
 		{
@@ -60,7 +61,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "English Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "French_Hallway")
+	else if(hallwayType == "frenchHallway")
 	{
 		for (i = 0; i < frenchRoom.length; i++)
 		{
@@ -68,7 +69,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "French Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "Gym_Hallway")
+	else if(hallwayType == "gymHallway")
 	{
 		for (i = 0; i < gymRoom.length; i++)
 		{
@@ -76,7 +77,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "Gym Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "Front_Foyer")
+	else if(hallwayType == "frontFoyer")
 	{
 		for (i = 0; i < frontFoyerRoom.length; i++)
 		{
@@ -84,7 +85,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "Front Foyer | First Floor ";
 		}
 	}
-	else if(hallwayType == "Music_Hallway")
+	else if(hallwayType == "musicHallway")
 	{
 		for (i = 0; i < musicRoom.length; i++)
 		{
@@ -92,7 +93,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "Music Hallway | First Floor ";
 		}
 	}
-	else if(hallwayType == "Math_Hallway")
+	else if(hallwayType == "mathHallway")
 	{
 		for (i = 0; i < mathRoom.length; i++)
 		{
@@ -101,7 +102,7 @@ function hallwayHover(elem){
 
 		}
 	}
-	else if(hallwayType == "Science_Hallway")
+	else if(hallwayType == "scienceHallway")
 	{
 		for (i = 0; i < scienceRoom.length; i++)
 		{
@@ -109,7 +110,7 @@ function hallwayHover(elem){
 			document.getElementById("placeholderParagraph").innerHTML = "Science Hallway | Second Floor ";
 		}
 	}
-	else if(hallwayType =="Geography_Hallway")
+	else if(hallwayType =="geographyHallway")
 	{
 		for (i = 0; i < geographyRoom.length; i++)
 		{
@@ -122,11 +123,13 @@ function hallwayHover(elem){
 function hallwayHoverOut()
 {
 
-	var map = document.getElementsByTagName("path");
 	for (i = 0; i < map.length; i++) {
 		map[i].style.fill = "#5e7172";
 	}
 	document.getElementById("placeholderParagraph").innerHTML = "Academic Room Booking and Inquiry System";
+}
+function remove(elem)
+{
 }
 
 $(document).ready(function(){

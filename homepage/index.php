@@ -70,16 +70,16 @@
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway"><a href="#">C Hallway</a></li>
-									<li class="sHallway" id="sHallway"><a href="#">S Hallway</a></li>
-									<li class="englishHallway" id="englishHallway"><a href="#">English Hallway</a></li>
-									<li class="frenchHallway" id="frenchHallway"><a href="#">French Hallway</a></li>
-									<li class="gymHallway" id="gymHallway"><a href="#">Gym Hallway</a></li>
-									<li class="frontFoyer" id="frontFoyer"><a href="#">Front Foyer</a></li>
-									<li class="musicHallway" id="musicHallway"><a href="#">Music Hallway</a></li>
-									<li class="mathHallway" id="mathHallway"><a href="#">Math Hallway</a></li>
-									<li class="scienceHallway" id="scienceHallway"><a href="#">Science Hallway</a></li>
-									<li class="geographyHallway" id="geographyHallway"><a href="#">Geography Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">C Hallway</a></li>
+									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"<a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
