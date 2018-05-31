@@ -15,7 +15,7 @@
 	<div id="ArbisNav" class="sidenav">
 		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
-		<a href="">Help</a>
+		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 
 	<section id="main" class="main">

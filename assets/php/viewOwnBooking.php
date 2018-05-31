@@ -21,7 +21,7 @@ include_once("connect.php");
 	<div id="ArbisNav" class="sidenav">
 		<a href="../../homepage/index.php">Home</a>
 		<a href="viewOwnBooking.php">Booked Rooms</a>
-		<a href="">Help</a>
+		<a href="../../ARBIS_Help.html">Help</a>
 	</div>
 
 		<section id="main" class="main container">
