@@ -25,13 +25,18 @@
 
 				<!-- Navigation Menu Icon -->
 				<div class="row">
-					<div id="navIcon">
-						<div id="nav-icon3" onclick="toggleNav()">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
+					<div class="col">
+						<div id="navIcon">
+							<div id="nav-icon3" onclick="toggleNav()">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
 						</div>
+					</div>
+					<div class="col">
+						<input type="button" value="Logout" class="logout"/>
 					</div>
 				</div>
 				<!-- Row 1 -->

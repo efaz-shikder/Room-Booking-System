@@ -680,3 +680,34 @@ button {
 .spin.done span:last-child {
   opacity: 1;
 }
+/** logout button **/
+.logout {
+	border: 2px solid red;
+  background: black;
+  width: 100px;
+  cursor:pointer;
+  border-radius:50px;
+  padding:10px 105px 10px 0;
+  color:red;
+	font-size: 16px;
+  text-align:center;
+  text-indent:40px;
+  display:flex;
+	float: right;
+
+  /* Animations: */
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .4s;
+  -webkit-transition-property: all;
+
+  -moz-transition-timing-function: ease-in-out;
+  -moz-transition-duration: .4s;
+  -moz-transition-property: all;
+}
+
+.logout:hover {
+  background: red;
+	color: white;
+  background-position: 65px 5px;
+  text-indent: 10px;
+}

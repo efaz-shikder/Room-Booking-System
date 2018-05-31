@@ -521,29 +521,29 @@ $("button").click(function () {
 });
 
 /** period buttons **/
-$('#a').click(function(){
-	$("#a").removeClass("btn-animate").addClass("btn-clicked");
-	$("#b").removeClass("btn-clicked").addClass("btn-animate");
-	$("#c").removeClass("btn-clicked").addClass("btn-animate");
-	$("#d").removeClass("btn-clicked").addClass("btn-animate");
+$('#A').click(function(){
+	$("#A").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
 })
-$('#b').click(function(){
-	$("#b").removeClass("btn-animate").addClass("btn-clicked");
-	$("#a").removeClass("btn-clicked").addClass("btn-animate");
-	$("#c").removeClass("btn-clicked").addClass("btn-animate");
-	$("#d").removeClass("btn-clicked").addClass("btn-animate");
+$('#B').click(function(){
+	$("#B").removeClass("btn-animate").addClass("btn-clicked");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
 })
-$('#c').click(function(){
-	$("#c").removeClass("btn-animate").addClass("btn-clicked");
-	$("#b").removeClass("btn-clicked").addClass("btn-animate");
-	$("#a").removeClass("btn-clicked").addClass("btn-animate");
-	$("#d").removeClass("btn-clicked").addClass("btn-animate");
+$('#C').click(function(){
+	$("#C").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		$("#D").removeClass("btn-clicked").addClass("btn-animate");
 })
-$('#d').click(function(){
-	$("#d").removeClass("btn-animate").addClass("btn-clicked");
-	$("#b").removeClass("btn-clicked").addClass("btn-animate");
-	$("#c").removeClass("btn-clicked").addClass("btn-animate");
-	$("#a").removeClass("btn-clicked").addClass("btn-animate");
+$('#D').click(function(){
+	$("#D").removeClass("btn-animate").addClass("btn-clicked");
+		$("#B").removeClass("btn-clicked").addClass("btn-animate");
+		$("#C").removeClass("btn-clicked").addClass("btn-animate");
+		$("#A").removeClass("btn-clicked").addClass("btn-animate");
 })
 
 
@@ -584,25 +584,25 @@ function bookAJAX(date, id, block)
 	var period = JSON.stringify(block);
 	period = period.substring(3,4);
 
-	
 
-	if (confirm('Are you sure you want to create booking?')) {
+
+			if (confirm('Are you sure you want to create booking?')) {
 
 		$.ajax({
 
-			type: 'post',
-			url: '../assets/php/addBooking.php',
-			data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-			success:function(data){
-				
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
+
 						// window.location.assign("../assets/php/addBooking.php")
 						console.log(data);
 						window.location.assign("../assets/php/viewOwnBooking.php");
 
 					}
-				}); 
+				});
 
 
-	} 
+			}
 
-}
+		}
