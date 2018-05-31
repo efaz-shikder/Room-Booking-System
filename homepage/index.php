@@ -98,7 +98,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="bookAJAX('.$classID.');">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 										?>
@@ -114,7 +114,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -131,7 +131,7 @@
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".'>'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -176,7 +176,7 @@
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway=''";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Front Foyer'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -270,10 +270,10 @@
 						<div class="row">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="center periodButtons">
-									<button class="btn-animate">A</button>
-									<button class="btn-animate">B</button>
-									<button class="btn-animate">C</button>
-									<button class="btn-animate">D</button>
+									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
+									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
+									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
+									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
 								</div>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -281,6 +281,11 @@
 								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 							</div>
 						</div>
+					</div>
+
+					<!-- Button to book -->
+					<div>
+						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
 					</div>
 					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
 						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">

@@ -1,3 +1,4 @@
+var dateFinal;
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -260,8 +261,8 @@ dateClicked: function () {
 					shortenedMonth = "12";
 					break;
 				}
-				simplifiedDate = simplifiedDate.substr(7) + " - " + shortenedMonth + " - " + simplifiedDate.substr(4,3)
-				var dateFinal = simplifiedDate;
+				simplifiedDate = simplifiedDate.substr(7) + "-" + shortenedMonth + "-" + simplifiedDate.substr(4,3)
+				dateFinal = simplifiedDate;
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
 				_this.removeActiveClass()
@@ -415,13 +416,13 @@ function toggleRoomsOff()
 	for (var i = 0; i < roomsArray.length; i++)
 	{
 
-			if($(roomsArray[i]).is(':visible'))
-			{
-				$(roomsArray[i]).toggle();
-				var n = hallwayArray[i];
-				n = "." + n.substring(1);
-				$(n).removeClass("current");
-			}
+		if($(roomsArray[i]).is(':visible'))
+		{
+			$(roomsArray[i]).toggle();
+			var n = hallwayArray[i];
+			n = "." + n.substring(1);
+			$(n).removeClass("current");
+		}
 	}
 }
 
@@ -492,60 +493,74 @@ $(hallwayArray[9]).click(function(){
 
 /** hallway grid **/
 $(document).ready(function() {
-    var numitems =  $("#gridHallways li").length;
+	var numitems =  $("#gridHallways li").length;
 
-    $("ul#gridHallways").css("column-count", numitems / 2);
+	$("ul#gridHallways").css("column-count", numitems / 2);
 });
 
 /** rooms grid **/
 $(document).ready(function() {
-    var numitems =  $(".gridRooms1 li").length;
+	var numitems =  $(".gridRooms1 li").length;
 
-    $("ul.gridRooms1").css("column-count", numitems / 7);
+	$("ul.gridRooms1").css("column-count", numitems / 7);
 });
 
-/* Delet Booking Ajax to pass variables */
-function passBooking(element)
+var period;
+var classID;
+
+function setClassID(id)
 {
-	var id = element.id;
-
-	$.ajax({
-			type: "POST",
-			url: '../assets/php/viewRooms.php',
-			data: 'hallway=' + id,
-
-			success: function(data){
-				$('rooms').php(data);
-
-			}
-		});
+	classID = JSON.stringify(id);
 }
 
-function getClassID(id)
+function setPeriod(element)
 {
-	var classID = JSON.stringify(id);
+	period = JSON.stringify(element.id);
+}
+
+function getClassID()
+{
+	return classID;
+}
+
+function getPeriod()
+{
+	return period;
+}
+
+function getDate()
+{
+	return dateFinal;
 }
 
 
-
-function bookAjax()
+function bookAJAX(date, id, block)
 		{
-			var dateOfBooking = JSON.stringify(dateFinal);
-			var classID = JSON.stringify(classID);
-			var period = JSON.stringify(period);
 
-			if (confirm('Are you sure you want to create booking')) {
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(id);
+			var period = JSON.stringify(block);
+			period = period.substring(3,4);
+
+			
+
+			if (confirm('Are you sure you want to create booking?')) {
 
 				$.ajax({
 
 					type: 'post',
 					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: date, classID: classID, period: period},
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
 					success:function(data){
-						window.location.assign("../assets/php/viewOwnBookings.php")
+						
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/viewOwnBooking.php");
 
 					}
-				});
-			}
+				}); 
+
+
+			} 
 
 		}
