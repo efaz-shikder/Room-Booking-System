@@ -30,6 +30,7 @@ include_once("connect.php");
 
 					<!--  Navigation Menu Icon -->
 					<div class="row">
+						<div class="col">
 						<div id="center navIcon">
 							<div id="nav-icon3" onclick="toggleNav()">
 								<span></span>
@@ -38,6 +39,7 @@ include_once("connect.php");
 								<span></span>
 							</div>
 						</div>
+					</div>
 					</div>
 					<!-- bookings table -->
 					<div class="row">

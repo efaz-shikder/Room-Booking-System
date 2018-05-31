@@ -1,4 +1,5 @@
 var dateFinal;
+
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -517,7 +518,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$("ul.gridRooms5").css("column-count", 2);
+	$("ul.gridRooms5").css("column-count", 1);
 });
 
 $(document).ready(function() {
@@ -537,7 +538,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$("ul.gridRooms10").css("column-count", 2);
+	$("ul.gridRooms10").css("column-count", 3);
 });
 
 /** submit button **/
@@ -553,33 +554,54 @@ $("button").click(function () {
 	}, 2200);
 }
 });
-
+var isClicked = false;
 /** period buttons **/
 $('#A').click(function(){
 	$("#A").removeClass("btn-animate").addClass("btn-clicked");
 		$("#B").removeClass("btn-clicked").addClass("btn-animate");
 		$("#C").removeClass("btn-clicked").addClass("btn-animate");
 		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
 })
 $('#B').click(function(){
 	$("#B").removeClass("btn-animate").addClass("btn-clicked");
 		$("#A").removeClass("btn-clicked").addClass("btn-animate");
 		$("#C").removeClass("btn-clicked").addClass("btn-animate");
 		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
 })
 $('#C').click(function(){
 	$("#C").removeClass("btn-animate").addClass("btn-clicked");
 		$("#B").removeClass("btn-clicked").addClass("btn-animate");
 		$("#A").removeClass("btn-clicked").addClass("btn-animate");
 		$("#D").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
 })
 $('#D').click(function(){
 	$("#D").removeClass("btn-animate").addClass("btn-clicked");
 		$("#B").removeClass("btn-clicked").addClass("btn-animate");
 		$("#C").removeClass("btn-clicked").addClass("btn-animate");
 		$("#A").removeClass("btn-clicked").addClass("btn-animate");
+		isClicked = true;
 })
 
+/** yeet **/
+var repeater;
+
+function doWork() {
+ $('#more').load('exp1.php');
+ repeater = setTimeout(doWork, 1000);
+ if ( (dateFinal == null) && !(isClicked) ) {
+	 document.getElementById('gridHallways').setAttribute("style", "pointer-events: none;");
+ }
+ else if ( !(dateFinal == null) || (isClicked) ) {
+	 document.getElementById('gridHallways').setAttribute("style", "pointer-events: none;");
+ }
+}
+
+doWork();
+
+/** yeet **/
 
 var period;
 var classID;

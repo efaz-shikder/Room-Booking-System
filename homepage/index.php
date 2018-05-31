@@ -173,7 +173,6 @@
 											echo '<a href='."#".' onclick="setClassID('.$classID.');">'.$roomName.'</a>';
 											echo '</li>';
 										}
-
 										?>
 									</ul>
 									<ul id="rooms6" class="gridRooms6">
@@ -299,7 +298,7 @@
 						</div>
 					</div>
 
-					<!-- Button to book 
+					<!-- Button to book
 					<div>
 						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
 					</div> -->
