@@ -589,8 +589,40 @@ $('#D').click(function(){
 var repeater;
 var areHallwaysAvailable = false;
 
-function setHallwaysAvailable() {
+function setHallwaysAvailable(name) {
 	areHallwaysAvailable = true;
+	switch (name) {
+		case 1:
+			document.getElementById("rooms").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 2:
+			document.getElementById("rooms2").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 3:
+			document.getElementById("rooms3").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 4:
+			document.getElementById("rooms4").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 5:
+			document.getElementById("rooms5").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 6:
+			document.getElementById("rooms6").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 7:
+			document.getElementById("rooms7").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 8:
+			document.getElementById("rooms8").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 9:
+			document.getElementById("rooms9").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+		case 10:
+			document.getElementById("rooms10").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+			break;
+	}
 }
 
 function doWork() {
