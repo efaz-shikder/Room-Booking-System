@@ -413,7 +413,7 @@ function clickGeographyHallway()
 }
 
 /** Show/Hide Toggles for room menu **/
-var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
+var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "#gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
 var roomsArray = ["#rooms", "#rooms2", "#rooms3", "#rooms4", "#rooms5", "#rooms6", "#rooms7", "#rooms8", "#rooms9", "#room10"];
 
 function toggleRoomsOff()
