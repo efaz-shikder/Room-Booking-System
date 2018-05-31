@@ -199,19 +199,19 @@ createDay: function (num, day, year) {
 	}
 
 	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
-				|| (this.date.getDay() === 6) || (this.date.getDay() === 0) ) {
+		|| (this.date.getDay() === 6) || (this.date.getDay() === 0) ) {
 		newDay.classList.add('cal__date--disabled')
-	} else {
-		newDay.classList.add('cal__date--active')
-		newDay.setAttribute('data-calendar-status', 'active')
-	}
+} else {
+	newDay.classList.add('cal__date--active')
+	newDay.setAttribute('data-calendar-status', 'active')
+}
 
-	if (this.date.toString() === this.todaysDate.toString()) {
-		newDay.classList.add('cal__date--today')
-	}
+if (this.date.toString() === this.todaysDate.toString()) {
+	newDay.classList.add('cal__date--today')
+}
 
-	newDay.appendChild(dateEl)
-	this.month.appendChild(newDay)
+newDay.appendChild(dateEl)
+this.month.appendChild(newDay)
 },
 
 dateClicked: function () {
@@ -508,46 +508,45 @@ $(document).ready(function() {
 
 /** submit button **/
 $("button").click(function () {
-  var target = $(this);
-  if (target.hasClass("done")) {
+	var target = $(this);
+	if (target.hasClass("done")) {
     // Do nothing
-  } else {
-    target.addClass("processing");
-    setTimeout(function () {
-      target.removeClass("processing");
-      target.addClass("done");
-    }, 2200);
-  }
+} else {
+	target.addClass("processing");
+	setTimeout(function () {
+		target.removeClass("processing");
+		target.addClass("done");
+	}, 2200);
+}
 });
 
 /** period buttons **/
 $('#a').click(function(){
 	$("#a").removeClass("btn-animate").addClass("btn-clicked");
-		$("#b").removeClass("btn-clicked").addClass("btn-animate");
-		$("#c").removeClass("btn-clicked").addClass("btn-animate");
-		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+	$("#b").removeClass("btn-clicked").addClass("btn-animate");
+	$("#c").removeClass("btn-clicked").addClass("btn-animate");
+	$("#d").removeClass("btn-clicked").addClass("btn-animate");
 })
 $('#b').click(function(){
 	$("#b").removeClass("btn-animate").addClass("btn-clicked");
-		$("#a").removeClass("btn-clicked").addClass("btn-animate");
-		$("#c").removeClass("btn-clicked").addClass("btn-animate");
-		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+	$("#a").removeClass("btn-clicked").addClass("btn-animate");
+	$("#c").removeClass("btn-clicked").addClass("btn-animate");
+	$("#d").removeClass("btn-clicked").addClass("btn-animate");
 })
 $('#c').click(function(){
 	$("#c").removeClass("btn-animate").addClass("btn-clicked");
-		$("#b").removeClass("btn-clicked").addClass("btn-animate");
-		$("#a").removeClass("btn-clicked").addClass("btn-animate");
-		$("#d").removeClass("btn-clicked").addClass("btn-animate");
+	$("#b").removeClass("btn-clicked").addClass("btn-animate");
+	$("#a").removeClass("btn-clicked").addClass("btn-animate");
+	$("#d").removeClass("btn-clicked").addClass("btn-animate");
 })
 $('#d').click(function(){
 	$("#d").removeClass("btn-animate").addClass("btn-clicked");
-		$("#b").removeClass("btn-clicked").addClass("btn-animate");
-		$("#c").removeClass("btn-clicked").addClass("btn-animate");
-		$("#a").removeClass("btn-clicked").addClass("btn-animate");
+	$("#b").removeClass("btn-clicked").addClass("btn-animate");
+	$("#c").removeClass("btn-clicked").addClass("btn-animate");
+	$("#a").removeClass("btn-clicked").addClass("btn-animate");
 })
 
-/* Delet Booking Ajax to pass variables */
-function passBooking(element)
+
 var period;
 var classID;
 
@@ -578,24 +577,24 @@ function getDate()
 
 
 function bookAJAX(date, id, block)
-		{
+{
 
-			var dateOfBooking = JSON.stringify(date);
-			var classID = JSON.stringify(id);
-			var period = JSON.stringify(block);
-			period = period.substring(3,4);
+	var dateOfBooking = JSON.stringify(date);
+	var classID = JSON.stringify(id);
+	var period = JSON.stringify(block);
+	period = period.substring(3,4);
 
-			
+	
 
-			if (confirm('Are you sure you want to create booking?')) {
+	if (confirm('Are you sure you want to create booking?')) {
 
-				$.ajax({
+		$.ajax({
 
-					type: 'post',
-					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-					success:function(data){
-						
+			type: 'post',
+			url: '../assets/php/addBooking.php',
+			data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+			success:function(data){
+				
 						// window.location.assign("../assets/php/addBooking.php")
 						console.log(data);
 						window.location.assign("../assets/php/viewOwnBooking.php");
@@ -604,6 +603,6 @@ function bookAJAX(date, id, block)
 				}); 
 
 
-			} 
+	} 
 
-		}
+}
