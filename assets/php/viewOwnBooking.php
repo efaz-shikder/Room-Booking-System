@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -18,21 +18,19 @@ include_once("connect.php");
 <body>
 
 	<!-- Navigation Menu -->
-	<div class="menunav">
-		<div id="ArbisNav" class="sidenav">
-			<a href="../../homepage/index.php">Home</a>
-			<a href="viewOwnBooking.php">Booked Rooms</a>
-			<a href="">Help</a>
-		</div>
+	<div id="ArbisNav" class="sidenav">
+		<a href="../../homepage/index.php">Home</a>
+		<a href="viewOwnBooking.php">Booked Rooms</a>
+		<a href="">Help</a>
+	</div>
 
-		<section id="main" class="main" style="padding: 20px;">
+		<section id="main" class="main container">
 
-			<div class="jumbotron vertical-center">
-				<div class="container-fluid">
+			<div class="container-fluid bookings">
 
 					<!--  Navigation Menu Icon -->
 					<div class="row">
-						<div id="navIcon">
+						<div id="center navIcon">
 							<div id="nav-icon3" onclick="toggleNav()">
 								<span></span>
 								<span></span>
@@ -41,65 +39,62 @@ include_once("connect.php");
 							</div>
 						</div>
 					</div>
+					<!-- bookings table -->
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<table id="bookings">
+							<thead>
+								<th>Date</th>
+								<th>Room Number</th>
+								<th>Period</th>
+								<th> Cancel</th>
+							</thead>>
 
-					<table id="bookings">
-						<thead>
-							<th>Date</th>
-							<th>Room Number</th>
-							<th>Period</th>
-							<th> Cancel</th>
-						</thead>>
+							<?php
 
-						<?php
+							$currentTeacherID = $_SESSION['email'];
+							$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ;
 
-						$currentTeacherID = $_SESSION['email']; 
-						$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
-
-						$result = mysqli_query($server, $query);
-						while($row = mysqli_fetch_array($result))
-						{   //Creates a loop to loop through results
-
-
-							$dateOfBooking = $row['dateOfBooking'];
-							$period = $row['period'];
-							$classID = $row['classID'];
-
-							$sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
-							$resultClassroom =  mysqli_query($server, $sql);
-							$resultName = mysqli_fetch_array($resultClassroom);
-
-							$roomName = $resultName['roomName'];
-
-							?>
-
-							<tbody>
-								<tr id="delete<?php echo $dateOfBooking; echo "$classID"; echo "$period"; ?>">
-									<td><?php echo $dateOfBooking ?></td> 
-									<td><?php echo $roomName ?></td> 
-									<td><?php echo $period ?></td> 
-									<td >
-										
-										<button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
-									</td>
-								</tr>
-							</tbody>
-						<?php } ?>
-					</table>
-
-				</div>
+							$result = mysqli_query($server, $query);
+							while($row = mysqli_fetch_array($result))
+							{   //Creates a loop to loop through results
 
 
-				
+								$dateOfBooking = $row['dateOfBooking'];
+								$period = $row['period'];
+								$classID = $row['classID'];
+
+								$sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
+								$resultClassroom =  mysqli_query($server, $sql);
+								$resultName = mysqli_fetch_array($resultClassroom);
+
+								$roomName = $resultName['roomName'];
+
+								?>
+
+								<tbody>
+									<tr id="delete<?php echo $dateOfBooking; echo "$classID"; echo "$period"; ?>">
+										<td><?php echo $dateOfBooking ?></td>
+										<td><?php echo $roomName ?></td>
+										<td><?php echo $period ?></td>
+										<td >
+
+											<button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
+										</td>
+									</tr>
+								</tbody>
+							<?php } ?>
+						</table>
+						</div>
+					</div>
 
 			</div>
-		</section>
-	</div>
 
+		</section>
 
 
 	<script src="../javascript/jquery.min.js"></script>
 	<script src="../javascript/script.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
 
 		function deleteAjax(date, room, periods)
@@ -116,7 +111,7 @@ include_once("connect.php");
 					url: 'removeBooking.php',
 					data: {dateOfBooking: date, classID: classID, period: period},
 					success:function(data){
-						$('#delete'+date+room+periods).hide('slow'); 
+						$('#delete'+date+room+periods).hide('slow');
 
 					}
 				});
@@ -155,8 +150,8 @@ function viewOwnBooking()
 	include_once("connect.php");
 
 
-	$currentTeacherID = $_SESSION['email']; 
-	$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ; 
+	$currentTeacherID = $_SESSION['email'];
+	$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ;
 
 	$result = mysqli_query($server, $query);
 
@@ -177,22 +172,22 @@ function viewOwnBooking()
 	$roomName = $resultName['roomName'];
 
 	$currentDate = date("d.m.Y");
-	
 
 
 
-	$cancelEditButton = '<input type="submit" name="submit" class="submit" value="Cancel"> 
+
+	$cancelEditButton = '<input type="submit" name="submit" class="submit" value="Cancel">
 
 	<input type="submit" value="Edit" onclick="alert('.'You clicked the button!'.')">';
 
 
 	if (strtotime($dateOfBooking) < strtotime($currentDate))
 	{
-		$cancelEditButton = "Unable to Cancel or Edit this Booking.";	
+		$cancelEditButton = "Unable to Cancel or Edit this Booking.";
 	}
 
 	echo "<tr><td>" . $dateOfBooking . "</td><td>" . $roomName . "</td>
-	<td>" . $row['period'] . "</td><td>" . $cancelEditButton . "</td></tr>"; 
+	<td>" . $row['period'] . "</td><td>" . $cancelEditButton . "</td></tr>";
 }
 
 // Wrap up and close connection

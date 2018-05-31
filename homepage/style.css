@@ -513,6 +513,7 @@ html {
 	justify-content: center;
 	padding-top: 15px;
 }
+
 .btn-animate {
 	margin: 5px;
   color: #000;
@@ -572,4 +573,110 @@ html {
   -webkit-transform: translateY(4px) translateZ(0);
           transform: translateY(4px) translateZ(0);
   box-shadow: 0px 8px 10px -6px #003f77;
+}
+.btn-clicked {
+	margin: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background: #0080ee;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 1;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+/** submit button **/
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(720deg);
+  }
+}
+.submitButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 14px;
+}
+button {
+  position: relative;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.spin {
+  border: 2px solid #1ecd97;
+  color: #1ecd97;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+.spin span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease-in-out;
+}
+.spin span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.spin svg {
+  height: 30px;
+  fill: #1ecd97;
+}
+.spin:hover {
+  background-color: #1ecd97;
+  color: #fff;
+}
+.spin.done, .spin.processing {
+  pointer-events: none;
+  cursor: default;
+}
+.spin.processing {
+  width: 50px;
+  border-width: 4px;
+  border-right-color: #bbb;
+  border-bottom-color: #bbb;
+  animation: spin;
+  animation-delay: 200ms;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.spin.processing:hover {
+  background-color: transparent;
+}
+.spin.processing span:first-child {
+  opacity: 0;
+}
+.spin.done:hover {
+  background-color: transparent;
+}
+.spin.done span:first-child {
+  opacity: 0;
+}
+.spin.done span:last-child {
+  opacity: 1;
 }
