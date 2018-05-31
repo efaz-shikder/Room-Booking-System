@@ -13,7 +13,7 @@
 	$sql4 = "DROP TABLE teacher";
 	mysqli_query($server, $sql4);
 	
-	$sql4 = "DROP TABLE schedule";
+	$sql5 = "DROP TABLE schedule";
 	mysqli_query($server, $sql5);
 
 	$sql6 = "SET FOREIGN_KEY_CHECKS=1";
