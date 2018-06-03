@@ -83,7 +83,6 @@ $teacherEmail = $_SESSION['email'];
                     <td><?php echo $roomName ?></td>
                     <td><?php echo $period ?></td>
                     <td >
- 
                       <button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
                     </td>
                   </tr>

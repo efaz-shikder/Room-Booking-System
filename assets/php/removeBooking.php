@@ -17,26 +17,4 @@ $sql = "DELETE FROM `booking` WHERE booking.classID = '$classID' AND booking.dat
 echo "$sql";
 mysqli_query($server, $sql);
 
-	/*
-
-	echo $classID;
-	echo $teacherEmail;
-
-	if ($_SESSION['accessLevel'] == ADMIN)
-	{
-		// Wrap up and close connection
-		mysqli_close($server);
-
-		// Redirect to all bookings if user is admin
-		header("Location: viewBooking.php");
-	}
-	else
-	{
-		// Wrap up and close connection
-		mysqli_close($server);
-
-		// Redirect to own booking if user is not admin
-		header("Location: viewOwnBooking.php");
-	} */
-
-	?>
+?>
