@@ -11,7 +11,7 @@
 
         password VARCHAR(50) NOT NULL,
 
-        accessLevel ENUM('0', '1') NOT NULL
+        accessLevel ENUM('0', '1', '2') NOT NULL
     	)";
 
     $sql2 = "CREATE TABLE classroom(

@@ -55,6 +55,40 @@ $teacherEmail = $_SESSION['email'];
 					<th> Teacher</th>
 				</thead>
 				<?php
+ 
+              $currentTeacherID = $_SESSION['email'];
+              $query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' " ;
+ 
+              $result = mysqli_query($server, $query);
+              while($row = mysqli_fetch_array($result))
+              {   //Creates a loop to loop through results
+ 
+ 
+                $dateOfBooking = $row['dateOfBooking'];
+                $period = $row['period'];
+                $classID = $row['classID'];
+ 
+                $sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
+                $resultClassroom =  mysqli_query($server, $sql);
+                $resultName = mysqli_fetch_array($resultClassroom);
+ 
+                $roomName = $resultName['roomName'];
+ 
+                ?>
+ 
+                <tbody>
+                  <tr id="delete<?php echo $dateOfBooking; echo "$classID"; echo "$period"; ?>">
+                    <td><?php echo $dateOfBooking ?></td>
+                    <td><?php echo $roomName ?></td>
+                    <td><?php echo $period ?></td>
+                    <td >
+                      <button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
+                    </td>
+                  </tr>
+                </tbody>
+              <?php } ?>
+			</table> 
+		</section>
 
 				$currentTeacherID = $_SESSION['email'];
 				$query = "SELECT * FROM booking" ;
@@ -134,45 +168,6 @@ $teacherEmail = $_SESSION['email'];
   		if (confirm('Are you sure you want to delete booking')) {
 
   			$.ajax({
-
-  				type: 'post',
-  				url: 'removeBooking.php',
-  				data: {dateOfBooking: date, classID: classID, period: period},
-  				success:function(data){
-  					$('#delete'+date+room+periods).hide('slow');
-
-  				}
-  			});
-  		}
-
-  	}
-
-  	/** Navigation Icon **/
-  	var action = 1;
-
-  	function toggleNav() {
-  		if ( action == 1 ) {
-  			document.getElementById("ArbisNav").style.width = "250px";
-  			document.getElementById("main").style.marginLeft = "250px";
-  			action = 2;
-  		}
-  		else {
-  			document.getElementById("ArbisNav").style.width = "0";
-  			document.getElementById("main").style.marginLeft = "0px";
-  			action = 1;
-  		}
-  		$("#mainContent").toggle();
-  	}
-  </script>
-
-</body>
-
-</html>
-</div>
-
-<?php
-
-
 
 // Wrap up and close connection
 mysqli_close($server);
