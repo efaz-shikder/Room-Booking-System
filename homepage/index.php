@@ -11,7 +11,7 @@ session_start();
 
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="homepageStyle.css">
 
 </head>
 
@@ -72,7 +72,7 @@ session_start();
 						</div>
 					</div>
 					<!-- hallways and rooms -->
-					<div class="col-xl-8 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					<div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9">
 						<div class="row">
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
