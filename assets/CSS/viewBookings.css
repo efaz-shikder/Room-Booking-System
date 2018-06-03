@@ -116,17 +116,37 @@ body
   transition: .25s ease-in-out;
 }
 
-td
-{
-
+/* View Bookings */
+ 
+#bookings {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
-
-th
-{
-	
+ 
+#bookings td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-#bookings
-{
-	margin-top: 10px;
-	width: 100%;	
+ 
+#bookings tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+ 
+#bookings tr:nth-child(odd){
+  background-color: #ddd;
+}
+ 
+#bookings tr:hover {
+  background-color: #5292b2;
+}
+ 
+#bookings th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1babcf;
+    color: white;
 }
