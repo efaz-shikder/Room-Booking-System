@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -85,7 +85,7 @@ session_start();
 									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Front Foyer</a></li>
 									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Music Hallway</a></li>
 									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Math Hallway</a></li>
-									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"<a href="#">Science Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Science Hallway</a></li>
 									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
@@ -935,7 +935,7 @@ session_start();
 	</section>
 
 	<script src="jquery.min.js"></script>
-	<script src="script.js"></script>
+	<script src="homepageScript.js"></script>
 </body>
 
 </html>
