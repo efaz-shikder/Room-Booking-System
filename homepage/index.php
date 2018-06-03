@@ -456,13 +456,11 @@ session_start();
 							class="Gym Hallway"
 							d="M 388.80255,54.905418 H 537.18018 V 176.68526 H 388.80255 Z"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							onClick="parent.open('https://www.google.com/')"
 							/>
 							<path id="Girl's Single Gym"
 							class="Gym Hallway"
 							d="m 542.02478,55.095406 h 74.28381 V 175.54536 h -74.28381 z"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							onClick="parent.open('https://www.google.com/')"
 							/>
 							<path id="Change Room"
 							class="Gym Hallway"
