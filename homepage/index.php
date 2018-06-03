@@ -20,7 +20,8 @@ session_start();
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
 		<a href="index.php">Home</a>
-		<a href="../assets/php/viewOwnBooking.php">Booked Rooms</a>
+		<a href="../assets/php/viewOwnBooking.php">Own Booked Rooms</a>
+		<a href="../assets/php/viewBooking.php">Own Booked Rooms</a>
 		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 

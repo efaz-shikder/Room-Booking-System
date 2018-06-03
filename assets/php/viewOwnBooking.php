@@ -20,9 +20,11 @@ $teacherEmail = $_SESSION['email'];
 <body>
 
 	<!-- Navigation Menu -->
+	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
 		<a href="../../homepage/index.php">Home</a>
-		<a href="viewOwnBooking.php">Booked Rooms</a>
+		<a href="viewOwnBooking.php">Own Booked Rooms</a>
+		<a href="viewBooking.php">All Booked Rooms </a>
 		<a href="../../ARBIS_Help.html">Help</a>
 	</div>
 
