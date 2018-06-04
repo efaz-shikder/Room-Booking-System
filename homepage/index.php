@@ -28,7 +28,7 @@ session_start();
 	<section id="main" class="main">
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
-			<div class="container-fluid">
+			<div class="container">
 
 				<!-- Navigation Menu Icon -->
 				<div class="row">
@@ -49,30 +49,43 @@ session_start();
 				<!-- Row 1 -->
 				<div class="row">
 					<!-- calender -->
-					<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
-						<!-- calendar -->
-						<div class="calendar_container">
-							<!-- Date Picked Display -->
-							<p class="demo-picked">
-								Date picked: <span data-calendar-label="picked"></span>
-							</p>
+					<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="row">
+							<!-- calendar -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="calendar_container">
+									<!-- Date Picked Display -->
+									<p class="demo-picked">
+										Date picked: <span data-calendar-label="picked"></span>
+									</p>
 
-							<div class="cal">
-								<div class="cal__header">
-									<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
-									<div class="cal__header__label" data-calendar-label="month">
+									<div class="cal">
+										<div class="cal__header">
+											<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
+											<div class="cal__header__label" data-calendar-label="month">
 
-									</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+											</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+										</div>
+										<div class="cal__week">
+											<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+										</div>
+										<div class="cal__body" data-calendar-area="month"></div>
+									</div>
 								</div>
-								<div class="cal__week">
-									<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+							</div>
+							<!-- period buttons -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="center periodButtons">
+									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
+									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
+									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
+									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
 								</div>
-								<div class="cal__body" data-calendar-area="month"></div>
 							</div>
 						</div>
 					</div>
 					<!-- hallways and rooms -->
-					<div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9">
+					<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
@@ -272,32 +285,18 @@ session_start();
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
-					<!-- map -->
-					<div class="col-xl-4 col-lg-4">
-						<div class="row">
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="center periodButtons">
-									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
-									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
-									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
-									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
-								</div>
-							</div>
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
-										<span>Submit</span>
-										<span>
-											<svg viewBox="0 0 24 24">
-												<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-											</svg>
-										</span>
-									</button>
-								</div>
-							</div>
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<!-- map info display -->
-								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+					<!-- submit button -->
+					<div class="col-xl-12 col-lg-12">
+						<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="submitButton">
+								<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+									<span>Submit</span>
+									<span>
+										<svg viewBox="0 0 24 24">
+											<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+										</svg>
+									</span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -306,8 +305,16 @@ session_start();
 					<div>
 						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
 					</div> -->
-					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
-						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
+				</div>
+				<!-- row 3 -->
+				<div class="row">
+					<!-- map info display -->
+					<div class="col-xl-4 col-lg-12 d-none d-lg-block">
+						<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+					</div>
+					<!-- map -->
+					<div class="col-xl-8 col-lg-12 d-none d-lg-block">
+						<svg class="center" style="width: 82%;" version="1.1" viewBox="0 0 1925.4308 714.88776">
 
 							<!--English Hallway -->
 							<path id="Day Care Office"

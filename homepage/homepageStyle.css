@@ -137,9 +137,7 @@ path
 
 #placeholderParagraph
 {
-	display: table-cell;
-	vertical-align: bottom;
-	margin-left: 50px;
+	text-align: center;
   font-size: 2em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
@@ -418,6 +416,9 @@ html {
 
 /** yeet **/
 .hallways {
+	border-left: 5px solid #008aee;
+	border-right: 5px solid #008aee;
+	border-radius: 8%;
 	margin-top: 30px;
 	padding: 0;
   font-family: 'Raleway', Arial, sans-serif;
@@ -442,7 +443,7 @@ html {
 }
 
 .hallways a {
-  padding: 0.3em;
+  padding: 0.8em;
   display: inline-block;
   color: white;
   position: relative;
@@ -481,13 +482,14 @@ html {
 /** yeeet **/
 .roomsContainer ul li {
 	font-size: 13px;
+	padding: 0;
 }
 
 #rooms, #rooms2, #rooms3, #rooms4, #rooms5, #rooms6, #rooms7, #rooms8, #rooms9, #rooms10 {
-	width: 92%;
+	vertical-align: center;
+	width: 100%;
 	list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding: 5px;
   background-color: #f1f1f1;
 	display: none;
 }
@@ -495,7 +497,7 @@ html {
 #rooms li a, #rooms2 li a, #rooms3 li a, #rooms4 li a, #rooms5 li a, #rooms6 li a, #rooms7 li a, #rooms8 li a, #rooms9 li a, #rooms10 li a {
 	display: block;
   color: #000;
-  padding: 8px 16px;
+  padding-top: 20px;
   text-decoration: none;
 }
 
@@ -599,14 +601,6 @@ html {
 }
 
 /** submit button **/
-@keyframes spin {
-  0% {
-    transform: rotateZ(0);
-  }
-  100% {
-    transform: rotateZ(720deg);
-  }
-}
 .submitButton {
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -641,12 +635,7 @@ button {
   height: 100%;
   transition: opacity 200ms ease-in-out;
 }
-.spin span:last-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
+
 .spin svg {
   height: 30px;
   fill: #1ecd97;
@@ -655,36 +644,7 @@ button {
   background-color: #1ecd97;
   color: #fff;
 }
-.spin.done, .spin.processing {
-  pointer-events: none;
-  cursor: default;
-}
-.spin.processing {
-  width: 50px;
-  border-width: 4px;
-  border-right-color: #bbb;
-  border-bottom-color: #bbb;
-  animation: spin;
-  animation-delay: 200ms;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-}
-.spin.processing:hover {
-  background-color: transparent;
-}
-.spin.processing span:first-child {
-  opacity: 0;
-}
-.spin.done:hover {
-  background-color: transparent;
-}
-.spin.done span:first-child {
-  opacity: 0;
-}
-.spin.done span:last-child {
-  opacity: 1;
-}
+
 /** logout button **/
 .logout {
 	border: 2px solid red;

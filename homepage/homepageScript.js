@@ -522,7 +522,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$("ul.gridRooms4").css("column-count", 1);
+	$("ul.gridRooms4").css("column-count", 2);
 });
 
 $(document).ready(function() {
@@ -549,20 +549,6 @@ $(document).ready(function() {
 	$("ul.gridRooms10").css("column-count", 3);
 });
 
-/** submit button **/
-$("button").click(function () {
-	var target = $(this);
-	if (target.hasClass("done")) {
-    // Do nothing
-} else {
-	target.addClass("processing");
-	setTimeout(function () {
-		target.removeClass("processing");
-		target.addClass("done");
-	}, 2200);
-}
-});
-var isClicked = false;
 /** period buttons **/
 $('#A').click(function(){
 	$("#A").removeClass("btn-animate").addClass("btn-clicked");
