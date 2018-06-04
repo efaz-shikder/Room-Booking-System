@@ -130,7 +130,7 @@ $teacherEmail = $_SESSION['email'];
     $.ajax({
 
       type: 'post',
-      url: 'removeBooking.php',
+      url: '../removeBooking.php',
       data: {dateOfBooking: date, classID: classID, period: period},
       success:function(data){
         $('#delete'+date+room+periods).hide('slow');

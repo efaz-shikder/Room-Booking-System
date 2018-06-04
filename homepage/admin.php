@@ -287,7 +287,7 @@ session_start();
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAXAdmin(getDate(), getClassID(), getPeriod());">
 										<span>Submit</span>
 										<span>
 											<svg viewBox="0 0 24 24">
@@ -936,6 +936,39 @@ session_start();
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
+	<script type="text/javascript">
+		function bookAJAXAdmin(date, id, block)
+		{
+
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(id);
+			var period = JSON.stringify(block);
+			period = period.substring(3,4);
+
+
+
+			if (confirm('Are you sure you want to create this booking?')) {
+
+				$.ajax({
+
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/ADMIN/viewOwnBookingAdmin.php");
+
+					}
+				});
+
+
+			}
+
+		}
+		
+	</script>
 </body>
 
 </html>

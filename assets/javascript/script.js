@@ -15,15 +15,3 @@ function toggleNav() {
  $("#mainContent").toggle();
 }
 
-
-function deleteBooking()
-{
-  var bookingTable = document.getElementById("bookings");
-
-  for (var index = 0; cell; cell = table.cells[i]; i++)
-  {
-
-  }
-
-
-}

@@ -266,7 +266,7 @@ createDay: function (num, day, year) {
 	this.activeDates = document.querySelectorAll('[data-calendar-status="active"]')
 
 	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
-		  || (weekend == "Sat") || (weekend == "Sun") ) {
+		|| (weekend == "Sat") || (weekend == "Sun") ) {
 		newDay.classList.add('cal__date--disabled')
 } else {
 	newDay.classList.add('cal__date--active')
@@ -552,31 +552,31 @@ $(document).ready(function() {
 /** period buttons **/
 $('#A').click(function(){
 	$("#A").removeClass("btn-animate").addClass("btn-clicked");
-		$("#B").removeClass("btn-clicked").addClass("btn-animate");
-		$("#C").removeClass("btn-clicked").addClass("btn-animate");
-		$("#D").removeClass("btn-clicked").addClass("btn-animate");
-		isClicked = true;
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	isClicked = true;
 })
 $('#B').click(function(){
 	$("#B").removeClass("btn-animate").addClass("btn-clicked");
-		$("#A").removeClass("btn-clicked").addClass("btn-animate");
-		$("#C").removeClass("btn-clicked").addClass("btn-animate");
-		$("#D").removeClass("btn-clicked").addClass("btn-animate");
-		isClicked = true;
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	isClicked = true;
 })
 $('#C').click(function(){
 	$("#C").removeClass("btn-animate").addClass("btn-clicked");
-		$("#B").removeClass("btn-clicked").addClass("btn-animate");
-		$("#A").removeClass("btn-clicked").addClass("btn-animate");
-		$("#D").removeClass("btn-clicked").addClass("btn-animate");
-		isClicked = true;
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	isClicked = true;
 })
 $('#D').click(function(){
 	$("#D").removeClass("btn-animate").addClass("btn-clicked");
-		$("#B").removeClass("btn-clicked").addClass("btn-animate");
-		$("#C").removeClass("btn-clicked").addClass("btn-animate");
-		$("#A").removeClass("btn-clicked").addClass("btn-animate");
-		isClicked = true;
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	isClicked = true;
 })
 
 /** disable user from clicking on hallways until condition is met **/
@@ -587,55 +587,55 @@ function setHallwaysAvailable(name) {
 	areHallwaysAvailable = true;
 	switch (name) {
 		case 1:
-			document.getElementById("rooms").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 2:
-			document.getElementById("rooms2").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms2").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 3:
-			document.getElementById("rooms3").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms3").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 4:
-			document.getElementById("rooms4").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms4").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 5:
-			document.getElementById("rooms5").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms5").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 6:
-			document.getElementById("rooms6").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms6").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 7:
-			document.getElementById("rooms7").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms7").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 8:
-			document.getElementById("rooms8").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms8").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 9:
-			document.getElementById("rooms9").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms9").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 		case 10:
-			document.getElementById("rooms10").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
-			break;
+		document.getElementById("rooms10").getElementsByTagName("LI").setAttribute("style", "background-color: #555; color: white");
+		break;
 	}
 }
 
 function doWork() {
- $('#more').load('exp1.php');
- repeater = setTimeout(doWork, 500);
+	$('#more').load('exp1.php');
+	repeater = setTimeout(doWork, 500);
 
- if ( (dateFinal == null) || !(isClicked) ) {
-	 document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
- }
- else if ( !(dateFinal == null) && (isClicked) ) {
-	 document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
- }
- /** disable user from clicking submit until condition is met **/
- if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
- 	document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
- }
- else {
-	 document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
- }
+	if ( (dateFinal == null) || !(isClicked) ) {
+		document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+	}
+	else if ( !(dateFinal == null) && (isClicked) ) {
+		document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
+	}
+	/** disable user from clicking submit until condition is met **/
+	if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
+		document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
+	}
+	else {
+		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+	}
 }
 
 doWork();
@@ -682,14 +682,14 @@ function bookAJAX(date, id, block)
 
 
 
-			if (confirm('Are you sure you want to create this booking?')) {
+	if (confirm('Are you sure you want to create this booking?')) {
 
 		$.ajax({
 
-					type: 'post',
-					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-					success:function(data){
+			type: 'post',
+			url: '../assets/php/addBooking.php',
+			data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+			success:function(data){
 
 						// window.location.assign("../assets/php/addBooking.php")
 						console.log(data);
@@ -699,6 +699,8 @@ function bookAJAX(date, id, block)
 				});
 
 
-			}
+	}
 
-		}
+}
+
+
