@@ -58,139 +58,141 @@ $teacherEmail = $_SESSION['email'];
 					<th>Make Admin</th>
 				</thead>>
 				<?php
- 
-              $currentTeacherID = $_SESSION['email'];
-              $query = "SELECT * FROM teacher" ;
- 
-              $result = mysqli_query($server, $query);
-              while($row = mysqli_fetch_array($result))
+
+				$currentTeacherID = $_SESSION['email'];
+				$query = "SELECT * FROM teacher" ;
+
+				$result = mysqli_query($server, $query);
+				while($row = mysqli_fetch_array($result))
               {   //Creates a loop to loop through results
- 
- 
-                $firstName = $row['first_name'];
-                $lastName = $row['last_name'];
-                $email = $row['email'];
-				
-				switch($row['accessLevel'])
-				{
-					case 0:
-						$currentLevel = "Cannot Book";
-						break;
-					case 1:
-						$currentLevel = "Can Book";
-						break;
-					case 2:
-						$currentLevel = "Administrator";
-						break;
-				}
 
-                ?>
- 
-                <tbody>
-                  <tr>
-                    <td><?php echo $firstName ?></td>
-                    <td><?php echo $lastName ?></td>
-                    <td><?php echo $email ?></td>
-					<td><?php echo $currentLevel ?></td>
-                    <td>
-						<button onclick="changeBookability('<?php echo $email ?>', 1)" class="btn btn-danger">Yes</button>
-						<button onclick="changeBookability('<?php echo $email ?>', 0)" class="btn btn-danger">No</button>
-                    </td>
-					<td>
-						<button onclick="changeBookability('<?php echo $email ?>', 2)" class="btn btn-danger">Yes</button>
-					</td>
-                  </tr>
-                </tbody>
+
+              	$firstName = $row['first_name'];
+              	$lastName = $row['last_name'];
+              	$email = $row['email'];
+
+              	switch($row['accessLevel'])
+              	{
+              		case 0:
+              		$currentLevel = "Cannot Book";
+              		break;
+              		case 1:
+              		$currentLevel = "Can Book";
+              		break;
+              		case 2:
+              		$currentLevel = "Administrator";
+              		break;
+              	}
+
+              	?>
+
+              	<tbody>
+              		<tr>
+              			<td><?php echo $firstName ?></td>
+              			<td><?php echo $lastName ?></td>
+              			<td><?php echo $email ?></td>
+              			<td><?php echo $currentLevel ?></td>
+              			<td>
+              				<button onclick="changeBookability('<?php echo $email ?>', 1)" class="btn btn-danger">Yes</button>
+              				<button onclick="changeBookability('<?php echo $email ?>', 0)" class="btn btn-danger">No</button>
+              			</td>
+              			<td>
+              				<button onclick="changeBookability('<?php echo $email ?>', 2)" class="btn btn-danger">Yes</button>
+              			</td>
+              		</tr>
+              	</tbody>
               <?php } ?>
-			</table> 
-		</section>
+          </table> 
+      </section>
 
 
-		<script src="../javascript/jquery.min.js"></script>
-		<script src="../javascript/script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript">
-			var action = 1;
+      <script src="../javascript/jquery.min.js"></script>
+      <script src="../javascript/script.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript">
+      	var action = 1;
 
-			function toggleNav() {
-				if ( action == 1 ) {
-					document.getElementById("ArbisNav").style.width = "250px";
-					document.getElementById("main").style.marginLeft = "280px";
-					action = 2;
-				}
-				else {
-					document.getElementById("ArbisNav").style.width = "0px";
-					document.getElementById("main").style.marginLeft = "0px";
-					action = 1;
-				}
-				$("#mainContent").toggle();
-			}
-			$(document).ready(function(){
-				$('#nav-icon3').click(function(){
-					$(this).toggleClass('open');
-				});
-			});
+      	function toggleNav() {
+      		if ( action == 1 ) {
+      			document.getElementById("ArbisNav").style.width = "250px";
+      			document.getElementById("main").style.marginLeft = "280px";
+      			action = 2;
+      		}
+      		else {
+      			document.getElementById("ArbisNav").style.width = "0px";
+      			document.getElementById("main").style.marginLeft = "0px";
+      			action = 1;
+      		}
+      		$("#mainContent").toggle();
+      	}
+      	$(document).ready(function(){
+      		$('#nav-icon3').click(function(){
+      			$(this).toggleClass('open');
+      		});
+      	});
 
-		</script>
-		<script type="text/javascript">
-			function changeBookability(teacherEmail, newAccessLevel)
-			{
-				var message = "";
-				var teacherEmail = JSON.stringify(teacherEmail);
+      </script>
+      <script type="text/javascript">
+      	function changeBookability(teacherEmail, newAccessLevel)
+      	{
+      		var message = "";
+      		var teacherEmail = JSON.stringify(teacherEmail);
 
-				switch(newAccessLevel)
-				{
-					case 0:
-						message =  "Are you sure you want to remove this teacher\'s booking ability?";
-						break;
-					case 1: 
-						message = "Are you sure you want to let this teacher book?";
-						break;
-					case 2:
-						message = "Are you sure you want to make this teacher an administrator?";
-						break;
-					
-				}
-				
-				if (confirm(message)) 
-				{
+      		switch(newAccessLevel)
+      		{
+      			case 0:
+      			message =  "Are you sure you want to remove this teacher\'s booking ability?";
+      			break;
+      			case 1: 
+      			message = "Are you sure you want to let this teacher book?";
+      			break;
+      			case 2:
+      			message = "Are you sure you want to make this teacher an administrator?";
+      			break;
 
-					$.ajax({
+      		}
 
-						type: 'post',
-						url: 'changeAccessLevel.php',
-						data: {email: teacherEmail, accessLevel: newAccessLevel},
-						success:function(data){}
-					});
-				}
+      		if (confirm(message)) 
+      		{
+      			$.ajax({
 
-			}
+      				type: 'post',
+      				url: 'changeAccessLevel.php',
+      				data: {teacherEmail: teacherEmail, newAccessLevel: newAccessLevel},
+      				success:function(data){
+      					console.log(data);
+      					window.location.assign("viewTeachers.php");
+      				}
+      			});
+      		}
 
-			/** Navigation Icon **/
-			var action = 1;
+      	}
 
-			function toggleNav() {
-				if ( action == 1 ) {
-					document.getElementById("ArbisNav").style.width = "250px";
-					document.getElementById("main").style.marginLeft = "250px";
-					action = 2;
-				}
-				else {
-					document.getElementById("ArbisNav").style.width = "0";
-					document.getElementById("main").style.marginLeft = "0px";
-					action = 1;
-				}
-				$("#mainContent").toggle();
-			}
-		</script>
+      	/** Navigation Icon **/
+      	var action = 1;
 
-	</body>
+      	function toggleNav() {
+      		if ( action == 1 ) {
+      			document.getElementById("ArbisNav").style.width = "250px";
+      			document.getElementById("main").style.marginLeft = "250px";
+      			action = 2;
+      		}
+      		else {
+      			document.getElementById("ArbisNav").style.width = "0";
+      			document.getElementById("main").style.marginLeft = "0px";
+      			action = 1;
+      		}
+      		$("#mainContent").toggle();
+      	}
+      </script>
 
-	</html>
-<?php
+  </body>
+
+  </html>
+  <?php
 
 // Wrap up and close connection
-mysqli_close($server);
+  mysqli_close($server);
 
 
-?>
+  ?>
