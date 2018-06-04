@@ -48,7 +48,7 @@ if (isset($_POST['submit']))
 	$database_password = $row['password'];
 	$accessLevel = $row['accessLevel'];
 
-	if ($password == $database_password) 
+	if (md5($password) == $database_password) 
 	{ 
 		if($accessLevel == $ADMIN)
 		{

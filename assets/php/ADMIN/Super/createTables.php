@@ -11,6 +11,8 @@
 
         password VARCHAR(50) NOT NULL,
 
+        hash VARCHAR( 32 ) NOT NULL,
+
         accessLevel ENUM('0', '1', '2') NOT NULL
     	)";
 

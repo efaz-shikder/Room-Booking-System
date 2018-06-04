@@ -51,14 +51,43 @@ if (isset($_POST['submit']))
 
 		// Worry about password encryption??
 
+		$realEmail = $email."@gmail.com";
 
-		$sql = "INSERT INTO `teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', '" .  DEFAULT_ACCESS_LEVEL . "')";
+		// Generates a random 32 character hash
+		$hash = md5(rand(0,1000));
+		$password = md5($password);
 
-		mysqli_query($server, $sql);
+		$sql = "INSERT INTO `teacher` (`first_name`, `last_name`, `email`, `password`, `hash`, `accessLevel`) VALUES ('$first_name', '$last_name', '$realEmail', '$password', '$hash', '" . DEFAULT_ACCESS_LEVEL . "')";
 
-		echo "<h1>Teacher successfully added. Redirecting to landing page.</h1>";
-		header("refresh:4;url=../../index.php");
+		$success = mysqli_query($server, $sql);
 
+		if ($success)
+		{
+			$to = $realEmail;
+			$subject = 'ARBIS | Verification';
+			$message = '
+
+			Thank you for signing up for ARBIS!
+			Your account has been created, you can login after activating your account.
+
+			Please click this link to activate your account:
+			localhost/RBS/assets/php/verify.php?email='.$email.'&hash='.$hash.'
+
+			';
+
+			$headers = 'From:noreply@ARBIS.com' . "\r\n";
+			mail($to, $subject, $message, $headers);
+
+
+			echo "<h4>Please check your email for the verification link.</h4>";
+			header("refresh:4;url=../../index.php");
+		}
+		else
+		{
+			echo "<h4>There was an error when signing up.</h4>";
+			header("refresh:4;url=../../index.php");
+		}
+		
 
 		// Wrap up and close connection
 		mysqli_close($server);
@@ -66,6 +95,7 @@ if (isset($_POST['submit']))
 	else
 	{
 		echo "<h1>Passwords entered do not match. Redirecting to landing page.</h1>";
+
 		header("refresh:4;url=../../index.php");
 
 		// Wrap up and close connection
