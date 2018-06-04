@@ -76,14 +76,14 @@ $teacherEmail = $_SESSION['email'];
               	switch($row['accessLevel'])
               	{
               		case 0:
-              		$currentLevel = "Cannot Book";
-              		break;
+						$currentLevel = "Cannot Book";
+						break;
               		case 1:
-              		$currentLevel = "Can Book";
-              		break;
+						$currentLevel = "Can Book";
+						break;
               		case 2:
-              		$currentLevel = "Administrator";
-              		break;
+						$currentLevel = "Administrator";
+						break;
               	}
 
               	?>
