@@ -3,7 +3,8 @@
 session_start();
 
 set_time_limit(4);
-$ADMIN = 1;
+$ADMIN = 2;
+$TEACHER = 1;
 
 if (isset($_POST['submit']))
 {
@@ -52,14 +53,18 @@ if (isset($_POST['submit']))
 		if($accessLevel == $ADMIN)
 		{
 			$_SESSION['email'] = $email;
-			header("Location: ../../homepage/index.php");
+			header("Location: ../../homepage/admin.php");
 			echo "Successful login as ADMIN";
 		}
-		else
+		elseif ($accessLevel == $TEACHER) 
 		{
 			$_SESSION['email'] = $email;
 			header("Location: ../../homepage/index.php");
 			echo "Successful login as TEACHER";
+		}
+		else
+		{
+			echo "<script type='text/javascript'>alert('Please check your email to verify your account!'); window.location.assign('../../index.php'); </script>";
 		}
 	}
 	else

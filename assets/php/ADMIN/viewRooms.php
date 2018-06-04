@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once("connect.php");
+include_once("../connect.php");
 
 $teacherEmail = $_SESSION['email'];
 
@@ -12,8 +12,8 @@ $teacherEmail = $_SESSION['email'];
 <head>
 
 	<title>test</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/viewRooms.css">
+	<link rel="stylesheet" type="text/css" href="../../CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../CSS/viewRooms.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -26,10 +26,12 @@ $teacherEmail = $_SESSION['email'];
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
-		<a href="../../homepage/index.php">Home</a>
-		<a href="viewOwnBooking.php">Own Booked Rooms</a>
-		<a href="viewBooking.php">All Booked Rooms </a>
-		<a href="../../ARBIS_Help.html">Help</a>
+		<a href="../../../homepage/admin.php">Home</a>
+    <a href="viewOwnBookingAdmin.php">Own Booked Rooms</a>
+    <a href="viewBookingAdmin.php">All Booked Rooms </a>
+    <a href="viewRooms.php">Edit Rooms</a>
+    <a href="viewTeachers.php">Edit Teachers</a>
+    <a href="../../../ARBIS_Help.html">Help</a>
 	</div>
 
 	<section id="main" class="main container">
@@ -103,8 +105,8 @@ $teacherEmail = $_SESSION['email'];
   </section>
 
 
-  <script src="../javascript/jquery.min.js"></script>
-  <script src="../javascript/script.js"></script>
+  <script src="../../javascript/jquery.min.js"></script>
+  <script src="../../javascript/script.js"></script>
   <script type="text/javascript">
 
 

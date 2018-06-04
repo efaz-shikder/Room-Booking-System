@@ -1,5 +1,5 @@
 <?php
-	include_once("connect.php");
+	include_once("../../connect.php");
 
 	$sql1 = "SET FOREIGN_KEY_CHECKS=0";
 	mysqli_query($server, $sql1);
