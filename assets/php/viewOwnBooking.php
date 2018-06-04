@@ -52,7 +52,7 @@ $teacherEmail = $_SESSION['email'];
 					<th>Date</th>
 					<th>Room Number</th>
 					<th>Period</th>
-					<th> Teacher</th>
+					<th>Cancel</th>
 				</thead>
 				<?php
 
