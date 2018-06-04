@@ -523,6 +523,7 @@ $('#A').click(function(){
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
 	isClicked = true;
+	alert($(window).width())
 })
 $('#B').click(function(){
 	$("#B").removeClass("btn-animate").addClass("btn-clicked");
@@ -605,12 +606,12 @@ function doWork() {
 	}
 
 	/** hallway grid **/
-	if ($(window).width() < 1200)
+	if ($(window).width() >= 1200)
 	{
-		$("ul#gridHallways").css("column-count", 1);
+		$("ul#gridHallways").css("column-count", 5);
 	}
 	else {
-		$("ul#gridHallways").css("column-count", 5);
+		$("ul#gridHallways").css("column-count", 1);
 	}
 }
 

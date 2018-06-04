@@ -51,7 +51,7 @@ session_start();
 				<!-- Row 1 -->
 				<div class="row">
 					<!-- calender -->
-					<div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
+					<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<!-- calendar -->
 						<div class="calendar_container">
 							<!-- Date Picked Display -->
@@ -74,12 +74,12 @@ session_start();
 						</div>
 					</div>
 					<!-- hallways and rooms -->
-					<div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9">
+					<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">C Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">&nbsp;C Hallway</a></li>
 									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">S Hallway</a></li>
 									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">English Hallway</a></li>
 									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">French Hallway</a></li>
@@ -967,7 +967,7 @@ session_start();
 			}
 
 		}
-		
+
 	</script>
 </body>
 
