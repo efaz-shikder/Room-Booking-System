@@ -54,7 +54,7 @@ $teacherEmail = $_SESSION['email'];
  </div>
 
  <!-- Trigger the modal with a button -->
- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+ <button type="button" class="btn btn-info btn-lg" style="float: right; padding: auto; margin-bottom: 2%;" data-toggle="modal" data-target="#myModal">Add Classroom</button>
 
 
  <table id="rooms">
