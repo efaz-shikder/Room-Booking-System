@@ -11,7 +11,7 @@ session_start();
 
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="homepageStyle.css">
 
 </head>
 
@@ -72,7 +72,7 @@ session_start();
 						</div>
 					</div>
 					<!-- hallways and rooms -->
-					<div class="col-xl-8 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+					<div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9">
 						<div class="row">
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
@@ -456,13 +456,11 @@ session_start();
 							class="Gym Hallway"
 							d="M 388.80255,54.905418 H 537.18018 V 176.68526 H 388.80255 Z"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							onClick="parent.open('https://www.google.com/')"
 							/>
 							<path id="Girl's Single Gym"
 							class="Gym Hallway"
 							d="m 542.02478,55.095406 h 74.28381 V 175.54536 h -74.28381 z"
 							onmouseover="availabilityDisplay(this)" onmouseout="remove(this)"
-							onClick="parent.open('https://www.google.com/')"
 							/>
 							<path id="Change Room"
 							class="Gym Hallway"

@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
 
 	if(isset($_POST['firstName']))
 	{
-		$first_name = $_POST['lastName'];
+		$first_name = $_POST['firstName'];
 	}
 
 
