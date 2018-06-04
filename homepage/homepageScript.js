@@ -501,51 +501,18 @@ $(hallwayArray[9]).click(function(){
 	$(".geographyHallway").addClass("current");
 })
 
-/** hallway grid **/
-$(document).ready(function() {
-	var numitems =  $("#gridHallways li").length;
-
-	$("ul#gridHallways").css("column-count", numitems / 2);
-});
 
 /** rooms grid **/
 $(document).ready(function() {
 	$("ul.gridRooms1").css("column-count", 3);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms2").css("column-count", 2);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms3").css("column-count", 3);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms4").css("column-count", 2);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms5").css("column-count", 1);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms6").css("column-count", 2);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms7").css("column-count", 1);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms8").css("column-count", 4);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms9").css("column-count", 2);
-});
-
-$(document).ready(function() {
 	$("ul.gridRooms10").css("column-count", 3);
 });
 
@@ -636,12 +603,18 @@ function doWork() {
 	else {
 		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
 	}
+
+	/** hallway grid **/
+	if ($(window).width() < 1200)
+	{
+		$("ul#gridHallways").css("column-count", 1);
+	}
+	else {
+		$("ul#gridHallways").css("column-count", 5);
+	}
 }
 
 doWork();
-
-
-
 
 var period;
 var classID;
@@ -702,5 +675,3 @@ function bookAJAX(date, id, block)
 	}
 
 }
-
-
