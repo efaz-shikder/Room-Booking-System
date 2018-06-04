@@ -53,7 +53,9 @@ $teacherEmail = $_SESSION['email'];
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Current Level</th>
 					<th>Teacher Bookability</th>
+					<th>Make Admin</th>
 				</thead>>
 				<?php
  
@@ -68,6 +70,19 @@ $teacherEmail = $_SESSION['email'];
                 $firstName = $row['first_name'];
                 $lastName = $row['last_name'];
                 $email = $row['email'];
+				
+				switch($row['accessLevel'])
+				{
+					case 0:
+						$currentLevel = "Cannot Book";
+						break;
+					case 1:
+						$currentLevel = "Can Book";
+						break;
+					case 2:
+						$currentLevel = "Administrator";
+						break;
+				}
 
                 ?>
  
@@ -76,10 +91,14 @@ $teacherEmail = $_SESSION['email'];
                     <td><?php echo $firstName ?></td>
                     <td><?php echo $lastName ?></td>
                     <td><?php echo $email ?></td>
-                    <td >
-                      <button onclick="changeBookability('<?php echo $email ?>', true)" class="btn btn-danger">Yes</button>
-                      <button onclick="changeBookability('<?php echo $email ?>', false)" class="btn btn-danger">No</button>
+					<td><?php echo $currentLevel ?></td>
+                    <td>
+						<button onclick="changeBookability('<?php echo $email ?>', 1)" class="btn btn-danger">Yes</button>
+						<button onclick="changeBookability('<?php echo $email ?>', 0)" class="btn btn-danger">No</button>
                     </td>
+					<td>
+						<button onclick="changeBookability('<?php echo $email ?>', 2)" class="btn btn-danger">Yes</button>
+					</td>
                   </tr>
                 </tbody>
               <?php } ?>
@@ -114,19 +133,25 @@ $teacherEmail = $_SESSION['email'];
 
 		</script>
 		<script type="text/javascript">
-			function changeBookability(email, canBook)
+			function changeBookability(teacherEmail, newAccessLevel)
 			{
 				var message = "";
-				var teacherEmail = JSON.stringify(email);
+				var teacherEmail = JSON.stringify(teacherEmail);
 
-				if(canBook)
+				switch(newAccessLevel)
 				{
-					message = "Are you sure you want to let this teacher book?";
+					case 0:
+						message =  "Are you sure you want to remove this teacher\'s booking ability?";
+						break;
+					case 1: 
+						message = "Are you sure you want to let this teacher book?";
+						break;
+					case 2:
+						message = "Are you sure you want to make this teacher an administrator?";
+						break;
+					
 				}
-				else
-				{
-					message = "Are you sure you want to remove this teacher\'s booking ability?";
-				}
+				
 				if (confirm(message)) 
 				{
 
@@ -134,7 +159,8 @@ $teacherEmail = $_SESSION['email'];
 
 						type: 'post',
 						url: 'changeAccessLevel.php',
-						data: {email: teacherEmail, canTeacherBook: canBook},
+						data: {email: teacherEmail, accessLevel: newAccessLevel},
+						success:function(data){}
 					});
 				}
 

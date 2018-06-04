@@ -1,22 +1,17 @@
 <?php
 include_once("connect.php");
 
-$email = $_POST['teacherEmail'];
-$canTeacherBook = $_POST['canBook'];
+$email = $_POST['email'];
+$accessLevel = $_POST['accessLevel'];
 
 $email =  trim($email, '"');
+$accessLevel = trim($accessLevel, '"');
 
 
-if($canTeacherBook)
-{
-	$sql = "UPDATE teacher SET accessLevel = '1' WHERE email = $email"
-}
-else
-{
-	$sql = "UPDATE teacher SET accessLevel = '0' WHERE email = $email"
-}
+$sql = "UPDATE teacher 
+			SET accessLevel = $accessLevel 
+			WHERE email = $email;"
 
-echo "$sql";
 mysqli_query($server, $sql);
 
 ?>
