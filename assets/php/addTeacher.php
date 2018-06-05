@@ -71,7 +71,7 @@ if (isset($_POST['submit']))
 			Your account has been created, you can login after activating your account.
 
 			Please click this link to activate your account:
-			localhost/RBS/assets/php/verify.php?email='.$email.'&hash='.$hash.'
+			localhost/RBS/assets/php/verify.php?email='.$realEmail.'&hash='.$hash.'
 
 			';
 

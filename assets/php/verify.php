@@ -13,7 +13,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     $sql = "Select * FROM teacher WHERE email= '" . $email . "' AND hash= '" . $hash . "' AND accessLevel= '0'";
     $result = mysqli_query($server, $sql);
 
-    $update = "UPDATE teacher SET `accessLevel` = '1' WHERE teacher.email='$email' AND teacher.hash='$hash' AND teacher.accessLevel='0'";
+    $update = "UPDATE teacher SET teacher.accessLevel= '1' WHERE teacher.email='$email' AND teacher.hash='$hash'";
     $updateResult = mysqli_query($server, $update);
     if ($updateResult)
     {
