@@ -1,0 +1,16 @@
+TO DO LIST: 
+
+- check whether room is booked on a certain (date, period ) before displaying on index, gray it out if it is 
+
+- make hallway selector disappear if another date is clicked after a hallway is clicked (i.e., they have to reselect the hallway if they reselect the date)
+
+- make calendar gray out dates based on the 'schedule' table
+
+- ADMIN add function to add special days to the schedule
+
+- connect email verification with an email server 
+
+
+if all of the above are complete
+
+- create a function to determine what day of school it is based on the first day of school, last day of school, and all no school days 
