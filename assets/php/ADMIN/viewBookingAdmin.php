@@ -21,6 +21,11 @@ $teacherEmail = $_SESSION['email'];
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="../../../homepage/admin.php">Home</a>
 		<a href="viewOwnBookingAdmin.php">Own Booked Rooms</a>
 		<a href="viewBookingAdmin.php">All Booked Rooms </a>
@@ -29,14 +34,14 @@ $teacherEmail = $_SESSION['email'];
 		<a href="../../../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main container">
+	<section class="container">
 
 		<div class="container-fluid bookings">
 
 			<!--  Navigation Menu Icon -->
 			<div class="row">
 				<div class="col">
-					<div id="center navIcon">
+					<div id="navIcon">
 						<div id="nav-icon3" onclick="toggleNav()">
 							<span></span>
 							<span></span>
@@ -187,10 +192,10 @@ $teacherEmail = $_SESSION['email'];
 
 			if(date != "")
 			{
-				
+
 				$('.date').hide();
-				$('tr[name='+date+']').show(); 
-			} 
+				$('tr[name='+date+']').show();
+			}
 		}
 	</script>
 

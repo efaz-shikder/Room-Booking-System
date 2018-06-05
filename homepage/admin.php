@@ -19,6 +19,11 @@ session_start();
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="admin.php">Home</a>
 		<a href="../assets/php/ADMIN/viewOwnBookingAdmin.php">Own Booked Rooms</a>
 		<a href="../assets/php/ADMIN/viewBookingAdmin.php">All Booked Rooms</a>
@@ -27,7 +32,7 @@ session_start();
 		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main">
+	<section>
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container-fluid">

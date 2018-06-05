@@ -21,20 +21,25 @@ $teacherEmail = $_SESSION['email'];
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="../../homepage/index.php">Home</a>
 		<a href="viewOwnBooking.php">Own Booked Rooms</a>
 		<a href="viewBooking.php">All Booked Rooms </a>
 		<a href="../../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main container">
+	<section class="container">
 
 		<div class="container-fluid bookings">
 
 			<!--  Navigation Menu Icon -->
 			<div class="row">
 				<div class="col">
-					<div id="center navIcon">
+					<div id="navIcon">
 						<div id="nav-icon3" onclick="toggleNav()">
 							<span></span>
 							<span></span>
@@ -43,7 +48,6 @@ $teacherEmail = $_SESSION['email'];
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 
@@ -87,7 +91,7 @@ $teacherEmail = $_SESSION['email'];
             </tr>
           </tbody>
         <?php } ?>
-      </table> 
+      </table>
     </div>
   </section>
 
@@ -95,52 +99,31 @@ $teacherEmail = $_SESSION['email'];
   <script src="../javascript/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript">
-   var action = 1;
 
-   function toggleNav() {
-    if ( action == 1 ) {
-     document.getElementById("ArbisNav").style.width = "250px";
-     document.getElementById("main").style.marginLeft = "280px";
-     action = 2;
-   }
-   else {
-     document.getElementById("ArbisNav").style.width = "0px";
-     document.getElementById("main").style.marginLeft = "0px";
-     action = 1;
-   }
-   $("#mainContent").toggle();
- }
- $(document).ready(function(){
-  $('#nav-icon3').click(function(){
-   $(this).toggleClass('open');
- });
-});
+		 function deleteAjax(date, room, periods)
+		 {
+		  var dateOfBooking = JSON.stringify(date);
+		  var classID = JSON.stringify(room);
+		  var period = JSON.stringify(periods);
 
+		  if (confirm('Are you sure you want to delete booking')) {
 
- function deleteAjax(date, room, periods)
- {
-  var dateOfBooking = JSON.stringify(date);
-  var classID = JSON.stringify(room);
-  var period = JSON.stringify(periods);
+		    $.ajax({
 
-  if (confirm('Are you sure you want to delete booking')) {
+		      type: 'post',
+		      url: 'removeBooking.php',
+		      data: {dateOfBooking: date, classID: classID, period: period},
+		      success:function(data){
+		        $('#delete'+date+room+periods).hide('slow');
 
-    $.ajax({
+		      }
+		    });
+		  }
 
-      type: 'post',
-      url: 'removeBooking.php',
-      data: {dateOfBooking: date, classID: classID, period: period},
-      success:function(data){
-        $('#delete'+date+room+periods).hide('slow');
-
-      }
-    });
-  }
-
-}
+		}
 
 
-</script>
+	</script>
 
 
 </body>
