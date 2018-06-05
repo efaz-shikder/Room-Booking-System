@@ -21,13 +21,14 @@ include_once("../assets/php/connect.php");
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<h1 onclick="toggleNav();">X</h1>
 		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Own Booked Rooms</a>
 		<a href="../assets/php/viewBooking.php">All Booked Rooms</a>
 		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main">
+	<section>
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container">
@@ -896,7 +897,7 @@ include_once("../assets/php/connect.php");
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-		
+
 		function loadTable(hallway, date, period)
 		{
 			var hallway = JSON.stringify(hallway);
