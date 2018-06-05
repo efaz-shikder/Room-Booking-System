@@ -21,7 +21,11 @@ include_once("../assets/php/connect.php");
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
-		<h1 onclick="toggleNav();">X</h1>
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Own Booked Rooms</a>
 		<a href="../assets/php/viewBooking.php">All Booked Rooms</a>

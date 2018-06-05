@@ -179,28 +179,29 @@ path
 
 /* The side navigation menu */
 .sidenav {
+	color: white;
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 99; /* Stay on top */
   overflow-x: hidden; /* Disable horizontal scroll */
-	background-color: white;
+	background-color: #1a1a1a;
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
 .sidenav a {
+	color: white;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: black;
   display: block;
   transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
+
 }
 
 /** Nav Icon **/
@@ -226,6 +227,9 @@ path
   position: relative;
   cursor: pointer;
 }
+#nav-icon3:hover span {
+	background-color: #008aee;
+}
 
 #nav-icon3 span {
   display: block;
@@ -233,11 +237,70 @@ path
   height: 3px;
   width: 100%;
   background: white;
-  border-radius: 9px;
+  border-radius: 20px;
   opacity: 1;
   left: 0;
 }
+/** close button **/
+.outer {
+  position: relative;
+  margin: auto;
+	margin-top: 20px;
+  width: 70px;
+  cursor: pointer;
+}
 
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label {
+  font-size: 12px;
+  line-height: 3em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: white;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}
 /** Calendar **/
 html {
   box-sizing: border-box;
