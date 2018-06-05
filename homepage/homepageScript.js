@@ -520,7 +520,6 @@ $('#A').click(function(){
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
 	isClicked = true;
-	alert($(window).width())
 })
 $('#B').click(function(){
 	$("#B").removeClass("btn-animate").addClass("btn-clicked");
