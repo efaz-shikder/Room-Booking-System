@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once("../assets/php/connect.php");
+
 ?>
 
 
@@ -90,74 +92,26 @@ session_start();
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">&nbsp;C Hallway</a></li>
-									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">S Hallway</a></li>
-									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">English Hallway</a></li>
-									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">French Hallway</a></li>
-									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Gym Hallway</a></li>
-									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Front Foyer</a></li>
-									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Music Hallway</a></li>
-									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Math Hallway</a></li>
-									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Science Hallway</a></li>
-									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Geography Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod());"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod());"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod());"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Gym Hallway', getDate(), getPeriod());"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Front Foyer', getDate(), getPeriod());"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Music Hallway', getDate(), getPeriod());"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Math Hallway', getDate(), getPeriod());"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Science Hallway', getDate(), getPeriod());"><a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Geography Hallway', getDate(), getPeriod());"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="roomsContainer">
 									<ul id="rooms" class="gridRooms1">
-										<?php
-
-										include_once("../assets/php/connect.php");
-
-
-
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='C Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
-										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1);">'.$roomName.'</a>';
-											echo '</li>';
-										}
-										?>
 									</ul>
 									<ul id="rooms2" class="gridRooms2">
-										<?php
-
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='S Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
-										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2);">'.$roomName.'</a>';
-											echo '</li>';
-										}
-
-										?>
 									</ul>
 									<ul id="rooms3" class="gridRooms3">
-										<?php
-
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='English Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
-										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3);">'.$roomName.'</a>';
-											echo '</li>';
-										}
-
-										?>
 									</ul>
 									<ul id="rooms4" class="gridRooms4">
 										<?php
@@ -941,6 +895,34 @@ session_start();
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
+	<script type="text/javascript">
+		
+		function loadTable(hallway, date, period)
+		{
+			var hallway = JSON.stringify(hallway);
+			var date = JSON.stringify(date);
+			var period = JSON.stringify(period);
+			period = period.substring(3,4);
+
+
+			$.ajax({
+
+				type: 'post',
+				//url: '../assets/php/checkBook.php',
+				url: 'checkBook.php',
+				data: {hallway: hallway, date: date, period: period},
+				success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						//window.location.assign("../assets/php/viewOwnBooking.php");
+
+					}
+				});
+
+
+		}
+	</script>
 </body>
 
 </html>

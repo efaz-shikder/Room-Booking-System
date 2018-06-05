@@ -676,3 +676,27 @@ function bookAJAX(date, id, block)
 	}
 
 }
+/*
+function loadTable(hallway, date, period)
+{
+	var hallway = JSON.stringify(hallway);
+	var date = JSON.stringify(date);
+	var period = JSON.stringify(period);
+	period = period.substring(3,4);
+
+	$.ajax({
+
+			type: 'post',
+			url: '../assets/php/checkBook.php',
+			data: {hallway: hallway, date: date, period: period},
+			success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/viewOwnBooking.php");
+
+					}
+				});
+
+
+} */
