@@ -1051,7 +1051,7 @@
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-		function grayOutBookedRooms{
+		function grayOutBookedRooms(){
 			// get variables from php
 			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
 			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
@@ -1081,7 +1081,7 @@
 				type: 'post',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
-					grayOutBookedRooms
+					grayOutBookedRooms();
 					}
 				});
 
