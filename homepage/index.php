@@ -1,8 +1,4 @@
 <?php
-	session_start();
-
-	include_once("../assets/php/connect.php");
-
 	if(isset($_POST['hallway']))
 	{
 
