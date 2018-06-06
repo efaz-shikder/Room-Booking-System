@@ -26,6 +26,11 @@ $teacherEmail = $_SESSION['email'];
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<div class="outer">
+			<div class="inner" onclick="toggleNav()">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="../../../homepage/admin.php">Home</a>
     <a href="viewOwnBookingAdmin.php">Own Booked Rooms</a>
     <a href="viewBookingAdmin.php">All Booked Rooms </a>
@@ -34,14 +39,14 @@ $teacherEmail = $_SESSION['email'];
     <a href="../../../ARBIS_Help.html">Help</a>
   </div>
 
-  <section id="main" class="main container">
+  <section class="padding container">
 
     <div class="container-fluid bookings">
 
      <!--  Navigation Menu Icon -->
      <div class="row">
       <div class="col">
-       <div id="center navIcon">
+       <div id="navIcon">
         <div id="nav-icon3" onclick="toggleNav()">
          <span></span>
          <span></span>
@@ -96,7 +101,7 @@ $teacherEmail = $_SESSION['email'];
           <input type="checkbox" name="bookable" onchange="setBookable(this);" id="initializeBookable" data-toggle="toggle" data-on="Yes" data-off="No" value="yes" checked />
 
           <input type="hidden" name="default_booking" id="default_booking" value="yes">
-          
+
 
         </div>
         <div class="modal-footer">
@@ -127,12 +132,12 @@ while($row = mysqli_fetch_array($result))
               		<tr>
               			<td><?php echo $roomName ?></td>
               			<td><?php echo $hallway ?></td>
-              			<td> 
+              			<td>
               				<form method="post" id="setBookable">
               					<div class="form-group">
               						<div class="checkbox">
-              							<input type="checkbox"  name="bookable" onchange="updateBookable(this)" value="<?php echo $classID; ?>" id="<?php echo $classID; ?>" data-toggle="toggle" data-on="Yes" data-off="No" 
-              							<?php 
+              							<input type="checkbox"  name="bookable" onchange="updateBookable(this)" value="<?php echo $classID; ?>" id="<?php echo $classID; ?>" data-toggle="toggle" data-on="Yes" data-off="No"
+              							<?php
               							if ($isBookable == "yes")
               							{
               								echo "checked";
@@ -147,7 +152,7 @@ while($row = mysqli_fetch_array($result))
               		</tr>
               	</tbody>
               <?php } ?>
-            </table> 
+            </table>
           </div>
         </section>
 
@@ -224,29 +229,6 @@ while($row = mysqli_fetch_array($result))
         }
       });
      }
-
-
-     /** Navigation Icon **/
-     var action = 1;
-
-     function toggleNav() {
-      if ( action == 1 ) {
-       document.getElementById("ArbisNav").style.width = "250px";
-       document.getElementById("main").style.marginLeft = "280px";
-       action = 2;
-     }
-     else {
-       document.getElementById("ArbisNav").style.width = "0px";
-       document.getElementById("main").style.marginLeft = "0px";
-       action = 1;
-     }
-     $("#mainContent").toggle();
-   }
-   $(document).ready(function(){
-    $('#nav-icon3').click(function(){
-     $(this).toggleClass('open');
-   });
-  });
 
 </script>
 

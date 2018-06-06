@@ -20,7 +20,12 @@ $teacherEmail = $_SESSION['email'];
 <body>
 
 	<!-- Navigation Menu -->
-	<div id="ArbisNav" class="sidenav">
+	<div id="ArbisNav" class="sidenav"> 
+		<div class="outer">
+			<div class="inner" onclick="toggleNav()">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="../../../homepage/admin.php">Home</a>
 		<a href="viewOwnBookingAdmin.php">Own Booked Rooms</a>
 		<a href="viewBookingAdmin.php">All Booked Rooms </a>
@@ -29,14 +34,14 @@ $teacherEmail = $_SESSION['email'];
 		<a href="../../../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main container">
+	<section class="padding container">
 
 		<div class="container-fluid bookings">
 
 			<!--  Navigation Menu Icon -->
 			<div class="row">
 				<div class="col">
-					<div id="center navIcon">
+					<div id="navIcon">
 						<div id="nav-icon3" onclick="toggleNav()">
 							<span></span>
 							<span></span>
@@ -117,29 +122,6 @@ $teacherEmail = $_SESSION['email'];
 	<script src="../../javascript/script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		var action = 1;
-
-		function toggleNav() {
-			if ( action == 1 ) {
-				document.getElementById("ArbisNav").style.width = "250px";
-				document.getElementById("main").style.marginLeft = "280px";
-				action = 2;
-			}
-			else {
-				document.getElementById("ArbisNav").style.width = "0px";
-				document.getElementById("main").style.marginLeft = "0px";
-				action = 1;
-			}
-			$("#mainContent").toggle();
-		}
-		$(document).ready(function(){
-			$('#nav-icon3').click(function(){
-				$(this).toggleClass('open');
-			});
-		});
-
-	</script>
-	<script type="text/javascript">
 		function deleteAjax(date, room, periods)
 		{
 			var dateOfBooking = JSON.stringify(date);
@@ -161,24 +143,6 @@ $teacherEmail = $_SESSION['email'];
 			}
 
 		}
-
-		/** Navigation Icon **/
-		var action = 1;
-
-		function toggleNav() {
-			if ( action == 1 ) {
-				document.getElementById("ArbisNav").style.width = "250px";
-				document.getElementById("main").style.marginLeft = "250px";
-				action = 2;
-			}
-			else {
-				document.getElementById("ArbisNav").style.width = "0";
-				document.getElementById("main").style.marginLeft = "0px";
-				action = 1;
-			}
-			$("#mainContent").toggle();
-		}
-
 		function selectDate()
 		{
 
@@ -187,10 +151,10 @@ $teacherEmail = $_SESSION['email'];
 
 			if(date != "")
 			{
-				
+
 				$('.date').hide();
-				$('tr[name='+date+']').show(); 
-			} 
+				$('tr[name='+date+']').show();
+			}
 		}
 	</script>
 

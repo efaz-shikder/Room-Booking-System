@@ -44,13 +44,18 @@ function rooms()
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
 		<a href="index.php">Home</a>
 		<a href="../assets/php/viewOwnBooking.php">Own Booked Rooms</a>
 		<a href="../assets/php/viewBooking.php">All Booked Rooms</a>
 		<a href="../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section id="main" class="main">
+	<section>
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container">
@@ -1022,7 +1027,7 @@ function rooms()
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-		
+
 		function loadTable(hallway, date, period)
 		{
 			var hallway = JSON.stringify(hallway);
