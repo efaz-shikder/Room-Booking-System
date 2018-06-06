@@ -32,7 +32,7 @@ $teacherEmail = $_SESSION['email'];
 		<a href="../../ARBIS_Help.html">Help</a>
 	</div>
 
-	<section class="container">
+	<section class="padding container">
 
 		<div class="container-fluid bookings">
 

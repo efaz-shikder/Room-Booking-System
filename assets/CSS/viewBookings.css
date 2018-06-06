@@ -1,6 +1,6 @@
 body
 {
-	background-color: black;
+	background: black fixed;
 }
 /* The side navigation menu */
 .sidenav {
@@ -28,7 +28,9 @@ body
 .sidenav a:hover{
 
 }
-
+.padding {
+	padding-top: 50px;
+}
 /** Nav Icon **/
 #navIcon {
 	z-index: 99;
