@@ -1097,7 +1097,7 @@
 				type: 'post',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
-					grayOutBookedRooms();
+					console.log(data);
 					}
 				});
 
