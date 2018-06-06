@@ -3,49 +3,52 @@
 
 	include_once("../assets/php/connect.php");
 
-	function rooms()
+	if(isset($_POST['hallway']))
 	{
-		$hallway = $_POST['hallway'];
-		$date = $_POST['date'];
-		$period = $_POST['period'];
-		$currentTeacherID = $_SESSION['email'];
+		function rooms()
+		{
+			$hallway = $_POST['hallway'];
+			$date = $_POST['date'];
+			$period = $_POST['period'];
+			$currentTeacherID = $_SESSION['email'];
 
-		$hallway = str_replace('"', "", $hallway);
+			$hallway = str_replace('"', "", $hallway);
+				
+			$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+			$result = mysqli_query($server, $sql);
 			
-		$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
-		$result = mysqli_query($server, $sql);
-		
-		$data = array();
-		while($row = mysqli_fetch_array($result))
-		{
-			$data[] = $row;
-		}	
-		
-		$bookedRoomIDs = array();
-		for ($i = 0; $i < count($data); $i++)
-		{
-			$sql = "SELECT * from booking WHERE booking.classID = '$data[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
-			$bookingResult = mysqli_query($server, $sql);
-			
-			if (mysql_num_rows($bookingResult)!=0)
+			$data = array();
+			while($row = mysqli_fetch_array($result))
 			{
-				// booking exists
-				// get the teacherID of the one result
-				$teacherEmail = $row['teacherEmail'];
-				$bookedRoomIDs[] = array($teacherEmail, $data[i]); 
-			}
-		}
+				$data[] = $row;
+			}	
 			
-		// room id and teacher name 2d array
-		$doubleArray = $bookedRoomIDs;
-		
-		// get 2d array length
-		$arrayLength = sizeof($doubleArray);
-		// convert variables to json
-		$doubleArrayJson = json_encode($doubleArray);
-		$arrayLengthJson = json_encode($arrayLength);
-		
-		exit;
+			$bookedRoomIDs = array();
+			for ($i = 0; $i < count($data); $i++)
+			{
+				$sql = "SELECT * from booking WHERE booking.classID = '$data[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
+				$bookingResult = mysqli_query($server, $sql);
+				
+				if (mysql_num_rows($bookingResult)!=0)
+				{
+					// booking exists
+					// get the teacherID of the one result
+					$teacherEmail = $row['teacherEmail'];
+					$bookedRoomIDs[] = array($teacherEmail, $data[i]); 
+				}
+			}
+				
+			// room id and teacher name 2d array
+			$doubleArray = $bookedRoomIDs;
+			
+			// get 2d array length
+			$arrayLength = sizeof($doubleArray);
+			// convert variables to json
+			$doubleArrayJson = json_encode($doubleArray);
+			$arrayLengthJson = json_encode($arrayLength);
+			
+			exit;
+		}
 	}
 	
 ?>
