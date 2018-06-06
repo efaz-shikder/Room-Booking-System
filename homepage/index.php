@@ -49,8 +49,8 @@
 			exit;
 echo '			<script type="text/javascript">
 					// get variables from php
-					var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-					var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
+					var doubleArray = JSON.parse(\'<?= $doubleArrayJson ?>\');
+					var arrayLength = JSON.parse(\'<?= $arrayLengthJson ?>\');
 					// iterate through all the booked rooms
 					for (var i = 0; i < arrayLength; i++){
 						// get room id
