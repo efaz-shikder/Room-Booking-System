@@ -1,32 +1,85 @@
 <?php
+	session_start();
 
-session_start();
+	include_once("../assets/php/connect.php");
 
-include_once("../assets/php/connect.php");
-
-function rooms()
-{
-	if(isset($_SESSION['selectDate']))
+	function rooms()
 	{
-		$date = $_SESSION['selectDate'];
-		$period = $_SESSION['period'];
-		$hallway = $_SESSION['hallway'];
-		$n = $_SESSION['$n'];
-
+		$hallway = $_POST['hallway'];
+		$date = $_POST['date'];
+		$period = $_POST['period'];
 		$currentTeacherID = $_SESSION['email'];
-		$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
-		$result = mysqli_query($server, $sql);
-		while($row = mysqli_fetch_array($result))
+
+		$n=0;
+		switch ($hallway) {
+			case '"C Hallway"':
+				$n = 1;
+				break;
+			case '"S Hallway"':
+				$n = 2;
+				break;
+			case '"English Hallway"':
+				$n = 3;
+				break;
+			case '"French Hallway"':
+				$n = 4;
+				break;
+			case '"Gym Hallway"':
+				$n = 5;
+				break;
+			case '"Front Foyer"':
+				$n = 6;
+				break;
+			case '"Music Hallway"':
+				$n = 7;
+				break;
+			case '"Math Hallway"':
+				$n = 8;
+				break;
+			case '"Science Hallway"':
+				$n = 9;
+				break;
+			case '"Geography Hallway"':
+				$n = 10;
+				break;
+		}
+		$hallway = str_replace('"', "", $hallway);
+	}
+		
+	$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+	$result = mysqli_query($server, $sql);
+	
+	$data = array();
+	while($row = mysqli_fetch_array($result))
+	{
+		$data[] = $row;
+	}	
+	
+	$bookedRoomIDs = array();
+	for ($i = 0; $i < count($data); $i++)
+	{
+		$sql = "SELECT * from booking WHERE booking.classID = $data[i] AND booking.dateOfBooking ='$date' AND booking.period='$period'";
+		$bookingResult = mysqli_query($server, $sql);
+		
+		if (mysql_num_rows($bookingResult)!=0)
 		{
-			$roomName = $row['roomName'];
-			$classID = $row['classID'];
-			echo '<li id='. $classID .' >';
-			echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
-			echo '</li>';
+			// booking exists
+			// get the teacherID of the one result
+			$teacherEmail = $row['teacherEmail'];
+			$bookedRoomIDs[] = array($teacherEmail, $data[i]); 
 		}
 	}
-}
-
+		
+	// room id and teacher name 2d array
+	$doubleArray = $bookedRoomIDs;
+	
+	// get 2d array length
+	$arrayLength = sizeof($doubleArray);
+	// convert variables to json
+	$doubleArrayJson = json_encode($doubleArray);
+	$arrayLengthJson = json_encode($arrayLength);
+	
+	exit;
 ?>
 
 
@@ -1026,20 +1079,8 @@ function rooms()
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
-	<?php
-		// room id and teacher name 2d array
-		$doubleArray = array(
-			array('Yeet', 104),
-			array('Skrrt', 103),
-			array('Yea', 102)
-		);
-		// get 2d array length
-		$arrayLength = sizeof($doubleArray);
-		// convert variables to json
-		$doubleArrayJson = json_encode($doubleArray);
-		$arrayLengthJson = json_encode($arrayLength);
-	?>
 	<script type="text/javascript">
+	
 		// get variables from php
 		var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
 		var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
@@ -1066,8 +1107,6 @@ function rooms()
 			$.ajax({
 
 				type: 'post',
-				//url: '../assets/php/checkBook.php',
-				url: 'checkBook.php',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 
