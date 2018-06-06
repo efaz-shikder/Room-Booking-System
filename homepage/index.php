@@ -945,6 +945,8 @@
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
 		function grayOutBookedRooms(){
+			var doubleArrayJson = <?php echo json_encode($_SESSION['bookedRoomsIDs']) ?>;
+			var arrayLengthJson = <?php echo json_encode(count($_SESSION['bookedRoomsIDs'])) ?>;
 			// get variables from php
 			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
 			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
@@ -958,9 +960,6 @@
 				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
 			}
 		}
-	</script>
-	<script type="text/javascript">
-
 		function loadTable(hallway, date, period)
 		{
 			var hallway = JSON.stringify(hallway);
@@ -976,6 +975,7 @@
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 					console.log(data);
+					grayOutBookedRooms();
 					}
 				});
 
