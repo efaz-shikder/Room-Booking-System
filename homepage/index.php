@@ -19,7 +19,8 @@
 			$data = array();
 			while($row = mysqli_fetch_array($result))
 			{
-				$data[] = $row;
+				array_push($data, $row);
+				// $data[] = $row;
 			}
 
 			$bookedRoomIDs = array();
@@ -33,7 +34,8 @@
 					// booking exists
 					// get the teacherID of the one result
 					$teacherEmail = $row['teacherEmail'];
-					$bookedRoomIDs[] = array($teacherEmail, $data[i]);
+					array_push($bookedRoomIDs, array($teacherEmail, $data[i]));
+					// $bookedRoomIDs[] = array($teacherEmail, $data[i]);
 				}
 			}
 
@@ -46,7 +48,7 @@
 			$doubleArrayJson = json_encode($doubleArray);
 			$arrayLengthJson = json_encode($arrayLength);
 
-			echo '			<script type="text/javascript">
+			echo '<script type="text/javascript">
 								// get variables from php
 								var doubleArray = JSON.parse(\'<?= $doubleArrayJson ?>\');
 								var arrayLength = JSON.parse(\'<?= $arrayLengthJson ?>\');
