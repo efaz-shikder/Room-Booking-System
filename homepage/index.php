@@ -4,6 +4,29 @@ session_start();
 
 include_once("../assets/php/connect.php");
 
+function rooms()
+{
+	if(isset($_SESSION['selectDate']))
+	{
+		$date = $_SESSION['selectDate'];
+		$period = $_SESSION['period'];
+		$hallway = $_SESSION['hallway'];
+		$n = $_SESSION['$n'];
+
+		$currentTeacherID = $_SESSION['email'];
+		$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+		$result = mysqli_query($server, $sql);
+		while($row = mysqli_fetch_array($result))
+		{
+			$roomName = $row['roomName'];
+			$classID = $row['classID'];
+			echo '<li id='. $classID .' >';
+			echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
+			echo '</li>';
+		}
+	}
+}
+
 ?>
 
 
@@ -108,24 +131,99 @@ include_once("../assets/php/connect.php");
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="roomsContainer">
 									<ul id="rooms" class="gridRooms1">
+										<?php
+
+										if(isset($_SESSION['selectDate']))
+										{
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1);">'.$roomName.'</a>';
+												echo '</li>';
+											}
+										}
+
+										
+
+										?>
 									</ul>
 									<ul id="rooms2" class="gridRooms2">
+										<?php
+
+										if(isset($_SESSION['selectDate']))
+										{
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2);">'.$roomName.'</a>';
+												echo '</li>';
+											}
+										}
+
+										?>
 									</ul>
 									<ul id="rooms3" class="gridRooms3">
+										<?php
+
+										if(isset($_SESSION['selectDate']))
+										{
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3);">'.$roomName.'</a>';
+												echo '</li>';
+											}
+										}
+
+										?>
 									</ul>
 									<ul id="rooms4" class="gridRooms4">
 										<?php
 
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='French Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
+										if(isset($_SESSION['selectDate']))
 										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4);">'.$roomName.'</a>';
-											echo '</li>';
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4);">'.$roomName.'</a>';
+												echo '</li>';
+											}
 										}
 
 										?>
@@ -133,32 +231,46 @@ include_once("../assets/php/connect.php");
 									<ul id="rooms5" class="gridRooms5">
 										<?php
 
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Gym Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
+										if(isset($_SESSION['selectDate']))
 										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5);">'.$roomName.'</a>';
-											echo '</li>';
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5);">'.$roomName.'</a>';
+												echo '</li>';
+											}
 										}
 										?>
 									</ul>
 									<ul id="rooms6" class="gridRooms6">
 										<?php
 
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Front Foyer'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
+										if(isset($_SESSION['selectDate']))
 										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6);">'.$roomName.'</a>';
-											echo '</li>';
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6);">'.$roomName.'</a>';
+												echo '</li>';
+											}
 										}
 
 										?>
@@ -166,16 +278,23 @@ include_once("../assets/php/connect.php");
 									<ul id="rooms7" class="gridRooms7">
 										<?php
 
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Music Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
+										if(isset($_SESSION['selectDate']))
 										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
-											echo '</li>';
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
+												echo '</li>';
+											}
 										}
 
 										?>
@@ -183,16 +302,23 @@ include_once("../assets/php/connect.php");
 									<ul id="rooms8" class="gridRooms8">
 										<?php
 
-										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Math Hallway'";
-										$result = mysqli_query($server, $sql);
-										while($row = mysqli_fetch_array($result))
+										if(isset($_SESSION['selectDate']))
 										{
-											$roomName = $row['roomName'];
-											$classID = $row['classID'];
-											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8);">'.$roomName.'</a>';
-											echo '</li>';
+											$date = $_SESSION['selectDate'];
+											$period = $_SESSION['period'];
+											$hallway = $_SESSION['hallway'];
+
+											$currentTeacherID = $_SESSION['email'];
+											$sql = "SELECT * FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+											$result = mysqli_query($server, $sql);
+											while($row = mysqli_fetch_array($result))
+											{
+												$roomName = $row['roomName'];
+												$classID = $row['classID'];
+												echo '<li id='. $classID .' >';
+												echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8);">'.$roomName.'</a>';
+												echo '</li>';
+											}
 										}
 
 										?>
