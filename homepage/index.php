@@ -47,7 +47,20 @@
 			$arrayLengthJson = json_encode($arrayLength);
 
 			exit;
-
+echo '			<script type="text/javascript">
+					// get variables from php
+					var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
+					var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
+					// iterate through all the booked rooms
+					for (var i = 0; i < arrayLength; i++){
+						// get room id
+						var bookedRoom = document.getElementById(doubleArray[i][1]);
+						// change style to disabled
+						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+						// add teachers name next to room that is booked
+						bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
+					}
+			</script> ';
 	}
 
 ?>
