@@ -10,39 +10,6 @@
 		$period = $_POST['period'];
 		$currentTeacherID = $_SESSION['email'];
 
-		$n=0;
-		switch ($hallway) {
-			case '"C Hallway"':
-				$n = 1;
-				break;
-			case '"S Hallway"':
-				$n = 2;
-				break;
-			case '"English Hallway"':
-				$n = 3;
-				break;
-			case '"French Hallway"':
-				$n = 4;
-				break;
-			case '"Gym Hallway"':
-				$n = 5;
-				break;
-			case '"Front Foyer"':
-				$n = 6;
-				break;
-			case '"Music Hallway"':
-				$n = 7;
-				break;
-			case '"Math Hallway"':
-				$n = 8;
-				break;
-			case '"Science Hallway"':
-				$n = 9;
-				break;
-			case '"Geography Hallway"':
-				$n = 10;
-				break;
-		}
 		$hallway = str_replace('"', "", $hallway);
 	}
 		
