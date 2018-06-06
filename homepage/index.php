@@ -5,8 +5,7 @@
 
 	if(isset($_POST['hallway']))
 	{
-		function rooms()
-		{
+
 			$hallway = $_POST['hallway'];
 			$date = $_POST['date'];
 			$period = $_POST['period'];
@@ -29,7 +28,7 @@
 				$sql = "SELECT * from booking WHERE booking.classID = '$data[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
 				$bookingResult = mysqli_query($server, $sql);
 
-				if (mysql_num_rows($bookingResult)!=0)
+				if (mysqli_num_rows($bookingResult)!=0)
 				{
 					// booking exists
 					// get the teacherID of the one result
@@ -46,24 +45,9 @@
 			// convert variables to json
 			$doubleArrayJson = json_encode($doubleArray);
 			$arrayLengthJson = json_encode($arrayLength);
-			
-			<script type="text/javascript">
-				// get variables from php
-				var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-				var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
-				// iterate through all the booked rooms
-				for (var i = 0; i < arrayLength; i++){
-					// get room id
-					var bookedRoom = document.getElementById(doubleArray[i][1]);
-					// change style to disabled
-					bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-					// add teachers name next to room that is booked
-					bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
-				}
-			</script>
 
 			exit;
-		}
+
 	}
 
 ?>
