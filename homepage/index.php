@@ -13,44 +13,44 @@
 			$currentTeacherID = $_SESSION['email'];
 
 			$hallway = str_replace('"', "", $hallway);
-				
-			$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
+
+			$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='no'";
 			$result = mysqli_query($server, $sql);
-			
+
 			$data = array();
 			while($row = mysqli_fetch_array($result))
 			{
 				$data[] = $row;
-			}	
-			
+			}
+
 			$bookedRoomIDs = array();
 			for ($i = 0; $i < count($data); $i++)
 			{
 				$sql = "SELECT * from booking WHERE booking.classID = '$data[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
 				$bookingResult = mysqli_query($server, $sql);
-				
+
 				if (mysql_num_rows($bookingResult)!=0)
 				{
 					// booking exists
 					// get the teacherID of the one result
 					$teacherEmail = $row['teacherEmail'];
-					$bookedRoomIDs[] = array($teacherEmail, $data[i]); 
+					$bookedRoomIDs[] = array($teacherEmail, $data[i]);
 				}
 			}
-				
+
 			// room id and teacher name 2d array
 			$doubleArray = $bookedRoomIDs;
-			
+
 			// get 2d array length
 			$arrayLength = sizeof($doubleArray);
 			// convert variables to json
 			$doubleArrayJson = json_encode($doubleArray);
 			$arrayLengthJson = json_encode($arrayLength);
-			
+
 			exit;
 		}
 	}
-	
+
 ?>
 
 
@@ -356,7 +356,7 @@
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway' AND classroom.isBookable='yes'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway' AND classroom.isBookable='no'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -373,7 +373,7 @@
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway' AND classroom.isBookable='yes'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway' AND classroom.isBookable='no'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -1051,20 +1051,18 @@
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-		function grayOutBookedRooms(){
-			// get variables from php
-			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
-			// iterate through all the booked rooms
-			for (var i = 0; i < arrayLength; i++){
-				// get room id
-				var bookedRoom = document.getElementById(doubleArray[i][1]);
-				// change style to disabled
-				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-				// add teachers name next to room that is booked
-				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
-			}
-		}
+	// get variables from php
+	var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
+	var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
+	// iterate through all the booked rooms
+	for (var i = 0; i < arrayLength; i++){
+		// get room id
+		var bookedRoom = document.getElementById(doubleArray[i][1]);
+		// change style to disabled
+		bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+		// add teachers name next to room that is booked
+		bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
+	}
 	</script>
 	<script type="text/javascript">
 
