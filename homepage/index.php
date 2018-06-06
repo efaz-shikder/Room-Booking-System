@@ -385,7 +385,7 @@
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -402,7 +402,7 @@
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -1080,18 +1080,19 @@
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-	
-		// get variables from php
-		var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-		var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
-		// iterate through all the booked rooms
-		for (var i = 0; i < arrayLength; i++){
-			// get room id
-			var bookedRoom = document.getElementById(doubleArray[i][1]);
-			// change style to disabled
-			bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-			// add teachers name next to room that is booked
-			bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
+		function grayOutBookedRooms{
+			// get variables from php
+			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
+			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
+			// iterate through all the booked rooms
+			for (var i = 0; i < arrayLength; i++){
+				// get room id
+				var bookedRoom = document.getElementById(doubleArray[i][1]);
+				// change style to disabled
+				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+				// add teachers name next to room that is booked
+				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
+			}
 		}
 	</script>
 	<script type="text/javascript">
@@ -1109,11 +1110,7 @@
 				type: 'post',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
-
-						// window.location.assign("../assets/php/addBooking.php")
-						console.log(data);
-						//window.location.assign("../assets/php/viewOwnBooking.php");
-
+					grayOutBookedRooms
 					}
 				});
 
