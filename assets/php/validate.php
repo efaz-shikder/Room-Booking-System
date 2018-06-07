@@ -72,7 +72,9 @@ if (isset($_POST['submit']))
 		}
 		elseif ($accessLevel == $UNBOOKABLE) 
 		{
-			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../index.php'); </script>";
+			$_SESSION['email'] = $email;
+			$_SESSION['accessLevel'] = $accessLevel;
+			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../homepage/index.php'); </script>";
 		}
 	}
 	else

@@ -1,6 +1,7 @@
 <?php
-	session_start();
-	include_once("../assets/php/connect.php");
+session_start();
+include_once("../assets/php/connect.php");
+$accessLevel = $_SESSION['accessLevel'];
 ?>
 
 
@@ -14,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="lockSubmit();">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -944,22 +945,14 @@
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-		function grayOutBookedRooms(){
-			var doubleArrayJson = <?php echo json_encode($_SESSION['bookedRoomsIDs']) ?>;
-			var arrayLengthJson = <?php echo json_encode(count($_SESSION['bookedRoomsIDs'])) ?>;
-			// get variables from php
-			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
-			// iterate through all the booked rooms
-			for (var i = 0; i < arrayLength; i++){
-				// get room id
-				var bookedRoom = document.getElementById(doubleArray[i][1]);
-				// change style to disabled
-				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-				// add teachers name next to room that is booked
-				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
-			}
-		}
+	</script>
+	<script type="text/javascript">
+		
+	</script>
+	<script type="text/javascript">
+
+
+
 		function loadTable(hallway, date, period)
 		{
 			var hallway = JSON.stringify(hallway);
@@ -976,11 +969,45 @@
 				success:function(data){
 					console.log(data);
 					grayOutBookedRooms();
-					}
-				});
+				}
+			});
+
+
+
+
 
 
 		}
+
+		function lockSubmit()
+		{
+			var access = <?php echo $accessLevel ?>;
+			if(access == 0)
+			{
+				$('.spin').prop('disabled', true);
+			}
+		}
+
+		/*
+		function grayOutBookedRooms()
+		{
+			var doubleArrayJson = <?php echo json_encode($_SESSION['bookedRoomsIDs']) ?>;
+			var arrayLengthJson = <?php echo json_encode(count($_SESSION['bookedRoomsIDs'])) ?>;
+			// get variables from php
+			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
+			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
+			// iterate through all the booked rooms
+			for (var i = 0; i < arrayLength; i++){
+				// get room id
+				var bookedRoom = document.getElementById(doubleArray[i][1]);
+				// change style to disabled
+				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+				// add teachers name next to room that is booked
+				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
+			}
+		} */
+		
+
 	</script>
 </body>
 
