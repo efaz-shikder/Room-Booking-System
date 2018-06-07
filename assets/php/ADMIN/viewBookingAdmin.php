@@ -11,7 +11,7 @@ $teacherEmail = $_SESSION['email'];
 <html lang="en">
 <head>
 
-	<title>Bookings</title>
+	<title>ARBIS-All Bookings</title>
 	<link rel="stylesheet" type="text/css" href="../../CSS/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../CSS/viewBookings.css">
 
@@ -20,7 +20,7 @@ $teacherEmail = $_SESSION['email'];
 <body>
 
 	<!-- Navigation Menu -->
-	<div id="ArbisNav" class="sidenav"> 
+	<div id="ArbisNav" class="sidenav">
 		<div class="outer">
 			<div class="inner" onclick="toggleNav()">
 				<label>Back</label>

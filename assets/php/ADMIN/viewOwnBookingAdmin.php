@@ -11,7 +11,7 @@ $teacherEmail = $_SESSION['email'];
 <html lang="en">
 <head>
 
-	<title>test</title>
+	<title>ARBIS-Your Bookings</title>
 	<link rel="stylesheet" type="text/css" href="../../CSS/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../../CSS/viewBookings.css">
 
