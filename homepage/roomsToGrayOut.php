@@ -1,4 +1,7 @@
 <?php
+	session_start();
+	include_once("../assets/php/connect.php");
+
 	$hallway = $_POST['hallway'];
 	$date = $_POST['date'];
 	$period = $_POST['period'];
@@ -16,12 +19,12 @@
 	$classID = array();
 	while($row = mysqli_fetch_array($result))
 	{
-		array_push($classID, $row);
+		array_push($classID, $row['classID']);
 		// $data[] = $row;
 	}
 
 	$bookedRoomIDs = array();
-	for ($i = 0; $i < count($data); $i++)
+	for ($i = 0; $i < count($classID); $i++)
 	{
 		$sql = "SELECT * from booking WHERE booking.classID = '$classID[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
 		$bookingResult = mysqli_query($server, $sql);
