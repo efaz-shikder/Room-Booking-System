@@ -76,31 +76,114 @@ if (isset($_POST['submit']))
 			mail($to, $subject, $message, $headers);
 
 
-			echo "<h4>Please check your email for the verification link.</h4>";
+			echo "
+      <html lang=\"en\">
+      <head>
+        <meta charset=\"utf-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        <title>ARBIS-Verification</title>
+      </head>
+      <style>
+        body,h1 {font-family: \"Raleway\", sans-serif; text-align: center;}
+        body, html {height: 100%; margin: 0; padding: 0;}
+        .bgimg {
+          background-image: url(\"../images/bg.jpg\");
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+        .center {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      </style>
+      <body>
+        <div class=\"bgimg\">
+        </div>
+        <h1 class=\"center\">Please check your email for the verification link.</h1>
+      </body>
+      </html>
+      ";
 			header("refresh:4;url=../../index.php");
 		}
 		else
 		{
-			echo "<h4>There was an error when signing up.</h4>";
+			echo "
+      <html lang=\"en\">
+      <head>
+        <meta charset=\"utf-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        <title>ARBIS-Verification</title>
+      </head>
+      <style>
+        body,h1 {font-family: \"Raleway\", sans-serif; text-align: center;}
+        body, html {height: 100%; margin: 0; padding: 0;}
+        .bgimg {
+          background-image: url(\"../images/bg.jpg\");
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+        .center {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      </style>
+      <body>
+        <div class=\"bgimg\">
+        </div>
+        <h1 class=\"center\">There was an error when signing up.</h1>
+      </body>
+      </html>
+      ";
 			header("refresh:4;url=../../index.php");
 		}
-		
+
 
 		// Wrap up and close connection
 		mysqli_close($server);
 	}
 	else
 	{
-		echo "<h1>Passwords entered do not match. Redirecting to landing page.</h1>";
-
+		echo "
+    <html lang=\"en\">
+    <head>
+      <meta charset=\"utf-8\">
+      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+      <title>ARBIS-Verification</title>
+    </head>
+    <style>
+      body,h1 {font-family: \"Raleway\", sans-serif; text-align: center;}
+      body, html {height: 100%; margin: 0; padding: 0;}
+      .bgimg {
+        background-image: url(\"../images/bg.jpg\");
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+      .center {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+    <body>
+      <div class=\"bgimg\">
+      </div>
+      <h1 class=\"center\">Passwords entered do not match. Redirecting to landing page.</h1>
+    </body>
+    </html>
+    "; 
 		header("refresh:4;url=../../index.php");
 
 		// Wrap up and close connection
 		mysqli_close($server);
 
 	}
-	
-	
+
+
 }
 
 ?>
