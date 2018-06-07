@@ -972,11 +972,6 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			});
 
-
-
-
-
-
 		}
 
 		function lockSubmit()
@@ -988,27 +983,50 @@ $accessLevel = $_SESSION['accessLevel'];
 			}
 		}
 
-		/*
+		
 		function grayOutBookedRooms()
 		{
-			var doubleArrayJson = <?php echo json_encode($_SESSION['bookedRoomsIDs']) ?>;
-			var arrayLengthJson = <?php echo json_encode(count($_SESSION['bookedRoomsIDs'])) ?>;
-			// get variables from php
-			var doubleArray = JSON.parse('<?= $doubleArrayJson ?>');
-			var arrayLength = JSON.parse('<?= $arrayLengthJson ?>');
-			// iterate through all the booked rooms
-			for (var i = 0; i < arrayLength; i++){
+			var doubleArrayJson = <?php 
+
+			if(isset($_SESSION['bookedRoomsIDs']))
+			{
+				echo $_SESSION['bookedRoomsIDs']; 
+			}
+			else
+			{
+				echo "''";
+			}
+			
+			?>;
+			var arrayLengthJson = <?php 
+
+			if(isset($_SESSION['bookedRoomsIDs']))
+			{
+				echo count($_SESSION['bookedRoomsIDs']);
+			}
+			else
+			{
+				echo "''";
+			}
+			
+			?>; 
+			if (doubleArrayJson != "")
+			{
+				for (var i = 0; i < arrayLength; i++)
+				{
 				// get room id
 				var bookedRoom = document.getElementById(doubleArray[i][1]);
 				// change style to disabled
 				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 				// add teachers name next to room that is booked
 				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
-			}
-		} */
+			} 
+		}
 		
+	} 
+	
 
-	</script>
+</script>
 </body>
 
 </html>
