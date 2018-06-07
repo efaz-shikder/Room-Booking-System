@@ -18,10 +18,12 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     if ($updateResult)
     {
     	echo "You can now login to ARBIS.";
+        header("refresh:4;url=../../index.php");
     }
     else
     {
     	echo "There was an error with verification.";
+        header("refresh:4;url=../../index.php");
     }
 }
 else

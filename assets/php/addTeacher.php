@@ -65,13 +65,10 @@ if (isset($_POST['submit']))
 		{
 			$to = $realEmail;
 			$subject = 'ARBIS | Verification';
-			$message = '
-
-			Thank you for signing up for ARBIS!
-			Your account has been created, you can login after activating your account.
+			$message = 'Thank you for signing up for ARBIS!Your account has been created, you can login after activating your account.
 
 			Please click this link to activate your account:
-			localhost/RBS/assets/php/verify.php?email='.$realEmail.'&hash='.$hash.'
+			http://rbs.victoriaparkci.ca/2/assets/php/verify.php?email='.$realEmail.'&hash='.$hash.'
 
 			';
 
