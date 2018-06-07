@@ -1,5 +1,5 @@
 <?php
-	
+
 	session_start();
 
 	include_once("../../connect.php");
@@ -57,12 +57,12 @@
 				break;
 		}
 
-		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', 'no')";
-	
+		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', 'yes')";
+
 		if (mysqli_query($server, $sql))
     	{
         echo "Room: $roomName Hallway: $hallway </br>";
-    	} 
+    	}
 	}
 
 	// Wrap up and close connection
