@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
 
-	<title>test</title>
+	<title>ARBIS-Home</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="homepageStyle.css">
 

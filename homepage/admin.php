@@ -9,7 +9,7 @@ session_start();
 <html lang="en">
 <head>
 
-	<title>ARBIS</title>
+	<title>ARBIS-Home</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="homepageStyle.css">
 
@@ -29,13 +29,13 @@ session_start();
 		<a href="../assets/php/ADMIN/viewBookingAdmin.php">All Booked Rooms</a>
 		<a href="../assets/php/ADMIN/viewRooms.php">Edit Rooms</a>
 		<a href="../assets/php/ADMIN/viewTeachers.php">Edit Teachers</a>
-		<a href="../ARBIS_Help.html">Help</a>
+		<a href="../ARBIS_Help_Admin.html">Help</a>
 	</div>
 
 	<section>
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
-			<div class="container-fluid">
+			<div class="container">
 
 				<!-- Navigation Menu Icon -->
 				<div class="row">
@@ -57,24 +57,37 @@ session_start();
 				<div class="row">
 					<!-- calender -->
 					<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<!-- calendar -->
-						<div class="calendar_container">
-							<!-- Date Picked Display -->
-							<p class="demo-picked">
-								Date picked: <span data-calendar-label="picked"></span>
-							</p>
+						<div class="row">
+							<!-- calendar -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="calendar_container">
+									<!-- Date Picked Display -->
+									<p class="demo-picked">
+										Date picked: <span data-calendar-label="picked"></span>
+									</p>
 
-							<div class="cal">
-								<div class="cal__header">
-									<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
-									<div class="cal__header__label" data-calendar-label="month">
+									<div class="cal">
+										<div class="cal__header">
+											<button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><img src="leftArrow.svg" height="24" width="99"></button>
+											<div class="cal__header__label" data-calendar-label="month">
 
-									</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+											</div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"><img src="rightArrow.svg" height="24" width="99"></button>
+										</div>
+										<div class="cal__week">
+											<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+										</div>
+										<div class="cal__body" data-calendar-area="month"></div>
+									</div>
 								</div>
-								<div class="cal__week">
-									<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+							</div>
+							<!-- period buttons -->
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="center periodButtons">
+									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
+									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
+									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
+									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
 								</div>
-								<div class="cal__body" data-calendar-area="month"></div>
 							</div>
 						</div>
 					</div>
@@ -84,16 +97,16 @@ session_start();
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">&nbsp;C Hallway</a></li>
-									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">S Hallway</a></li>
-									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">English Hallway</a></li>
-									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">French Hallway</a></li>
-									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Gym Hallway</a></li>
-									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Front Foyer</a></li>
-									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Music Hallway</a></li>
-									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Math Hallway</a></li>
-									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Science Hallway</a></li>
-									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)"><a href="#">Geography Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod());"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod());"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod());"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Gym Hallway', getDate(), getPeriod());"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Front Foyer', getDate(), getPeriod());"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Music Hallway', getDate(), getPeriod());"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Math Hallway', getDate(), getPeriod());"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Science Hallway', getDate(), getPeriod());"><a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Geography Hallway', getDate(), getPeriod());"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
@@ -102,12 +115,8 @@ session_start();
 									<ul id="rooms" class="gridRooms1">
 										<?php
 
-										include_once("../assets/php/connect.php");
-
-
-
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='C Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='C Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -117,13 +126,14 @@ session_start();
 											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1);">'.$roomName.'</a>';
 											echo '</li>';
 										}
+
 										?>
 									</ul>
 									<ul id="rooms2" class="gridRooms2">
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='S Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='S Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -140,7 +150,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='English Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='English Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -157,7 +167,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='French Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='French Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -174,7 +184,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Gym Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Gym Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -184,13 +194,14 @@ session_start();
 											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5);">'.$roomName.'</a>';
 											echo '</li>';
 										}
+
 										?>
 									</ul>
 									<ul id="rooms6" class="gridRooms6">
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Front Foyer'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Front Foyer' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -207,7 +218,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Music Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Music Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -224,7 +235,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Math Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Math Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -241,7 +252,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Science Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -258,7 +269,7 @@ session_start();
 										<?php
 
 										$currentTeacherID = $_SESSION['email'];
-										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway'";
+										$sql = "SELECT * FROM classroom WHERE classroom.hallway='Geography Hallway' AND classroom.isBookable='yes'";
 										$result = mysqli_query($server, $sql);
 										while($row = mysqli_fetch_array($result))
 										{
@@ -279,32 +290,18 @@ session_start();
 				</div>
 				<!-- Row 2 -->
 				<div class="row">
-					<!-- map -->
-					<div class="col-xl-4 col-lg-4">
-						<div class="row">
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="center periodButtons">
-									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
-									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
-									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
-									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
-								</div>
-							</div>
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAXAdmin(getDate(), getClassID(), getPeriod());">
-										<span>Submit</span>
-										<span>
-											<svg viewBox="0 0 24 24">
-												<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-											</svg>
-										</span>
-									</button>
-								</div>
-							</div>
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<!-- map info display -->
-								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+					<!-- submit button -->
+					<div class="col-xl-12 col-lg-12">
+						<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="submitButton">
+								<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+									<span>Submit</span>
+									<span>
+										<svg viewBox="0 0 24 24">
+											<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+										</svg>
+									</span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -313,8 +310,16 @@ session_start();
 					<div>
 						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
 					</div> -->
-					<div class="col-xl-8 col-lg-8 d-none d-lg-block">
-						<svg version="1.1" viewBox="0 0 1925.4308 714.88776">
+				</div>
+				<!-- row 3 -->
+				<div class="row">
+					<!-- map info display -->
+					<div class="col-xl-4 col-lg-12 d-none d-lg-block">
+						<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+					</div>
+					<!-- map -->
+					<div class="col-xl-8 col-lg-12 d-none d-lg-block">
+						<svg class="center" style="width: 82%;" version="1.1" viewBox="0 0 1925.4308 714.88776">
 
 							<!--English Hallway -->
 							<path id="Day Care Office"
