@@ -13,7 +13,7 @@
 
         hash VARCHAR( 32 ) NOT NULL,
 
-        accessLevel ENUM('0', '1', '2') NOT NULL
+        accessLevel ENUM('0', '1', '2', '3', '4') NOT NULL
     	)";
 
     $sql2 = "CREATE TABLE classroom(

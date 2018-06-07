@@ -2,7 +2,7 @@
 
 session_start();
 
-define("DEFAULT_ACCESS_LEVEL", "0");
+define("DEFAULT_ACCESS_LEVEL", "4");
 
 if (isset($_POST['submit']))
 {

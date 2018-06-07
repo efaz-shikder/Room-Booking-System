@@ -57,7 +57,7 @@
 				break;
 		}
 
-		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', 'no')";
+		$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', 'yes')";
 	
 		if (mysqli_query($server, $sql))
     	{

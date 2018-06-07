@@ -5,6 +5,8 @@ session_start();
 set_time_limit(4);
 $ADMIN = 2;
 $TEACHER = 1;
+$UNVERIFIED = 4;
+$UNBOOKABLE = 0;
 
 if (isset($_POST['submit']))
 {
@@ -53,18 +55,24 @@ if (isset($_POST['submit']))
 		if($accessLevel == $ADMIN)
 		{
 			$_SESSION['email'] = $email;
+			$_SESSION['accessLevel'] = $accessLevel;
 			header("Location: ../../homepage/admin.php");
 			echo "Successful login as ADMIN";
 		}
 		elseif ($accessLevel == $TEACHER) 
 		{
 			$_SESSION['email'] = $email;
+			$_SESSION['accessLevel'] = $accessLevel;
 			header("Location: ../../homepage/index.php");
 			echo "Successful login as TEACHER";
 		}
-		else
+		elseif ($accessLevel == $UNVERIFIED) 
 		{
 			echo "<script type='text/javascript'>alert('Please check your email to verify your account!'); window.location.assign('../../index.php'); </script>";
+		}
+		elseif ($accessLevel == $UNBOOKABLE) 
+		{
+			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../index.php'); </script>";
 		}
 	}
 	else
