@@ -30,7 +30,7 @@
 		$bookingResult = mysqli_query($server, $sql);
 		$row = mysqli_fetch_array($bookingResult);
 
-		if (mysqli_num_rows($bookingResult)!=0)
+		if (mysqli_num_rows($bookingResult) > 0)
 		{
 			// booking exists
 			// get the teacherID of the one result

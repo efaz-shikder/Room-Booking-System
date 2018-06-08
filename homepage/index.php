@@ -966,7 +966,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		}
 
-		/* function lockSubmit()
+		 function lockSubmit()
 		{
 			var access = "<?php echo $accessLevel ?>";
 			if(access === 0)
@@ -974,12 +974,12 @@ $accessLevel = $_SESSION['accessLevel'];
 				$('.spin').prop('disabled', true);
 			}
 		}
-		*/
+		
 		
 		function grayOutBookedRooms()
 		{
-			var doubleArrayJson = "<?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode($_SESSION['bookedRoomIDs']); 	}	else	{echo 'y';}	?>";
-			var arrayLengthJson = "<?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));}	else{echo '1';}	?>"; 
+			var doubleArrayJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode($_SESSION['bookedRoomIDs']); 	}?>;
+			var arrayLengthJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));	}?>; 
 			alert(doubleArrayJson);
 			alert(arrayLengthJson);
 			if (doubleArrayJson !== "")
