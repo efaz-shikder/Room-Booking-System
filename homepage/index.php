@@ -966,7 +966,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		}
 
-		function lockSubmit()
+		/* function lockSubmit()
 		{
 			var access = "<?php echo $accessLevel ?>";
 			if(access === 0)
@@ -974,7 +974,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				$('.spin').prop('disabled', true);
 			}
 		}
-
+		*/
 		
 		function grayOutBookedRooms()
 		{
@@ -995,7 +995,8 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			}
 		
-		}  
+		} 
+		
 	</script>
 </body>
 </html>
