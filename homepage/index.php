@@ -969,7 +969,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		function lockSubmit()
 		{
 			var access = "<?php echo $accessLevel ?>";
-			if(access == 0)
+			if(access === 0)
 			{
 				$('.spin').prop('disabled', true);
 			}
@@ -982,7 +982,7 @@ $accessLevel = $_SESSION['accessLevel'];
 			var arrayLengthJson = "<?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));}	else{echo '1';}	?>"; 
 			alert(doubleArrayJson);
 			alert(arrayLengthJson);
-			if (doubleArrayJson != "")
+			if (doubleArrayJson !== "")
 			{
 				for (var i = 0; i < arrayLengthJson; i++)
 				{
@@ -996,9 +996,6 @@ $accessLevel = $_SESSION['accessLevel'];
 			}
 		
 		}  
-	
-
-</script>
+	</script>
 </body>
-
 </html>
