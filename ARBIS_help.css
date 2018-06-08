@@ -1,79 +1,169 @@
+.padding {
+	padding-top: 50px;
+}
+
+/* The side navigation menu */
+.sidenav {
+	color: white;
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Stay on top */
+  overflow-x: hidden; /* Disable horizontal scroll */
+	background-color: #1a1a1a;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+	color: white;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover{
+
+}
+
+/** Nav Icon **/
+#navIcon {
+	z-index: 99;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 14px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 28px;
+}
+
+#nav-icon3 {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  cursor: pointer;
+}
+#nav-icon3:hover span {
+	background-color: #008aee;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  opacity: 1;
+  left: 0;
+}
+/** close button **/
+.outer {
+  position: relative;
+  margin: auto;
+	margin-top: 20px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label {
+  font-size: 12px;
+  line-height: 3em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: white;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}
+
 body
 {
 	background-color: black;
-	font-family: 'Playfair Display', serif;
-	padding-top: 5px;
 }
 
-ul
+
+h1 {
+	color: #008aee;
+	font-size: 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+li
 {
-	padding: 10px 10px 50px 10px;
 	color: white;
-	margin: 50px 250px ;
-	background-color: black;
-	border-style: solid;
-	border-width: medium;
-	border-color: #59f0ff; /*Standard light blue*/
-	text-align: left;
+	font-size: 14px;
+	padding: 3px;
+	text-decoration: none;
 }
 
-h1
+img
 {
-	margin: none;
-	border-style: none;
+	float: right;
+	
+}
+
+#faq
+{
 	text-align: center;
-	color: white;
-	text-shadow: 2px 2px #017f96; /*Aqua blue*/
+	font-size: 48px;
+	padding-bottom: 20px;
 }
-
-a
+.steps
 {
-	color: #59f0ff;/*Light blue*/
-}
-
-a.goback{
-	border:solid;
-	color: white;
-	background-color: #59f0ff;/*Light blue*/
-	margin: 10px 5px;
-	text-decoration:none;
-	padding: 0px 2px;
-}
-
-h2
-{
-	color: #59f0ff;/*Light blue*/
-}
-
-.important
-{
-	color: #6dc5d6; /*Aqua blue*/
+	font-size: 20px;
 	font-weight: 700;
+	margin: 5px;
+	color: #008aee;
 }
-
-/*scrolling bar style*/
-
-/* width */
-::-webkit-scrollbar {
-    width: 20px;
-	background-color:  #6dc5d6;/*Aqua blue*/
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #017f96;/*Dark aqua blue*/
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #1099b2; /*Light aqua blue*/
-}
-
-

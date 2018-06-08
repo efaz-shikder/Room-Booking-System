@@ -1,51 +1,167 @@
 <!DOCTYPE html>
-	<head>
-		<title>Help</title>
-		<link rel="stylesheet" type="text/css" href="ARBIS_Help.css"> 
-	</head>
-		<ul style="list-style-type:none">
-			<h1>FAQS</h1>
-			
-			
-			
-			<li><h2>How Do I Book A Room?</h2></li>
-			<li><p>In order to book a room, please go to our <a href="ARBIS_Map.html">Booking Page</a> using the ARBIS side menu and click on a hallway in our indicated hallway selection menu. This should open a new compartment just beneath the hallway menu, where you can choose an individual classroom to book in that hallway. Once selected, you will see a confirmation alert to ensure this is the room that you like. Should this hallway not contain your desired room, feel free to click on your desired hallway selection menu. When selecting a hallway, the map will illuminate to reveal which hallway you are about to select.</p></li>
-			
-			
-			
-			<li><h2>How Do I Know if a Room is unavailable?</h2></li>
-			<li><p>The room name would either be grayed out with the room text being followed by either <span class="important">"unavailable"</span> or <span class="important">"booked by:"</span> which will be followed by the name of the teacher. This depending on the reason the room is unavailable (a room is unavailable if it is completely unusable for any purpose, while "booked by:" suggests a teacher has already booked this room). </p></li>
-			
-			
-			
-			<li><h2>How Can I Reschedule a booked room?</h2></li>
-			<li><p>Use the ARBIS side menu to go to your <a href="">Booked Rooms</a> and click on the <span class="important">"edit"</span> button in the settings section directly to the right of the room you wish to reschedule. A popup will appear to confirm your decision.</p></li>
-			
-			
-			
-			<li><h2>How Can I Cancel a Room that I have booked? </h2></li>
-			<li><p>Use the ARBIS side menu to go to your <a href="">Booked Rooms</a> and click on the <span class="important">"delete"</span> button in the settings section directly to the right of the room you wish to reschedule. A popup will appear to confirm your decision.</p></li>
-			
-			
-			
-			<li><h2>Can I Declare a room as unavailable?</h2></li>
-			<li><p>To avoid any misuse of this particular privelage, we only give this option to <span class="important">administrative users</span> (principal, vice principal, etc.). A room will only be declared unavailable if it is unsafe to use or under renovations.</p></li>
-			
-			
-			
-			<li><h2>My Account Is not working.</h2></li>
-			<li><p>This may be due to the fact that your device is having trouble connecting to our server. Please refresh the page or restart your devise. Feel free to contact us should the problem persist. Another factor may be that you have forgotten your password, please click on <span class="important">Forgot Password?</span> and follow the instructions to change your password.</p></li>
-			
-			
-			
-			<li><h2>What Does ARBIS Stand For?</h2></li>
-			<li><p>The Name ARBIS stands for: <span class="important">Academic Room Booking and Inquiry System.</span> This name comes from the fact that the system is specifically designed for the purpose of <span class="important">booking rooms</span> for <span class="important">academic</span> use within Victoria Park. It is also for the purpose of <span class="important">inquiring</span> whether a room is available and if not, when the room will be available next.</p></li>
-			
-			
-			
-			<li><h2>Contact Us:</h2></li>
-			<li><p>If you need any further assistance please contact us at: <span class="important">arbis.vicpark@gmail.com.</span></p></li>
-		</ul>
-		
-	<body>
-	</body>
+<html lang="en">
+<head>
+	<title>Help</title>
+	<link rel="stylesheet" type="text/css" href="homepage/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="ARBIS_help.css">
+</head>
+<body>
+	<!-- Navigation Menu -->
+	<div id="ArbisNav" class="sidenav">
+		<div class="outer" onclick="toggleNav();">
+			<div class="inner">
+				<label>Back</label>
+			</div>
+		</div>
+		<a href="homepage/index.php">Home</a>
+		<a href="assets/php/viewOwnBooking.php">Own Booked Rooms</a>
+		<a href="assets/php/viewBooking.php">All Booked Rooms</a>
+		<a href="ARBIS_Help.html">Help</a>
+	</div>
+
+	<section class="padding">
+
+		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
+			<div class="container-fluid">
+				<!-- Navigation Menu Icon -->
+				<div class="row">
+					<div class="col">
+						<div id="navIcon">
+							<div id="nav-icon3" onclick="toggleNav()">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Content -->
+				<div class="row">
+					<div class="col">
+						<h1 id="faq">FREQUENTLY ASKED QUESTIONS</h1>
+						<img src="signUp.jpg" alt="Sign Up" width="320px" height="300px" >	
+						<h1>How to sign up:</h1>
+						<ol>
+						<li>Input your first and last name.</li>
+						<li>Input your TDSB email. You cannot register an account if you use an email with any other extension.</li>
+						<li>Input your password (There is a check box located just above the sign up button that you may click to reveal your password).</li>
+						<li>Re-enter your password.</li>
+						<li>Click sign up.</li>
+						<li>You will receive a confirmation email in the TDSB email you registered with.</li>
+						<li>After account confirmation the page will redirect to a page identical to the first image.</li>
+						<li>Your account is now registered.</li>
+						</ol>
+						<h1>How to sign in:</h1>
+						<ol>
+						<li>You will be taken to the sign in page once you press the “Sign In” button.</li>
+						<img src="signIn.jpg" alt="Sign In" width="320px" height="230px" >
+						<li>Input your email and password</li>
+						<li>Click Remember Me to save your login information</li>
+						<li>Click Hide Password to hide your password</li>
+						<li>Click Forgot Password? if you’ve forgotten your password.</li>
+							<ol>
+							<li>Once clicked, you will receive an email prompting for the change of your password.</li>
+							<li>Once changed, sign in with your new password.</li>
+							</ol>
+						<li>Press Login if you’ve inputted your email and password correctly.</li>
+						<li>You will be taken to the homepage.</li>
+						</ol>
+						<h1>Room Booking Tutorial</h1>
+						<ol>
+						<img src="periodSelection.jpg" alt="Date Selection" width="300px" height="370px">
+						<li class="steps"> Date selection</li>
+							<ol>
+								<li>The current date is highlighted in dark blue.</li>
+								<li>The selected date(the date when you wish to book a room) is highlighted in light blue.</li>
+								<li>The non-bookable dates are greyed out. Such dates include but are not limited to: PA days, weekends, and vacation days.</li>
+								<li>Note: You may not click a block letter or hallway until this component is completed.</li>
+							</ol>
+						<li class="steps"> Period selection</li>
+							<ol>
+								<li>The four buttons below the calendar indicate the periods.</li>
+								<li>Choose the period that you want to book a room for.</li>
+								<li>The chosen period will be highlighted in dark blue.</li>
+								<li>If you made a mistake and wish to choose another period, click on the desired period.</li>
+								<li>Note: You may not click on a  hallway until this component is completed.</li>
+							</ol>
+						<li class="steps"> Hallway selection</li>
+						<img src="hallwaySelection.jpg" alt="Hallway Selection" width="550px" height="100px">
+							<ol>
+								<li>After selecting the period and the date, you can now hover over the hallway options.</li>
+								<li>The hovered hallway will have two blue lines that indicate selection.</li>
+								<li>When a hallway option is hovered over, the corresponding hallway on the map will illuminate.</li>
+								<li>Click on the desired hallway and a dropdown menu comprising of all the bookable rooms in that hallway will appear.</li>
+								<li>Select the room you want to book.</li>
+								<li>The room selected will be highlighted in dark gray, as shown in the picture.</li>
+							</ol>
+							
+						<li class="steps"> Submit booking</li>
+						<img src="submitBooking.jpg" alt="Submit Booking" width="400px" height="130px">
+							<ol>
+								<li>Once you have a room, a period, and a date selected, you can submit your room booking.</li>	
+								<li>When pressed, an alert will show asking for your confirmation.</li>
+								<li>Press OK to confirm your booking.</li>
+								<li>Press Cancel if you want to make alterations to your booking.</li>
+							</ol>
+						<li class="steps"> View booking</li>
+							<ol>
+								<img src="viewBooking.jpg" alt="View Booking" width="600px" height="60px">
+								<li>To view your bookings, click on the icon located at the top left of the webpage.</li>
+								<li>When clicked, a navigation bar will appear.</li>
+								<li>Click “Booked Rooms” to view your booked rooms.</li>
+								<li>Below the options “Date, Room Number, Period” will be the details of your booking. </li>
+							</ol>
+						<li class="steps"> Cancel booking</li>
+							<ol>
+							<img src="cancelBooking.jpg" alt="Cancel Booking" width="600px" height="160px">
+								<li>To cancel a booking. Press the cancel button on the row of the booking that you want to cancel. You will receive a confirmation alert.</li>
+								<li>After deleting a room, you can return to the homepage to book another room. </li>
+							</ol>
+						</ol>
+						<h1>User Interface Layout</h1>
+						<ul>
+						<img src="interfaceLayout.jpg" alt="User interface layout" width="700px" height="500px">
+						<li>The white icon on the top left of the interface will open a navigation bar when pressed.</li>
+						<li>The calendar shows the current date and is used to select your desired date for booking.</li>
+						<li>The buttons labelled A-D below the calendar shows the periods. Click to select your desired period.</li>
+						<li>The submit button below the periods cannot be clicked until a date, period, and room is chosen.</li>
+						<li>The text Academic Room Booking and Inquiry System will change based on hallway and room hovered.</li>
+						<li>The map is on the lower part of the interface is that of the school. When you hover over the rooms, the text will change to that of its room number, hallway name, and floor. The map cannot be clicked and only serves the purpose of being a tool useful to the user’s navigation.</li>
+						<li>The hallway options on the top part of the interface can only be selected once you choose a desired date and period. Clicking on the text opens a menu of all bookable rooms.</li>
+						<li>The Logout button allows you to log out of the account.</li>
+						</ul>
+						<h1>Admin Privileges:</h1>
+						<ul>
+							<li>Book rooms</li>
+							<li>Remove booked rooms of other teachers</li>
+							<li>Make rooms unbookable</li>
+							<li>View all bookings</li>
+							<li>Edit schedule</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<script src="homepage/jquery.min.js"></script>
+	<script>
+		/** Navigation Icon **/
+		var action = 1;
+
+		function toggleNav() {
+			if ( action == 1 ) {
+				document.getElementById("ArbisNav").style.width = "250px";
+				action = 2;
+			}
+			else {
+				document.getElementById("ArbisNav").style.width = "0";
+				action = 1;
+			}
+		}
+	</script>
+
+</body>
+</html>
