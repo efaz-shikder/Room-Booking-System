@@ -26,7 +26,7 @@
 	$bookedRoomIDs = array();
 	for ($i = 0; $i < count($classID); $i++)
 	{
-		$sql = "SELECT * from booking WHERE booking.classID = '$classID[i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
+		$sql = "SELECT * from booking WHERE booking.classID = '$classID[$i]' AND booking.dateOfBooking ='$date' AND booking.period='$period'";
 		$bookingResult = mysqli_query($server, $sql);
 		$row = mysqli_fetch_array($bookingResult);
 
@@ -35,10 +35,10 @@
 			// booking exists
 			// get the teacherID of the one result
 			$teacherEmail = $row['teacherEmail'];
-			array_push($bookedRoomIDs, array($teacherEmail, $classID[i]));
+			array_push($bookedRoomIDs, array($teacherEmail, $classID[$i]));
 			// $bookedRoomIDs[] = array($teacherEmail, $data[i]);
 		}
 	}
-	
-	$_SESSION['bookedRoomIDS'] = $bookedRoomIDs;
+
+	$_SESSION['bookedRoomIDs'] = $bookedRoomIDs;
 ?>

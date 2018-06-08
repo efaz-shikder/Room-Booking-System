@@ -945,19 +945,11 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
-	</script>
-	<script type="text/javascript">
-		
-	</script>
-	<script type="text/javascript">
-
-
-
 		function loadTable(hallway, date, period)
 		{
-			var hallway = JSON.stringify(hallway);
-			var date = JSON.stringify(date);
-			var period = JSON.stringify(period);
+			hallway = JSON.stringify(hallway);
+			date = JSON.stringify(date);
+			period = JSON.stringify(period);
 			period = period.substring(3,4);
 
 
@@ -976,7 +968,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		function lockSubmit()
 		{
-			var access = <?php echo $accessLevel ?>;
+			var access = "<?php echo $accessLevel ?>";
 			if(access == 0)
 			{
 				$('.spin').prop('disabled', true);
@@ -986,44 +978,24 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		function grayOutBookedRooms()
 		{
-			var doubleArrayJson = <?php 
-
-			if(isset($_SESSION['bookedRoomsIDs']))
-			{
-				echo $_SESSION['bookedRoomsIDs']; 
-			}
-			else
-			{
-				echo "''";
-			}
-			
-			?>;
-			var arrayLengthJson = <?php 
-
-			if(isset($_SESSION['bookedRoomsIDs']))
-			{
-				echo count($_SESSION['bookedRoomsIDs']);
-			}
-			else
-			{
-				echo "''";
-			}
-			
-			?>; 
+			var doubleArrayJson = "<?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode($_SESSION['bookedRoomIDs']); 	}	else	{echo 'y';}	?>";
+			var arrayLengthJson = "<?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));}	else{echo '1';}	?>"; 
+			alert(doubleArrayJson);
+			alert(arrayLengthJson);
 			if (doubleArrayJson != "")
 			{
-				for (var i = 0; i < arrayLength; i++)
+				for (var i = 0; i < arrayLengthJson; i++)
 				{
 				// get room id
-				var bookedRoom = document.getElementById(doubleArray[i][1]);
+				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
 				// change style to disabled
 				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 				// add teachers name next to room that is booked
-				bookedRoom.textContent += " Booked by: " + doubleArray[i][0];
-			} 
-		}
+				bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
+				}
+			}
 		
-	} 
+		}  
 	
 
 </script>

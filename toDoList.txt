@@ -8,9 +8,6 @@ TO DO LIST:
 
 - ADMIN add function to add special days to the schedule
 
-- connect email verification with an email server 
-
-
 if all of the above are complete
 
 - create a function to determine what day of school it is based on the first day of school, last day of school, and all no school days 
