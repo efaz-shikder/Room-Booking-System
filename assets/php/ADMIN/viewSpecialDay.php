@@ -22,7 +22,7 @@ $teacherEmail = $_SESSION['email'];
 
 </head>
 
-<body>
+<body onload="selectDate();">
 
   <!-- Navigation Menu -->
   <div id="ArbisNav" class="sidenav">
@@ -31,6 +31,7 @@ $teacherEmail = $_SESSION['email'];
     <a href="viewBookingAdmin.php">All Booked Rooms </a>
     <a href="viewRooms.php">Edit Rooms</a>
     <a href="viewTeachers.php">Edit Teachers</a>
+    <a href="viewTeachers.php">Edit Calendar</a>
     <a href="../../../ARBIS_Help.html">Help</a>
   </div>
 
@@ -78,8 +79,8 @@ $teacherEmail = $_SESSION['email'];
           <label>Description of Date:</label>
           <input type="text" name="description" id="description" class="form-control"></br>
 
-          <label for="sel1">Select Type of Day:</label>
-          <select id="hallway" name="hallway">
+          <label for="typeOfDay">Select Type of Day:</label>
+          <select id="typeOfDay" name="typeOfDay">
             <option value="C Hallway">First Day of School</option>
             <option value="S Hallway">Last Day of School</option>
             <option value="English Hallway">Late Start</option>
@@ -91,7 +92,7 @@ $teacherEmail = $_SESSION['email'];
           <label>Date</label>
           <div class="calendar col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <input type="date" id="selectDate" value="yyyy-mm-dd">
-            <button onclick="selectDate();">Search</button>
+
           </div>
 
           <input type="hidden" name="default_booking" id="default_booking" value="yes">
@@ -99,7 +100,7 @@ $teacherEmail = $_SESSION['email'];
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addRoom(document.getElementById('room_name'), document.getElementById('hallway'));">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addDay(selectDate(), document.getElementById('description'), document.getElementById('typeOfDay'))">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -113,100 +114,85 @@ $query = "SELECT * FROM schedule ORDER BY schedule.specialDate DESC" ;
 
 $result = mysqli_query($server, $query);
 while($row = mysqli_fetch_array($result))
-              {   //Creates a loop to loop through results
+{   //Creates a loop to loop through results
 
-                $description = $row['dateDescription'];
-                $date = $row['specialDate'];
-                $type = $row['typeOfDay'];
+  $description = $row['dateDescription'];
+  $date = $row['specialDate'];
+  $type = $row['typeOfDay'];
 
-                ?>
+  ?>
 
-                <tbody>
-                  <tr>
-                    <td><?php echo $date ?></td>
-                    <td><?php echo $type ?></td>
-                    <td><?php echo $description ?></td>
-                  </tr>
-                </tbody>
-              <?php } ?>
-            </table> 
-          </div>
-        </section>
+  <tbody>
+    <tr>
+      <td><?php echo $date ?></td>
+      <td><?php echo $type ?></td>
+      <td><?php echo $description ?></td>
+    </tr>
+  </tbody>
+<?php } ?>
+</table> 
+</div>
+</section>
+s
 
+<script src="../../javascript/jquery.min.js"></script>
+<script src="../../javascript/script.js"></script>
+<script type="text/javascript">
 
-        <script src="../../javascript/jquery.min.js"></script>
-        <script src="../../javascript/script.js"></script>
-        <script type="text/javascript">
+  function selectDate()
+  {
 
+    var date = document.getElementById("selectDate").value;
 
-         function selectDate()
-         {
-
-          var date = document.getElementById("selectDate").value;
-          $('.date').show();
-
-          if(date != "")
-          {
-
-            $('.date').hide();
-            $('tr[name='+date+']').show();
-          }
-        }
+    return date;
 
 
-        function addRoom(name, hallway)
-        {
-          var roomName = name.value;
-          var hallway = hallway.value;
-          var isBookable;
-
-          if (document.getElementById("initializeBookable").checked == true)
-          {
-           isBookable = "yes";
-         }
-         else
-         {
-           isBookable = "no";
-         }
-
-         $.ajax({
-
-           type: 'post',
-           url: 'addRoom.php',
-           data: {roomName: roomName, hallway: hallway, isBookable: isBookable},
-           success:function(data){
-            console.log(data);
-            alert("Room has been added.");
-            window.location.replace("viewRooms.php");
-          }
-        });
-       }
+  }
 
 
-       /** Navigation Icon **/
-       var action = 1;
+  function addDay(date, description, type)
+  {
+    var roomName = name.value;
+    var description = description.value;
+    var type = type.value;
 
-       function toggleNav() {
-        if ( action == 1 ) {
-         document.getElementById("ArbisNav").style.width = "250px";
-         document.getElementById("main").style.marginLeft = "280px";
-         action = 2;
-       }
-       else {
-         document.getElementById("ArbisNav").style.width = "0px";
-         document.getElementById("main").style.marginLeft = "0px";
-         action = 1;
-       }
-       $("#mainContent").toggle();
-     }
-     $(document).ready(function(){
-      $('#nav-icon3').click(function(){
-       $(this).toggleClass('open');
-     });
-    });
+    $.ajax({
 
-  </script>
+     type: 'post',
+     url: 'addDay.php',
+     data: {date: date, description: description, type: type},
+     success:function(data){
+      console.log(data);
+      alert("Day has been added.");
+      window.location.replace("viewSpecialDay.php");
+    }
+  });
+  }
 
+
+  /** Navigation Icon **/
+  var action = 1;
+
+  function toggleNav() {
+    if ( action == 1 ) {
+     document.getElementById("ArbisNav").style.width = "250px";
+     document.getElementById("main").style.marginLeft = "280px";
+     action = 2;
+   }
+   else {
+     document.getElementById("ArbisNav").style.width = "0px";
+     document.getElementById("main").style.marginLeft = "0px";
+     action = 1;
+   }
+   $("#mainContent").toggle();
+ }
+ $(document).ready(function(){
+  $('#nav-icon3').click(function(){
+   $(this).toggleClass('open');
+ });
+});
+
+</script
 </body>
 
 </html>

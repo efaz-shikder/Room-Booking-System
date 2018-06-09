@@ -1,6 +1,7 @@
 <?php
-
 session_start();
+include_once("../assets/php/connect.php");
+$accessLevel = $_SESSION['accessLevel'];
 
 ?>
 
