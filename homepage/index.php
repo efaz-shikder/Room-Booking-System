@@ -95,7 +95,7 @@ $accessLevel = $_SESSION['accessLevel'];
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
 									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
 									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
 									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
@@ -945,6 +945,8 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
+		var doubleArrayJson;
+		
 		function loadTable(hallway, date, period)
 		{
 			hallway = JSON.stringify(hallway);
@@ -960,7 +962,10 @@ $accessLevel = $_SESSION['accessLevel'];
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 					console.log(data);
-					
+					doubleArrayJson = data;		
+				},
+				complete: function(data){
+					grayOutBookedRooms();
 				}
 			});
 
@@ -977,28 +982,9 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		
 		function grayOutBookedRooms()
-		{
-			/*
-			var doubleArrayJson;
-			var oReq = new XMLHttpRequest();
-			
-			oReq.onload = function() 
-			{
-				doubleArrayJson = this.responseText;
-			};
-			
-			oReq.open("get", "roomsToGrayOut.php", true);
-			oReq.send();
-			*/
-			
-			var doubleArrayJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode($_SESSION['bookedRoomIDs']); 	}?>;
-			var arrayLengthJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));	}?>; 
-			
-			var doubleArrayJson = bookedRoomIDs;
-			var arrayLengthJson = bookedRoomIDs.length;
-			
-			alert(doubleArrayJson);
-			alert(arrayLengthJson);
+		{	
+			var arrayLengthJson = doubleArrayJson.length; 
+		
 			if (doubleArrayJson !== "")
 			{
 				for (var i = 0; i < arrayLengthJson; i++)
