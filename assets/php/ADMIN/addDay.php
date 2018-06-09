@@ -4,16 +4,16 @@ session_start();
 
 include_once("../connect.php");
 
-$roomName = $_POST['roomName'];
-$hallway = $_POST['hallway'];
-$isBookable = $_POST['isBookable'];
+$description = $_POST['description'];
+$type = $_POST['type'];
+$date = $_POST['date'];
 
-echo "$roomName";
-echo "$hallway";
-echo "$isBookable";
+echo "$description";
+echo "$type";
+echo "$date";
 
 
-$sql = "INSERT INTO `classroom` (`classID`, `roomName`, `hallway`, `isBookable`) VALUES (NULL, '$roomName', '$hallway', '$isBookable')";
+$sql = "INSERT INTO schedule (`ID`, `dateDescription`, `specialDate`, `typeOfDay`) VALUES (NULL, '$description', '$date', '$type')";
 mysqli_query($server, $sql);
 
 

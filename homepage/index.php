@@ -975,6 +975,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		function removeGrayOutBookedRooms()
 		{
+			
 
 		}
 
