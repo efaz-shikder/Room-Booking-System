@@ -40,8 +40,8 @@ if (isset($_POST['submit']))
 	$email = mysqli_real_escape_string($server, $email);
 	$password = mysqli_real_escape_string($server, $password);
 
-	// Worry about password encryption??
-
+	$email = $email."@gmail.com";
+	
 	$sql = "SELECT * FROM teacher WHERE email = '$email'";
 	$query = mysqli_query($server, $sql);
 	$row = mysqli_fetch_array($query);
