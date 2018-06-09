@@ -626,6 +626,8 @@ function setPeriod(element)
 	period = JSON.stringify(element.id);
 }
 
+
+
 function getClassID()
 {
 	return classID;

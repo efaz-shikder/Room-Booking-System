@@ -119,9 +119,10 @@ $accessLevel = $_SESSION['accessLevel'];
 										while($row = mysqli_fetch_array($result))
 										{
 											$roomName = $row['roomName'];
+											$roomString = "$roomName";
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1); setRoomName(\''. $roomString .'\');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -138,7 +139,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -155,7 +156,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -172,7 +173,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -189,7 +190,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -206,7 +207,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -223,7 +224,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -240,7 +241,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -257,7 +258,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -274,7 +275,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10);">'.$roomName.'</a>';
+											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -292,7 +293,7 @@ $accessLevel = $_SESSION['accessLevel'];
 					<div class="col-xl-12 col-lg-12">
 						<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="submitButton">
-								<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+								<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod(), getRoomName());">
 									<span>Submit</span>
 									<span>
 										<svg viewBox="0 0 24 24">
@@ -946,6 +947,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
 		var doubleArrayJson;
+		var roomName;
 		
 		function loadTable(hallway, date, period)
 		{
@@ -981,17 +983,21 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		var access = <?php echo $accessLevel ?>;
 		
-		function bookAJAX(date, id, block)
+		function bookAJAX(date, id, block, room)
 		{
 
 			var dateOfBooking = JSON.stringify(date);
+			dateOfBooking.replace(/\s+/g, '');
 			var classID = JSON.stringify(id);
 			var period = JSON.stringify(block);
+			roomName = JSON.stringify(room);
 			period = period.substring(3,4);
+
+
 
 			if (access != 0)
 			{
-				if (confirm('Are you sure you want to create this booking?')) {
+				if (confirm('Confirm Booking of ' + roomName + 'on ' + dateOfBooking + ' during period ' + period + '.')) {
 
 					$.ajax({
 
@@ -1037,8 +1043,25 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			}
 		}
-		
+
 	} 
+
+
+
+	function setRoomName(room)
+	{
+		roomName = room;
+		
+	}
+
+	setRoomName("yes");
+
+	function getRoomName()
+	{
+		return roomName;
+		alert(roomName);
+	}
+
 
 </script>
 </body>
