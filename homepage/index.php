@@ -962,7 +962,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 					console.log(data);
-					doubleArrayJson = data;		
+					doubleArrayJson = JSON.parse(data);		
 				},
 				complete: function(data){
 					grayOutBookedRooms();
@@ -983,18 +983,19 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		function grayOutBookedRooms()
 		{	
-			var arrayLengthJson = doubleArrayJson.length; 
-		
 			if (doubleArrayJson !== "")
 			{
-				for (var i = 0; i < arrayLengthJson; i++)
+				for (var i = 0; i < doubleArrayJson.length; i++)
 				{
 				// get room id
-				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
-				// change style to disabled
-				bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-				// add teachers name next to room that is booked
-				bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
+				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);		
+				if (bookedRoom != null)
+				{
+					// change style to disabled
+					bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+					// add teachers name next to room that is booked
+					bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
+				}
 				}
 			}
 		
