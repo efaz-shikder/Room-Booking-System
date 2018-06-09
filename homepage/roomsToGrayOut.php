@@ -7,6 +7,8 @@
 	$period = $_POST['period'];
 	$currentTeacherID = $_SESSION['email'];
 	
+	$date = str_replace('"', "", $date);
+	$period = str_replace('"', "", $period);
 	$hallway = str_replace('"', "", $hallway);
 
 	$sql = "SELECT classroom.classID FROM classroom WHERE classroom.hallway='$hallway' AND classroom.isBookable='yes'";
@@ -37,5 +39,6 @@
 		}
 	}
 
-	$_SESSION['bookedRoomIDs'] = [["efaz.shikder", 37], ["LUL", 38]];
+	$_SESSION['bookedRoomIDs'] = $bookedRoomIDs;
+	echo json_encode($bookedRoomIDs);
 ?>

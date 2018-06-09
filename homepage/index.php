@@ -960,6 +960,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 					console.log(data);
+					
 				}
 			});
 
@@ -977,8 +978,25 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		function grayOutBookedRooms()
 		{
+			/*
+			var doubleArrayJson;
+			var oReq = new XMLHttpRequest();
+			
+			oReq.onload = function() 
+			{
+				doubleArrayJson = this.responseText;
+			};
+			
+			oReq.open("get", "roomsToGrayOut.php", true);
+			oReq.send();
+			*/
+			
 			var doubleArrayJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode($_SESSION['bookedRoomIDs']); 	}?>;
 			var arrayLengthJson = <?php	if(isset($_SESSION['bookedRoomIDs']))	{echo json_encode(count($_SESSION['bookedRoomIDs']));	}?>; 
+			
+			var doubleArrayJson = bookedRoomIDs;
+			var arrayLengthJson = bookedRoomIDs.length;
+			
 			alert(doubleArrayJson);
 			alert(arrayLengthJson);
 			if (doubleArrayJson !== "")
