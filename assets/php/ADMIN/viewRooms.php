@@ -22,7 +22,7 @@ $teacherEmail = $_SESSION['email'];
 
 </head>
 
-<body>
+<body style="background: black;">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -36,7 +36,7 @@ $teacherEmail = $_SESSION['email'];
     <a href="viewBookingAdmin.php">All Booked Rooms </a>
     <a href="viewRooms.php">Edit Rooms</a>
     <a href="viewTeachers.php">Edit Teachers</a>
-    <a href="../../../ARBIS_Help.html">Help</a>
+    <a href="../../../ARBIS_Help_Admin.html">Help</a>
   </div>
 
   <section class="padding container">
