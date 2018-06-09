@@ -15,7 +15,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body onload="lockSubmit();">
+<body onload="">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -95,7 +95,7 @@ $accessLevel = $_SESSION['accessLevel'];
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());lockSubmit();"><a href="#">&nbsp;C Hallway</a></li>
 									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
 									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
 									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
@@ -971,16 +971,54 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		}
 
-		 function lockSubmit()
+
+		
+		function removeGrayOutBookedRooms()
 		{
-			var access = "<?php echo $accessLevel ?>";
-			if(access === 0)
+
+		}
+
+		var access = <?php echo $accessLevel ?>;
+		
+		function bookAJAX(date, id, block)
+		{
+
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(id);
+			var period = JSON.stringify(block);
+			period = period.substring(3,4);
+
+			if (access != 0)
 			{
-				$('.spin').prop('disabled', true);
+				if (confirm('Are you sure you want to create this booking?')) {
+
+					$.ajax({
+
+						type: 'post',
+						url: '../assets/php/addBooking.php',
+						data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+						success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/viewOwnBooking.php");
+
+					}
+				});
+
+
+				}
 			}
+			else
+			{
+				alert('You are not authorized to create any bookings. Please contact an administrator.');
+			}
+
+			
+
 		}
 		
-		
+
 		function grayOutBookedRooms()
 		{	
 			if (doubleArrayJson !== "")
@@ -996,11 +1034,11 @@ $accessLevel = $_SESSION['accessLevel'];
 					// add teachers name next to room that is booked
 					bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
 				}
-				}
 			}
+		}
 		
-		} 
-		
-	</script>
+	} 
+
+</script>
 </body>
 </html>

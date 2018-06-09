@@ -47,9 +47,6 @@
               <label for="password">Password</label>
             </div>
             <div class="click-group">
-              <div class="col">
-               <p class="remember">Remember Me</p>
-             </div>
              <div class="col">
                <div class="show">
                 <input type="checkbox" id="chk">
@@ -57,8 +54,7 @@
               </div>
             </div>
           </div>
-          <input class="form-button" onclick="closeForm()" type="submit" name="submit" value="Login">
-          <div class="form-forgot">Forgot Password?</div>   
+          <input class="form-button" onclick="closeForm()" type="submit" name="submit" value="Login"> 
         </form> 
       </div>
     </div>
