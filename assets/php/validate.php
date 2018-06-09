@@ -7,6 +7,7 @@ $ADMIN = 2;
 $TEACHER = 1;
 $UNVERIFIED = 4;
 $UNBOOKABLE = 0;
+$DENY = 3;
 
 if (isset($_POST['submit']))
 {
@@ -71,6 +72,12 @@ if (isset($_POST['submit']))
 			echo "<script type='text/javascript'>alert('Please check your email to verify your account!'); window.location.assign('../../index.php'); </script>";
 		}
 		elseif ($accessLevel == $UNBOOKABLE) 
+		{
+			$_SESSION['email'] = $email;
+			$_SESSION['accessLevel'] = $accessLevel;
+			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../homepage/index.php'); </script>";
+		}
+		elseif ($accessLevel == $DENY) 
 		{
 			$_SESSION['email'] = $email;
 			$_SESSION['accessLevel'] = $accessLevel;
