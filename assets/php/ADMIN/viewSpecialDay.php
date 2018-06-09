@@ -22,7 +22,7 @@ $teacherEmail = $_SESSION['email'];
 
 </head>
 
-<body onload="selectDate();">
+<body>
 
   <!-- Navigation Menu -->
   <div id="ArbisNav" class="sidenav">
@@ -81,12 +81,12 @@ $teacherEmail = $_SESSION['email'];
 
           <label for="typeOfDay">Select Type of Day:</label>
           <select id="typeOfDay" name="typeOfDay">
-            <option value="C Hallway">First Day of School</option>
-            <option value="S Hallway">Last Day of School</option>
-            <option value="English Hallway">Late Start</option>
-            <option value="French Hallway">No School</option>
-            <option value="Gym Hallway">Day Zero</option>
-            <option value="Front Foyer">Normal Day</option>
+            <option value="first day of school">First Day of School</option>
+            <option value="last day of school">Last Day of School</option>
+            <option value="late start">Late Start</option>
+            <option value="no school">No School</option>
+            <option value="day zero">Day Zero</option>
+            <option value="normal day">Normal Day</option>
           </select>
 
           <label>Date</label>
@@ -100,7 +100,7 @@ $teacherEmail = $_SESSION['email'];
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addDay(selectDate(), document.getElementById('description'), document.getElementById('typeOfDay'))">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addDay(document.getElementById('selectDate').value, document.getElementById('description'), document.getElementById('typeOfDay'))">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -133,22 +133,10 @@ while($row = mysqli_fetch_array($result))
 </table> 
 </div>
 </section>
-s
 
 <script src="../../javascript/jquery.min.js"></script>
 <script src="../../javascript/script.js"></script>
 <script type="text/javascript">
-
-  function selectDate()
-  {
-
-    var date = document.getElementById("selectDate").value;
-
-    return date;
-
-
-  }
-
 
   function addDay(date, description, type)
   {
