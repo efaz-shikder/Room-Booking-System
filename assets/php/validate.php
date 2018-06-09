@@ -81,7 +81,7 @@ if (isset($_POST['submit']))
 		{
 			$_SESSION['email'] = $email;
 			$_SESSION['accessLevel'] = $accessLevel;
-			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../homepage/index.php'); </script>";
+			echo "<script type='text/javascript'>alert('You are not authorized to access ARBIS. Please contact an administrator.');</script>";
 		}
 	}
 	else
