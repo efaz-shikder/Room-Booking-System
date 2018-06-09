@@ -88,8 +88,11 @@ $teacherEmail = $_SESSION['email'];
             <option value="Front Foyer">Normal Day</option>
           </select>
 
-          <label>Is bookable?</label>
-          <input type="checkbox" name="bookable" onchange="setBookable(this);" id="initializeBookable" data-toggle="toggle" data-on="Yes" data-off="No" value="yes" checked />
+          <label>Date</label>
+          <div class="calendar col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <input type="date" id="selectDate" value="yyyy-mm-dd">
+            <button onclick="selectDate();">Search</button>
+          </div>
 
           <input type="hidden" name="default_booking" id="default_booking" value="yes">
           
@@ -136,12 +139,28 @@ while($row = mysqli_fetch_array($result))
         <script type="text/javascript">
 
 
-         function updateBookable(element)
+         function selectDate()
          {
-          var classID = element.value;
+
+          var date = document.getElementById("selectDate").value;
+          $('.date').show();
+
+          if(date != "")
+          {
+
+            $('.date').hide();
+            $('tr[name='+date+']').show();
+          }
+        }
+
+
+        function addRoom(name, hallway)
+        {
+          var roomName = name.value;
+          var hallway = hallway.value;
           var isBookable;
 
-          if (document.getElementById(classID).checked == true)
+          if (document.getElementById("initializeBookable").checked == true)
           {
            isBookable = "yes";
          }
@@ -150,84 +169,43 @@ while($row = mysqli_fetch_array($result))
            isBookable = "no";
          }
 
-
          $.ajax({
 
            type: 'post',
-           url: 'updateRoom.php',
-           data: {classID: classID, isBookable: isBookable},
+           url: 'addRoom.php',
+           data: {roomName: roomName, hallway: hallway, isBookable: isBookable},
            success:function(data){
             console.log(data);
-            alert("Room has been updated.");
+            alert("Room has been added.");
+            window.location.replace("viewRooms.php");
           }
         });
        }
 
-       function setBookable(element)
-       {
-          if(element.value == "yes")
-          {
-            element.setAttribute("value", "no");
-          }
-          else
-          {
-            element.setAttribute("value", "yes");
-          }
+
+       /** Navigation Icon **/
+       var action = 1;
+
+       function toggleNav() {
+        if ( action == 1 ) {
+         document.getElementById("ArbisNav").style.width = "250px";
+         document.getElementById("main").style.marginLeft = "280px";
+         action = 2;
        }
-
-
-       function addRoom(name, hallway)
-       {
-        var roomName = name.value;
-        var hallway = hallway.value;
-        var isBookable;
-
-        if (document.getElementById("initializeBookable").checked == true)
-        {
-         isBookable = "yes";
+       else {
+         document.getElementById("ArbisNav").style.width = "0px";
+         document.getElementById("main").style.marginLeft = "0px";
+         action = 1;
        }
-       else
-       {
-         isBookable = "no";
-       }
-
-       $.ajax({
-
-         type: 'post',
-         url: 'addRoom.php',
-         data: {roomName: roomName, hallway: hallway, isBookable: isBookable},
-         success:function(data){
-          console.log(data);
-          alert("Room has been added.");
-          window.location.replace("viewRooms.php");
-        }
-      });
+       $("#mainContent").toggle();
      }
+     $(document).ready(function(){
+      $('#nav-icon3').click(function(){
+       $(this).toggleClass('open');
+     });
+    });
 
-
-     /** Navigation Icon **/
-     var action = 1;
-
-     function toggleNav() {
-      if ( action == 1 ) {
-       document.getElementById("ArbisNav").style.width = "250px";
-       document.getElementById("main").style.marginLeft = "280px";
-       action = 2;
-     }
-     else {
-       document.getElementById("ArbisNav").style.width = "0px";
-       document.getElementById("main").style.marginLeft = "0px";
-       action = 1;
-     }
-     $("#mainContent").toggle();
-   }
-   $(document).ready(function(){
-    $('#nav-icon3').click(function(){
-     $(this).toggleClass('open');
-   });
-  });
-
-</script>
+  </script>
 
 </body>
 
