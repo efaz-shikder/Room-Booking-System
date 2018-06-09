@@ -270,10 +270,6 @@ createDay: function (num, day, year) {
 	newDay.setAttribute('data-calendar-status', 'active')
 }
 
-if (this.date.toString() === this.todaysDate.toString()) {
-	newDay.classList.add('cal__date--today')
-}
-
 newDay.appendChild(dateEl)
 this.month.appendChild(newDay)
 },
@@ -642,6 +638,3 @@ function getDate()
 {
 	return dateFinal;
 }
-
-
-
