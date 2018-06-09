@@ -945,7 +945,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
 		var doubleArrayJson;
-		
+
 		function loadTable(hallway, date, period)
 		{
 			hallway = JSON.stringify(hallway);
@@ -961,7 +961,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
 					console.log(data);
-					doubleArrayJson = JSON.parse(data);		
+					doubleArrayJson = JSON.parse(data);
 				},
 				complete: function(data){
 					grayOutBookedRooms();
@@ -971,7 +971,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		}
 
 
-		
+
 		function removeGrayOutBookedRooms()
 		{
 
@@ -980,13 +980,13 @@ $accessLevel = $_SESSION['accessLevel'];
 		var access = <?php echo $accessLevel ?>;
 
 		function grayOutBookedRooms()
-		{	
+		{
 			if (doubleArrayJson !== "")
 			{
 				for (var i = 0; i < doubleArrayJson.length; i++)
 				{
 				// get room id
-				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);		
+				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
 				if (bookedRoom != null)
 				{
 					// change style to disabled
@@ -996,8 +996,8 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			}
 		}
-		
-	} 
+
+	}
 		function bookAJAXAdmin(date, id, block)
 		{
 
