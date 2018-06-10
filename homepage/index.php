@@ -1028,7 +1028,6 @@ $accessLevel = $_SESSION['accessLevel'];
 				//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
 			} */
 		}
-		} 
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
