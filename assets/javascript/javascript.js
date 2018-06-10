@@ -33,8 +33,10 @@ var inputChk  = document.getElementById('chk');
 var label = document.getElementById('showhide');
 
 var inputPass2 = document.getElementById('password2');
+var inputPass3 = document.getElementById('password3');
 var inputChk2  = document.getElementById('chk2');
 var label2 = document.getElementById('showhide2');
+
 
 inputChk.onclick = function () {
 	if(inputChk.checked) {
@@ -50,10 +52,13 @@ inputChk.onclick = function () {
 inputChk2.onclick = function () {
 	if(inputChk2.checked) {
 		inputPass2.setAttribute('type', 'text');
+		inputPass3.setAttribute('type', 'text');
+
 		label2.textContent = 'Hide Passowrd';
 	}
 	else {
-		inputPass2.setAttribute('type', 'password');;
+		inputPass2.setAttribute('type', 'password');
+		inputPass3.setAttribute('type', 'password');
 		label2.textContent = 'Show Passowrd';
 	}
 }

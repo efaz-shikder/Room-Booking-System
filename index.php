@@ -84,7 +84,7 @@
          <label for="password">Password</label>
        </div>
        <div class="input-group">
-         <input type="password" onblur="checkInput(this)" name="password2" />
+         <input type="password" id="password3" onblur="checkInput(this)" name="password2" />
          <label for="password">Re-enter Password</label>
        </div>
        <div class="click-group">
