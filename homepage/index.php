@@ -950,7 +950,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		var roomName;
 		var noSchoolArray;
 		var hallwayToUngray;
-		
+
 		function loadTable(hallway, date, period)
 		{
 			hallway = JSON.stringify(hallway);
@@ -965,7 +965,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				url: 'roomsToGrayOut.php',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
-					doubleArrayJson = JSON.parse(data);		
+					doubleArrayJson = JSON.parse(data);
 				},
 				complete: function(data){
 					grayOutBookedRooms();
@@ -995,13 +995,13 @@ $accessLevel = $_SESSION['accessLevel'];
 		function updateCalendar()
 			alert(noSchoolArray);
 		}
-		
+
 		function ungrayRooms(hallway)
 		{
 			hallway = JSON.stringify(hallway);
-			
+
 			$.ajax({
-				
+
 				type: 'post',
 				url: 'hallwayToUngray.php',
 				data: {hallway: halway},
@@ -1011,21 +1011,25 @@ $accessLevel = $_SESSION['accessLevel'];
 				complete: function(data){
 					ungrayHallway();
 				}
-			
+
 
 			});
 		}
-		
+
 		function ungrayRooms()
 		{
 			for(var i = 0; i < hallwayToUngray.length; i++)
 			{
 				var room = document.getElementById(hallwayToUngray[i]);
+				// change style to original
+				bookedRoom.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
+				// add teachers name next to room that is booked
+				bookedRoom.textContent -= " Booked by: " + doubleArrayJson[i][0];
 			}
 		}
 
 		var access = <?php echo $accessLevel ?>;
-		
+
 		function bookAJAX(date, id, block, room)
 		{
 
@@ -1040,7 +1044,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 			if (access != 0)
 			{
-				
+
 
 				$.ajax({
 
@@ -1057,26 +1061,26 @@ $accessLevel = $_SESSION['accessLevel'];
 				});
 
 
-				
+
 			}
 			else
 			{
 				alert('You are not authorized to create any bookings. Please contact an administrator.');
 			}
 
-			
+
 
 		}
-		
+
 
 		function grayOutBookedRooms()
-		{	
+		{
 			if (doubleArrayJson !== "")
 			{
 				for (var i = 0; i < doubleArrayJson.length; i++)
 				{
 				// get room id
-				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);		
+				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
 				if (bookedRoom != null)
 				{
 					// change style to disabled
@@ -1087,14 +1091,14 @@ $accessLevel = $_SESSION['accessLevel'];
 			}
 		}
 
-	} 
+	}
 
 
 
 	function setRoomName(room)
 	{
 		roomName = room;
-		
+
 	}
 
 	setRoomName("yes");
