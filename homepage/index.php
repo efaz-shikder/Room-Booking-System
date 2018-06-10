@@ -1047,7 +1047,7 @@ $accessLevel = $_SESSION['accessLevel'];
 			var period = JSON.stringify(block);
 			period = period.substring(3,4);
 
-			if (access !== 0)
+			if (access != 0)
 			{
 				$.ajax({
 
