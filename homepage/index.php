@@ -96,15 +96,15 @@ $accessLevel = $_SESSION['accessLevel'];
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
 									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('C Hallway'); loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
-									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
-									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
-									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
-									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Gym Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Gym Hallway</a></li>
-									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Front Foyer', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Front Foyer</a></li>
-									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Music Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Music Hallway</a></li>
-									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Math Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Math Hallway</a></li>
-									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Science Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Science Hallway</a></li>
-									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('Geography Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Geography Hallway</a></li>
+									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('S Hallway'); loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
+									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('English Hallway'); loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
+									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('French Hallway'); loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
+									<li class="gymHallway" id="gymHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Gym Hallway'); loadTable('Gym Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Gym Hallway</a></li>
+									<li class="frontFoyer" id="frontFoyer" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Front Foyer'); loadTable('Front Foyer', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Front Foyer</a></li>
+									<li class="musicHallway" id="musicHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Music Hallway'); loadTable('Music Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Music Hallway</a></li>
+									<li class="mathHallway" id="mathHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Math Hallway'); loadTable('Math Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Math Hallway</a></li>
+									<li class="scienceHallway" id="scienceHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Science Hallway'); loadTable('Science Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Science Hallway</a></li>
+									<li class="geographyHallway" id="geographyHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('Geography Hallway'); loadTable('Geography Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">Geography Hallway</a></li>
 								</ul>
 							</div>
 							<!-- rooms -->
@@ -139,7 +139,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -156,7 +156,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -173,7 +173,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -190,7 +190,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -207,7 +207,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -224,7 +224,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -241,7 +241,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -275,7 +275,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
