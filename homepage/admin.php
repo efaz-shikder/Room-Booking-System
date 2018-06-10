@@ -1,8 +1,14 @@
 <?php
 session_start();
 include_once("../assets/php/connect.php");
-$accessLevel = $_SESSION['accessLevel'];
 
+// Checks if the session is valid
+if (!isset($_SESSION['email']) && !isset($_SESSION['accessLevel']))
+{
+	header("Location: ../index.php");
+}
+
+$accessLevel = $_SESSION['accessLevel'];
 ?>
 
 

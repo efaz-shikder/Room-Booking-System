@@ -13,17 +13,12 @@ if (isset($_POST['submit']))
 {
 	include_once("connect.php");
 
-<<<<<<< HEAD
 	if(isset($_POST['login']))
-=======
-	if("" == trim($_POST['email']))
->>>>>>> master
 	{
 		$email = $_POST['login'];
 	}
 	else
 	{
-<<<<<<< HEAD
 		$email = "Default";
 	}
 
@@ -35,11 +30,6 @@ if (isset($_POST['submit']))
 	{
 		$password = "password";
 	}
-=======
-		// Security measures in order to prevent SQL injections
-		$username = strip_tags($_POST['email']);
-		$password = strip_tags($_POST['password']);
->>>>>>> master
 
 	// Security measures in order to prevent SQL injections
 	$email = strip_tags($email);
@@ -51,13 +41,9 @@ if (isset($_POST['submit']))
 	$email = mysqli_real_escape_string($server, $email);
 	$password = mysqli_real_escape_string($server, $password);
 
-<<<<<<< HEAD
 	$email = $email."@gmail.com";
 	
 	$sql = "SELECT * FROM teacher WHERE email = '$email'";
-=======
-	$sql = "SELECT * FROM Teacher WHERE email = '$username'";
->>>>>>> master
 	$query = mysqli_query($server, $sql);
 	$row = mysqli_fetch_array($query);
 
@@ -69,24 +55,15 @@ if (isset($_POST['submit']))
 	{ 
 		if($accessLevel == $ADMIN)
 		{
-<<<<<<< HEAD
 			$_SESSION['email'] = $email;
 			$_SESSION['accessLevel'] = $accessLevel;
 			header("Location: ../../homepage/admin.php");
-=======
-			$_SESSION['username'] = $email;
-			header("Location: ../../homepage/index.php");
->>>>>>> master
 			echo "Successful login as ADMIN";
 		}
 		elseif ($accessLevel == $TEACHER) 
 		{
-<<<<<<< HEAD
 			$_SESSION['email'] = $email;
 			$_SESSION['accessLevel'] = $accessLevel;
-=======
-			$_SESSION['username'] = $email;
->>>>>>> master
 			header("Location: ../../homepage/index.php");
 			echo "Successful login as TEACHER";
 		}
@@ -109,16 +86,9 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-<<<<<<< HEAD
 		echo "Incorrect login details! Redirecting to landing page.";
 		header("refresh:2;url=../../index.php");
 	}
-=======
-		echo "Incorrect login details!";
-		sleep(2);
-		//header("Location: ../../index.php");
-	} 
->>>>>>> master
 }
 
 	

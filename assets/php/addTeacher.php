@@ -2,7 +2,6 @@
 
 session_start();
 
-<<<<<<< HEAD
 define("DEFAULT_ACCESS_LEVEL", "4");
 
 if (isset($_POST['submit']))
@@ -36,38 +35,14 @@ if (isset($_POST['submit']))
 	{
 		$last_name = $_POST['lastName'];
 	}
-=======
-$email = "default";
-$password = "default";
-$first_name = "default";
-$last_name = "default";
-define("DEFAULT_ACCESS_LEVEL", 0);
-
-if(isset($_POST['submit'])) 
-{
-	include_once("connect.php");
-
-	$email = $_POST['email'];
-	$password1 = ($_POST['password1']);
-	$password2 = ($_POST['password2']);
-	$first_name = ($_POST['firstName']);
-	$last_name = ($_POST['lastName']);
->>>>>>> master
 
 	if ($password1 == $password2)
 	{
 		// Security measures in order to prevent SQL injections
-<<<<<<< HEAD
 		$email = stripslashes(strip_tags($email));
 		$password = stripslashes(strip_tags($password1));
 		$first_name = stripslashes(strip_tags($first_name));
 		$last_name = stripslashes(strip_tags($last_name));
-=======
-		$email = stripslashes(strip_tags($_POST['email']));
-		$password = stripslashes(strip_tags($_POST['password1']));
-		$first_name = stripslashes(strip_tags($_POST['firstName']));
-		$last_name = stripslashes(strip_tags($_POST['lastName']));
->>>>>>> master
 
 		$email = mysqli_real_escape_string($server, $email);
 		$password = mysqli_real_escape_string($server, $password);
@@ -76,7 +51,6 @@ if(isset($_POST['submit']))
 
 		// Worry about password encryption??
 
-<<<<<<< HEAD
 		$realEmail = $email."@gmail.com";
 
 		// Generates a random 32 character hash
@@ -166,19 +140,6 @@ if(isset($_POST['submit']))
       ";
 			header("refresh:4;url=../../index.php");
 		}
-=======
-		
-
-
-
-		$sql = "INSERT INTO `Teacher` (`first_name`, `last_name`, `email`, `password`, `accessLevel`) VALUES ('$first_name', '$last_name', '$email', '$password', DEFAULT_ACCESS_LEVEL";
-
-		mysqli_query($server, $sql);
-
-		echo "<h1>Teacher successfully added.</h1>";
-		sleep(3);
-		//header("Location: ../../index.php");
->>>>>>> master
 
 
 		// Wrap up and close connection
@@ -221,11 +182,8 @@ if(isset($_POST['submit']))
 		mysqli_close($server);
 
 	}
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 }
 
 ?>
