@@ -1029,7 +1029,7 @@ $accessLevel = $_SESSION['accessLevel'];
 			}
 		}
 
-		var access = <?php echo $accessLevel ?>;
+		var access = <?php echo json_encode($accessLevel) ?>;
 
 		function bookAJAX(date, id, block, room)
 		{
@@ -1061,16 +1061,11 @@ $accessLevel = $_SESSION['accessLevel'];
 					}
 				});
 
-
-
 			}
 			else
 			{
 				alert('You are not authorized to create any bookings. Please contact an administrator.');
 			}
-
-
-
 		}
 
 
@@ -1080,19 +1075,19 @@ $accessLevel = $_SESSION['accessLevel'];
 			{
 				for (var i = 0; i < doubleArrayJson.length; i++)
 				{
-				// get room id
-				var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
-				if (bookedRoom != null)
-				{
-					// change style to disabled
-					bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
-					// add teachers name next to room that is booked
-					bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
+					// get room id
+					var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
+					if (bookedRoom != null)
+					{
+						// change style to disabled
+						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+						// add teachers name next to room that is booked
+						bookedRoom.textContent += " Booked by: " + doubleArrayJson[i][0];
+					}
 				}
 			}
-		}
 
-	}
+		}
 
 
 
