@@ -1,0 +1,159 @@
+/* The side navigation menu */
+.sidenav {
+	color: white;
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Stay on top */
+  overflow-x: hidden; /* Disable horizontal scroll */
+	background-color: #1a1a1a;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+	color: white;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover{
+  text-decoration: none;
+  color: white;
+}
+.padding {
+	padding-top: 50px;
+}
+/** Nav Icon **/
+#navIcon {
+	z-index: 99;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 15px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 33px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 51px;
+}
+
+#nav-icon3 {
+  width: 55px;
+  height: 65px;
+  position: relative;
+  cursor: pointer;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #008aee;
+  border-radius: 20px;
+  opacity: 1;
+  left: 0;
+}
+/** close button **/
+.outer {
+  position: relative;
+  margin: auto;
+	margin-top: 20px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label {
+  font-size: 12px;
+  line-height: 3em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: white;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}
+
+/* View Rooms */
+
+#rooms {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#rooms td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#rooms tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#rooms tr:nth-child(odd){
+  background-color: #ddd;
+}
+
+#rooms tr:hover {
+  background-color: #5292b2;
+}
+
+#rooms th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1babcf;
+    color: white;
+}

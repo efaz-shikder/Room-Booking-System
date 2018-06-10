@@ -2,6 +2,7 @@
 session_start();
 include_once("../assets/php/connect.php");
 $accessLevel = $_SESSION['accessLevel'];
+
 ?>
 
 
@@ -15,7 +16,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body onload="blockDates();">
+<body>
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -24,10 +25,12 @@ $accessLevel = $_SESSION['accessLevel'];
 				<label>Back</label>
 			</div>
 		</div>
-		<a href="index.php">Home</a>
-		<a href="../assets/php/viewOwnBooking.php">Own Booked Rooms</a>
-		<a href="../assets/php/viewBooking.php">All Booked Rooms</a>
-		<a href="../ARBIS_Help.html">Help</a>
+		<a href="admin.php">Home</a>
+		<a href="../assets/php/ADMIN/viewOwnBookingAdmin.php">Own Booked Rooms</a>
+		<a href="../assets/php/ADMIN/viewBookingAdmin.php">All Booked Rooms</a>
+		<a href="../assets/php/ADMIN/viewRooms.php">Edit Rooms</a>
+		<a href="../assets/php/ADMIN/viewTeachers.php">Edit Teachers</a>
+		<a href="../ARBIS_Help_Admin.html">Help</a>
 	</div>
 
 	<section>
@@ -289,7 +292,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						<div class="row">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAXAdmin(getDate(), getClassID(), getPeriod());">
 										<span>Submit</span>
 										<span>
 											<svg viewBox="0 0 24 24">
@@ -1029,41 +1032,6 @@ $accessLevel = $_SESSION['accessLevel'];
 			} */
 		}
 
-		var access = <?php echo json_encode($accessLevel) ?>;
-
-		function bookAJAX(date, id, block)
-		{
-
-			var dateOfBooking = JSON.stringify(date);
-			dateOfBooking.replace(/\s+/g, '');
-			var classID = JSON.stringify(id);
-			var period = JSON.stringify(block);
-			period = period.substring(3,4);
-
-			if (access !== 0)
-			{
-				$.ajax({
-
-					type: 'post',
-					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-					success:function(data){
-
-						// window.location.assign("../assets/php/addBooking.php")
-						console.log(data);
-						window.location.assign("../assets/php/viewOwnBooking.php");
-
-					}
-				});
-
-			}
-			else
-			{
-				alert('You are not authorized to create any bookings. Please contact an administrator.');
-			}
-		}
-
-
 		function grayOutBookedRooms()
 		{
 			if (doubleArrayJson !== "")
@@ -1084,6 +1052,39 @@ $accessLevel = $_SESSION['accessLevel'];
 			}
 
 		}
+
+		function bookAJAXAdmin(date, id, block)
+		{
+
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(id);
+			var period = JSON.stringify(block);
+			period = period.substring(3,4);
+
+
+
+			if (confirm('Are you sure you want to create this booking?')) {
+
+				$.ajax({
+
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/ADMIN/viewOwnBookingAdmin.php");
+
+					}
+				});
+
+
+			}
+
+		}
+
 	</script>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
-.padding {
-	padding-top: 50px;
+body
+{
+	background: black fixed;
 }
-
 /* The side navigation menu */
 .sidenav {
 	color: white;
@@ -28,7 +28,9 @@
 .sidenav a:hover{
 
 }
-
+.padding {
+	padding-top: 50px;
+}
 /** Nav Icon **/
 #navIcon {
 	z-index: 99;
@@ -127,42 +129,42 @@ label {
   bottom: 0;
 }
 
-body
-{
-	background-color: black;
+/* View Bookings */
+
+#bookings {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
-
-h1 {
-	color: #008aee;
-	font-size: 32px;
-	text-decoration: none;
-	text-transform: uppercase;
+#bookings td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-li
-{
-	color: white;
-	font-size: 14px;
-	padding: 3px;
-	text-decoration: none;
+#bookings tr:nth-child(even){
+  background-color: #f2f2f2;
 }
 
-img
-{
-	float: right;
-
+#bookings tr:nth-child(odd){
+  background-color: #ddd;
 }
 
-#faq
-{
-	text-align: center;
-	font-size: 48px;
+#bookings tr:hover {
+  background-color: #5292b2;
 }
-.steps
-{
-	font-size: 20px;
-	font-weight: 700;
-	margin: 5px;
-	color: #008aee;
+
+#bookings th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1babcf;
+    color: white;
+}
+
+.calendar {
+	margin-top: 50px;
+	margin-bottom: 50px;
 }

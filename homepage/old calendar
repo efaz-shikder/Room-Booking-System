@@ -1,0 +1,59 @@
+<!-- calendar -->
+<div class="calendar_container">
+  <!-- Date Picked Display -->
+  <p class="demo-picked">
+    Date picked: <span data-calendar-label="picked"></span>
+  </p>
+
+  <div class="cal">
+    <div class="cal__header">
+      <button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24">
+      <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>
+      <div class="cal__header__label" data-calendar-label="month">
+
+      </div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"> <svg height="24" version="1.1" viewbox="0 0 24 24" width="24">
+      <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
+    </div>
+    <div class="cal__week">
+      <span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+    </div>
+    <div class="cal__body" data-calendar-area="month"></div>
+  </div>
+</div>
+
+
+<!-- hallway selector -->
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+  <ul class="flex-column center nav">
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="C_Hallway">C Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="S_Hallway">S Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="English_Hallway">English Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="French_Hallway">French Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Gym_Hallway">Gym Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Front_Foyer">Front foyer</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Music_Hallway">Music Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Math_Hallway">Math Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Science_Hallway">Science Hallway</a>
+    </li>
+    <li class="">
+      <a class="" href="#" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" id="Geography_Hallway">Geography Hallway</a>
+    </li>
+  </ul>
+</div>

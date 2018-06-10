@@ -1,0 +1,689 @@
+
+body{
+	background-color: black;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align : center;
+  -webkit-align-items : center;
+  -moz-box-align : center;
+  -ms-flex-align : center;
+  align-items : center;
+  width: 100%;
+  -webkit-box-pack : center;
+  -moz-box-pack : center;
+  -ms-flex-pack : center;
+  -webkit-justify-content : center;
+  justify-content : center;
+}
+
+.container-fluid {
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*Map */
+svg {
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+path
+{
+	fill: #677b7c/* Grey */;
+	opacity: 0.9;
+	transition: 0.3s;
+
+}
+
+.C.Hallway:hover
+{
+	cursor: pointer;
+	fill:#59f0ff /*Light blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.S.Hallway:hover
+{
+	cursor: pointer;
+	fill: #8fd2d8/*Sea blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.English.Hallway:hover
+{
+	cursor: pointer;
+	fill:#5fb7bf/*Dark grey-blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.French.Hallway:hover
+{
+	cursor: pointer;
+	fill:#2ad1e0/*Neon blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Gym.Hallway:hover
+{
+	cursor: pointer;
+	fill:#33a1e0/*Sky blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Front.foyer:hover
+{
+	cursor: pointer;
+	fill:#246c96/*Navy blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Music.Hallway:hover
+{
+	cursor: pointer;
+	fill:#2cb7a2/*Cyan blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Science.Hallway:hover
+{
+	cursor: pointer;
+	fill:#ffb093/*Peach*/;
+	transition-delay:0.01s;
+}
+
+.Math.Hallway:hover
+{
+	cursor: pointer;
+	fill:#7564c4/*Purple blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Science.Hallway:hover
+{
+	cursor: pointer;
+	fill:#bfc6ff/*Lavender blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+.Geography.Hallway:hover
+{
+	cursor: pointer;
+	fill:#1637ba /*Dark blue*/;
+	transition-delay:0.01s;
+	opacity: 1;
+}
+
+/*End of Map */
+
+#placeholderParagraph
+{
+	text-align: center;
+  font-size: 2em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	color: white;
+}
+
+/* Hallway Menu */
+.center {
+	position: relative;
+	top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+.nav {
+	position: relative;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 16px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+	margin-bottom: 25px;
+	border-radius: 4px;
+	background-color: #008aee;
+}
+
+.nav li a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+.nav li a:hover {
+  background: #00a7ee;
+}
+
+/* The side navigation menu */
+.sidenav {
+	color: white;
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Stay on top */
+  overflow-x: hidden; /* Disable horizontal scroll */
+	background-color: #1a1a1a;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+	color: white;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover{
+
+}
+
+/** Nav Icon **/
+#navIcon {
+	z-index: 99;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 14px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 28px;
+}
+
+#nav-icon3 {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  cursor: pointer;
+}
+#nav-icon3:hover span {
+	background-color: #008aee;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  opacity: 1;
+  left: 0;
+}
+/** close button **/
+.outer {
+  position: relative;
+  margin: auto;
+	margin-top: 20px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label {
+  font-size: 12px;
+  line-height: 3em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: white;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}
+/** Calendar **/
+html {
+  box-sizing: border-box;
+	font-size: 9px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.cal__header button {
+  background: none;
+  border: 0;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
+
+.cal button:active {
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px rgba(10, 146, 151, 0.1)
+}
+
+.cal {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+	font-size: 1.1rem;
+	width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #e7e9ed;
+}
+
+.cal__header {
+	font-size: 1.5rem;
+  display: flex;
+  padding: 1.2rem 1.4rem;
+  align-items: center;
+}
+
+.cal__header__label {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cal__week {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #E7E9ED;
+}
+
+.cal__week span {
+  font-size: 1.5rem;
+  max-width: 14.28%;
+  padding: 1.2rem 1.4rem;
+  flex: 0 0 14.28%;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cal__body {
+	font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+}
+
+.cal__date {
+  background-color: #fff;
+  display: flex;
+  max-width: 14.28%;
+  flex: 0 0 14.28%;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-radius: 4px;
+}
+
+.cal__date--active:hover {
+  cursor: pointer;
+}
+
+.cal__date--today {
+  background-color: #008aee; /*#00a7ee*/
+  color: #fff;
+}
+
+.cal__date--selected {
+  background-color: #46C5FB;
+  color: #333;
+}
+
+.cal__date--disabled {
+  opacity: 0.5;
+}
+
+.cal__date--disabled:hover {
+  cursor: not-allowed;
+}
+
+.calendar_container p {
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+	color: white;
+	font-weight: 600;
+  text-align: center;
+}
+
+/** yeet **/
+.hallways {
+	border-left: 5px solid #008aee;
+	border-right: 5px solid #008aee;
+	border-radius: 8%;
+	margin-top: 30px;
+	padding: 0;
+  font-family: 'Raleway', Arial, sans-serif;
+  text-transform: capitalize;
+	text-align: center;
+	font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.hallways * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.35s ease;
+	transition: all 0.35s ease;
+}
+
+.hallways li {
+	font-size: 13px;
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1.5em;
+}
+
+.hallways a {
+  padding: 0.8em;
+  display: inline-block;
+  color: white;
+  position: relative;
+  text-decoration: none;
+}
+
+.hallways a:before,
+.hallways a:after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #008aee;
+  width: 0;
+}
+.hallways a:before {
+  top: 0;
+  left: 0;
+}
+.hallways a:after {
+  bottom: 0;
+  right: 0;
+}
+.hallways a:hover,
+.hallways .current a {
+  color: #ffffff;
+}
+.hallways a:hover:before,
+.hallways .current a:before,
+.hallways a:hover:after,
+.hallways .current a:after {
+  width: 100%;
+}
+
+/** yeeet **/
+.roomsContainer ul li {
+	font-size: 13px;
+	padding: 0;
+}
+
+#rooms, #rooms2, #rooms3, #rooms4, #rooms5, #rooms6, #rooms7, #rooms8, #rooms9, #rooms10 {
+	vertical-align: center;
+	width: 100%;
+	list-style-type: none;
+  padding: 5px;
+  background-color: #f1f1f1;
+	display: none;
+}
+
+#rooms li a, #rooms2 li a, #rooms3 li a, #rooms4 li a, #rooms5 li a, #rooms6 li a, #rooms7 li a, #rooms8 li a, #rooms9 li a, #rooms10 li a {
+	display: block;
+  color: #000;
+  padding-top: 20px;
+  text-decoration: none;
+}
+
+#rooms li a:hover, #rooms2 li a:hover, #rooms3 li a:hover, #rooms4 li a:hover, #rooms5 li a:hover, #rooms6 li a:hover, #rooms7 li a:hover, #rooms8 li a:hover,
+ #rooms9 li a:hover, #rooms10 li a:hover {
+	background-color: #555;
+  color: white;
+}
+
+#rooms li a:focus, #rooms2 li a:focus, #rooms3 li a:focus, #rooms4 li a:focus, #rooms5 li a:focus, #rooms6 li a:focus, #rooms7 li a:focus, #rooms8 li a:focus,
+ #rooms9 li a:focus, #rooms10 li a:focus {
+	background-color: #555;
+  color: white;
+}
+
+/** period buttons **/
+.periodButtons{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 15px;
+}
+
+.btn-animate {
+	margin: 5px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 1;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.btn-animate span {
+  position: relative;
+  z-index: 2;
+}
+.btn-animate:before, .btn-animate:after {
+  border-radius: 8px;
+  content: '';
+  z-index: -1;
+  background: #fff;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.btn-animate:after {
+  background: #0080ee;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: .1s;
+}
+.btn-animate:hover {
+  box-shadow: 0px 16px 47px -15px #003f77;
+}
+.btn-animate:hover:after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  transition-delay: 0s;
+}
+.btn-animate:active {
+  -webkit-transform: translateY(4px) translateZ(0);
+          transform: translateY(4px) translateZ(0);
+  box-shadow: 0px 8px 10px -6px #003f77;
+}
+.btn-clicked {
+	margin: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background: #0080ee;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 1;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+/** submit button **/
+.submitButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 14px;
+}
+button {
+  position: relative;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.spin {
+	opacity: 0.4;
+  border: 2px solid #1ecd97;
+  color: #1ecd97;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+.spin span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease-in-out;
+}
+
+.spin svg {
+  height: 30px;
+  fill: #1ecd97;
+}
+.spin:hover {
+  background-color: #1ecd97;
+  color: #fff;
+}
+
+/** logout button **/
+.logout {
+	border: 2px solid red;
+  background: black;
+  width: 100px;
+  cursor:pointer;
+  border-radius:50px;
+  padding:10px 105px 10px 0;
+  color:red;
+	font-size: 16px;
+  text-align:center;
+  text-indent:40px;
+  display:flex;
+	float: right;
+
+  /* Animations: */
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .4s;
+  -webkit-transition-property: all;
+
+  -moz-transition-timing-function: ease-in-out;
+  -moz-transition-duration: .4s;
+  -moz-transition-property: all;
+}
+
+.logout:hover {
+  background: red;
+	color: white;
+  background-position: 65px 5px;
+  text-indent: 10px;
+}

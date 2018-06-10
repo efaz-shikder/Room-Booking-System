@@ -17,12 +17,14 @@ CREATE TABLE Classroom(
 
         roomName VARCHAR(50) NOT NULL,
 		
+		hallway ENUM('C Hallway', 'S Hallway', 'English Hallway', 'French Hallway', 'Gym Hallway', 'Front Foyer', 'Music Hallway', 'Math Hallway', 'Science Hallway', 'Geography Hallway') NOT NULL, 
+		
 		isBookable ENUM('yes', 'no')
 );
 
 CREATE TABLE Booking(
 
-        teacherEmail  INT NOT NULL,
+        teacherEmail  VARCHAR(50) NOT NULL,
 
         classID INT NOT NULL,
 
@@ -62,14 +64,14 @@ INSERT INTO Classroom(classID, roomName)
 	VALUES (NULL, 'C16');
 	
 /* add bookings */
-INSERT INTO Booking(teacherID, classID, dateOfBooking, period)
+INSERT INTO Booking(teacherEmail, classID, dateOfBooking, period)
 	VALUES ('1', '2', '2018-05-23', 'A');
-INSERT INTO Booking(teacherID, classID, dateOfBooking, period)
+INSERT INTO Booking(teacherEmail, classID, dateOfBooking, period)
 	VALUES ('2', '1', '2018-06-07', 'C');
 
 	
 /* add special dates */
-INSERT INTO SpecialDate(ID, dateDescription, specialDate, typeOfDay)
+INSERT INTO schedule(ID, dateDescription, specialDate, typeOfDay)
 	VALUES (NULL, 'Victoria Day', '2018-05-21', 'no school');
-INSERT INTO SpecialDate(ID, dateDescription, specialDate, typeOfDay)
+INSERT INTO schedule(ID, dateDescription, specialDate, typeOfDay)
 	VALUES (NULL, 'Staff Meeting', '2018-05-29', 'late start');
