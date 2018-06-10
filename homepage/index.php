@@ -948,6 +948,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script type="text/javascript">
 		var doubleArrayJson;
 		var roomName;
+		var hallwayToUngray;
 		
 		function loadTable(hallway, date, period)
 		{
@@ -963,7 +964,6 @@ $accessLevel = $_SESSION['accessLevel'];
 				url: 'roomsToGrayOut.php',
 				data: {hallway: hallway, date: date, period: period},
 				success:function(data){
-					console.log(data);
 					doubleArrayJson = JSON.parse(data);		
 				},
 				complete: function(data){
@@ -972,13 +972,33 @@ $accessLevel = $_SESSION['accessLevel'];
 			});
 
 		}
-
-
 		
-		function removeGrayOutBookedRooms()
+		function ungrayRooms(hallway)
 		{
+			hallway = JSON.stringify(hallway);
+			
+			$.ajax({
+				
+				type: 'post',
+				url: 'hallwayToUngray.php',
+				data: {hallway: halway},
+				sucess: function(data){
+					hallwayToUngray = JSON.parse(data);
+				},
+				complete: function(data){
+					ungrayHallway();
+				}
 			
 
+			});
+		}
+		
+		function ungrayRooms()
+		{
+			for(var i = 0; i < hallwayToUngray.length; i++)
+			{
+				var room = document.getElementById(doubleArrayJson[i]);
+			}
 		}
 
 		var access = <?php echo $accessLevel ?>;
