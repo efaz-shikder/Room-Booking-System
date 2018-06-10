@@ -322,95 +322,6 @@ window.addEventListener('load', function () {
 	vanillacalendar.init();
 })
 
-/* Click Hallway */
-function clickCHallway()
-{
-	var btn = document.getElementById('cHallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-function clickSHallway()
-{
-	var btn = document.getElementById('S_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickEnglishHallway()
-{
-	var btn = document.getElementById('English_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickFrenchHallway()
-{
-	var btn = document.getElementById('French_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickGymHallway()
-{
-	var btn = document.getElementById('Gym_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickFrontFoyer()
-{
-	var btn = document.getElementById('Front_Foyer');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickMusicHallway()
-{
-	var btn = document.getElementById('Music_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickMathHallway()
-{
-	var btn = document.getElementById('Math_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickScienceHallway()
-{
-	var btn = document.getElementById('Science_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
-
-function clickGeographyHallway()
-{
-	var btn = document.getElementById('Geography_Hallway');
-	btn.addEventListener('click', function() {
-		document.location.href = 'viewRooms.php';
-	});
-}
-
 /** Show/Hide Toggles for room menu **/
 var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "#gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
 var roomsArray = ["#rooms", "#rooms2", "#rooms3", "#rooms4", "#rooms5", "#rooms6", "#rooms7", "#rooms8", "#rooms9", "#rooms10"];
@@ -662,8 +573,6 @@ function setPeriod(element)
 {
 	period = JSON.stringify(element.id);
 }
-
-
 
 function getClassID()
 {
