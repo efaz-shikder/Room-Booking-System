@@ -95,7 +95,7 @@ $accessLevel = $_SESSION['accessLevel'];
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="ungrayRooms('C Hallway'); loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
 									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
 									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
 									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
@@ -1004,9 +1004,11 @@ $accessLevel = $_SESSION['accessLevel'];
 
 				type: 'post',
 				url: 'hallwayToUngray.php',
-				data: {hallway: halway},
+				data: {hallway: hallway},
 				sucess: function(data){
+					alert(data);
 					hallwayToUngray = JSON.parse(data);
+					alert(hallwayToUngray);
 				},
 				complete: function(data){
 					ungrayHallway();
@@ -1024,7 +1026,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				// change style to original
 				bookedRoom.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
 				// get rid of the booked by 'teacher'
-				bookedRoom.textContent = bookedRoom.textContent.substr(0,str.indexOf(' '));
+				bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.indexOf(' '));
 			}
 		}
 
@@ -1077,7 +1079,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						// change style to disabled
 						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 						// add teachers name next to room that is booked
-						bookedRoom.textContent =  bookedRoom.textContent.substr(0,str.indexOf(' ')) + " Booked by: " + doubleArrayJson[i][0];
+						bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.indexOf(' ')) + " Booked by: " + doubleArrayJson[i][0];
 					}
 				}
 			}

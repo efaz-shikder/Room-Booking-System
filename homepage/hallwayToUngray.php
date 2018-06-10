@@ -13,5 +13,6 @@
 	{
 		array_push($classID, $row['classID']);
 	}
+	
 	echo json_encode($classID);
 ?>
