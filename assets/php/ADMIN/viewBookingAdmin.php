@@ -106,7 +106,22 @@ $teacherEmail = $_SESSION['email'];
 		              				<?php echo "$firstName $lastName"; ?>
 		              			</td>
 		              			<td>
-		              				<button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
+		              				<?php
+		              				$currentDate = date("d.m.Y");
+
+
+
+
+		              				$cancel = '<button onclick="deleteAjax(\''.$dateOfBooking.'\', \''.$classID.'\', \''.$period.'\')" class="btn btn-danger">Cancel</button>';
+
+
+		              				if (strtotime($dateOfBooking) < strtotime($currentDate))
+		              				{
+		              					$cancel = "Unable to Cancel this Booking.";  
+		              				}
+
+		              				echo $cancel; 
+		              				?>
 		              			</td>
 		              		</tr>
 		              	</tr>
