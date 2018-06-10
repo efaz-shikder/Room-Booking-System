@@ -60,70 +60,85 @@ $teacherEmail = $_SESSION['email'];
 				</thead>
 				<?php
 
-        $currentTeacherID = $_SESSION['email'];
-        $query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' ORDER BY booking.dateOfBooking DESC" ;
+				$currentTeacherID = $_SESSION['email'];
+				$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' ORDER BY booking.dateOfBooking DESC" ;
 
-        $result = mysqli_query($server, $query);
-        while($row = mysqli_fetch_array($result))
+				$result = mysqli_query($server, $query);
+				while($row = mysqli_fetch_array($result))
          {   //Creates a loop to loop through results
 
 
-          $dateOfBooking = $row['dateOfBooking'];
-          $period = $row['period'];
-          $classID = $row['classID'];
+         	$dateOfBooking = $row['dateOfBooking'];
+         	$period = $row['period'];
+         	$classID = $row['classID'];
 
-          $sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
-          $resultClassroom =  mysqli_query($server, $sql);
-          $resultName = mysqli_fetch_array($resultClassroom);
+         	$sql = "SELECT * FROM classroom WHERE classroom.classID = $classID";
+         	$resultClassroom =  mysqli_query($server, $sql);
+         	$resultName = mysqli_fetch_array($resultClassroom);
 
-          $roomName = $resultName['roomName'];
+         	$roomName = $resultName['roomName'];
 
-          ?>
+         	?>
 
-          <tbody>
-            <tr id="delete<?php echo $dateOfBooking; echo "$classID"; echo "$period"; ?>">
-              <td><?php echo $dateOfBooking ?></td>
-              <td><?php echo $roomName ?></td>
-              <td><?php echo $period ?></td>
-              <td >
-                <button onclick="deleteAjax('<?php echo $dateOfBooking ?>', '<?php echo $classID ?>', '<?php echo $period ?>' )" class="btn btn-danger">Cancel</button>
-              </td>
-            </tr>
-          </tbody>
-        <?php } ?>
-      </table>
-    </div>
-  </section>
+         	<tbody>
+         		<tr id="delete<?php echo $dateOfBooking; echo "$classID"; echo "$period"; ?>">
+         			<td><?php echo $dateOfBooking ?></td>
+         			<td><?php echo $roomName ?></td>
+         			<td><?php echo $period ?></td>
+         			<td>
+         				<?php
+         				$currentDate = date("d.m.Y");
 
-  <script src="../javascript/jquery.min.js"></script>
-  <script src="../javascript/script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript">
 
-		 function deleteAjax(date, room, periods)
-		 {
-		  var dateOfBooking = JSON.stringify(date);
-		  var classID = JSON.stringify(room);
-		  var period = JSON.stringify(periods);
 
-		  if (confirm('Are you sure you want to delete booking')) {
 
-		    $.ajax({
+         				$cancel = '<button onclick="deleteAjax(\''.$dateOfBooking.'\', \''.$classID.'\', \''.$period.'\')" class="btn btn-danger">Cancel</button>';
 
-		      type: 'post',
-		      url: 'removeBooking.php',
-		      data: {dateOfBooking: date, classID: classID, period: period},
-		      success:function(data){
-		        $('#delete'+date+room+periods).hide('slow');
 
-		      }
-		    });
-		  }
+         				if (strtotime($dateOfBooking) < strtotime($currentDate))
+         				{
+         					$cancel = "Unable to Cancel this Booking.";  
+         				}
 
+         				echo $cancel; 
+         				?>
+         			</td>
+         		</tr>
+         	</tbody>
+         <?php } ?>
+     </table>
+ </div>
+</section>
+
+<script src="../javascript/jquery.min.js"></script>
+<script src="../javascript/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	function deleteAjax(date, room, periods)
+	{
+		var dateOfBooking = JSON.stringify(date);
+		var classID = JSON.stringify(room);
+		var period = JSON.stringify(periods);
+
+		if (confirm('Are you sure you want to delete booking')) {
+
+			$.ajax({
+
+				type: 'post',
+				url: 'removeBooking.php',
+				data: {dateOfBooking: date, classID: classID, period: period},
+				success:function(data){
+					$('#delete'+date+room+periods).hide('slow');
+
+				}
+			});
 		}
 
+	}
 
-	</script>
+
+</script>
 
 
 </body>
