@@ -151,13 +151,28 @@ li
 img
 {
 	float: right;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> master
 }
 
 #faq
 {
 	text-align: center;
 	font-size: 48px;
+<<<<<<< HEAD
+}
+.steps
+{
+	font-size: 20px;
+	font-weight: 700;
+	margin: 5px;
+	color: #008aee;
+=======
+	padding-bottom: 20px;
+>>>>>>> master
 }
 .steps
 {

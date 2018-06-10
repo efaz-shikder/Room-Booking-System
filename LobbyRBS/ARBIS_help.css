@@ -1,0 +1,77 @@
+body
+{
+	background-color: black;
+	font-family: 'Playfair Display', serif;
+	padding-top: 5px;
+}
+
+ul
+{
+	padding: 10px 10px 50px 10px;
+	color: white;
+	margin: 50px 250px ;
+	background-color: black;
+	border-style: solid;
+	border-width: medium;
+	border-color: #6dc5d6; /*Aqua blue*/ 
+	text-align: left;
+}
+
+h1
+{
+	margin: none;
+	border-style: none;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px #017f96; /*Aqua blue*/
+}
+
+a
+{
+	color: #59f0ff;/*Light blue*/
+}
+
+a.goback{
+	border:solid;
+	color: white;
+	background-color: #59f0ff;/*Light blue*/
+	margin: 10px 5px;
+}
+
+h2
+{
+	color: #6dc5d6; /*Aqua blue*/
+}
+
+.important
+{
+	color: #6dc5d6; /*Aqua blue*/
+	font-weight: 700;
+}
+
+/*scrolling bar style*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+	background-color:  #6dc5d6;/*Aqua blue*/
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #017f96;/*Dark aqua blue*/
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1099b2; /*Light aqua blue*/
+}
+
+
