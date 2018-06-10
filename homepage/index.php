@@ -991,7 +991,6 @@ $accessLevel = $_SESSION['accessLevel'];
 			});
 		}
 
-		{
 		function updateCalendar()
 		{
 			alert(noSchoolArray);
@@ -1041,12 +1040,8 @@ $accessLevel = $_SESSION['accessLevel'];
 			roomName = JSON.stringify(room);
 			period = period.substring(3,4);
 
-
-
-			if (access != 0)
+			if (access !== 0)
 			{
-
-
 				$.ajax({
 
 					type: 'post',
@@ -1077,7 +1072,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				{
 					// get room id
 					var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
-					if (bookedRoom != null)
+					if (bookedRoom !== null)
 					{
 						// change style to disabled
 						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
@@ -1101,8 +1096,8 @@ $accessLevel = $_SESSION['accessLevel'];
 
 	function getRoomName()
 	{
-		return roomName;
 		alert(roomName);
+		return roomName;
 	}
 
 
