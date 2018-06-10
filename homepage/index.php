@@ -1017,15 +1017,23 @@ $accessLevel = $_SESSION['accessLevel'];
 		
 		function ungrayHallway()
 		{
+			for(var index = 0; index < hallwayToUngray.length; index++)
+			{
+				var ungray = document.getElementById(hallwayToUngray[index]);
 
+				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
+				//ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf('Booked'));
+
+			}
+			/*
 			for(var i = 0; i < hallwayToUngray.length; i++)
 			{
 				var room = document.getElementById(hallwayToUngray[i]);
 				// change style to original
-				//room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
+				room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
 				// get rid of the booked by 'teacher'
-				room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
-			}
+				//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
+			} */
 		} 
 
 		var access = <?php echo json_encode($accessLevel) ?>;
