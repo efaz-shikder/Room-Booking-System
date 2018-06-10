@@ -621,6 +621,10 @@ $("#checking").click(function(){
 
 		if($this.data('clicked')) {
 			toggleRoomsOff();
+			$("#A").removeClass("btn-clicked").addClass("btn-animate");
+			$("#B").removeClass("btn-clicked").addClass("btn-animate");
+			$("#C").removeClass("btn-clicked").addClass("btn-animate");
+			$("#D").removeClass("btn-clicked").addClass("btn-animate");
 		}
 		else {
 		 $this.data('clicked', true);
