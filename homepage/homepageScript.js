@@ -509,7 +509,7 @@ $(document).ready(function() {
 	$("ul.gridRooms10").css("column-count", 3);
 });
 
-var isClicked;
+var isClicked = false;
 /** period buttons **/
 $('#A').click(function(){
 	$("#A").removeClass("btn-animate").addClass("btn-clicked");
