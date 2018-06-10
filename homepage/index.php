@@ -1023,8 +1023,8 @@ $accessLevel = $_SESSION['accessLevel'];
 				var room = document.getElementById(hallwayToUngray[i]);
 				// change style to original
 				bookedRoom.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
-				// add teachers name next to room that is booked
-				bookedRoom.textContent -= " Booked by: " + doubleArrayJson[i][0];
+				// get rid of the booked by 'teacher'
+				bookedRoom.textContent = bookedRoom.textContent.substr(0,str.indexOf(' '));
 			}
 		}
 
