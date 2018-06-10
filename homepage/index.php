@@ -1015,7 +1015,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
 				if(ungray.textContent.indexOf(':') > 0)
 				{
-					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':')); 
+					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
 				}
 			}
 			/*
