@@ -982,7 +982,6 @@ $accessLevel = $_SESSION['accessLevel'];
 				url: 'daysToBlock.php',
 				data: {},
 				success: function(data){
-					console.log("Success");
 					noSchoolArray = JSON.parse(data);
 				},
 				complete: function(data){
@@ -993,7 +992,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		function updateCalendar()
 		{
-			alert(noSchoolArray);
+
 		}
 
 		function ungrayRooms(hallway)
@@ -1005,16 +1004,16 @@ $accessLevel = $_SESSION['accessLevel'];
 				type: 'post',
 				url: 'hallwayToUngray.php',
 				data: {hallway: hallway},
-				sucess: function(data){
-					alert(data);
+				success:function(data){
+
+					console.log(data);
 					hallwayToUngray = JSON.parse(data);
 					alert(hallwayToUngray);
+
 				},
 				complete: function(data){
 					ungrayHallway();
 				}
-
-
 			});
 		}
 
@@ -1024,9 +1023,9 @@ $accessLevel = $_SESSION['accessLevel'];
 			{
 				var room = document.getElementById(hallwayToUngray[i]);
 				// change style to original
-				bookedRoom.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
+				room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
 				// get rid of the booked by 'teacher'
-				bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.indexOf(' '));
+				room.textContent = room.textContent.substr(0, room.textContent.indexOf(' '));
 			}
 		}
 
@@ -1088,21 +1087,21 @@ $accessLevel = $_SESSION['accessLevel'];
 
 
 
-	function setRoomName(room)
-	{
-		roomName = room;
+		function setRoomName(room)
+		{
+			roomName = room;
 
-	}
+		}
 
-	setRoomName("yes");
+		setRoomName("yes");
 
-	function getRoomName()
-	{
-		alert(roomName);
-		return roomName;
-	}
+		function getRoomName()
+		{
+			alert(roomName);
+			return roomName;
+		}
 
 
-</script>
+	</script>
 </body>
 </html>
