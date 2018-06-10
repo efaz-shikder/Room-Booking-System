@@ -289,7 +289,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						<div class="row">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod(), getRoomName());">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
 										<span>Submit</span>
 										<span>
 											<svg viewBox="0 0 24 24">
@@ -1015,7 +1015,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
 				if(ungray.textContent.indexOf(':') > 0)
 				{
-					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':')); 
+					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
 				}
 			}
 			/*
