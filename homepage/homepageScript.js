@@ -509,6 +509,7 @@ $(document).ready(function() {
 	$("ul.gridRooms10").css("column-count", 3);
 });
 
+var isClicked;
 /** period buttons **/
 $('#A').click(function(){
 	$("#A").removeClass("btn-animate").addClass("btn-clicked");
@@ -579,25 +580,31 @@ function setHallwaysAvailable(name) {
 	}
 }
 
+
+
 function doWork() {
 	$('#more').load('exp1.php');
 	repeater = setTimeout(doWork, 500);
 
+	// disable user from clicking on hallway until condition is met
 	if ( (dateFinal == null) || !(isClicked) ) {
 		document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
 	}
-	else if ( !(dateFinal == null) && (isClicked) ) {
+	if ( !(dateFinal == null) && (isClicked) ) {
 		document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
 	}
-	/** disable user from clicking submit until condition is met **/
+	// testing
+
+	// disable user from clicking submit until condition is met
 	if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
 		document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
 	}
 	else {
 		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
 	}
+	// testing
 
-	/** hallway grid **/
+	// hallway grid
 	if ($(window).width() >= 1200)
 	{
 		$("ul#gridHallways").css("column-count", 5);
@@ -608,6 +615,19 @@ function doWork() {
 }
 
 doWork();
+
+$("#checking").click(function(){
+		var $this = $(this);
+
+		if($this.data('clicked')) {
+			toggleRoomsOff();
+		}
+		else {
+		 $this.data('clicked', true);
+
+ 		}
+
+});
 
 var period;
 var classID;

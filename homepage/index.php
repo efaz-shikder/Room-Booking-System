@@ -74,7 +74,7 @@ $accessLevel = $_SESSION['accessLevel'];
 										<div class="cal__week">
 											<span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
 										</div>
-										<div class="cal__body" data-calendar-area="month"></div>
+										<div id="checking" class="cal__body" data-calendar-area="month"></div>
 									</div>
 								</div>
 							</div>
@@ -109,7 +109,7 @@ $accessLevel = $_SESSION['accessLevel'];
 							</div>
 							<!-- rooms -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="roomsContainer">
+								<div id="roomsContainer" class="roomsContainer">
 									<ul id="rooms" class="gridRooms1">
 										<?php
 
@@ -1026,7 +1026,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				// get rid of the booked by 'teacher'
 				//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
 			} */
-		} 
+		}
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
