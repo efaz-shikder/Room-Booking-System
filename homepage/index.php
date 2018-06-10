@@ -948,7 +948,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script type="text/javascript">
 		var doubleArrayJson;
 		var roomName;
-		var daysArray;
+		var noSchoolArray;
 		
 		function loadTable(hallway, date, period)
 		{
@@ -983,7 +983,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				data: {},
 				success: function(data){
 					console.log("Success");
-					daysArray = JSON.parse(data);
+					noSchoolArray = JSON.parse(data);
 				},
 				complete: function(data){
 					updateCalendar();
@@ -993,7 +993,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		function updateCalendar()
 		{
-			alert(daysArray);
+			alert(noSchoolArray);
 		}
 
 
