@@ -122,7 +122,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomString = "$roomName";
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1); setRoomName(\''. $roomString .'\');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1); setRoomName(\''. $roomString .'\');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -258,7 +258,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
 											echo '</li>';
 										}
 
@@ -1010,9 +1010,9 @@ $accessLevel = $_SESSION['accessLevel'];
 		{
 			for(var index = 0; index < hallwayToUngray.length; index++)
 			{
-				var ungray = document.getElementById(hallwayToUngray[index]);
+				var ungray = document.getElementById(hallwayToUngray[index]+"R");
 
-				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
+				$(ungray).removeAttr("style");
 				if(ungray.textContent.indexOf(':') > 0)
 				{
 					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
@@ -1071,11 +1071,11 @@ $accessLevel = $_SESSION['accessLevel'];
 				for (var i = 0; i < doubleArrayJson.length; i++)
 				{
 					// get room id
-					var bookedRoom = document.getElementById(doubleArrayJson[i][1]);
+					var bookedRoom = document.getElementById(doubleArrayJson[i][1]+"R");
 					if (bookedRoom !== null)
 					{
 						// change style to disabled
-						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
+						bookedRoom.setAttribute("style", "pointer-events: none; opacity: 0.6;");
 						// add teachers name next to room that is booked
 						roomName = bookedRoom.textContent;
 						bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
