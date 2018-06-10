@@ -289,7 +289,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						<div class="row">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="submitButton">
-									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod(), getRoomName());">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">
 										<span>Submit</span>
 										<span>
 											<svg viewBox="0 0 24 24">
@@ -1031,14 +1031,13 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
-		function bookAJAX(date, id, block, room)
+		function bookAJAX(date, id, block)
 		{
 
 			var dateOfBooking = JSON.stringify(date);
 			dateOfBooking.replace(/\s+/g, '');
 			var classID = JSON.stringify(id);
 			var period = JSON.stringify(block);
-			roomName = JSON.stringify(room);
 			period = period.substring(3,4);
 
 			if (access !== 0)
