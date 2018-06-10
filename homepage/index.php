@@ -939,7 +939,6 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="homepageScript.js"></script>
 	<script type="text/javascript">
 		var doubleArrayJson;
-		var roomName;
 		var noSchoolArray;
 		var hallwayToUngray;
 
@@ -1014,8 +1013,10 @@ $accessLevel = $_SESSION['accessLevel'];
 				var ungray = document.getElementById(hallwayToUngray[index]);
 
 				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
-				//ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf('Booked'));
-
+				if(ungray.textContent.indexOf(':') > 0)
+				{
+					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':')); 
+				}
 			}
 			/*
 			for(var i = 0; i < hallwayToUngray.length; i++)
@@ -1027,6 +1028,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
 			} */
 		}
+		} 
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
@@ -1077,30 +1079,13 @@ $accessLevel = $_SESSION['accessLevel'];
 						// change style to disabled
 						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 						// add teachers name next to room that is booked
-						bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.length) + " Booked by: " + doubleArrayJson[i][0];
+						roomName = bookedRoom.textContent;
+						bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
 					}
 				}
 			}
 
 		}
-
-
-
-		function setRoomName(room)
-		{
-			roomName = room;
-
-		}
-
-		setRoomName("yes");
-
-		function getRoomName()
-		{
-			alert(roomName);
-			return roomName;
-		}
-
-
 	</script>
 </body>
 </html>
