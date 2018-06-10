@@ -516,6 +516,7 @@ $('#A').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	toggleRoomsOff();
 	isClicked = true;
 })
 $('#B').click(function(){
@@ -523,6 +524,7 @@ $('#B').click(function(){
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	toggleRoomsOff();
 	isClicked = true;
 })
 $('#C').click(function(){
@@ -530,6 +532,7 @@ $('#C').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	toggleRoomsOff();
 	isClicked = true;
 })
 $('#D').click(function(){
@@ -537,6 +540,7 @@ $('#D').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	toggleRoomsOff();
 	isClicked = true;
 })
 
