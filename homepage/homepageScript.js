@@ -1,4 +1,5 @@
 var dateFinal;
+var areHallwaysAvailable = false;
 
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
@@ -427,6 +428,7 @@ function toggleRoomsOff()
 			$(n).removeClass("current");
 		}
 	}
+	areHallwaysAvailable = false;
 }
 
 function toggleCurrentRoom(roomName)
@@ -546,7 +548,6 @@ $('#D').click(function(){
 
 /** disable user from clicking on hallways until condition is met **/
 var repeater;
-var areHallwaysAvailable = false;
 
 function setHallwaysAvailable(name) {
 	areHallwaysAvailable = true;
@@ -585,6 +586,18 @@ function setHallwaysAvailable(name) {
 }
 
 
+function hideHallways() {
+	document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.6;");
+}
+function showHallways() {
+	document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
+}
+function hideSubmit() {
+	document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.4;");
+}
+function showSubmit() {
+	document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
+}
 
 function doWork() {
 	$('#more').load('exp1.php');
@@ -592,17 +605,17 @@ function doWork() {
 
 	// disable user from clicking on hallway until condition is met
 	if ( (dateFinal == null) || !(isClicked) ) {
-		document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.6;");
+		hideHallways();
 	}
 	if ( !(dateFinal == null) && (isClicked) ) {
-		document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
+		showHallways();
 	}
 	// disable user from clicking submit until condition is met
 	if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
-		document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
+		showSubmit();
 	}
 	else {
-		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.4;");
+		hideSubmit();
 	}
 
 	// hallway grid
@@ -626,6 +639,9 @@ $("#checking").click(function(){
 			$("#B").removeClass("btn-clicked").addClass("btn-animate");
 			$("#C").removeClass("btn-clicked").addClass("btn-animate");
 			$("#D").removeClass("btn-clicked").addClass("btn-animate");
+			isClicked = false;
+			hideHallways();
+			hideSubmit();
 		}
 		else {
 		 $this.data('clicked', true);

@@ -632,6 +632,7 @@ button {
 }
 
 .spin {
+	opacity: 0.4;
   border: 2px solid #1ecd97;
   color: #1ecd97;
   font-weight: 600;
