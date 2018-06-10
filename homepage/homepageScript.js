@@ -588,25 +588,22 @@ function setHallwaysAvailable(name) {
 
 function doWork() {
 	$('#more').load('exp1.php');
-	repeater = setTimeout(doWork, 500);
+	repeater = setTimeout(doWork, 100);
 
 	// disable user from clicking on hallway until condition is met
 	if ( (dateFinal == null) || !(isClicked) ) {
-		document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+		document.getElementById('permission').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.6;");
 	}
 	if ( !(dateFinal == null) && (isClicked) ) {
-		document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto;");
+		document.getElementById('permission').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
 	}
-	// testing
-
 	// disable user from clicking submit until condition is met
 	if ( !(dateFinal == null) && (isClicked) && (areHallwaysAvailable) ) {
-		document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto;");
+		document.getElementById('spin').setAttribute("style", "pointer-events: auto; cursor: auto; opacity: 1;");
 	}
 	else {
-		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed;");
+		document.getElementById('spin').setAttribute("style", "pointer-events: none; cursor: not-allowed; opacity: 0.4;");
 	}
-	// testing
 
 	// hallway grid
 	if ($(window).width() >= 1200)
