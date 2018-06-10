@@ -184,7 +184,6 @@ while($row = mysqli_fetch_array($result))
            data: {classID: classID, isBookable: isBookable},
            success:function(data){
             console.log(data);
-            alert("Room has been updated.");
           }
         });
        }
