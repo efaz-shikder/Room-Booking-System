@@ -77,7 +77,7 @@ $teacherEmail = $_SESSION['email'];
 						<?php
 
 						$currentTeacherID = $_SESSION['email'];
-						$query = "SELECT * FROM booking ORDER BY booking.dateOfBooking DESC" ;
+						$query = "SELECT * FROM booking ORDER BY booking.dateOfBooking DESC, booking.period ASC" ;
 
 						$result = mysqli_query($server, $query);
 						$numberOfRows = mysqli_num_rows($result);

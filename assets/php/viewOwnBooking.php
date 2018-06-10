@@ -67,7 +67,7 @@ $teacherEmail = $_SESSION['email'];
 				<?php
 
 				$currentTeacherID = $_SESSION['email'];
-				$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' ORDER BY booking.dateOfBooking DESC" ;
+				$query = "SELECT * FROM booking WHERE booking.teacherEmail = '$currentTeacherID' ORDER BY booking.dateOfBooking DESC, booking.period ASC" ;
 
 				$result = mysqli_query($server, $query);
 				while($row = mysqli_fetch_array($result))
