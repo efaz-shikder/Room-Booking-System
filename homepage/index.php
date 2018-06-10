@@ -1008,26 +1008,25 @@ $accessLevel = $_SESSION['accessLevel'];
 
 					console.log(data);
 					hallwayToUngray = JSON.parse(data);
-					alert(hallwayToUngray);
-
 				},
 				complete: function(data){
 					ungrayHallway();
 				}
 			});
 		}
-
+		
 		function ungrayHallway()
 		{
+
 			for(var i = 0; i < hallwayToUngray.length; i++)
 			{
 				var room = document.getElementById(hallwayToUngray[i]);
 				// change style to original
-				room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
+				//room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
 				// get rid of the booked by 'teacher'
-				room.textContent = room.textContent.substr(0, room.textContent.indexOf(' '));
+				room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
 			}
-		}
+		} 
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
@@ -1078,7 +1077,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						// change style to disabled
 						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 						// add teachers name next to room that is booked
-						bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.indexOf(' ')) + " Booked by: " + doubleArrayJson[i][0];
+						bookedRoom.textContent = bookedRoom.textContent.substr(0, bookedRoom.textContent.length) + " Booked by: " + doubleArrayJson[i][0];
 					}
 				}
 			}
