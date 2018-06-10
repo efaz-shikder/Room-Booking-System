@@ -1020,7 +1020,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		{
 			for(var i = 0; i < hallwayToUngray.length; i++)
 			{
-				var room = document.getElementById(doubleArrayJson[i]);
+				var room = document.getElementById(hallwayToUngray[i]);
 			}
 		}
 
