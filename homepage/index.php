@@ -949,6 +949,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		var doubleArrayJson;
 		var roomName;
 		var noSchoolArray;
+		var hallwayToUngray;
 		
 		function loadTable(hallway, date, period)
 		{
@@ -994,8 +995,6 @@ $accessLevel = $_SESSION['accessLevel'];
 		function updateCalendar()
 			alert(noSchoolArray);
 		}
-
-
 		
 		function ungrayRooms(hallway)
 		{
