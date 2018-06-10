@@ -95,7 +95,7 @@ $accessLevel = $_SESSION['accessLevel'];
 							<!-- hallways -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="permission">
 								<ul id="gridHallways" class="hallways">
-									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());lockSubmit();"><a href="#">&nbsp;C Hallway</a></li>
+									<li class="cHallway" id="cHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('C Hallway', getDate(), getPeriod());"><a href="#">&nbsp;C Hallway</a></li>
 									<li class="sHallway" id="sHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('S Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">S Hallway</a></li>
 									<li class="englishHallway" id="englishHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('English Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">English Hallway</a></li>
 									<li class="frenchHallway" id="frenchHallway" onmouseover="hallwayHover(this)" onmouseout="hallwayHoverOut(this)" onclick="loadTable('French Hallway', getDate(), getPeriod()); grayOutBookedRooms();"><a href="#">French Hallway</a></li>
