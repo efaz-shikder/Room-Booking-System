@@ -15,7 +15,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body onload="">
+<body onload="blockDates();">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -948,6 +948,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script type="text/javascript">
 		var doubleArrayJson;
 		var roomName;
+		var daysArray;
 		
 		function loadTable(hallway, date, period)
 		{
@@ -971,6 +972,28 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			});
 
+		}
+
+		function blockDates()
+		{
+			$.ajax({
+
+				type: 'post',
+				url: 'daysToBlock.php',
+				data: {},
+				success: function(data){
+					console.log("Success");
+					daysArray = JSON.parse(data);
+				},
+				complete: function(data){
+					updateCalendar();
+				}
+			});
+		}
+
+		function updateCalendar()
+		{
+			alert(daysArray);
 		}
 
 
@@ -997,14 +1020,14 @@ $accessLevel = $_SESSION['accessLevel'];
 
 			if (access != 0)
 			{
-				if (confirm('Confirm Booking of ' + roomName + 'on ' + dateOfBooking + ' during period ' + period + '.')) {
+				
 
-					$.ajax({
+				$.ajax({
 
-						type: 'post',
-						url: '../assets/php/addBooking.php',
-						data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-						success:function(data){
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
 
 						// window.location.assign("../assets/php/addBooking.php")
 						console.log(data);
@@ -1014,7 +1037,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				});
 
 
-				}
+				
 			}
 			else
 			{
