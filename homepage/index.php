@@ -1013,9 +1013,9 @@ $accessLevel = $_SESSION['accessLevel'];
 				var ungray = document.getElementById(hallwayToUngray[index]);
 
 				ungray.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;")
-				if(ungray.textContent.indexOf(' ') > 0)
+				if(ungray.textContent.indexOf(':') > 0)
 				{
-					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(' ')); 
+					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':')); 
 				}
 			}
 		} 
@@ -1070,7 +1070,7 @@ $accessLevel = $_SESSION['accessLevel'];
 						bookedRoom.setAttribute("style", "pointer-events: none; cursor: not-allowed; background-color: #bfbfbf; padding: 10px 10px 10px 0;");
 						// add teachers name next to room that is booked
 						roomName = bookedRoom.textContent;
-						bookedRoom.textContent = roomName + bookedRoom.textContent.substr(0, bookedRoom.textContent.indexOf(' ')) + " Booked by: " + doubleArrayJson[i][0];
+						bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
 					}
 				}
 			}
