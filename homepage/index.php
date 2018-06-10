@@ -285,32 +285,24 @@ $accessLevel = $_SESSION['accessLevel'];
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<!-- Row 2 -->
-				<div class="row">
-					<!-- submit button -->
-					<div class="col-xl-12 col-lg-12">
-						<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="submitButton">
-								<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod(), getRoomName());">
-									<span>Submit</span>
-									<span>
-										<svg viewBox="0 0 24 24">
-											<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-										</svg>
-									</span>
-								</button>
+						<!-- submit button -->
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="submitButton">
+									<button class="spin" id="spin" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod(), getRoomName());">
+										<span>Submit</span>
+										<span>
+											<svg viewBox="0 0 24 24">
+												<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+											</svg>
+										</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-
-					<!-- Button to book
-					<div>
-						<button class="btn-animate" value="submit" onclick="bookAJAX(getDate(), getClassID(), getPeriod());">Book</button>
-					</div> -->
 				</div>
-				<!-- row 3 -->
+				<!-- row 2 -->
 				<div class="row">
 					<!-- map info display -->
 					<div class="col-xl-4 col-lg-12 d-none d-lg-block">
@@ -1014,7 +1006,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				}
 			});
 		}
-		
+
 		function ungrayHallway()
 		{
 
@@ -1026,7 +1018,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				// get rid of the booked by 'teacher'
 				room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
 			}
-		} 
+		}
 
 		var access = <?php echo json_encode($accessLevel) ?>;
 
