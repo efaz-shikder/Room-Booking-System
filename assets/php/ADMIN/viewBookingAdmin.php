@@ -4,6 +4,12 @@ session_start();
 
 include_once("../connect.php");
 
+// Checks if the session is valid
+if (!isset($_SESSION['email']) && !isset($_SESSION['accessLevel']))
+{
+	header("Location: ../../../index.php");
+}
+
 $teacherEmail = $_SESSION['email'];
 
 ?>
