@@ -5,7 +5,7 @@ include_once("connect.php");
 $periodArray = ['A', 'B', 'C', 'D'];
 $teacherArray = ['ashfipathan@gmail.com', 'josh.prested@gmail.com', 'orson.barredo@gmail.com', 'shaibalmuhtadee@gmail.com', 'efaz.es@gmail.com'];
 
-for ($i = 0; $i < 1000; $i++)
+for ($i = 0; $i < 250; $i++)
 {
 	$randomClassroom = rand(1, 70);
 
