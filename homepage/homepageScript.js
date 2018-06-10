@@ -546,7 +546,6 @@ $("#checking").click(function(){
 
 		if($this.data('clicked')) {
 			toggleRoomsOff();
-			isClicked = false;
 			hideHallways();
 			hideSubmit();
 		}
