@@ -993,6 +993,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 		{
 		function updateCalendar()
+		{
 			alert(noSchoolArray);
 		}
 
