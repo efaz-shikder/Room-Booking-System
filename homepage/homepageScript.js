@@ -591,6 +591,6 @@ function getDate()
 
 $(document).ready(function(){
     $("div").on("click", "button", function(event){
-        $(event.delegateTarget).css("background", "#bfc0c1");
+        $(event.delegateTarget).css("background", "#bfc0c1"/**light gray**/);
     });
 });
