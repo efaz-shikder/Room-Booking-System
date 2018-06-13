@@ -22,7 +22,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body>
+<body class="padding">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
