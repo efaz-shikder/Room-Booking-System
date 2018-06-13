@@ -52,8 +52,21 @@
   
         specialDate date NOT NULL,
 		
-		typeOfDay ENUM('first day of school', 'last day of school', 'late start', 'no school', 'day zero', 'normal day') NOT NULL 
-	)";
+		typeOfDay ENUM('0', '1', '2', '3', '4', '5', 'first day', 'last day') NOT NULL 
+	)"
+	
+	/* 
+		day 0: students and/or teachers come to school, but it does not progress the schedule: PA days, first day of school
+		day 1: school day 1
+		day 2: school day 2
+		day 3: school day 3
+		day 4: school day 4
+		day 5: no school: weekends, winter and march break, other holidays
+		first day: the first day of school (probably a day 0) 
+		last day: last day of school (also probably a day 0)
+	*/
+	
+	;
 
     if (mysqli_query($server, $sql1))
     {
