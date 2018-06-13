@@ -45,53 +45,61 @@ if (isset($_POST['submit']))
 	
 	$sql = "SELECT * FROM teacher WHERE email = '$email'";
 	$query = mysqli_query($server, $sql);
-	$row = mysqli_fetch_array($query);
+	if ($query)
+	{
+		$row = mysqli_fetch_array($query);
 
-	$id = $row['email'];
-	$database_password = $row['password'];
-	$accessLevel = $row['accessLevel'];
+		$id = $row['email'];
+		$database_password = $row['password'];
+		$accessLevel = $row['accessLevel'];
 
-	if (md5($password) == $database_password) 
-	{ 
-		if($accessLevel == $ADMIN)
-		{
-			$_SESSION['email'] = $email;
-			$_SESSION['accessLevel'] = $accessLevel;
-			header("Location: ../../homepage/admin.php");
-			echo "Successful login as ADMIN";
+		if (md5($password) == $database_password) 
+		{ 
+			if($accessLevel == $ADMIN)
+			{
+				$_SESSION['email'] = $email;
+				$_SESSION['accessLevel'] = $accessLevel;
+				header("Location: ../../homepage/admin.php");
+				echo "Successful login as ADMIN";
+			}
+			elseif ($accessLevel == $TEACHER) 
+			{
+				$_SESSION['email'] = $email;
+				$_SESSION['accessLevel'] = $accessLevel;
+				header("Location: ../../homepage/index.php");
+				echo "Successful login as TEACHER";
+			}
+			elseif ($accessLevel == $UNVERIFIED) 
+			{
+				echo "<script type='text/javascript'>alert('Please check your email to verify your account!'); window.location.assign('../../index.php'); </script>";
+			}
+			elseif ($accessLevel == $UNBOOKABLE) 
+			{
+				$_SESSION['email'] = $email;
+				$_SESSION['accessLevel'] = $accessLevel;
+				echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../homepage/index.php'); </script>";
+			}
+			elseif ($accessLevel == $DENY) 
+			{
+				$_SESSION['email'] = $email;
+				$_SESSION['accessLevel'] = $accessLevel;
+				echo "<script type='text/javascript'>alert('You are not authorized to access ARBIS. Please contact an administrator.'); window.location.assign('../../index.php');</script>";
+			}
 		}
-		elseif ($accessLevel == $TEACHER) 
+		else
 		{
-			$_SESSION['email'] = $email;
-			$_SESSION['accessLevel'] = $accessLevel;
-			header("Location: ../../homepage/index.php");
-			echo "Successful login as TEACHER";
-		}
-		elseif ($accessLevel == $UNVERIFIED) 
-		{
-			echo "<script type='text/javascript'>alert('Please check your email to verify your account!'); window.location.assign('../../index.php'); </script>";
-		}
-		elseif ($accessLevel == $UNBOOKABLE) 
-		{
-			$_SESSION['email'] = $email;
-			$_SESSION['accessLevel'] = $accessLevel;
-			echo "<script type='text/javascript'>alert('You are unable to make any bookings. Please contact an administrator.'); window.location.assign('../../homepage/index.php'); </script>";
-		}
-		elseif ($accessLevel == $DENY) 
-		{
-			$_SESSION['email'] = $email;
-			$_SESSION['accessLevel'] = $accessLevel;
-			echo "<script type='text/javascript'>alert('You are not authorized to access ARBIS. Please contact an administrator.'); window.location.assign('../../index.php');</script>";
+			echo "Incorrect login details! Redirecting to landing page.";
+			header("refresh:2;url=../../index.php");
 		}
 	}
 	else
 	{
-		echo "Incorrect login details! Redirecting to landing page.";
-		header("refresh:2;url=../../index.php");
+		echo "There seems to be a problem with the servers. Please check back later.";
 	}
+	
 }
 
-	
+
 
 
 // Wrap up and close connection
