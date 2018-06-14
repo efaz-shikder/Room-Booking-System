@@ -35,7 +35,7 @@
 
         dateOfBooking date NOT NULL,
 
-        period ENUM('A', 'B', 'C', 'D') NOT NULL,
+        period ENUM('A', 'B', 'C', 'D', 'L', 'BS', 'AS') NOT NULL,
 
         FOREIGN KEY (teacherEmail) REFERENCES teacher(email),
 
