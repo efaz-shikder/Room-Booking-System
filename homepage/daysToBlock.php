@@ -2,7 +2,7 @@
 	session_start();
 	include_once("../assets/php/connect.php");
 
-	$sql = "SELECT * FROM schedule WHERE schedule.typeOfDay='no school'";
+	$sql = "SELECT * FROM schedule WHERE schedule.typeOfDay='5'";
 	$result = mysqli_query($server, $sql);
 
 	$noSchoolDays = array();
