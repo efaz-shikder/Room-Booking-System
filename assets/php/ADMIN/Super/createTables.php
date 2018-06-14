@@ -46,11 +46,9 @@
 
 	$sql4 = "CREATE TABLE schedule(
 
-        ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-
         dateDescription VARCHAR(50),
   
-        specialDate date NOT NULL,
+        specialDate date NOT NULL PRIMARY KEY,
 		
 		typeOfDay ENUM('0', '1', '2', '3', '4', '5', 'first day', 'last day') NOT NULL 
 	)"
