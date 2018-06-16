@@ -61,7 +61,24 @@ $teacherEmail = $_SESSION['email'];
 
 			<div class="calendar col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<input type="date" id="selectDate" value="yyyy-mm-dd">
-				<button onclick="selectDate();">Search</button>
+				<select id="selectRoom" name="selectRoom" value="room name">
+					<option value="" selected="">Rooms</option>
+
+					<?php 
+
+					$listQuery = "SELECT * FROM classroom WHERE classroom.isBookable = 'yes' ORDER BY classroom.roomName ASC";
+					$list = mysqli_query($server, $listQuery);
+
+					while ($dropList = mysqli_fetch_array($list)) 
+					{
+						$roomName = $dropList['roomName'];
+						$classID = $dropList['classID'];
+
+						echo '<option value="' . $classID . '">' . $roomName . '</option>';
+					}
+					?>
+				</select>
+				<button onclick="filter();">Search</button>
 			</div>
 
 			<div class="row">
@@ -164,19 +181,31 @@ $teacherEmail = $_SESSION['email'];
 			}
 
 		}
-		function selectDate()
-		{
 
-			var date = document.getElementById("selectDate").value;
-			$('.date').show();
-
-			if(date != "")
+		function filter()
 			{
 
-				$('.date').hide();
-				$('tr[name='+date+']').show();
+				var date = document.getElementById("selectDate").value;
+				var room = document.getElementById("selectRoom").value;
+				$('.date').show();
+
+				if(date != "" && room=="")
+				{
+
+					$('.date').hide();
+					$('tr[name='+date+']').show();
+				}
+				else if (room != "" && date == "") 
+				{
+					$('.date').hide();
+					$('[id *= ' + room +']').show();
+				}
+				else if (room != "" && date != "")
+				{
+					$('.date').hide();
+					$('tr[name='+date+']').filter('[id *= ' + room +']').show();
+				}
 			}
-		}
 	</script>
 
 </body>
