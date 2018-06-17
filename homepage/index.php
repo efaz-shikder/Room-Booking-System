@@ -320,7 +320,9 @@ $accessLevel = $_SESSION['accessLevel'];
 					<div class="col-xl-4 col-lg-12 d-none d-lg-block">
 						<div class="center row">
 							<div class="col-xs-12">
-								<div class="bg-white" style="height: 200px; width: 400px"></div>
+								<div class="container schedule">
+									<img style="width:100%;height:auto;"src="../assets/images/schedule.PNG">
+								</div>
 							</div>
 							<div class="col-xs-12">
 								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
