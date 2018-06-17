@@ -324,7 +324,7 @@ $accessLevel = $_SESSION['accessLevel'];
 									<img style="width:100%;height:auto;"src="../assets/images/schedule.PNG">
 								</div>
 							</div>
-							<div class="col-xs-12">
+							<div class="center col-xs-12">
 								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
 							</div>
 						</div>	

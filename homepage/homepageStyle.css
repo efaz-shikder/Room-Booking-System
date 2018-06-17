@@ -144,7 +144,8 @@ path
   font-size: 2em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: white;
-  padding-left: 20px;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
 /* Hallway Menu */
@@ -553,6 +554,7 @@ html {
           transform: translateZ(0);
 }
 .btn-animate span {
+  top: -5;
   position: relative;
   z-index: 2;
 }
@@ -692,6 +694,7 @@ button {
 }
 
 .schedule {
+  padding-top: 20px;
   height: auto;
   width: 100%;
   transform: translateX(3%);
