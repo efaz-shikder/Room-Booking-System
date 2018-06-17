@@ -94,9 +94,9 @@ $accessLevel = $_SESSION['accessLevel'];
 									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
 								</div>
 								<div class="periodButtons">
-									<button class="btn-animate" id="E" onclick="setPeriod(this);">Before School</button>
-									<button class="btn-animate" id="F" onclick="setPeriod(this);">Lunch</button>
-									<button class="btn-animate" id="G" onclick="setPeriod(this);">After School</button>
+									<button class="btn-animate" id="BS" onclick="setPeriod(this);">Before School</button>
+									<button class="btn-animate" id="L" onclick="setPeriod(this);">Lunch</button>
+									<button class="btn-animate" id="AS" onclick="setPeriod(this);">After School</button>
 								</div>
 							</div>
 						</div>
