@@ -22,7 +22,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body class="padding">
+<body>
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -39,7 +39,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		<a href="../ARBIS_Help_Admin.html">Help</a>
 	</div>
 
-	<section>
+	<section class="padding">
 
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container">
@@ -89,11 +89,16 @@ $accessLevel = $_SESSION['accessLevel'];
 							</div>
 							<!-- period buttons -->
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="center periodButtons">
+								<div class="periodButtons" style="padding-top: 5px;">
 									<button class="btn-animate" id="A" onclick="setPeriod(this);">A</button>
 									<button class="btn-animate" id="B" onclick="setPeriod(this);">B</button>
 									<button class="btn-animate" id="C" onclick="setPeriod(this);">C</button>
 									<button class="btn-animate" id="D" onclick="setPeriod(this);">D</button>
+								</div>
+								<div class="periodButtons">
+									<button class="btn-animate" id="E" onclick="setPeriod(this);">Before School</button>
+									<button class="btn-animate" id="F" onclick="setPeriod(this);">Lunch</button>
+									<button class="btn-animate" id="G" onclick="setPeriod(this);">After School</button>
 								</div>
 							</div>
 						</div>
@@ -315,7 +320,14 @@ $accessLevel = $_SESSION['accessLevel'];
 				<div class="row">
 					<!-- map info display -->
 					<div class="col-xl-4 col-lg-12 d-none d-lg-block">
-						<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+						<div class="center row">
+							<div class="col-xs-12">
+								<div class="bg-white" style="height: 200px; width: 400px"></div>
+							</div>
+							<div class="col-xs-12">
+								<p id="placeholderParagraph" class="center d-none d-lg-block">Academic Room Booking and Inquiry System</p>
+							</div>
+						</div>	
 					</div>
 					<!-- map -->
 					<div class="col-xl-8 col-lg-12 d-none d-lg-block">

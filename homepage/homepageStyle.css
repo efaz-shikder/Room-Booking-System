@@ -1,6 +1,7 @@
 .padding {
-	padding-top: 20px;
+  padding-top: 20px;
 }
+
 body{
 	background-color: black;
 }
@@ -530,7 +531,6 @@ html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-top: 15px;
 }
 
 .btn-animate {

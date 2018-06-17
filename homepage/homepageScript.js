@@ -429,6 +429,9 @@ $('#A').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#E").removeClass("btn-clicked").addClass("btn-animate");
+	$("#F").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");	
 	toggleRoomsOff();
 	isClicked = true;
 })
@@ -437,6 +440,9 @@ $('#B').click(function(){
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#E").removeClass("btn-clicked").addClass("btn-animate");
+	$("#F").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");		
 	toggleRoomsOff();
 	isClicked = true;
 })
@@ -445,6 +451,9 @@ $('#C').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
 	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#E").removeClass("btn-clicked").addClass("btn-animate");
+	$("#F").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");		
 	toggleRoomsOff();
 	isClicked = true;
 })
@@ -453,10 +462,45 @@ $('#D').click(function(){
 	$("#B").removeClass("btn-clicked").addClass("btn-animate");
 	$("#C").removeClass("btn-clicked").addClass("btn-animate");
 	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#E").removeClass("btn-clicked").addClass("btn-animate");
+	$("#F").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");		
 	toggleRoomsOff();
 	isClicked = true;
 })
-
+$('#E').click(function(){
+	$("#E").removeClass("btn-animate").addClass("btn-clicked");
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#F").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");	
+	toggleRoomsOff();
+	isClicked = true;
+})
+$('#F').click(function(){
+	$("#F").removeClass("btn-animate").addClass("btn-clicked");
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#E").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");	
+	toggleRoomsOff();
+	isClicked = true;
+})
+$('#G').click(function(){
+	$("#G").removeClass("btn-animate").addClass("btn-clicked");
+	$("#B").removeClass("btn-clicked").addClass("btn-animate");
+	$("#C").removeClass("btn-clicked").addClass("btn-animate");
+	$("#D").removeClass("btn-clicked").addClass("btn-animate");
+	$("#A").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");
+	$("#G").removeClass("btn-clicked").addClass("btn-animate");	
+	toggleRoomsOff();
+	isClicked = true;
+})
 /** disable user from clicking on hallways until condition is met **/
 var repeater;
 
