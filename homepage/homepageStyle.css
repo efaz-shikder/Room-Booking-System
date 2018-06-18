@@ -554,7 +554,6 @@ html {
           transform: translateZ(0);
 }
 .btn-animate span {
-  top: -5;
   position: relative;
   z-index: 2;
 }
