@@ -322,9 +322,9 @@ removeActiveClass: function () {
 }
 
 // loads the calendar
-window.addEventListener('load', function () {
-	vanillacalendar.init();
-})
+//window.addEventListener('load', function () {
+//	vanillacalendar.init();
+//})
 
 /** Show/Hide Toggles for room menu **/
 var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "#gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
@@ -665,7 +665,7 @@ function blockDates()
 			noSchoolArray = JSON.parse(data);
 		},
 		complete: function(data){
-			updateCalendar();
+			vanillacalendar.init();
 		}
 	});
 }
