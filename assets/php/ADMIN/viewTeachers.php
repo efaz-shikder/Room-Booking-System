@@ -38,6 +38,7 @@ $teacherEmail = $_SESSION['email'];
 		<a href="viewBookingAdmin.php">All Booked Rooms </a>
 		<a href="viewRooms.php">Edit Rooms</a>
 		<a href="viewTeachers.php">Edit Teachers</a>
+    <a href="viewSpecialDay.php">Edit Days</a>
 		<a href="../../../ARBIS_Help_Admin.html">Help</a>
 	</div>
 

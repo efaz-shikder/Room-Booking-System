@@ -69,6 +69,7 @@ $teacherEmail = $_SESSION['email'];
    <th>Date</th>
    <th>Type of Day</th>
    <th>Description</th>
+   <th>Delete Day</th>
  </thead>
 
  <!-- Modal -->
@@ -123,13 +124,25 @@ while($row = mysqli_fetch_array($result))
   $date = $row['specialDate'];
   $type = $row['typeOfDay'];
 
+  if ($type == 5)
+  {
+    $typeText = "No School";
+  }
+  else
+  {
+    $typeText = $type;
+  }
+
   ?>
 
   <tbody>
-    <tr>
+    <tr id="delete<?php echo $date; echo $type; ?>">
       <td><?php echo $date ?></td>
-      <td><?php echo $type ?></td>
+      <td><?php echo $typeText ?></td>
       <td><?php echo $description ?></td>
+      <td>
+        <?php echo '<button onclick="deleteDate(\''.$date.'\', \''.$type.'\')" class="btn btn-danger">Cancel</button>' ?>
+      </td>
     </tr>
   </tbody>
 <?php } ?>
@@ -183,6 +196,27 @@ while($row = mysqli_fetch_array($result))
  });
 });
 
+ function deleteDate(date, typeOfDay)
+ {
+  var day = JSON.stringify(date);
+  var typeOfDay = JSON.stringify(typeOfDay);
+
+  if (confirm('Are you sure you want to delete this day?')) {
+
+    $.ajax({
+
+      type: 'post',
+      url: 'removeDate.php',
+      data: {date: day, type: typeOfDay},
+      success:function(data){
+        console.log(data);
+        window.location.replace("viewSpecialDay.php");
+
+      }
+    });
+  }
+
+}
 </script
 </body>
 

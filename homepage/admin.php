@@ -36,6 +36,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		<a href="../assets/php/ADMIN/viewBookingAdmin.php">All Booked Rooms</a>
 		<a href="../assets/php/ADMIN/viewRooms.php">Edit Rooms</a>
 		<a href="../assets/php/ADMIN/viewTeachers.php">Edit Teachers</a>
+		<a href="../assets/php/ADMIN/viewSpecialDay.php">Edit Days</a>
 		<a href="../ARBIS_Help_Admin.html">Help</a>
 	</div>
 

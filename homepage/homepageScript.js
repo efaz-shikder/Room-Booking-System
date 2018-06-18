@@ -785,3 +785,4 @@ function bookAJAXAdmin(date, id, block)
 
 	}
 }
+
