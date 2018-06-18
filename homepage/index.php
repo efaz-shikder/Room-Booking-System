@@ -969,7 +969,8 @@ $accessLevel = $_SESSION['accessLevel'];
 			  dateOfBooking.replace(/\s+/g, '');
 			  var classID = JSON.stringify(id);
 			  var period = JSON.stringify(block);
-			  period = period.substring(3,4);
+			  period = period.replace(/"/g, "");
+			  period = period.replace(/\\/g, "");
 		 
 			  if (access != 0)
 			  {
