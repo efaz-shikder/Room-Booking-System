@@ -627,6 +627,7 @@ function getDate()
 	return dateFinal;
 }
 
+
 		var doubleArrayJson;
 		var noSchoolArray;
 		var hallwayToUngray;
@@ -718,41 +719,6 @@ function getDate()
 			} */
 		}
 
-		var access = <?php echo json_encode($accessLevel) ?>;
-
-		function bookAJAX(date, id, block)
-		{
-
-			var dateOfBooking = JSON.stringify(date);
-			dateOfBooking.replace(/\s+/g, '');
-			var classID = JSON.stringify(id);
-			var period = JSON.stringify(block);
-			period = period.substring(3,4);
-
-			if (access != 0)
-			{
-				$.ajax({
-
-					type: 'post',
-					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-					success:function(data){
-
-						// window.location.assign("../assets/php/addBooking.php")
-						console.log(data);
-						window.location.assign("../assets/php/viewOwnBooking.php");
-
-					}
-				});
-
-			}
-			else
-			{
-				alert('You are not authorized to create any bookings. Please contact an administrator.');
-			}
-		}
-
-
 		function grayOutBookedRooms()
 		{
 			if (doubleArrayJson !== "")
@@ -770,6 +736,37 @@ function getDate()
 						bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
 					}
 				}
+			}
+
+		}
+
+		function bookAJAXAdmin(date, id, block)
+		{
+
+			var dateOfBooking = JSON.stringify(date);
+			var classID = JSON.stringify(id);
+			var period = JSON.stringify(block);
+			period = period.substring(3,4);
+
+
+
+			if (confirm('Are you sure you want to create this booking?')) {
+
+				$.ajax({
+
+					type: 'post',
+					url: '../assets/php/addBooking.php',
+					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+					success:function(data){
+
+						// window.location.assign("../assets/php/addBooking.php")
+						console.log(data);
+						window.location.assign("../assets/php/ADMIN/viewOwnBookingAdmin.php");
+
+					}
+				});
+
+
 			}
 
 		}
