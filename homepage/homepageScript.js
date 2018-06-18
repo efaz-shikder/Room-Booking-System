@@ -670,11 +670,6 @@ function blockDates()
 	});
 }
 
-function updateCalendar()
-{
-
-}
-
 function ungrayRooms(hallway)
 {
 	hallway = JSON.stringify(hallway);
@@ -707,15 +702,6 @@ function ungrayHallway()
 			ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
 		}
 	}
-	/*
-	for(var i = 0; i < hallwayToUngray.length; i++)
-	{
-		var room = document.getElementById(hallwayToUngray[i]);
-		// change style to original
-		room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
-		// get rid of the booked by 'teacher'
-		//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
-	} */
 }
 
 function grayOutBookedRooms()
@@ -767,5 +753,36 @@ function bookAJAXAdmin(date, id, block)
 
 
 	}
-
 }
+
+function bookAJAX(date, id, block)
+{
+ 
+      var dateOfBooking = JSON.stringify(date);
+      dateOfBooking.replace(/\s+/g, '');
+      var classID = JSON.stringify(id);
+      var period = JSON.stringify(block);
+      period = period.substring(3,4);
+ 
+      if (access != 0)
+      {
+        $.ajax({
+		  type: 'post',
+          url: '../assets/php/addBooking.php',
+          data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+          success:function(data){
+ 
+            // window.location.assign("../assets/php/addBooking.php")
+            console.log(data);
+            window.location.assign("../assets/php/viewOwnBooking.php");
+ 
+          }
+        });
+ 
+      }
+      else
+      {
+        alert('You are not authorized to create any bookings. Please contact an administrator.');
+      }
+}
+
