@@ -958,5 +958,40 @@ $accessLevel = $_SESSION['accessLevel'];
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
+	<script type = "text/javascript">
+		
+		var access = json_encode(<?php echo $accessLevel ?>);
+
+		function bookAJAX(date, id, block)
+		{
+		 
+			  var dateOfBooking = JSON.stringify(date);
+			  dateOfBooking.replace(/\s+/g, '');
+			  var classID = JSON.stringify(id);
+			  var period = JSON.stringify(block);
+			  period = period.substring(3,4);
+		 
+			  if (access != 0)
+			  {
+				$.ajax({
+				  type: 'post',
+				  url: '../assets/php/addBooking.php',
+				  data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+				  success:function(data){
+		 
+					// window.location.assign("../assets/php/addBooking.php")
+					console.log(data);
+					window.location.assign("../assets/php/viewOwnBooking.php");
+		 
+				  }
+				});
+		 
+			  }
+			  else
+			  {
+				alert('You are not authorized to create any bookings. Please contact an administrator.');
+			  }
+		}
+	</script>
 </body>
 </html>
