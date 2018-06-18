@@ -272,17 +272,19 @@ createDay: function (num, day, year) {
 	}
 	var _this = this;
 	this.activeDates = document.querySelectorAll('[data-calendar-status="active"]')
-
-	for (var n = 0; n < noSchoolArray.length; n++) {
-		year1 = noSchoolArray[n].substring(0,4);
-		month1 = noSchoolArray[n].substring(5,7) - 1;
-		day1 = noSchoolArray[n].substring(8,10);
-		
-	if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
-		|| (this.date.getMonth() === 6) 
-		|| (this.date.getMonth() === 7)
-		|| (weekend == "Sat") || (weekend == "Sun") 
-		|| ((this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
+	
+	if(noSchoolArray.length > 0)
+	{
+		for (var n = 0; n < noSchoolArray.length; n++) {
+			year1 = noSchoolArray[n].substring(0,4);
+			month1 = noSchoolArray[n].substring(5,7) - 1;
+			day1 = noSchoolArray[n].substring(8,10);
+			
+		if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
+			|| (this.date.getMonth() === 6) 
+			|| (this.date.getMonth() === 7)
+			|| (weekend == "Sat") || (weekend == "Sun") 
+			|| ((this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
 		{
 			newDay.classList.add('cal__date--disabled')
 		} 
@@ -291,7 +293,23 @@ createDay: function (num, day, year) {
 			newDay.classList.add('cal__date--active')
 			newDay.setAttribute('data-calendar-status', 'active')
 		}
-}
+	}
+	}
+	else
+	{
+		if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
+			|| (this.date.getMonth() === 6) 
+			|| (this.date.getMonth() === 7)
+			|| (weekend == "Sat") || (weekend == "Sun") 
+		{
+			newDay.classList.add('cal__date--disabled')
+		} 
+		else 
+		{
+			newDay.classList.add('cal__date--active')
+			newDay.setAttribute('data-calendar-status', 'active')
+		}		
+	}
 
 newDay.appendChild(dateEl)
 this.month.appendChild(newDay)
