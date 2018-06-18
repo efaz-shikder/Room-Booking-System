@@ -266,7 +266,6 @@ createDay: function (num, day, year) {
 	}
 	var _this = this;
 	this.activeDates = document.querySelectorAll('[data-calendar-status="active"]')
-
 	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
 		|| (weekend == "Sat") || (weekend == "Sun") ) {
 		newDay.classList.add('cal__date--disabled')
@@ -320,11 +319,6 @@ removeActiveClass: function () {
 	}
 }
 }
-
-// loads the calendar
-//window.addEventListener('load', function () {
-//	vanillacalendar.init();
-//})
 
 /** Show/Hide Toggles for room menu **/
 var hallwayArray = ["#cHallway", "#sHallway", "#englishHallway", "#frenchHallway", "#gymHallway", "#frontFoyer", "#musicHallway", "#mathHallway", "#scienceHallway", "#geographyHallway"];
