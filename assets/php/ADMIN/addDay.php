@@ -13,7 +13,7 @@ echo "$type";
 echo "$date";
 
 
-$sql = "INSERT INTO schedule (`ID`, `dateDescription`, `specialDate`, `typeOfDay`) VALUES (NULL, '$description', '$date', '$type')";
+$sql = "INSERT INTO schedule (`dateDescription`, `specialDate`, `typeOfDay`) VALUES ('$description', '$date', '$type')";
 mysqli_query($server, $sql);
 
 
