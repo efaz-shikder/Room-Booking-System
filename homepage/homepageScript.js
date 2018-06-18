@@ -1,6 +1,10 @@
 var dateFinal;
 var areHallwaysAvailable = false;
 
+var doubleArrayJson;
+var noSchoolArray;
+var hallwayToUngray;
+
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -627,146 +631,141 @@ function getDate()
 	return dateFinal;
 }
 
-
-		var doubleArrayJson;
-		var noSchoolArray;
-		var hallwayToUngray;
-
-		function loadTable(hallway, date, period)
-		{
-			hallway = JSON.stringify(hallway);
-			date = JSON.stringify(date);
-			period = JSON.stringify(period);
-			period = period.substring(3,4);
+function loadTable(hallway, date, period)
+{
+	hallway = JSON.stringify(hallway);
+	date = JSON.stringify(date);
+	period = JSON.stringify(period);
+	period = period.substring(3,4);
 
 
-			$.ajax({
+	$.ajax({
 
-				type: 'post',
-				url: 'roomsToGrayOut.php',
-				data: {hallway: hallway, date: date, period: period},
-				success:function(data){
-					doubleArrayJson = JSON.parse(data);
-				},
-				complete: function(data){
-					grayOutBookedRooms();
-				}
-			});
-
+		type: 'post',
+		url: 'roomsToGrayOut.php',
+		data: {hallway: hallway, date: date, period: period},
+		success:function(data){
+			doubleArrayJson = JSON.parse(data);
+		},
+		complete: function(data){
+			grayOutBookedRooms();
 		}
+	});
 
-		function blockDates()
-		{
-			$.ajax({
-				type: 'post',
+}
 
-				url: 'daysToBlock.php',
-				data: {},
-				success: function(data){
-					noSchoolArray = JSON.parse(data);
-				},
-				complete: function(data){
-					updateCalendar();
-				}
-			});
+function blockDates()
+{
+	$.ajax({
+		type: 'post',
+
+		url: 'daysToBlock.php',
+		data: {},
+		success: function(data){
+			noSchoolArray = JSON.parse(data);
+		},
+		complete: function(data){
+			updateCalendar();
 		}
+	});
+}
 
-		function updateCalendar()
-		{
+function updateCalendar()
+{
 
+}
+
+function ungrayRooms(hallway)
+{
+	hallway = JSON.stringify(hallway);
+
+	$.ajax({
+
+		type: 'post',
+		url: 'hallwayToUngray.php',
+		data: {hallway: hallway},
+		success:function(data){
+
+			console.log(data);
+			hallwayToUngray = JSON.parse(data);
+		},
+		complete: function(data){
+			ungrayHallway();
 		}
+	});
+}
 
-		function ungrayRooms(hallway)
+function ungrayHallway()
+{
+	for(var index = 0; index < hallwayToUngray.length; index++)
+	{
+		var ungray = document.getElementById(hallwayToUngray[index]+"R");
+
+		$(ungray).removeAttr("style");
+		if(ungray.textContent.indexOf(':') > 0)
 		{
-			hallway = JSON.stringify(hallway);
-
-			$.ajax({
-
-				type: 'post',
-				url: 'hallwayToUngray.php',
-				data: {hallway: hallway},
-				success:function(data){
-
-					console.log(data);
-					hallwayToUngray = JSON.parse(data);
-				},
-				complete: function(data){
-					ungrayHallway();
-				}
-			});
+			ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
 		}
+	}
+	/*
+	for(var i = 0; i < hallwayToUngray.length; i++)
+	{
+		var room = document.getElementById(hallwayToUngray[i]);
+		// change style to original
+		room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
+		// get rid of the booked by 'teacher'
+		//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
+	} */
+}
 
-		function ungrayHallway()
+function grayOutBookedRooms()
+{
+	if (doubleArrayJson !== "")
+	{
+		for (var i = 0; i < doubleArrayJson.length; i++)
 		{
-			for(var index = 0; index < hallwayToUngray.length; index++)
+			// get room id
+			var bookedRoom = document.getElementById(doubleArrayJson[i][1]+"R");
+			if (bookedRoom !== null)
 			{
-				var ungray = document.getElementById(hallwayToUngray[index]+"R");
-
-				$(ungray).removeAttr("style");
-				if(ungray.textContent.indexOf(':') > 0)
-				{
-					ungray.textContent = ungray.textContent.substr(0, ungray.textContent.indexOf(':'));
-				}
+				// change style to disabled
+				bookedRoom.setAttribute("style", "pointer-events: none; opacity: 0.6;");
+				// add teachers name next to room that is booked
+				roomName = bookedRoom.textContent;
+				bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
 			}
-			/*
-			for(var i = 0; i < hallwayToUngray.length; i++)
-			{
-				var room = document.getElementById(hallwayToUngray[i]);
-				// change style to original
-				room.setAttribute("style", "pointer-events: auto; cursor: pointer; background-color: #f1f1f1;");
-				// get rid of the booked by 'teacher'
-				//room.textContent = room.textContent.substr(0, room.textContent.indexOf('Booked'));
-			} */
 		}
+	}
 
-		function grayOutBookedRooms()
-		{
-			if (doubleArrayJson !== "")
-			{
-				for (var i = 0; i < doubleArrayJson.length; i++)
-				{
-					// get room id
-					var bookedRoom = document.getElementById(doubleArrayJson[i][1]+"R");
-					if (bookedRoom !== null)
-					{
-						// change style to disabled
-						bookedRoom.setAttribute("style", "pointer-events: none; opacity: 0.6;");
-						// add teachers name next to room that is booked
-						roomName = bookedRoom.textContent;
-						bookedRoom.textContent = roomName + ": Booked by " + doubleArrayJson[i][0];
-					}
-				}
-			}
+}
 
-		}
+function bookAJAXAdmin(date, id, block)
+{
 
-		function bookAJAXAdmin(date, id, block)
-		{
-
-			var dateOfBooking = JSON.stringify(date);
-			var classID = JSON.stringify(id);
-			var period = JSON.stringify(block);
-			period = period.substring(3,4);
+	var dateOfBooking = JSON.stringify(date);
+	var classID = JSON.stringify(id);
+	var period = JSON.stringify(block);
+	period = period.substring(3,4);
 
 
 
-			if (confirm('Are you sure you want to create this booking?')) {
+	if (confirm('Are you sure you want to create this booking?')) {
 
-				$.ajax({
+		$.ajax({
 
-					type: 'post',
-					url: '../assets/php/addBooking.php',
-					data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
-					success:function(data){
+			type: 'post',
+			url: '../assets/php/addBooking.php',
+			data: {dateOfBooking: dateOfBooking, classID: classID, period: period},
+			success:function(data){
 
-						// window.location.assign("../assets/php/addBooking.php")
-						console.log(data);
-						window.location.assign("../assets/php/ADMIN/viewOwnBookingAdmin.php");
-
-					}
-				});
-
+				// window.location.assign("../assets/php/addBooking.php")
+				console.log(data);
+				window.location.assign("../assets/php/ADMIN/viewOwnBookingAdmin.php");
 
 			}
+		});
 
-		}
+
+	}
+
+}
