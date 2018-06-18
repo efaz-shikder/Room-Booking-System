@@ -300,7 +300,7 @@ createDay: function (num, day, year) {
 		if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
 			|| (this.date.getMonth() === 6) 
 			|| (this.date.getMonth() === 7)
-			|| (weekend == "Sat") || (weekend == "Sun") 
+			|| (weekend == "Sat") || (weekend == "Sun"))
 		{
 			newDay.classList.add('cal__date--disabled')
 		} 
