@@ -278,7 +278,6 @@ createDay: function (num, day, year) {
 		month1 = noSchoolArray[n].substring(5,7) - 1;
 		day1 = noSchoolArray[n].substring(8,10);
 		
-
 	if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) || (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
 		|| (weekend == "Sat") || (weekend == "Sun") || ( (this.date.getFullYear() == year1 && this.date.getMonth() == month1) 
 		&& (this.date.getDate() == day1) ) ) {
