@@ -251,7 +251,7 @@ dateClicked: function () {
 					{
 						if (!(schedule[index][1] == 5)) 
 						{
-							simplifiedDate = simplifiedDate + " Day " + schedule[index][1];
+							simplifiedDate = simplifiedDate + ", Day " + schedule[index][1];
 						}
 					}
 				}
