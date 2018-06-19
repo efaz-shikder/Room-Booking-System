@@ -2,7 +2,7 @@ var dateFinal;
 var areHallwaysAvailable = false;
 
 var doubleArrayJson;
-var noSchoolArray;
+var noSchoolArray = [];
 var hallwayToUngray;
 
 //display room name, type, and availability when hovered
@@ -786,11 +786,26 @@ function bookAJAXAdmin(date, id, block)
 	}
 }
 
+var y;
+var m;
+var d;
+
+function splitDate(dateToCheck)
+{
+	y = dateToCheck.substr(0,4);
+	m = dateToCheck.substr(5,2);
+	d = dateToCheck.substr(8,2);
+}
+
 function checkIfWeekend(dateToCheck)
 {
-	var date = new Date(); 
-	date.setDate(dateToCheck.substr(8));
-	return (date.getDate() == 0 || date.getDate() == 6);
+	splitDate(dateToCheck);
+	var date = new Date(y, (m-1), d); 
+	if (date.getDay() == 0 || date.getDay() == 6)
+	{
+		alert(date + "is a weekend");
+	}
+	return (date.getDay() == 0 || date.getDay() == 6);
 }
 
 function checkIfNoSchool(dateToCheck)
@@ -810,7 +825,7 @@ function checkIfNoSchool(dateToCheck)
 function createDaySchedule()
 {
 	var date1 = new Date(2017, 8, 6);
-	var date2 = new Date(2018, 5, 20);
+	var date2 = new Date(2017, 9, 30);
 	var day;
 	var year;
 	var month;
@@ -846,4 +861,29 @@ function createDaySchedule()
 			}
 		}
 	}
+
+	console.log(between);
+	console.log(schedule[0][0]);
+	console.log(schedule[0][1]);
+
+	console.log(schedule[1][0]);
+	console.log(schedule[1][1]);
+
+	console.log(schedule[2][0]);
+	console.log(schedule[2][1]);
+
+	console.log(schedule[3][0]);
+	console.log(schedule[3][1]);
+
+	console.log(schedule[4][0]);
+	console.log(schedule[4][1]);
+
+	console.log(schedule[5][0]);
+	console.log(schedule[5][1]);
+
+	console.log(schedule[6][0]);
+	console.log(schedule[6][1]);
+
+	console.log(schedule[7][0]);
+	console.log(schedule[7][1]);
 }
