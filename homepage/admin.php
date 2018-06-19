@@ -984,6 +984,13 @@ $accessLevel = $_SESSION['accessLevel'];
 			date1.setDate(date1.getDate() + 1);  
 			between.push(year+"-"+(month+1)+"-"+day);
 		}
+		
+		function checkIfWeekend(dateToCheck)
+		{
+			var date = new Date(); 
+			date.setDate(dateToCheck.substr(8));
+			return (date.getDate() == 0 || date.getDate() == 6);
+		}
 
 		console.log(between);
 
