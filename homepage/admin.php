@@ -962,13 +962,6 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
 	<script>
-
-		function calculateDaySchedule(firstDate, lastDate)
-		{
-
-		}
-
-
 		var date1 = new Date(2017, 8, 6);
 		var date2 = new Date(2018, 5, 20);
 		var day;
@@ -991,6 +984,32 @@ $accessLevel = $_SESSION['accessLevel'];
 			date.setDate(dateToCheck.substr(8));
 			return (date.getDate() == 0 || date.getDate() == 6);
 		}
+		
+		function checkIfNoSchool(dateToCheck)
+		{
+
+			for (var n = 0; n < noSchoolArray.length; n++) 
+			{
+				if (noSchoolArray[n] == dateToCheck)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		function createDaySchedule()
+		{
+			var dayOfSchedule = 1; 
+			
+			for (var i = 0; i < between.length; i++)
+			{
+				if !(
+			}
+
+		}
+
 
 		console.log(between);
 
