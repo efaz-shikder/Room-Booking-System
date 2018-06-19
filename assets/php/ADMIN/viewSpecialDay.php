@@ -88,8 +88,6 @@ $teacherEmail = $_SESSION['email'];
 
           <label for="typeOfDay">Select Type of Day:</label>
           <select id="typeOfDay" name="typeOfDay">
-            <option value="first day of school">First Day of School</option>
-            <option value="last day of school">Last Day of School</option>
             <option value="5">No School</option>
           </select>
 
