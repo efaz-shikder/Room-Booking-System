@@ -694,6 +694,8 @@ function blockDates()
 		data: {},
 		success: function(data){
 			noSchoolArray = JSON.parse(data);
+			console.log(noSchoolArray);
+			createDaySchedule();
 		},
 		complete: function(data){
 			vanillacalendar.init();
@@ -804,10 +806,6 @@ function checkIfWeekend(dateToCheck)
 	splitDate(dateToCheck);
 	var date = new Date(y, (m-1), d); 
 	
-	if (date.getDay() == 0 || date.getDay() == 6)
-	{
-		alert(date);
-	}
 	return (date.getDay() == 0 || date.getDay() == 6);
 }
 
@@ -849,7 +847,7 @@ function createDaySchedule()
 	
 	for (var i = 0; i < between.length; i++)
 	{
-		if (!(checkIfWeekend(between[i])) || !(checkIfNoSchool(between[i])))
+		if (!(checkIfWeekend(between[i])) && !(checkIfNoSchool(between[i])))
 		{
 			// normal school day
 			schedule.push([between[i], dayOfSchedule]);
@@ -862,10 +860,15 @@ function createDaySchedule()
 			{
 				dayOfSchedule++; 
 			}
-		}
+		} 
+		else
+		{
+			schedule.push([between[i], 5]);
+		} 
 	}
 
 	console.log(between);
+	console.log(noSchoolArray);
 	console.log(schedule[0][0]);
 	console.log(schedule[0][1]);
 

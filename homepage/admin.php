@@ -22,7 +22,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body onload="blockDates(); createDaySchedule();">
+<body onload="blockDates();">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
