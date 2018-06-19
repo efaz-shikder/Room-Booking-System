@@ -849,7 +849,7 @@ function createDaySchedule()
 	
 	for (var i = 0; i < between.length; i++)
 	{
-		if (!(checkIfWeekend(between[i])) || !(checkIfNoSchool(between[i])))
+		if (!(checkIfWeekend(between[i])) && !(checkIfNoSchool(between[i])))
 		{
 			// normal school day
 			schedule.push([between[i], dayOfSchedule]);
