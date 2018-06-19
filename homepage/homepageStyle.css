@@ -702,3 +702,7 @@ button {
 .disabled5 {
   pointer-events: none;
 }
+
+.colored {
+  color: #3dc4fd;
+}
