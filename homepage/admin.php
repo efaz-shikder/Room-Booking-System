@@ -22,7 +22,7 @@ $accessLevel = $_SESSION['accessLevel'];
 
 </head>
 
-<body onload="blockDates();">
+<body onload="blockDates(); createDaySchedule();">
 
 	<!-- Navigation Menu -->
 	<div id="ArbisNav" class="sidenav">
@@ -961,73 +961,6 @@ $accessLevel = $_SESSION['accessLevel'];
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
-	<script>
-		var date1 = new Date(2017, 8, 6);
-		var date2 = new Date(2018, 5, 20);
-		var day;
-		var year;
-		var month;
-		var between = [];
-		var schedule = [];
-
-		while(date1 <= date2) {
-			day = date1.getDate();
-			month = date1.getMonth();
-			year = date1.getFullYear();
-
-			date1.setDate(date1.getDate() + 1);  
-			between.push(year+"-"+(month+1)+"-"+day);
-		}
-		
-		function checkIfWeekend(dateToCheck)
-		{
-			var date = new Date(); 
-			date.setDate(dateToCheck.substr(8));
-			return (date.getDate() == 0 || date.getDate() == 6);
-		}
-		
-		function checkIfNoSchool(dateToCheck)
-		{
-
-			for (var n = 0; n < noSchoolArray.length; n++) 
-			{
-				if (noSchoolArray[n] == dateToCheck)
-				{
-					return true;
-				}
-			}
-			
-			return false;
-		}
-		
-		function createDaySchedule()
-		{
-			var dayOfSchedule = 1; 
-			
-			for (var i = 0; i < between.length; i++)
-			{
-				if (!(checkIfWeekend(between[i])) && !(checkIfNoSchool(between[i])))
-				{
-					// normal school day
-					schedule.push([between[i], dayOfSchedule]);
-					
-					if (dayOfSchedule == 4)
-					{
-						dayOfSchedule = 1;
-					}
-					else
-					{
-						dayOfSchedule++; 
-					}
-				}
-			}
-
-		}
-
-
-		console.log(between);
-
-	</script>
 </body>
 
 </html>
