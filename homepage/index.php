@@ -39,6 +39,8 @@ $accessLevel = $_SESSION['accessLevel'];
 
 	<section class="padding">
 
+		<section class="padding">
+
 		<div class="container vertical-center d-flex align-items-center flex-column justify-content-center">
 			<div class="container">
 
@@ -60,7 +62,7 @@ $accessLevel = $_SESSION['accessLevel'];
 				</div>
 				<!-- Row 1 -->
 				<div class="row">
-					<!-- calender and period buttons -->
+					<!-- calender -->
 					<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
 							<!-- calendar -->
@@ -135,7 +137,7 @@ $accessLevel = $_SESSION['accessLevel'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
 											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(1); setRoomName(\''. $roomString .'\');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -151,8 +153,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(2); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -168,8 +170,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(3); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -185,8 +187,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(4); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -202,8 +204,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(5); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -219,8 +221,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(6); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -236,8 +238,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(7); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -253,8 +255,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(8); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -270,8 +272,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(9); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
@@ -287,8 +289,8 @@ $accessLevel = $_SESSION['accessLevel'];
 											$roomName = $row['roomName'];
 											$classID = $row['classID'];
 											echo '<li id='. $classID .' >';
-											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10); setRoomName(' . $roomName . ');">'.$roomName.'</a>';
-											echo '</li>';
+											echo '<a id="'.$classID.'R" href='."#".' onclick="setClassID('.$classID.'); setHallwaysAvailable(10); setRoomName(\'' . $roomName . '\');">'.$roomName.'</a>';
+											echo '</li>'.PHP_EOL;
 										}
 
 										?>
