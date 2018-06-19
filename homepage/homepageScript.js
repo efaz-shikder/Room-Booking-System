@@ -5,6 +5,8 @@ var doubleArrayJson;
 var noSchoolArray = [];
 var hallwayToUngray;
 
+var schedule = [];
+
 //display room name, type, and availability when hovered
 function availabilityDisplay(elem) {
 	var elementID = elem.getAttribute("id");
@@ -281,10 +283,8 @@ createDay: function (num, day, year) {
 			day1 = noSchoolArray[n].substring(8,10);
 			
 			if ( (this.date.getTime() <= this.todaysDate.getTime() - 1) 
-				|| (this.date.getMonth() === 6) 
-				|| (this.date.getMonth() === 7)
-				|| (weekend == "Sat") 
-				|| (weekend == "Sun")
+				|| (this.date.getMonth() === 6) || (this.date.getMonth() === 7)
+				|| (weekend == "Sat") || (weekend == "Sun")
 				|| ( (this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
 			{
 				newDay.classList.add('cal__date--disabled');
@@ -828,7 +828,6 @@ function createDaySchedule()
 	var year;
 	var month;
 	var between = [];
-	var schedule = [];
 
 	while(date1 <= date2)
 	{
