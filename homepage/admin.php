@@ -961,6 +961,33 @@ $accessLevel = $_SESSION['accessLevel'];
 
 	<script src="jquery.min.js"></script>
 	<script src="homepageScript.js"></script>
+	<script>
+
+		function calculateDaySchedule(firstDate, lastDate)
+		{
+
+		}
+
+
+		var date1 = new Date(2017, 8, 6);
+		var date2 = new Date(2018, 5, 20);
+		var day;
+		var year;
+		var month;
+		var between = [];
+
+		while(date1 <= date2) {
+			day = date1.getDate();
+			month = date1.getMonth();
+			year = date1.getFullYear();
+
+			date1.setDate(date1.getDate() + 1);  
+			between.push(year+"-"+(month+1)+"-"+day);
+		}
+
+		console.log(between);
+
+	</script>
 </body>
 
 </html>
