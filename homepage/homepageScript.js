@@ -245,9 +245,12 @@ dateClicked: function () {
 				simplifiedDate = simplifiedDate.substring(7,11) + "-" + shortenedMonth + "-" + simplifiedDate.substring(4,6)
 				dateFinal = simplifiedDate;
 
-				if (simplifiedDate == schedule[i][0])
+				for (var index = 0; index < schedule.length; index++)
 				{
-					simplifiedDate += simplifiedDate + " " + schedule[i][1];
+					if (simplifiedDate == schedule[index][0])
+					{
+						simplifiedDate = simplifiedDate + " " + schedule[index][1];
+					}
 				}
 
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
