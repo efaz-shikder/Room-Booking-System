@@ -792,18 +792,21 @@ var d;
 
 function splitDate(dateToCheck)
 {
-	y = dateToCheck.substr(0,4);
-	m = dateToCheck.substr(5,2);
-	d = dateToCheck.substr(8,2);
+	var str = dateToCheck.split("-");
+
+	y = str[0];
+	m = str[1];
+	d = str[2];
 }
 
 function checkIfWeekend(dateToCheck)
 {
 	splitDate(dateToCheck);
 	var date = new Date(y, (m-1), d); 
+	
 	if (date.getDay() == 0 || date.getDay() == 6)
 	{
-		alert(date + "is a weekend");
+		alert(date);
 	}
 	return (date.getDay() == 0 || date.getDay() == 6);
 }
