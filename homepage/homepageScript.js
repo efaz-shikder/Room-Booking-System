@@ -242,8 +242,14 @@ dateClicked: function () {
 					shortenedMonth = "12";
 					break;
 				}
-				simplifiedDate = simplifiedDate.substr(7) + "-" + shortenedMonth + "-" + simplifiedDate.substr(4,3)
+				simplifiedDate = simplifiedDate.substring(7,11) + "-" + shortenedMonth + "-" + simplifiedDate.substring(4,6)
 				dateFinal = simplifiedDate;
+
+				if (simplifiedDate == schedule[i][0])
+				{
+					simplifiedDate += simplifiedDate + " " + schedule[i][1];
+				}
+
 				var picked = document.querySelectorAll('[data-calendar-label="picked"]')[0]
 				picked.innerHTML = simplifiedDate
 				_this.removeActiveClass()
@@ -288,7 +294,7 @@ createDay: function (num, day, year) {
 				|| ( (this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
 			{
 				newDay.classList.add('cal__date--disabled');
-				newDay.classList.add('disabled5');
+				// newDay.classList.add('disabled5');
 			} 
 			else 
 			{
