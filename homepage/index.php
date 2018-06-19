@@ -70,7 +70,7 @@ $accessLevel = $_SESSION['accessLevel'];
 								<div class="calendar_container">
 									<!-- Date Picked Display -->
 									<p class="demo-picked">
-										Date picked: <span data-calendar-label="picked"></span>
+										Date picked: <span class="colored" data-calendar-label="picked"></span>
 									</p>
 
 									<div class="cal">
