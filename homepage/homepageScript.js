@@ -819,17 +819,13 @@ function checkIfNoSchool(dateToCheck)
 		splitDate(noSchoolArray[n]);
 		var noSchoolDate = new Date(y, (m-1), d);
 
-		console.log(checkDate);
-		console.log(noSchoolDate);
 		if (noSchoolDate.getTime() === checkDate.getTime())
 		{
-			console.log("true");
 			return true;
 			
 		}
 		else
 		{
-			console.log("false");
 			return false;
 		}
 	}
@@ -840,8 +836,8 @@ function checkIfNoSchool(dateToCheck)
 
 function createDaySchedule()
 {
-	var date1 = new Date(2017, 8, 6);
-	var date2 = new Date(2017, 8, 14);
+	var date1 = new Date(2018, 5, 5);
+	var date2 = new Date(2018, 5, 19);
 	var day;
 	var year;
 	var month;
@@ -885,24 +881,9 @@ function createDaySchedule()
 	console.log(schedule[0][0]);
 	console.log(schedule[0][1]);
 
-	console.log(schedule[1][0]);
-	console.log(schedule[1][1]);
+	console.log(schedule[13][0]);
+	console.log(schedule[13][1]);
 
-	console.log(schedule[2][0]);
-	console.log(schedule[2][1]);
-
-	console.log(schedule[3][0]);
-	console.log(schedule[3][1]);
-
-	console.log(schedule[4][0]);
-	console.log(schedule[4][1]);
-
-	console.log(schedule[5][0]);
-	console.log(schedule[5][1]);
-
-	console.log(schedule[6][0]);
-	console.log(schedule[6][1]);
-
-	console.log(schedule[7][0]);
-	console.log(schedule[7][1]);
+	console.log(schedule[14][0]);
+	console.log(schedule[14][1]);
 }
