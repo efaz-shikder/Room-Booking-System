@@ -698,3 +698,7 @@ button {
   width: 100%;
   transform: translateX(3%);
 }
+
+.disabled5 {
+  pointer-events: none;
+}
