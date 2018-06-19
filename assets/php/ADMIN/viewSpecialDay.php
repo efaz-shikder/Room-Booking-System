@@ -205,7 +205,7 @@ while($row = mysqli_fetch_array($result))
 
       type: 'post',
       url: 'removeDate.php',
-      data: {date: day, type: typeOfDay},
+      data: {date: day},
       success:function(data){
         console.log(data);
         window.location.replace("viewSpecialDay.php");
