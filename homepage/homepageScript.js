@@ -247,16 +247,11 @@ dateClicked: function () {
 
 				for (var index = 0; index < schedule.length; index++)
 				{
-					alert(schedule[index][0]);
 					if (simplifiedDate == schedule[index][0])
 					{
 						if (!(schedule[index][1] == 5)) 
 						{
 							simplifiedDate = simplifiedDate + " Day " + schedule[index][1];
-						}
-						else
-						{
-							// do nothing
 						}
 					}
 				}
