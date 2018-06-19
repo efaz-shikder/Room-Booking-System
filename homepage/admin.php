@@ -968,6 +968,7 @@ $accessLevel = $_SESSION['accessLevel'];
 		var year;
 		var month;
 		var between = [];
+		var schedule = [];
 
 		while(date1 <= date2) {
 			day = date1.getDate();
@@ -1005,7 +1006,20 @@ $accessLevel = $_SESSION['accessLevel'];
 			
 			for (var i = 0; i < between.length; i++)
 			{
-				if !(
+				if (!(checkIfWeekend(between[i])) && !(checkIfNoSchool(between[i])))
+				{
+					// normal school day
+					schedule.push([between[i], dayOfSchedule]);
+					
+					if (dayOfSchedule == 4)
+					{
+						dayOfSchedule = 1;
+					}
+					else
+					{
+						dayOfSchedule++; 
+					}
+				}
 			}
 
 		}
