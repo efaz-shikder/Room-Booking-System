@@ -280,20 +280,20 @@ createDay: function (num, day, year) {
 			month1 = noSchoolArray[n].substring(5,7) - 1;
 			day1 = noSchoolArray[n].substring(8,10);
 			
-		if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
-			|| (this.date.getMonth() === 6) 
-			|| (this.date.getMonth() === 7)
-			|| (weekend == "Sat") || (weekend == "Sun") 
-			|| ((this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
-		{
-			newDay.classList.add('cal__date--disabled')
-		} 
-		else 
-		{
-			newDay.classList.add('cal__date--active')
-			newDay.setAttribute('data-calendar-status', 'active')
+			if ((this.date.getTime() <= this.todaysDate.getTime() - 1) 
+				|| (this.date.getMonth() === 6) 
+				|| (this.date.getMonth() === 7)
+				|| (weekend == "Sat") || (weekend == "Sun") 
+				|| ((this.date.getFullYear() == year1 && this.date.getMonth() == month1) && (this.date.getDate() == day1) ) ) 
+			{
+				newDay.classList.add('cal__date--disabled')
+			} 
+			else 
+			{
+				newDay.classList.add('cal__date--active')
+				newDay.setAttribute('data-calendar-status', 'active')
+			}
 		}
-	}
 	}
 	else
 	{
@@ -311,8 +311,8 @@ createDay: function (num, day, year) {
 		}		
 	}
 
-newDay.appendChild(dateEl)
-this.month.appendChild(newDay)
+	newDay.appendChild(dateEl)
+	this.month.appendChild(newDay)
 },
 
 createMonth: function () {
@@ -621,16 +621,16 @@ function doWork() {
 doWork();
 
 $("#checking").click(function(){
-		var $this = $(this);
+	var $this = $(this);
 
-		if($this.data('clicked')) {
-			toggleRoomsOff();
-			hideHallways();
-			hideSubmit();
-		}
-		else {
-		 $this.data('clicked', true);
- 		}
+	if($this.data('clicked')) {
+		toggleRoomsOff();
+		hideHallways();
+		hideSubmit();
+	}
+	else {
+		$this.data('clicked', true);
+	}
 
 });
 
@@ -694,7 +694,6 @@ function blockDates()
 		data: {},
 		success: function(data){
 			noSchoolArray = JSON.parse(data);
-			console.log(noSchoolArray);
 			createDaySchedule();
 		},
 		complete: function(data){
@@ -814,19 +813,35 @@ function checkIfNoSchool(dateToCheck)
 
 	for (var n = 0; n < noSchoolArray.length; n++) 
 	{
-		if (noSchoolArray[n] == dateToCheck)
+		splitDate(dateToCheck);
+		var checkDate = new Date(y, (m-1), d);
+
+		splitDate(noSchoolArray[n]);
+		var noSchoolDate = new Date(y, (m-1), d);
+
+		console.log(checkDate);
+		console.log(noSchoolDate);
+		if (noSchoolDate.getTime() === checkDate.getTime())
 		{
+			console.log("true");
 			return true;
+			
+		}
+		else
+		{
+			console.log("false");
+			return false;
 		}
 	}
+
 	
-	return false;
+	
 }
 
 function createDaySchedule()
 {
 	var date1 = new Date(2017, 8, 6);
-	var date2 = new Date(2017, 9, 30);
+	var date2 = new Date(2017, 8, 14);
 	var day;
 	var year;
 	var month;
@@ -867,8 +882,6 @@ function createDaySchedule()
 		} 
 	}
 
-	console.log(between);
-	console.log(noSchoolArray);
 	console.log(schedule[0][0]);
 	console.log(schedule[0][1]);
 
