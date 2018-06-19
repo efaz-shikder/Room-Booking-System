@@ -962,7 +962,7 @@ $accessLevel = $_SESSION['accessLevel'];
 	<script src="homepageScript.js"></script>
 	<script type = "text/javascript">
 		
-		var access = json_encode(<?php echo $accessLevel ?>);
+		var access = <?php echo json_encode($accessLevel) ?>;
 
 		function bookAJAX(date, id, block)
 		{
