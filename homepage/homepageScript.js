@@ -206,31 +206,31 @@ dateClicked: function () {
 				var shortenedMonth = simplifiedDate.substring(0,3);
 				switch (shortenedMonth) {
 					case "Jan":
-					shortenedMonth = "01";
+					shortenedMonth = "1";
 					break;
 					case "Feb":
-					shortenedMonth = "02";
+					shortenedMonth = "2";
 					break;
 					case "Mar":
-					shortenedMonth = "03";
+					shortenedMonth = "3";
 					break;
 					case "Apr":
-					shortenedMonth = "04";
+					shortenedMonth = "4";
 					break;
 					case "May":
-					shortenedMonth = "05";
+					shortenedMonth = "5";
 					break;
 					case "Jun":
-					shortenedMonth = "06";
+					shortenedMonth = "6";
 					break;
 					case "Jul":
-					shortenedMonth = "07";
+					shortenedMonth = "7";
 					break;
 					case "Aug":
-					shortenedMonth = "08";
+					shortenedMonth = "8";
 					break;
 					case "Sep":
-					shortenedMonth = "09";
+					shortenedMonth = "9";
 					break;
 					case "Oct":
 					shortenedMonth = "10";
@@ -247,9 +247,17 @@ dateClicked: function () {
 
 				for (var index = 0; index < schedule.length; index++)
 				{
+					alert(schedule[index][0]);
 					if (simplifiedDate == schedule[index][0])
 					{
-						simplifiedDate = simplifiedDate + " " + schedule[index][1];
+						if (!(schedule[index][1] == 5)) 
+						{
+							simplifiedDate = simplifiedDate + " Day " + schedule[index][1];
+						}
+						else
+						{
+							// do nothing
+						}
 					}
 				}
 
