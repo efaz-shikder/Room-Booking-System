@@ -207,6 +207,8 @@ path
 }
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
+  color: #008eee;
+  transition: 0.4s;
 }
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {

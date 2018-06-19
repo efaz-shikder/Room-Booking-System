@@ -28,37 +28,42 @@ $teacherEmail = $_SESSION['email'];
 
 </head>
 
-<body>
+<body style="background: black;">
 
   <!-- Navigation Menu -->
   <div id="ArbisNav" class="sidenav">
+    <div class="outer">
+      <div class="inner" onclick="toggleNav()">
+        <label>Back</label>
+      </div>
+    </div>
     <a href="../../../homepage/admin.php">Home</a>
     <a href="viewOwnBookingAdmin.php">Own Booked Rooms</a>
     <a href="viewBookingAdmin.php">All Booked Rooms </a>
     <a href="viewRooms.php">Edit Rooms</a>
     <a href="viewTeachers.php">Edit Teachers</a>
     <a href="viewTeachers.php">Edit Days</a>
-    <a href="../../../ARBIS_Help.html">Help</a>
+    <a href="../../../ARBIS_Help_Admin.html">Help</a>
   </div>
 
-  <section id="main" class="main container">
+  <section class="padding container">
 
     <div class="container-fluid bookings">
 
-     <!--  Navigation Menu Icon -->
-     <div class="row">
-      <div class="col">
-       <div id="center navIcon">
-        <div id="nav-icon3" onclick="toggleNav()">
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-       </div>
-     </div>
-   </div>
 
- </div>
+        <!-- Navigation Menu Icon -->
+        <div class="row">
+          <div class="col">
+            <div id="navIcon">
+              <div id="nav-icon3" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
  <!-- Trigger the modal with a button -->
  <button type="button" class="btn btn-info btn-lg" style="float: right; padding: auto; margin-bottom: 2%;" data-toggle="modal" data-target="#myModal">Add special date</button>
@@ -215,11 +220,20 @@ while($row = mysqli_fetch_array($result))
   }
 
 }
-</script
+function toggleNav() {
+  if ( action == 1 ) {
+    document.getElementById("ArbisNav").style.width = "250px";
+    action = 2;
+  }
+  else {
+    document.getElementById("ArbisNav").style.width = "0";
+    action = 1;
+  }
+}
+</script>
 </body>
 
 </html>
-</div>
 
 <?php
 

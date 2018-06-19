@@ -26,7 +26,7 @@ $teacherEmail = $_SESSION['email'];
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-</head>
+</head> 
 
 <body style="background: black;">
 
@@ -50,20 +50,19 @@ $teacherEmail = $_SESSION['email'];
 
     <div class="container-fluid bookings">
 
-     <!--  Navigation Menu Icon -->
-     <div class="row">
-      <div class="col">
-       <div id="navIcon">
-        <div id="nav-icon3" onclick="toggleNav()">
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-       </div>
-     </div>
-   </div>
-
- </div>
+        <!-- Navigation Menu Icon -->
+        <div class="row">
+          <div class="col">
+            <div id="navIcon">
+              <div id="nav-icon3" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
  <!-- Trigger the modal with a button -->
  <button type="button" class="btn btn-info btn-lg" style="float: right; padding: auto; margin-bottom: 2%;" data-toggle="modal" data-target="#myModal">Add Classroom</button>

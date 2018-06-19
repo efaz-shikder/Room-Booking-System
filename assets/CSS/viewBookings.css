@@ -26,7 +26,8 @@ body
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover{
-
+  color: #008eee;
+  transition: 0.4s;
 }
 .padding {
 	padding-top: 50px;
